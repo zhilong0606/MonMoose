@@ -1,0 +1,6 @@
+MonMoose/Library/
+MonMoose/Temp/
+MonMoose/obj/
+MonMoose/.vs/
+MonMoose/*.csproj
+MonMoose/*.sln
