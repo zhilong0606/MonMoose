@@ -6,7 +6,7 @@ using UnityEngine;
 public enum EGameState
 {
     Lobby,
-    SkillTest,
+    Battle,
 }
 
 public class GameManager : MonoSingleton<GameManager>
@@ -19,7 +19,7 @@ public class GameManager : MonoSingleton<GameManager>
         stateMachine = new StateMachine(new State[]
         {
             new LobbyState(),
-            new SkillTestState(),
+            new BattleState(),
         });
         RegisterListener();
         m_initializer.StartAsync(OnInitFinish);
@@ -32,17 +32,15 @@ public class GameManager : MonoSingleton<GameManager>
 
     private void RegisterListener()
     {
-        EventManager.instance.RegisterListener((int)EventID.LobbyWindow_SkillTestBtn_Click, OnSkillTestBtnClick);
     }
 
     private void RemoveListener()
     {
-        EventManager.instance.UnregisterListener((int)EventID.LobbyWindow_SkillTestBtn_Click, OnSkillTestBtnClick);
     }
 
-    private void OnSkillTestBtnClick()
+    public void EnterBattle()
     {
-        stateMachine.ChangeState((int)EGameState.SkillTest);
+        stateMachine.ChangeState((int)EGameState.Battle);
     }
 
     private void Update()

@@ -1,24 +1,25 @@
 ﻿
 using MonMoose.Core;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LobbyPanel : UIWindow
 {
     protected override void OnInit(object param)
     {
         base.OnInit(param);
-        GameObject skillTestBtn = GetWidget((int)EWidget.SkillTestBtn);
-        
-        UIEventListener.Get(skillTestBtn).SetEvent(UIEventType.PointerClick, LobbyWindow_SkillTestBtn_Click);
+        Button startBtn = GetComponentToWidget<Button>((int)EWidget.StartBtn);
+
+        startBtn.onClick.AddListener(OnStartBtnClick);
     }
 
-    private void LobbyWindow_SkillTestBtn_Click(UIEvent obj)
+    private void OnStartBtnClick()
     {
-        EventManager.instance.Broadcast((int)EventID.LobbyWindow_SkillTestBtn_Click);
+        GameManager.Instance.EnterBattle();
     }
 
     private enum EWidget
     {
-        SkillTestBtn,
+        StartBtn,
     }
 }

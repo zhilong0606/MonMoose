@@ -11,10 +11,10 @@ public class GameDataManager : Singleton<GameDataManager>
 
     protected override void Init()
     {
-        LoadCSV(actorInfoDic, "Exporter/GameData/ActorInfo");
-        LoadCSV(skillInfoDic, "Exporter/GameData/SkillInfo");
-        LoadCSV(animationInfoDic, "Exporter/GameData/AnimationInfo");
-        LoadCSV(attributeStaticInfoMap, "Exporter/GameData/AttributeStaticInfo");
+        //LoadCSV(actorInfoDic, "Exporter/GameData/ActorInfo");
+        //LoadCSV(skillInfoDic, "Exporter/GameData/SkillInfo");
+        //LoadCSV(animationInfoDic, "Exporter/GameData/AnimationInfo");
+        //LoadCSV(attributeStaticInfoMap, "Exporter/GameData/AttributeStaticInfo");
     }
 
     private void LoadCSV<T>(Dictionary<int,T> dic, string csvPath) where T : BaseGameInfo, new()

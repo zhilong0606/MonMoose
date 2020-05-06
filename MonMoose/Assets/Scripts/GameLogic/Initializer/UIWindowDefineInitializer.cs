@@ -19,8 +19,7 @@ public class UIWindowDefineInitializer : Initializer
 
     protected override IEnumerator OnProcess()
     {
-        UIWindowManager.instance.RegisterWindowContext((int)EWindowType.JoystickWindow, new UIWindowContext("Exporter/UI/Joystick/Prefabs/JoystickPanel", typeof(JoystickPanel)));
-        UIWindowManager.instance.RegisterWindowContext((int)EWindowType.LobbyWindow, new UIWindowContext("Exporter/UI/Lobby/Prefabs/LobbyPanel", typeof(LobbyPanel)));
+        UIWindowManager.instance.RegisterWindowContext((int)EWindowType.LobbyWindow, new UIWindowContext("Exported/UI/Lobby/Prefabs/LobbyPanel", typeof(LobbyPanel)));
         yield return null;
     }
 }

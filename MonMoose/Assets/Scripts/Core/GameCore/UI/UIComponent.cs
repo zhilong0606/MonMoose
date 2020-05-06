@@ -39,7 +39,7 @@ public class UIComponent : UIBehaviour, IUIWindowHolder
         catch
         {
             Debug.LogError("Error: Initialize Failed!!!   " + GetType());
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
         if (m_isInitialized)
         {

@@ -10,7 +10,6 @@ public class LobbyState : State
 
     public override void OnEnter()
     {
-        SceneManager.LoadScene("LobbyScene");
         UIWindowManager.instance.OpenWindow((int)EWindowType.LobbyWindow);
     }
 

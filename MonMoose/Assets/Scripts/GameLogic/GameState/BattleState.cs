@@ -1,13 +1,13 @@
 ﻿using MonMoose.Core;
 using UnityEngine.SceneManagement;
 
-public class SkillTestState : State
+public class BattleState : State
 {
     private BattleSystem battleSystem = new BattleSystem();
 
     public override int stateIndex
     {
-        get { return (int)EGameState.SkillTest; }
+        get { return (int)EGameState.Battle; }
     }
 
     public override void OnEnter()
@@ -15,7 +15,7 @@ public class SkillTestState : State
         StartFightHandler.CreateInstance();
         PlayerManager.CreateInstance();
         ActorManager.CreateInstance();
-        SceneManager.LoadScene("SkillTest");
+        SceneManager.LoadScene("BattleScene");
         RegisterListener();
     }
 
@@ -23,7 +23,6 @@ public class SkillTestState : State
     {
         RemoveListener();
         battleSystem.Clear();
-        battleSystem = null;
         StartFightHandler.DestroyInstance();
         PlayerManager.DestroyInstance();
         ActorManager.DestroyInstance();

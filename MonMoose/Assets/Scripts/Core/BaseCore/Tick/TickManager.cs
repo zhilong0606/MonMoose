@@ -40,10 +40,7 @@ namespace MonMoose.Core
             List<Action<float>> list;
             if (m_globalTickListMap.TryGetValue(id, out list))
             {
-                if (!list.Contains(action))
-                {
-                    list.Remove(action);
-                }
+                list.Remove(action);
             }
         }
 
