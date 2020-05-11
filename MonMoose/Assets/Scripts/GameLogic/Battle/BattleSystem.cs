@@ -1,12 +1,12 @@
 ﻿public class BattleSystem
 {
-    private SkillController skillController = new SkillController();
-    private MoveController moveController = new MoveController();
+    //private SkillController skillController = new SkillController();
+    //private MoveController moveController = new MoveController();
 
     public void Init()
     {
-        skillController.Init();
-        moveController.Init();
+        //skillController.Init();
+        //moveController.Init();
         //RegisterListener();
     }
 
@@ -27,7 +27,7 @@
     public void Clear()
     {
         //skillController.Clear();
-        moveController.Clear();
+        //moveController.Clear();
         RemoveListener();
     }
 }

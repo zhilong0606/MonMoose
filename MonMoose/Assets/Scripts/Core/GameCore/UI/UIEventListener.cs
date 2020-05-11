@@ -2,6 +2,7 @@
 using MonMoose.Core;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class UIEventListener : MonoBehaviour, IPointerClickHandler, IPointerDownHandler, IPointerUpHandler, IPointerEnterHandler, IPointerExitHandler
 {
@@ -10,6 +11,11 @@ public class UIEventListener : MonoBehaviour, IPointerClickHandler, IPointerDown
 
     public static UIEventListener Get(GameObject go)
     {
+        Graphic graphic = go.GetComponent<Graphic>();
+        if (graphic != null)
+        {
+            graphic.raycastTarget = true;
+        }
         UIEventListener eventListener = go.GetComponent<UIEventListener>();
         if (eventListener == null)
         {

@@ -1,59 +1,58 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using MonMoose.Core;
 using UnityEngine.EventSystems;
 
-public class UIComponent : UIBehaviour, IUIWindowHolder
+public class UIComponent : UIBehaviour
 {
+    private static List<Component> m_catchedComponentList = new List<Component>();
+
     private bool m_isInitialized;
-    private UIWindow m_window;
     private UIWindowCanvas m_canvas;
+    private UIComponent m_parent;
     private Dictionary<int, IEnumerator> m_awakeMap = new Dictionary<int, IEnumerator>();
     private List<IEnumerator> m_awakeList = new List<IEnumerator>();
-    private UIWidgetInventory m_widgetInventory;
+    private Dictionary<int, UIWidgetInventory> m_widgetInventoryMap = new Dictionary<int, UIWidgetInventory>();
+    private List<UIComponent> m_componentList = new List<UIComponent>();
+    private UIWidgetInventory m_cachedInventory;
+    private bool m_isDestroying;
 
-    public UIWindow window { get { return m_window; } }
     public bool isInitialized { get { return m_isInitialized; } }
     public virtual bool needAutoInit { get { return false; } }
-    public virtual int widgetInventoryId { get { return -1; } }
     public bool isActiveSelf { get { return gameObject != null && gameObject.activeSelf; } }
     public bool isActiveInHierarchy { get { return gameObject != null && gameObject.activeInHierarchy; } }
     public virtual UIWindowCanvas canvas { get { if (m_canvas == null) m_canvas = FindCanvas(); return m_canvas; } }
-    public UIWidgetInventory widgetInventory { get { return m_widgetInventory; } }
+    public bool isDestroying { get { return m_isDestroying; } }
 
-    public void Initialize(UIWindow window, object param = null)
+    public void Initialize(UIComponent parent, object param = null)
     {
         if (m_isInitialized)
         {
             Debug.LogWarning("Warn: Initialize Multi Time!!!   " + GetType());
             return;
         }
-        m_window = window;
-        m_widgetInventory = GetInventory(widgetInventoryId);
+        CollectWidgetInventory();
+#if USE_TRYCATCH
         try
+#endif
         {
             OnInit(param);
             m_isInitialized = true;
         }
-        catch
+#if USE_TRYCATCH
+        catch (Exception e)
         {
-            Debug.LogError("Error: Initialize Failed!!!   " + GetType());
-            //Destroy(gameObject);
+            Debug.LogError("Error: Initialize Failed!!!   " + e);
+            Destroy(gameObject);
         }
+#endif
         if (m_isInitialized)
         {
-            window.AddComponent(this);
+            BindParent(parent);
             RegisterListener();
         }
-    }
-
-    public void Initialize<T>(UIWindow window, T param) where T : struct
-    {
-        StructHolder<T> holder = ClassPoolManager.instance.Fetch<StructHolder<T>>();
-        holder.value = param;
-        Initialize(window, (object)holder);
-        holder.Release();
     }
 
     public void UnInit()
@@ -62,11 +61,41 @@ public class UIComponent : UIBehaviour, IUIWindowHolder
         {
             OnUninit();
             UnregisterListener();
+            for (int i = m_componentList.Count - 1; i >= 0; --i)
+            {
+                m_componentList[i].UnInit();
+            }
+            m_componentList.Clear();
             m_awakeMap.Clear();
             m_awakeList.Clear();
-            m_window = null;
+            BindParent(null);
             m_isInitialized = false;
         }
+    }
+
+    public void Destroy()
+    {
+        m_isDestroying = true;
+        UnInit();
+        Destroy(gameObject);
+    }
+
+    public void BindParent(UIComponent parent)
+    {
+        if (parent == m_parent)
+        {
+            return;
+        }
+        if (m_parent != null)
+        {
+            m_parent.RemoveComponent(this);
+        }
+        m_parent = parent;
+        if (m_parent != null)
+        {
+            m_parent.AddComponent(this);
+        }
+        m_canvas = null;
     }
 
     protected override void OnEnable()
@@ -77,6 +106,32 @@ public class UIComponent : UIBehaviour, IUIWindowHolder
         }
         m_awakeList.Clear();
         m_awakeMap.Clear();
+    }
+
+    public void AddComponent(UIComponent component)
+    {
+        if (component != this)
+        {
+            m_componentList.Add(component);
+        }
+    }
+
+    public void RemoveComponent(UIComponent component)
+    {
+        m_componentList.Remove(component);
+    }
+
+    public void UpdateAlways(float deltaTime)
+    {
+        IUIUpdatable updatable = this as IUIUpdatable;
+        if (updatable != null)
+        {
+            updatable.UpdateFloat(deltaTime);
+        }
+        for (int i = 0; i < m_componentList.Count; ++i)
+        {
+            m_componentList[i].UpdateAlways(deltaTime);
+        }
     }
 
     public void TryUpdateWidget(int id, IEnumerator iter)
@@ -130,97 +185,63 @@ public class UIComponent : UIBehaviour, IUIWindowHolder
 
     private UIWindowCanvas FindCanvas()
     {
-        Transform t = transform;
-        List<Component> l = ListPool<Component>.Get();
-        UIWindowCanvas canvas = null;
-        while (t != null)
+        if (m_canvas == null)
         {
-            bool needBreak = false;
-            l.Clear();
-            t.GetComponents(l);
-            for (int i = 0; i < l.Count; ++i)
+            Transform t = transform;
+            while (t != null)
             {
-                Component compo = l[i];
-                if (compo is UIWindowCanvas)
+                bool needBreak = false;
+                m_catchedComponentList.Clear();
+                t.GetComponents(m_catchedComponentList);
+                for (int i = 0; i < m_catchedComponentList.Count; ++i)
                 {
-                    canvas = compo as UIWindowCanvas;
-                    needBreak = true;
+                    Component compo = m_catchedComponentList[i];
+                    if (compo is UIWindowCanvas)
+                    {
+                        m_canvas = compo as UIWindowCanvas;
+                        needBreak = true;
+                    }
+                    else if (compo is UIWindow)
+                    {
+                        needBreak = true;
+                    }
                 }
-                else if (compo is UIWindow)
+                if (needBreak)
                 {
-                    needBreak = true;
+                    break;
                 }
+                t = t.parent;
             }
-            if (needBreak)
+        }
+        return m_canvas;
+    }
+
+    private void CollectWidgetInventory()
+    {
+        m_widgetInventoryMap.Clear();
+        UIWidgetInventory[] inventories = GetComponents<UIWidgetInventory>();
+        for (int i = 0; i < inventories.Length; ++i)
+        {
+            UIWidgetInventory inventory = inventories[i];
+            if (!m_widgetInventoryMap.ContainsKey(inventory.Id))
             {
-                break;
+                inventory.parent = this;
+                m_widgetInventoryMap.Add(inventory.Id, inventory);
             }
-            t = t.parent;
-        }
-        ListPool<Component>.Release(l);
-        return canvas;
-    }
-
-    public UIWidgetInventory GetInventory(int id)
-    {
-        UIWidgetInventory result = null;
-        List<Component> l = ListPool<Component>.Get();
-        transform.GetComponents(l);
-        for (int i = 0; i < l.Count; ++i)
-        {
-            UIWidgetInventory inventory = l[i] as UIWidgetInventory;
-            if (inventory != null && inventory.Id == id)
+            else
             {
-                result = inventory;
-                break;
+                Debug.LogError("Error: UIWidgetInventories have same id in A GameObject:" + gameObject.name);
             }
         }
-        ListPool<Component>.Release(l);
-        return result;
-    }
-    public T GetComponentToWidget<T>(int index, bool needInit, object param = null) where T : UIComponent
-    {
-        if (widgetInventory != null)
-        {
-            return widgetInventory.GetComponent<T>(index, needInit, param);
-        }
-        return null;
     }
 
-    public T AddComponentToWidget<T>(int index, bool needInit, object param = null) where T : UIComponent
+    public UIWidgetInventory GetInventory(int id = UIWidgetInventory.defaultId)
     {
-        if (widgetInventory != null)
+        if (m_cachedInventory == null || id != m_cachedInventory.Id)
         {
-            return widgetInventory.AddComponent<T>(index, needInit, param);
+            m_cachedInventory = m_widgetInventoryMap.GetClassValue(id);
         }
-        return null;
-    }
-
-    public T GetComponentToWidget<T>(int index) where T : Component
-    {
-        if (widgetInventory != null)
-        {
-            return widgetInventory.GetComponent<T>(index);
-        }
-        return null;
-    }
-
-    public T AddComponentToWidget<T>(int index) where T : Component
-    {
-        if (widgetInventory != null)
-        {
-            return widgetInventory.AddComponent<T>(index);
-        }
-        return null;
-    }
-
-    public GameObject GetWidget(int index)
-    {
-        if (widgetInventory != null)
-        {
-            return widgetInventory.Get(index);
-        }
-        return null;
+        return m_cachedInventory;
     }
 
     protected void DebugLog(string str)
@@ -234,6 +255,11 @@ public class UIComponent : UIBehaviour, IUIWindowHolder
     protected virtual void UnregisterListener() { }
     protected virtual void OnSetActive(bool flag, bool isValid) { }
     protected virtual void Update() { }
-    public virtual void LateInit() { }
-    public virtual void OnWindowSetActive(bool flag, bool isValid) { }
+    public virtual void OnWindowSetActive(bool flag, bool isValid)
+    {
+        for (int i = 0; i < m_componentList.Count; ++i)
+        {
+            m_componentList[i].OnWindowSetActive(flag, isValid);
+        }
+    }
 }

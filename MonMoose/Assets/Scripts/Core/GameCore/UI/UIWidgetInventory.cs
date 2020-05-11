@@ -2,15 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UIWidgetInventory : GameObjectInventory, IUIWindowHolder
+public class UIWidgetInventory : GameObjectInventory
 {
-    [SerializeField]
-    private int m_id = -1;
+    public const int defaultId = -1;
 
-    private UIWindow m_window;
+    [SerializeField]
+    private int m_id = defaultId;
+
+    private UIComponent m_parent;
 
     public int Id { get { return m_id; } }
-    public UIWindow window { get { return m_window; } set { m_window = value; } }
+    public UIComponent parent { get { return m_parent; } set { m_parent = value; } }
 
     public T GetComponent<T>(int index, bool needInit, object param = null) where T : UIComponent
     {
@@ -22,7 +24,7 @@ public class UIWidgetInventory : GameObjectInventory, IUIWindowHolder
         T component = go.GetComponent<T>();
         if (component != null && needInit)
         {
-            component.Initialize(m_window, param);
+            component.Initialize(m_parent, param);
         }
         return component;
     }
@@ -37,7 +39,7 @@ public class UIWidgetInventory : GameObjectInventory, IUIWindowHolder
         T component = go.AddComponent<T>();
         if (component != null && needInit)
         {
-            component.Initialize(m_window, param);
+            component.Initialize(m_parent, param);
         }
         return component;
     }

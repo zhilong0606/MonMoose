@@ -8,7 +8,7 @@ public class LobbyPanel : UIWindow
     protected override void OnInit(object param)
     {
         base.OnInit(param);
-        Button startBtn = GetComponentToWidget<Button>((int)EWidget.StartBtn);
+        Button startBtn = GetInventory().GetComponent<Button>((int)EWidget.StartBtn);
 
         startBtn.onClick.AddListener(OnStartBtnClick);
     }

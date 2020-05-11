@@ -14,7 +14,6 @@ public class UIWindowDefineInitializer : Initializer
 {
     public UIWindowDefineInitializer()
     {
-        AddSubInitializer(new JoystickDefineInitializer());
     }
 
     protected override IEnumerator OnProcess()

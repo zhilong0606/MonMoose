@@ -1,2 +1,0 @@
-﻿using System;using System.Collections.Generic;using UnityEngine;
-public class JoystickContext{    public Joystick joystick;    public int joystickId;    public List<DelegateJoystickEvent> m_actionOnDragUpdateList = new List<DelegateJoystickEvent>();    public List<DelegateJoystickEvent> m_actionOnStateChangedList = new List<DelegateJoystickEvent>();    public List<DelegateJoystickEvent> m_actionOnValidChangedList = new List<DelegateJoystickEvent>();    public void Reset()    {        joystick = null;    }}

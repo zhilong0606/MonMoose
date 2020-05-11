@@ -6,7 +6,7 @@ public class UICamera : MonoBehaviour
 {
     private Camera m_camera;
 
-    public Camera Camera
+    public new Camera camera
     {
         get { return m_camera; }
     }

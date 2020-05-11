@@ -1,35 +1,50 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class LocalizationWidget : UIComponent
+public class LocalizationWidget : MonoBehaviour
 {
-    public bool skip = false;
     [SerializeField]
-    protected int id;
-    protected int language;
+    protected int m_id;
+    protected int m_language;
 
-    public override bool needAutoInit
-    {
-        get { return true; }
-    }
-
-    public int Language
+    public int language
     {
         set
         {
-            language = value;
-            OnLanguageUpdate();
+            if (value != m_language)
+            {
+                m_language = value;
+                OnLanguageUpdate();
+            }
         }
     }
 
-    public int Id
+    public virtual int id
     {
-        get { return id; }
+        get { return m_id; }
         set
         {
-            id = value;
-            OnIdUpdate();
+            if (value != m_id)
+            {
+                m_id = value;
+                OnIdUpdate();
+            }
         }
+    }
+
+    protected virtual void Awake()
+    {
+        //SettingManager.instance.RegisterListener(ESettingKey.Language, OnSettingLanguageChanged);
+    }
+
+    protected virtual void OnDestroy()
+    {
+        //SettingManager.instance.UnregisterListener(ESettingKey.Language, OnSettingLanguageChanged);
+    }
+
+    private void OnSettingLanguageChanged()
+    {
+        //language = (ELanguage)SettingManager.instance.GetEnumValue(ESettingKey.Language);
     }
 
     public virtual void OnLanguageUpdate()

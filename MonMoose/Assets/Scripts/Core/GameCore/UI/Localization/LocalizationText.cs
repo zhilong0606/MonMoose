@@ -1,109 +1,154 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class LocalizationText : LocalizationWidget
 {
-    private Text text;
+    private Text m_text;
     [SerializeField]
-    protected bool autoNewLine = false;
+    protected bool m_autoNewLine = false;
     [SerializeField]
-    protected EValueType curValueType = EValueType.Id;
-    private object[] prms;
-    private Dictionary<int, string> strMap = new Dictionary<int, string>(); 
+    protected EValueType m_valueType = EValueType.Id;
+    private string[] m_strPrms;
+    private int[] m_idPrms;
+    private string m_str;
 
-    public string Text
+    public Func<string, string> funcOnStrUpdate;
+
+    public string text
     {
-        get { return text.text; }
+        get { return m_text.text; }
         set
         {
-            curValueType = EValueType.Text;
-            text.text = value; 
+            m_valueType = EValueType.Str;
+            m_str = value;
+            SetText(value);
         }
     }
-    public Color Color
-    {
-        get { return text.color; }
-        set { text.color = value; }
-    }
 
-    protected override void OnInit(object param)
+    public override int id
     {
-        text = GetComponent<Text>();
-        //m_window.AddLocalizationWidget(this);
-    }
-
-    public string LocalizationStr
-    {
-        get
+        get { return base.id; }
+        set
         {
-            string str;
-            if (id == 0)
-            {
-                str = string.Empty;
-            }
-            else if (!strMap.TryGetValue(id, out str))
-            {
-                //str = StaticDataManager.instance.GetLocalizationText(id, (I18NType)language);
-                strMap.Add(id, str);
-            }
-            return str; 
+            m_valueType = EValueType.Id;
+            base.id = value;
         }
     }
 
-    public void Format(int textId, params object[] values)
+    public Color color
     {
-        id = textId;
-        prms = values;
-        curValueType = EValueType.Format;
-        text.text = string.Format(LocalizationStr, values);
+        get { return m_text.color; }
+        set { m_text.color = value; }
     }
 
-    public void Format(string textStr, params object[] values)
+    protected override void Awake()
     {
-        Text = string.Format(textStr, values);
+        base.Awake();
+        m_text = GetComponent<Text>();
+        UpdateWidget();
     }
 
-    public void SetString(string str) {
-        Text = str;
+    //private string GetLocalization(int id)
+    //{
+    //    //return LocalizationSystem.instance.GetLocalization(id);
+    //}
+
+    public void Format(int textId, params string[] values)
+    {
+        m_id = textId;
+        m_strPrms = values;
+        m_valueType = EValueType.IdFormatStrParams;
+        UpdateWidget();
+    }
+
+    public void Format(int textId, params int[] values)
+    {
+        m_id = textId;
+        m_idPrms = values;
+        m_valueType = EValueType.IdFormatIdParams;
+        UpdateWidget();
+    }
+
+    public void Format(string textStr, params int[] values)
+    {
+        m_str = textStr;
+        m_idPrms = values;
+        m_valueType = EValueType.StrFormatIdParams;
+        UpdateWidget();
+    }
+
+    public void Format(string textStr, params string[] values)
+    {
+        text = string.Format(textStr, values);
     }
 
     public override void OnIdUpdate()
     {
-        curValueType = EValueType.Id;
+        m_valueType = EValueType.Id;
         UpdateWidget();
     }
 
     public override void OnLanguageUpdate()
     {
-        strMap.Clear();
-        if (curValueType == EValueType.Id)
-        {
-            UpdateWidget();
-        }
-        else if (curValueType == EValueType.Format)
-        {
-            text.text = string.Format(LocalizationStr, prms);
-        }
+        UpdateWidget();
     }
 
     private void UpdateWidget()
     {
-        string textStr = LocalizationStr;
-        if (autoNewLine)
+        string str = m_str;
+        //if (m_valueType == EValueType.Id)
+        //{
+        //    str = GetLocalization(m_id);
+        //}
+        //else if (m_valueType == EValueType.IdFormatIdParams)
+        //{
+        //    string[] prms = new string[m_idPrms.Length];
+        //    for (int i = 0; i < m_idPrms.Length; ++i)
+        //    {
+        //        prms[i] = LocalizationSystem.instance.GetLocalization(m_idPrms[i]);
+        //    }
+        //    str = string.Format(GetLocalization(m_id), prms);
+        //}
+        //else if (m_valueType == EValueType.StrFormatIdParams)
+        //{
+        //    string[] prms = new string[m_idPrms.Length];
+        //    for (int i = 0; i < m_idPrms.Length; ++i)
+        //    {
+        //        prms[i] = LocalizationSystem.instance.GetLocalization(m_idPrms[i]);
+        //    }
+        //    str = string.Format(m_str, prms);
+        //}
+        //else if (m_valueType == EValueType.IdFormatStrParams)
+        //{
+        //    str = string.Format(GetLocalization(m_id), m_strPrms);
+        //}
+        //if (funcOnStrUpdate != null)
+        //{
+        //    str = funcOnStrUpdate(str);
+        //}
+        SetText(str);
+    }
+
+    private void SetText(string str)
+    {
+        if (m_autoNewLine && str.Contains("\\n"))
         {
-            textStr = textStr.Replace("\\n", "\n");
+            str = str.Replace("\\n", "\n");
         }
-        if (text != null && text.text != null)
+        if (m_text != null)
         {
-            text.text = textStr;
-        }        
+            m_text.text = str;
+        }
     }
 
     public enum EValueType
     {
-        Text,
-        Format,
+        Str,
+        StrFormatIdParams,
+        IdFormatStrParams,
+        IdFormatIdParams,
         Id,
     }
 }

@@ -35,7 +35,10 @@ public class UIWindowManager : Singleton<UIWindowManager>
 
     public void RegisterWindowContext(int windowId, UIWindowContext context)
     {
-        m_windowContextMap.Add(windowId, context);
+        if (!m_windowContextMap.ContainsKey(windowId))
+        {
+            m_windowContextMap.Add(windowId, context);
+        }
     }
 
     public UIWindowContext GetWindowContext(int windowId)
@@ -48,31 +51,42 @@ public class UIWindowManager : Singleton<UIWindowManager>
         return null;
     }
 
-    public UIWindow OpenWindow(int windowId)
+    public UIWindow OpenWindow(int windowId, object param = null)
     {
         UIWindow window = null;
         if (!m_windowMap.TryGetValue(windowId, out window))
         {
-            window = CreateWindow(windowId);
+            window = CreateWindow(windowId, param);
+            window.OnOpened(param);
         }
         else
         {
             window.SetActive(true);
+            window.OnOpened(param);
         }
         return window;
     }
 
-    public T OpenWindow<T>(int windowId) where T : UIWindow
+    public T OpenWindow<T>(int windowId, object param = null) where T : UIWindow
     {
-        return OpenWindow(windowId) as T;
+        return OpenWindow(windowId, param) as T;
     }
 
-    public T CreateWindow<T>(int windowId) where T : UIWindow
+    public void HideWindow(int windowId)
     {
-        return CreateWindow(windowId) as T;
+        UIWindow window = null;
+        if (m_windowMap.TryGetValue(windowId, out window))
+        {
+            window.SetActive(false);
+        }
     }
 
-    public UIWindow CreateWindow(int windowId)
+    public T CreateWindow<T>(int windowId, object param = null) where T : UIWindow
+    {
+        return CreateWindow(windowId, param) as T;
+    }
+
+    public UIWindow CreateWindow(int windowId, object param = null)
     {
         UIWindow window = null;
         if (m_windowMap.TryGetValue(windowId, out window))
@@ -92,13 +106,14 @@ public class UIWindowManager : Singleton<UIWindowManager>
                     window = go.AddComponent(context.Type) as UIWindow;
                     if (window != null)
                     {
-                        window.Initialize(windowId, config);
-                        if (window.gameObject != null && window.isInitialized)
+                        window.PreInitialize(windowId, config);
+                        if (window.gameObject != null)
                         {
                             window.m_onSetActiveCb = OnWindowSetActive;
                             AddWindow(windowId, window);
-                            NeedUpdateSort();
+                            UpdateWindowSort();
                         }
+                        window.Initialize(null, param);
                     }
                     else
                     {
@@ -124,9 +139,16 @@ public class UIWindowManager : Singleton<UIWindowManager>
 
     private void OnWindowSetActive(UIWindow window, bool flag)
     {
-        if (window.Config.NeedStack && flag)
+        if (window.Config.NeedStack)
         {
-            SetTop(window);
+            if (flag)
+            {
+                SetTop(window);
+            }
+            else
+            {
+                Pop(false);
+            }
         }
         if (window.Config.ActiveToTop && flag)
         {
@@ -209,14 +231,17 @@ public class UIWindowManager : Singleton<UIWindowManager>
         }
     }
 
-    public void Pop()
+    public void Pop(bool needDisable)
     {
         if (m_windowStack.Count > 0)
         {
             if (m_topWindow != null)
             {
                 m_topWindow.OnMarginalized();
-                m_topWindow.SetActive(false);
+                if (needDisable)
+                {
+                    m_topWindow.SetActive(false);
+                }
             }
             m_topWindow = m_windowStack.Pop();
             m_topWindow.SetActive(true);
@@ -230,7 +255,7 @@ public class UIWindowManager : Singleton<UIWindowManager>
         {
             return;
         }
-        if (m_topWindow != null)
+        if (m_topWindow != null && !m_topWindow.isDestroying)
         {
             m_topWindow.OnMarginalized();
             m_topWindow.SetActive(false);
@@ -337,7 +362,7 @@ public class UIWindowManager : Singleton<UIWindowManager>
                 {
                     for (int i = 0; i < excepts.Length; ++i)
                     {
-                        if (excepts[i] == enumerator.Current.Key)
+                        if ((int)excepts[i] == enumerator.Current.Key)
                         {
                             needClose = false;
                             break;
