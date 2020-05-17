@@ -4,16 +4,19 @@ using UnityEngine;
 
 public class BattleGrid
 {
-    public BattleGridView m_view;
+    private BattleGridView m_view;
 
-    public Grid2D m_pos;
-    public BattleGrid[] m_relatedGrids = new BattleGrid[(int)EBattleGridRalationType.Max];
+    private Grid2D m_pos;
+    private BattleGrid[] m_relatedGrids = new BattleGrid[(int)EBattleGridRalationType.Max];
 
     public BattleGrid upGrid { get { return m_relatedGrids[(int)EBattleGridRalationType.Up]; } }
     public BattleGrid downGrid { get { return m_relatedGrids[(int)EBattleGridRalationType.Down]; } }
     public BattleGrid leftGrid { get { return m_relatedGrids[(int)EBattleGridRalationType.Left]; } }
     public BattleGrid rightGrid { get { return m_relatedGrids[(int)EBattleGridRalationType.Right]; } }
+
     public BattleGrid[] relatedGrids { get { return m_relatedGrids; } }
+    public Grid2D gridPos { get { return m_pos;} }
+    public Vector3 transPos { get { return m_view.transform.position; } }
 
     public void Init(BattleGridView view, Grid2D pos)
     {

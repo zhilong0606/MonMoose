@@ -39,6 +39,7 @@ GameObject:
   - component: {fileID: 224367280688683698}
   - component: {fileID: 222675690323910454}
   - component: {fileID: 114831041771533924}
+  - component: {fileID: 114931166078961614}
   m_Layer: 5
   m_Name: ActorCollection
   m_TagString: Untagged
@@ -322,6 +323,20 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114931166078961614
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1476708734331796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4da618686b69c3641b82700a357e4f80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_items:
+  - {fileID: 1729099807853642}
+  m_id: -1
 --- !u!114 &114938503523598830
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -46,6 +46,7 @@ public class GameManager : MonoSingleton<GameManager>
     private void Update()
     {
         TickManager.instance.Tick(Time.deltaTime);
+        stateMachine.TickFloat(Time.deltaTime);
     }
 
     protected override void UnInit()
