@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <excelFolderPath>./../../StaticData/</excelFolderPath>
+  <client>
+    <needExport>true</needExport>
+    <nameSpace>MonMoose.ConfigData</nameSpace>
+    <prefix>ConfigData</prefix>
+    <structureExportPath>./../../MonMoose/Assets/Scripts/StaticData/AutoGen/</structureExportPath>
+    <dataExportPath>./../../MonMoose/Assets/Resources/Exported/StaticData/</dataExportPath>
+    <exportMode>Proto</exportMode>
+  </client>
+  <server>
+    <needExport>false</needExport>
+    <nameSpace />
+    <prefix />
+    <structureExportPath />
+    <dataExportPath />
+    <exportMode>Flat</exportMode>
+  </server>
+  <needGenerateStructure>true</needGenerateStructure>
+  <needGenerateData>true</needGenerateData>
+  <needGenerateLoader>true</needGenerateLoader>
+</Config>

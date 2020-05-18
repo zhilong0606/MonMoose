@@ -4,3 +4,9 @@ MonMoose/obj/
 MonMoose/.vs/
 MonMoose/*.csproj
 MonMoose/*.sln
+
+Tools/ExcelDataExporter/ExcelDataExporter/*.user
+Tools/ExcelDataExporter/ExcelDataExporter/.vs/
+Tools/ExcelDataExporter/ExcelDataExporter/ExcelDataExporter/*.user
+Tools/ExcelDataExporter/ExcelDataExporter/ExcelDataExporter/bin/
+Tools/ExcelDataExporter/ExcelDataExporter/ExcelDataExporter/obj/
