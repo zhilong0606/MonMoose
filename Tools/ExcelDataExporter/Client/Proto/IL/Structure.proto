@@ -1,10 +1,10 @@
 syntax = "proto3";
-package MonMoose.ConfigData;
+package MonMoose.StaticData;
 
-enum TestType
+enum EActorClassType
 {
 	None = 0;
-	TestType1 = 1;
+	Warrior = 1;
 	TestType2 = 2;
 	TestType3 = 3;
 	Test3Type1 = 4;
@@ -12,49 +12,18 @@ enum TestType
 	TestdddType3 = 6;
 }
 
-message ConfigDataTestDataInfo
+message ActorStaticInfo
 {
 	int32 Id = 1;
 	string Name = 2;
-	repeated int32 WeaponIds = 3;
-	repeated int32 EquipIds = 4;
-	ConfigDataComp1 TestComp = 5;
-	ConfigDataComp1 TestComp2 = 6;
-	repeated ConfigDataComp1 TestCompList = 7;
+	EActorClassType Type = 3;
+	int32 MoveSpeed = 4;
+	int32 Attack = 5;
+	int32 Deffence = 6;
+	string PrefabPath = 7;
 }
 
-message ConfigDataTestDataInfoList
+message ActorStaticInfoList
 {
-	repeated ConfigDataTestDataInfo list = 1;
-}
-
-message ConfigDataWeaponInfo
-{
-	int32 Id = 1;
-	string Name = 2;
-	TestType Type = 3;
-}
-
-message ConfigDataWeaponInfoList
-{
-	repeated ConfigDataWeaponInfo list = 1;
-}
-
-message ConfigDataEquipInfo
-{
-	int32 Id = 1;
-	string Name = 2;
-	TestType Type = 3;
-}
-
-message ConfigDataEquipInfoList
-{
-	repeated ConfigDataEquipInfo list = 1;
-}
-
-message ConfigDataComp1
-{
-	int32 count = 1;
-	string name = 2;
-	int32 id = 3;
+	repeated ActorStaticInfo list = 1;
 }

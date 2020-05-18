@@ -30,6 +30,8 @@ public class Config
         [XmlElement]
         public string prefix = string.Empty;
         [XmlElement]
+        public string postfix = string.Empty;
+        [XmlElement]
         public string structureExportPath = string.Empty;
         [XmlElement]
         public string dataExportPath = string.Empty;

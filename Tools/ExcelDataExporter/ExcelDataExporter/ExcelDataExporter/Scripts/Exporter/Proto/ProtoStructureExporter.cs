@@ -14,6 +14,7 @@ public class ProtoStructureExporter : StructureExporter
     private List<ClassStructureInfo> m_classList = new List<ClassStructureInfo>();
     private List<ListStructureInfo> m_listList = new List<ListStructureInfo>();
     private List<DictionaryStructureInfo> m_dictionaryList = new List<DictionaryStructureInfo>();
+    private List<PackStructureInfo> m_packList = new List<PackStructureInfo>();
 
     private FileWriter m_ilWriter = new FileWriter();
 
@@ -32,6 +33,7 @@ public class ProtoStructureExporter : StructureExporter
         ExportHead();
         ExportEnum();
         ExportClass();
+        ExportPack();
         WriteIlFile();
         RunProtoc();
     }
@@ -55,6 +57,10 @@ public class ProtoStructureExporter : StructureExporter
             if (kv.Value.structureType == EStructureType.Dictionary)
             {
                 m_dictionaryList.Add(kv.Value as DictionaryStructureInfo);
+            }
+            if (kv.Value.structureType == EStructureType.Pack)
+            {
+                m_packList.Add(kv.Value as PackStructureInfo);
             }
             if (kv.Value.structureType == EStructureType.None)
             {
@@ -145,7 +151,35 @@ public class ProtoStructureExporter : StructureExporter
             m_ilWriter.EndCodeBlock();
         }
     }
-    
+
+    private void ExportPack()
+    {
+        for (int i = 0; i < m_packList.Count; ++i)
+        {
+            PackStructureInfo packInfo = m_packList[i];
+            SendMsg((double)(i + m_enumList.Count) / (m_enumList.Count + m_classList.Count), string.Format("正在导出类型:{0} ({1}/{2})", packInfo.name, i, m_classList.Count));
+            m_ilWriter.AppendLine();
+            m_ilWriter.StartLine("message").AppendSpace().Append(GetExportName(packInfo)).EndLine();
+            m_ilWriter.StartCodeBlock();
+            {
+                for (int j = 0; j < packInfo.memberList.Count; ++j)
+                {
+                    ClassMemberInfo memberInfo = packInfo.memberList[j];
+                    m_ilWriter.StartLine();
+                    BaseStructureInfo memberStructureInfo = memberInfo.structureInfo;
+                    ListStructureInfo memberListInfo = memberStructureInfo as ListStructureInfo;
+                    if (!memberListInfo.valueStructureInfo.isCollection)
+                    {
+                        m_ilWriter.Append("repeated").AppendSpace().Append(GetExportName(memberListInfo.valueStructureInfo));
+                    }
+                    m_ilWriter.AppendSpace().Append(memberInfo.name).Append(" = ").Append((j + 1).ToString());
+                    m_ilWriter.Append(";").EndLine();
+                }
+            }
+            m_ilWriter.EndCodeBlock();
+        }
+    }
+
     protected override string GetExportName(BaseStructureInfo structureInfo)
     {
         switch (structureInfo.structureType)
@@ -154,7 +188,9 @@ public class ProtoStructureExporter : StructureExporter
                 BasicStructureInfo basicStructureInfo = structureInfo as BasicStructureInfo;
                 return GetExportName(basicStructureInfo.basicStructureType);
             case EStructureType.Class:
-                return m_context.prefixStr + structureInfo.name;
+                return m_context.prefixStr + structureInfo.name + m_context.postfixStr;
+            case EStructureType.Pack:
+                return m_context.prefixStr + (structureInfo as PackStructureInfo).classStructureInfo.name + m_context.postfixStr + "List";
         }
         return structureInfo.name;
     }

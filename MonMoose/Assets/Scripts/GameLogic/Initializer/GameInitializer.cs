@@ -8,6 +8,7 @@ public class GameInitializer : Initializer
 {
     public GameInitializer()
     {
+        AddSubInitializer(new StaticDataInitializer());
         AddSubInitializer(new SettingDefineInitializer());
         AddSubInitializer(new TickRegisterInitializer());
         AddSubInitializer(new UIWindowDefineInitializer());

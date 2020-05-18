@@ -10,6 +10,7 @@ public class UserContext
     public string name;
     public string namespaceStr;
     public string prefixStr;
+    public string postfixStr;
     public string structureExportPath;
     public string dataExportPath;
     public bool needExport;

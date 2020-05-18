@@ -7,7 +7,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace MonMoose.ConfigData {
+namespace MonMoose.StaticData {
 
   /// <summary>Holder for reflection information generated from Client/Proto/IL/Structure.proto</summary>
   public static partial class StructureReflection {
@@ -22,49 +22,32 @@ namespace MonMoose.ConfigData {
     static StructureReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch9DbGllbnQvUHJvdG8vSUwvU3RydWN0dXJlLnByb3RvEhNNb25Nb29zZS5D",
-            "b25maWdEYXRhIoQCChZDb25maWdEYXRhVGVzdERhdGFJbmZvEgoKAklkGAEg",
-            "ASgFEgwKBE5hbWUYAiABKAkSEQoJV2VhcG9uSWRzGAMgAygFEhAKCEVxdWlw",
-            "SWRzGAQgAygFEjYKCFRlc3RDb21wGAUgASgLMiQuTW9uTW9vc2UuQ29uZmln",
-            "RGF0YS5Db25maWdEYXRhQ29tcDESNwoJVGVzdENvbXAyGAYgASgLMiQuTW9u",
-            "TW9vc2UuQ29uZmlnRGF0YS5Db25maWdEYXRhQ29tcDESOgoMVGVzdENvbXBM",
-            "aXN0GAcgAygLMiQuTW9uTW9vc2UuQ29uZmlnRGF0YS5Db25maWdEYXRhQ29t",
-            "cDEiVwoaQ29uZmlnRGF0YVRlc3REYXRhSW5mb0xpc3QSOQoEbGlzdBgBIAMo",
-            "CzIrLk1vbk1vb3NlLkNvbmZpZ0RhdGEuQ29uZmlnRGF0YVRlc3REYXRhSW5m",
-            "byJdChRDb25maWdEYXRhV2VhcG9uSW5mbxIKCgJJZBgBIAEoBRIMCgROYW1l",
-            "GAIgASgJEisKBFR5cGUYAyABKA4yHS5Nb25Nb29zZS5Db25maWdEYXRhLlRl",
-            "c3RUeXBlIlMKGENvbmZpZ0RhdGFXZWFwb25JbmZvTGlzdBI3CgRsaXN0GAEg",
-            "AygLMikuTW9uTW9vc2UuQ29uZmlnRGF0YS5Db25maWdEYXRhV2VhcG9uSW5m",
-            "byJcChNDb25maWdEYXRhRXF1aXBJbmZvEgoKAklkGAEgASgFEgwKBE5hbWUY",
-            "AiABKAkSKwoEVHlwZRgDIAEoDjIdLk1vbk1vb3NlLkNvbmZpZ0RhdGEuVGVz",
-            "dFR5cGUiUQoXQ29uZmlnRGF0YUVxdWlwSW5mb0xpc3QSNgoEbGlzdBgBIAMo",
-            "CzIoLk1vbk1vb3NlLkNvbmZpZ0RhdGEuQ29uZmlnRGF0YUVxdWlwSW5mbyI6",
-            "Cg9Db25maWdEYXRhQ29tcDESDQoFY291bnQYASABKAUSDAoEbmFtZRgCIAEo",
-            "CRIKCgJpZBgDIAEoBSp0CghUZXN0VHlwZRIICgROb25lEAASDQoJVGVzdFR5",
-            "cGUxEAESDQoJVGVzdFR5cGUyEAISDQoJVGVzdFR5cGUzEAMSDgoKVGVzdDNU",
-            "eXBlMRAEEg8KC1RlczIxdFR5cGUyEAUSEAoMVGVzdGRkZFR5cGUzEAZiBnBy",
-            "b3RvMw=="));
+            "Ch9DbGllbnQvUHJvdG8vSUwvU3RydWN0dXJlLnByb3RvEhNNb25Nb29zZS5T",
+            "dGF0aWNEYXRhIqgBCg9BY3RvclN0YXRpY0luZm8SCgoCSWQYASABKAUSDAoE",
+            "TmFtZRgCIAEoCRIyCgRUeXBlGAMgASgOMiQuTW9uTW9vc2UuU3RhdGljRGF0",
+            "YS5FQWN0b3JDbGFzc1R5cGUSEQoJTW92ZVNwZWVkGAQgASgFEg4KBkF0dGFj",
+            "axgFIAEoBRIQCghEZWZmZW5jZRgGIAEoBRISCgpQcmVmYWJQYXRoGAcgASgJ",
+            "IkkKE0FjdG9yU3RhdGljSW5mb0xpc3QSMgoEbGlzdBgBIAMoCzIkLk1vbk1v",
+            "b3NlLlN0YXRpY0RhdGEuQWN0b3JTdGF0aWNJbmZvKnkKD0VBY3RvckNsYXNz",
+            "VHlwZRIICgROb25lEAASCwoHV2FycmlvchABEg0KCVRlc3RUeXBlMhACEg0K",
+            "CVRlc3RUeXBlMxADEg4KClRlc3QzVHlwZTEQBBIPCgtUZXMyMXRUeXBlMhAF",
+            "EhAKDFRlc3RkZGRUeXBlMxAGYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
-          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::MonMoose.ConfigData.TestType), }, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::MonMoose.ConfigData.ConfigDataTestDataInfo), global::MonMoose.ConfigData.ConfigDataTestDataInfo.Parser, new[]{ "Id", "Name", "WeaponIds", "EquipIds", "TestComp", "TestComp2", "TestCompList" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::MonMoose.ConfigData.ConfigDataTestDataInfoList), global::MonMoose.ConfigData.ConfigDataTestDataInfoList.Parser, new[]{ "List" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::MonMoose.ConfigData.ConfigDataWeaponInfo), global::MonMoose.ConfigData.ConfigDataWeaponInfo.Parser, new[]{ "Id", "Name", "Type" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::MonMoose.ConfigData.ConfigDataWeaponInfoList), global::MonMoose.ConfigData.ConfigDataWeaponInfoList.Parser, new[]{ "List" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::MonMoose.ConfigData.ConfigDataEquipInfo), global::MonMoose.ConfigData.ConfigDataEquipInfo.Parser, new[]{ "Id", "Name", "Type" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::MonMoose.ConfigData.ConfigDataEquipInfoList), global::MonMoose.ConfigData.ConfigDataEquipInfoList.Parser, new[]{ "List" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::MonMoose.ConfigData.ConfigDataComp1), global::MonMoose.ConfigData.ConfigDataComp1.Parser, new[]{ "Count", "Name", "Id" }, null, null, null)
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::MonMoose.StaticData.EActorClassType), }, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::MonMoose.StaticData.ActorStaticInfo), global::MonMoose.StaticData.ActorStaticInfo.Parser, new[]{ "Id", "Name", "Type", "MoveSpeed", "Attack", "Deffence", "PrefabPath" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::MonMoose.StaticData.ActorStaticInfoList), global::MonMoose.StaticData.ActorStaticInfoList.Parser, new[]{ "List" }, null, null, null)
           }));
     }
     #endregion
 
   }
   #region Enums
-  public enum TestType {
+  public enum EActorClassType {
     [pbr::OriginalName("None")] None = 0,
-    [pbr::OriginalName("TestType1")] _1 = 1,
-    [pbr::OriginalName("TestType2")] _2 = 2,
-    [pbr::OriginalName("TestType3")] _3 = 3,
+    [pbr::OriginalName("Warrior")] Warrior = 1,
+    [pbr::OriginalName("TestType2")] TestType2 = 2,
+    [pbr::OriginalName("TestType3")] TestType3 = 3,
     [pbr::OriginalName("Test3Type1")] Test3Type1 = 4,
     [pbr::OriginalName("Tes21tType2")] Tes21TType2 = 5,
     [pbr::OriginalName("TestdddType3")] TestdddType3 = 6,
@@ -73,14 +56,14 @@ namespace MonMoose.ConfigData {
   #endregion
 
   #region Messages
-  public sealed partial class ConfigDataTestDataInfo : pb::IMessage<ConfigDataTestDataInfo> {
-    private static readonly pb::MessageParser<ConfigDataTestDataInfo> _parser = new pb::MessageParser<ConfigDataTestDataInfo>(() => new ConfigDataTestDataInfo());
+  public sealed partial class ActorStaticInfo : pb::IMessage<ActorStaticInfo> {
+    private static readonly pb::MessageParser<ActorStaticInfo> _parser = new pb::MessageParser<ActorStaticInfo>(() => new ActorStaticInfo());
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<ConfigDataTestDataInfo> Parser { get { return _parser; } }
+    public static pb::MessageParser<ActorStaticInfo> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::MonMoose.ConfigData.StructureReflection.Descriptor.MessageTypes[0]; }
+      get { return global::MonMoose.StaticData.StructureReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -89,26 +72,26 @@ namespace MonMoose.ConfigData {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public ConfigDataTestDataInfo() {
+    public ActorStaticInfo() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public ConfigDataTestDataInfo(ConfigDataTestDataInfo other) : this() {
+    public ActorStaticInfo(ActorStaticInfo other) : this() {
       id_ = other.id_;
       name_ = other.name_;
-      weaponIds_ = other.weaponIds_.Clone();
-      equipIds_ = other.equipIds_.Clone();
-      TestComp = other.testComp_ != null ? other.TestComp.Clone() : null;
-      TestComp2 = other.testComp2_ != null ? other.TestComp2.Clone() : null;
-      testCompList_ = other.testCompList_.Clone();
+      type_ = other.type_;
+      moveSpeed_ = other.moveSpeed_;
+      attack_ = other.attack_;
+      deffence_ = other.deffence_;
+      prefabPath_ = other.prefabPath_;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public ConfigDataTestDataInfo Clone() {
-      return new ConfigDataTestDataInfo(this);
+    public ActorStaticInfo Clone() {
+      return new ActorStaticInfo(this);
     }
 
     /// <summary>Field number for the "Id" field.</summary>
@@ -133,65 +116,68 @@ namespace MonMoose.ConfigData {
       }
     }
 
-    /// <summary>Field number for the "WeaponIds" field.</summary>
-    public const int WeaponIdsFieldNumber = 3;
-    private static readonly pb::FieldCodec<int> _repeated_weaponIds_codec
-        = pb::FieldCodec.ForInt32(26);
-    private readonly pbc::RepeatedField<int> weaponIds_ = new pbc::RepeatedField<int>();
+    /// <summary>Field number for the "Type" field.</summary>
+    public const int TypeFieldNumber = 3;
+    private global::MonMoose.StaticData.EActorClassType type_ = 0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<int> WeaponIds {
-      get { return weaponIds_; }
-    }
-
-    /// <summary>Field number for the "EquipIds" field.</summary>
-    public const int EquipIdsFieldNumber = 4;
-    private static readonly pb::FieldCodec<int> _repeated_equipIds_codec
-        = pb::FieldCodec.ForInt32(34);
-    private readonly pbc::RepeatedField<int> equipIds_ = new pbc::RepeatedField<int>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<int> EquipIds {
-      get { return equipIds_; }
-    }
-
-    /// <summary>Field number for the "TestComp" field.</summary>
-    public const int TestCompFieldNumber = 5;
-    private global::MonMoose.ConfigData.ConfigDataComp1 testComp_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::MonMoose.ConfigData.ConfigDataComp1 TestComp {
-      get { return testComp_; }
+    public global::MonMoose.StaticData.EActorClassType Type {
+      get { return type_; }
       set {
-        testComp_ = value;
+        type_ = value;
       }
     }
 
-    /// <summary>Field number for the "TestComp2" field.</summary>
-    public const int TestComp2FieldNumber = 6;
-    private global::MonMoose.ConfigData.ConfigDataComp1 testComp2_;
+    /// <summary>Field number for the "MoveSpeed" field.</summary>
+    public const int MoveSpeedFieldNumber = 4;
+    private int moveSpeed_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::MonMoose.ConfigData.ConfigDataComp1 TestComp2 {
-      get { return testComp2_; }
+    public int MoveSpeed {
+      get { return moveSpeed_; }
       set {
-        testComp2_ = value;
+        moveSpeed_ = value;
       }
     }
 
-    /// <summary>Field number for the "TestCompList" field.</summary>
-    public const int TestCompListFieldNumber = 7;
-    private static readonly pb::FieldCodec<global::MonMoose.ConfigData.ConfigDataComp1> _repeated_testCompList_codec
-        = pb::FieldCodec.ForMessage(58, global::MonMoose.ConfigData.ConfigDataComp1.Parser);
-    private readonly pbc::RepeatedField<global::MonMoose.ConfigData.ConfigDataComp1> testCompList_ = new pbc::RepeatedField<global::MonMoose.ConfigData.ConfigDataComp1>();
+    /// <summary>Field number for the "Attack" field.</summary>
+    public const int AttackFieldNumber = 5;
+    private int attack_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::MonMoose.ConfigData.ConfigDataComp1> TestCompList {
-      get { return testCompList_; }
+    public int Attack {
+      get { return attack_; }
+      set {
+        attack_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Deffence" field.</summary>
+    public const int DeffenceFieldNumber = 6;
+    private int deffence_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Deffence {
+      get { return deffence_; }
+      set {
+        deffence_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "PrefabPath" field.</summary>
+    public const int PrefabPathFieldNumber = 7;
+    private string prefabPath_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string PrefabPath {
+      get { return prefabPath_; }
+      set {
+        prefabPath_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as ConfigDataTestDataInfo);
+      return Equals(other as ActorStaticInfo);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(ConfigDataTestDataInfo other) {
+    public bool Equals(ActorStaticInfo other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -200,11 +186,11 @@ namespace MonMoose.ConfigData {
       }
       if (Id != other.Id) return false;
       if (Name != other.Name) return false;
-      if(!weaponIds_.Equals(other.weaponIds_)) return false;
-      if(!equipIds_.Equals(other.equipIds_)) return false;
-      if (!object.Equals(TestComp, other.TestComp)) return false;
-      if (!object.Equals(TestComp2, other.TestComp2)) return false;
-      if(!testCompList_.Equals(other.testCompList_)) return false;
+      if (Type != other.Type) return false;
+      if (MoveSpeed != other.MoveSpeed) return false;
+      if (Attack != other.Attack) return false;
+      if (Deffence != other.Deffence) return false;
+      if (PrefabPath != other.PrefabPath) return false;
       return true;
     }
 
@@ -213,11 +199,11 @@ namespace MonMoose.ConfigData {
       int hash = 1;
       if (Id != 0) hash ^= Id.GetHashCode();
       if (Name.Length != 0) hash ^= Name.GetHashCode();
-      hash ^= weaponIds_.GetHashCode();
-      hash ^= equipIds_.GetHashCode();
-      if (testComp_ != null) hash ^= TestComp.GetHashCode();
-      if (testComp2_ != null) hash ^= TestComp2.GetHashCode();
-      hash ^= testCompList_.GetHashCode();
+      if (Type != 0) hash ^= Type.GetHashCode();
+      if (MoveSpeed != 0) hash ^= MoveSpeed.GetHashCode();
+      if (Attack != 0) hash ^= Attack.GetHashCode();
+      if (Deffence != 0) hash ^= Deffence.GetHashCode();
+      if (PrefabPath.Length != 0) hash ^= PrefabPath.GetHashCode();
       return hash;
     }
 
@@ -236,17 +222,26 @@ namespace MonMoose.ConfigData {
         output.WriteRawTag(18);
         output.WriteString(Name);
       }
-      weaponIds_.WriteTo(output, _repeated_weaponIds_codec);
-      equipIds_.WriteTo(output, _repeated_equipIds_codec);
-      if (testComp_ != null) {
-        output.WriteRawTag(42);
-        output.WriteMessage(TestComp);
+      if (Type != 0) {
+        output.WriteRawTag(24);
+        output.WriteEnum((int) Type);
       }
-      if (testComp2_ != null) {
-        output.WriteRawTag(50);
-        output.WriteMessage(TestComp2);
+      if (MoveSpeed != 0) {
+        output.WriteRawTag(32);
+        output.WriteInt32(MoveSpeed);
       }
-      testCompList_.WriteTo(output, _repeated_testCompList_codec);
+      if (Attack != 0) {
+        output.WriteRawTag(40);
+        output.WriteInt32(Attack);
+      }
+      if (Deffence != 0) {
+        output.WriteRawTag(48);
+        output.WriteInt32(Deffence);
+      }
+      if (PrefabPath.Length != 0) {
+        output.WriteRawTag(58);
+        output.WriteString(PrefabPath);
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -258,20 +253,26 @@ namespace MonMoose.ConfigData {
       if (Name.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
       }
-      size += weaponIds_.CalculateSize(_repeated_weaponIds_codec);
-      size += equipIds_.CalculateSize(_repeated_equipIds_codec);
-      if (testComp_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(TestComp);
+      if (Type != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Type);
       }
-      if (testComp2_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(TestComp2);
+      if (MoveSpeed != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(MoveSpeed);
       }
-      size += testCompList_.CalculateSize(_repeated_testCompList_codec);
+      if (Attack != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Attack);
+      }
+      if (Deffence != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Deffence);
+      }
+      if (PrefabPath.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(PrefabPath);
+      }
       return size;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(ConfigDataTestDataInfo other) {
+    public void MergeFrom(ActorStaticInfo other) {
       if (other == null) {
         return;
       }
@@ -281,21 +282,21 @@ namespace MonMoose.ConfigData {
       if (other.Name.Length != 0) {
         Name = other.Name;
       }
-      weaponIds_.Add(other.weaponIds_);
-      equipIds_.Add(other.equipIds_);
-      if (other.testComp_ != null) {
-        if (testComp_ == null) {
-          testComp_ = new global::MonMoose.ConfigData.ConfigDataComp1();
-        }
-        TestComp.MergeFrom(other.TestComp);
+      if (other.Type != 0) {
+        Type = other.Type;
       }
-      if (other.testComp2_ != null) {
-        if (testComp2_ == null) {
-          testComp2_ = new global::MonMoose.ConfigData.ConfigDataComp1();
-        }
-        TestComp2.MergeFrom(other.TestComp2);
+      if (other.MoveSpeed != 0) {
+        MoveSpeed = other.MoveSpeed;
       }
-      testCompList_.Add(other.testCompList_);
+      if (other.Attack != 0) {
+        Attack = other.Attack;
+      }
+      if (other.Deffence != 0) {
+        Deffence = other.Deffence;
+      }
+      if (other.PrefabPath.Length != 0) {
+        PrefabPath = other.PrefabPath;
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -314,32 +315,24 @@ namespace MonMoose.ConfigData {
             Name = input.ReadString();
             break;
           }
-          case 26:
           case 24: {
-            weaponIds_.AddEntriesFrom(input, _repeated_weaponIds_codec);
+            type_ = (global::MonMoose.StaticData.EActorClassType) input.ReadEnum();
             break;
           }
-          case 34:
           case 32: {
-            equipIds_.AddEntriesFrom(input, _repeated_equipIds_codec);
+            MoveSpeed = input.ReadInt32();
             break;
           }
-          case 42: {
-            if (testComp_ == null) {
-              testComp_ = new global::MonMoose.ConfigData.ConfigDataComp1();
-            }
-            input.ReadMessage(testComp_);
+          case 40: {
+            Attack = input.ReadInt32();
             break;
           }
-          case 50: {
-            if (testComp2_ == null) {
-              testComp2_ = new global::MonMoose.ConfigData.ConfigDataComp1();
-            }
-            input.ReadMessage(testComp2_);
+          case 48: {
+            Deffence = input.ReadInt32();
             break;
           }
           case 58: {
-            testCompList_.AddEntriesFrom(input, _repeated_testCompList_codec);
+            PrefabPath = input.ReadString();
             break;
           }
         }
@@ -348,14 +341,14 @@ namespace MonMoose.ConfigData {
 
   }
 
-  public sealed partial class ConfigDataTestDataInfoList : pb::IMessage<ConfigDataTestDataInfoList> {
-    private static readonly pb::MessageParser<ConfigDataTestDataInfoList> _parser = new pb::MessageParser<ConfigDataTestDataInfoList>(() => new ConfigDataTestDataInfoList());
+  public sealed partial class ActorStaticInfoList : pb::IMessage<ActorStaticInfoList> {
+    private static readonly pb::MessageParser<ActorStaticInfoList> _parser = new pb::MessageParser<ActorStaticInfoList>(() => new ActorStaticInfoList());
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<ConfigDataTestDataInfoList> Parser { get { return _parser; } }
+    public static pb::MessageParser<ActorStaticInfoList> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::MonMoose.ConfigData.StructureReflection.Descriptor.MessageTypes[1]; }
+      get { return global::MonMoose.StaticData.StructureReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -364,39 +357,39 @@ namespace MonMoose.ConfigData {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public ConfigDataTestDataInfoList() {
+    public ActorStaticInfoList() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public ConfigDataTestDataInfoList(ConfigDataTestDataInfoList other) : this() {
+    public ActorStaticInfoList(ActorStaticInfoList other) : this() {
       list_ = other.list_.Clone();
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public ConfigDataTestDataInfoList Clone() {
-      return new ConfigDataTestDataInfoList(this);
+    public ActorStaticInfoList Clone() {
+      return new ActorStaticInfoList(this);
     }
 
     /// <summary>Field number for the "list" field.</summary>
     public const int ListFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::MonMoose.ConfigData.ConfigDataTestDataInfo> _repeated_list_codec
-        = pb::FieldCodec.ForMessage(10, global::MonMoose.ConfigData.ConfigDataTestDataInfo.Parser);
-    private readonly pbc::RepeatedField<global::MonMoose.ConfigData.ConfigDataTestDataInfo> list_ = new pbc::RepeatedField<global::MonMoose.ConfigData.ConfigDataTestDataInfo>();
+    private static readonly pb::FieldCodec<global::MonMoose.StaticData.ActorStaticInfo> _repeated_list_codec
+        = pb::FieldCodec.ForMessage(10, global::MonMoose.StaticData.ActorStaticInfo.Parser);
+    private readonly pbc::RepeatedField<global::MonMoose.StaticData.ActorStaticInfo> list_ = new pbc::RepeatedField<global::MonMoose.StaticData.ActorStaticInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::MonMoose.ConfigData.ConfigDataTestDataInfo> List {
+    public pbc::RepeatedField<global::MonMoose.StaticData.ActorStaticInfo> List {
       get { return list_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as ConfigDataTestDataInfoList);
+      return Equals(other as ActorStaticInfoList);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(ConfigDataTestDataInfoList other) {
+    public bool Equals(ActorStaticInfoList other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -432,7 +425,7 @@ namespace MonMoose.ConfigData {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(ConfigDataTestDataInfoList other) {
+    public void MergeFrom(ActorStaticInfoList other) {
       if (other == null) {
         return;
       }
@@ -449,743 +442,6 @@ namespace MonMoose.ConfigData {
             break;
           case 10: {
             list_.AddEntriesFrom(input, _repeated_list_codec);
-            break;
-          }
-        }
-      }
-    }
-
-  }
-
-  public sealed partial class ConfigDataWeaponInfo : pb::IMessage<ConfigDataWeaponInfo> {
-    private static readonly pb::MessageParser<ConfigDataWeaponInfo> _parser = new pb::MessageParser<ConfigDataWeaponInfo>(() => new ConfigDataWeaponInfo());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<ConfigDataWeaponInfo> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::MonMoose.ConfigData.StructureReflection.Descriptor.MessageTypes[2]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public ConfigDataWeaponInfo() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public ConfigDataWeaponInfo(ConfigDataWeaponInfo other) : this() {
-      id_ = other.id_;
-      name_ = other.name_;
-      type_ = other.type_;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public ConfigDataWeaponInfo Clone() {
-      return new ConfigDataWeaponInfo(this);
-    }
-
-    /// <summary>Field number for the "Id" field.</summary>
-    public const int IdFieldNumber = 1;
-    private int id_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int Id {
-      get { return id_; }
-      set {
-        id_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "Name" field.</summary>
-    public const int NameFieldNumber = 2;
-    private string name_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Name {
-      get { return name_; }
-      set {
-        name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "Type" field.</summary>
-    public const int TypeFieldNumber = 3;
-    private global::MonMoose.ConfigData.TestType type_ = 0;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::MonMoose.ConfigData.TestType Type {
-      get { return type_; }
-      set {
-        type_ = value;
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
-      return Equals(other as ConfigDataWeaponInfo);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(ConfigDataWeaponInfo other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if (Id != other.Id) return false;
-      if (Name != other.Name) return false;
-      if (Type != other.Type) return false;
-      return true;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (Id != 0) hash ^= Id.GetHashCode();
-      if (Name.Length != 0) hash ^= Name.GetHashCode();
-      if (Type != 0) hash ^= Type.GetHashCode();
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
-      if (Id != 0) {
-        output.WriteRawTag(8);
-        output.WriteInt32(Id);
-      }
-      if (Name.Length != 0) {
-        output.WriteRawTag(18);
-        output.WriteString(Name);
-      }
-      if (Type != 0) {
-        output.WriteRawTag(24);
-        output.WriteEnum((int) Type);
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int CalculateSize() {
-      int size = 0;
-      if (Id != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Id);
-      }
-      if (Name.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
-      }
-      if (Type != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Type);
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(ConfigDataWeaponInfo other) {
-      if (other == null) {
-        return;
-      }
-      if (other.Id != 0) {
-        Id = other.Id;
-      }
-      if (other.Name.Length != 0) {
-        Name = other.Name;
-      }
-      if (other.Type != 0) {
-        Type = other.Type;
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            input.SkipLastField();
-            break;
-          case 8: {
-            Id = input.ReadInt32();
-            break;
-          }
-          case 18: {
-            Name = input.ReadString();
-            break;
-          }
-          case 24: {
-            type_ = (global::MonMoose.ConfigData.TestType) input.ReadEnum();
-            break;
-          }
-        }
-      }
-    }
-
-  }
-
-  public sealed partial class ConfigDataWeaponInfoList : pb::IMessage<ConfigDataWeaponInfoList> {
-    private static readonly pb::MessageParser<ConfigDataWeaponInfoList> _parser = new pb::MessageParser<ConfigDataWeaponInfoList>(() => new ConfigDataWeaponInfoList());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<ConfigDataWeaponInfoList> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::MonMoose.ConfigData.StructureReflection.Descriptor.MessageTypes[3]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public ConfigDataWeaponInfoList() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public ConfigDataWeaponInfoList(ConfigDataWeaponInfoList other) : this() {
-      list_ = other.list_.Clone();
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public ConfigDataWeaponInfoList Clone() {
-      return new ConfigDataWeaponInfoList(this);
-    }
-
-    /// <summary>Field number for the "list" field.</summary>
-    public const int ListFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::MonMoose.ConfigData.ConfigDataWeaponInfo> _repeated_list_codec
-        = pb::FieldCodec.ForMessage(10, global::MonMoose.ConfigData.ConfigDataWeaponInfo.Parser);
-    private readonly pbc::RepeatedField<global::MonMoose.ConfigData.ConfigDataWeaponInfo> list_ = new pbc::RepeatedField<global::MonMoose.ConfigData.ConfigDataWeaponInfo>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::MonMoose.ConfigData.ConfigDataWeaponInfo> List {
-      get { return list_; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
-      return Equals(other as ConfigDataWeaponInfoList);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(ConfigDataWeaponInfoList other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if(!list_.Equals(other.list_)) return false;
-      return true;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override int GetHashCode() {
-      int hash = 1;
-      hash ^= list_.GetHashCode();
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
-      list_.WriteTo(output, _repeated_list_codec);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int CalculateSize() {
-      int size = 0;
-      size += list_.CalculateSize(_repeated_list_codec);
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(ConfigDataWeaponInfoList other) {
-      if (other == null) {
-        return;
-      }
-      list_.Add(other.list_);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            input.SkipLastField();
-            break;
-          case 10: {
-            list_.AddEntriesFrom(input, _repeated_list_codec);
-            break;
-          }
-        }
-      }
-    }
-
-  }
-
-  public sealed partial class ConfigDataEquipInfo : pb::IMessage<ConfigDataEquipInfo> {
-    private static readonly pb::MessageParser<ConfigDataEquipInfo> _parser = new pb::MessageParser<ConfigDataEquipInfo>(() => new ConfigDataEquipInfo());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<ConfigDataEquipInfo> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::MonMoose.ConfigData.StructureReflection.Descriptor.MessageTypes[4]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public ConfigDataEquipInfo() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public ConfigDataEquipInfo(ConfigDataEquipInfo other) : this() {
-      id_ = other.id_;
-      name_ = other.name_;
-      type_ = other.type_;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public ConfigDataEquipInfo Clone() {
-      return new ConfigDataEquipInfo(this);
-    }
-
-    /// <summary>Field number for the "Id" field.</summary>
-    public const int IdFieldNumber = 1;
-    private int id_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int Id {
-      get { return id_; }
-      set {
-        id_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "Name" field.</summary>
-    public const int NameFieldNumber = 2;
-    private string name_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Name {
-      get { return name_; }
-      set {
-        name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "Type" field.</summary>
-    public const int TypeFieldNumber = 3;
-    private global::MonMoose.ConfigData.TestType type_ = 0;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::MonMoose.ConfigData.TestType Type {
-      get { return type_; }
-      set {
-        type_ = value;
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
-      return Equals(other as ConfigDataEquipInfo);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(ConfigDataEquipInfo other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if (Id != other.Id) return false;
-      if (Name != other.Name) return false;
-      if (Type != other.Type) return false;
-      return true;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (Id != 0) hash ^= Id.GetHashCode();
-      if (Name.Length != 0) hash ^= Name.GetHashCode();
-      if (Type != 0) hash ^= Type.GetHashCode();
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
-      if (Id != 0) {
-        output.WriteRawTag(8);
-        output.WriteInt32(Id);
-      }
-      if (Name.Length != 0) {
-        output.WriteRawTag(18);
-        output.WriteString(Name);
-      }
-      if (Type != 0) {
-        output.WriteRawTag(24);
-        output.WriteEnum((int) Type);
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int CalculateSize() {
-      int size = 0;
-      if (Id != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Id);
-      }
-      if (Name.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
-      }
-      if (Type != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Type);
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(ConfigDataEquipInfo other) {
-      if (other == null) {
-        return;
-      }
-      if (other.Id != 0) {
-        Id = other.Id;
-      }
-      if (other.Name.Length != 0) {
-        Name = other.Name;
-      }
-      if (other.Type != 0) {
-        Type = other.Type;
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            input.SkipLastField();
-            break;
-          case 8: {
-            Id = input.ReadInt32();
-            break;
-          }
-          case 18: {
-            Name = input.ReadString();
-            break;
-          }
-          case 24: {
-            type_ = (global::MonMoose.ConfigData.TestType) input.ReadEnum();
-            break;
-          }
-        }
-      }
-    }
-
-  }
-
-  public sealed partial class ConfigDataEquipInfoList : pb::IMessage<ConfigDataEquipInfoList> {
-    private static readonly pb::MessageParser<ConfigDataEquipInfoList> _parser = new pb::MessageParser<ConfigDataEquipInfoList>(() => new ConfigDataEquipInfoList());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<ConfigDataEquipInfoList> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::MonMoose.ConfigData.StructureReflection.Descriptor.MessageTypes[5]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public ConfigDataEquipInfoList() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public ConfigDataEquipInfoList(ConfigDataEquipInfoList other) : this() {
-      list_ = other.list_.Clone();
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public ConfigDataEquipInfoList Clone() {
-      return new ConfigDataEquipInfoList(this);
-    }
-
-    /// <summary>Field number for the "list" field.</summary>
-    public const int ListFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::MonMoose.ConfigData.ConfigDataEquipInfo> _repeated_list_codec
-        = pb::FieldCodec.ForMessage(10, global::MonMoose.ConfigData.ConfigDataEquipInfo.Parser);
-    private readonly pbc::RepeatedField<global::MonMoose.ConfigData.ConfigDataEquipInfo> list_ = new pbc::RepeatedField<global::MonMoose.ConfigData.ConfigDataEquipInfo>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::MonMoose.ConfigData.ConfigDataEquipInfo> List {
-      get { return list_; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
-      return Equals(other as ConfigDataEquipInfoList);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(ConfigDataEquipInfoList other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if(!list_.Equals(other.list_)) return false;
-      return true;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override int GetHashCode() {
-      int hash = 1;
-      hash ^= list_.GetHashCode();
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
-      list_.WriteTo(output, _repeated_list_codec);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int CalculateSize() {
-      int size = 0;
-      size += list_.CalculateSize(_repeated_list_codec);
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(ConfigDataEquipInfoList other) {
-      if (other == null) {
-        return;
-      }
-      list_.Add(other.list_);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            input.SkipLastField();
-            break;
-          case 10: {
-            list_.AddEntriesFrom(input, _repeated_list_codec);
-            break;
-          }
-        }
-      }
-    }
-
-  }
-
-  public sealed partial class ConfigDataComp1 : pb::IMessage<ConfigDataComp1> {
-    private static readonly pb::MessageParser<ConfigDataComp1> _parser = new pb::MessageParser<ConfigDataComp1>(() => new ConfigDataComp1());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<ConfigDataComp1> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::MonMoose.ConfigData.StructureReflection.Descriptor.MessageTypes[6]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public ConfigDataComp1() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public ConfigDataComp1(ConfigDataComp1 other) : this() {
-      count_ = other.count_;
-      name_ = other.name_;
-      id_ = other.id_;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public ConfigDataComp1 Clone() {
-      return new ConfigDataComp1(this);
-    }
-
-    /// <summary>Field number for the "count" field.</summary>
-    public const int CountFieldNumber = 1;
-    private int count_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int Count {
-      get { return count_; }
-      set {
-        count_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "name" field.</summary>
-    public const int NameFieldNumber = 2;
-    private string name_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Name {
-      get { return name_; }
-      set {
-        name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "id" field.</summary>
-    public const int IdFieldNumber = 3;
-    private int id_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int Id {
-      get { return id_; }
-      set {
-        id_ = value;
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
-      return Equals(other as ConfigDataComp1);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(ConfigDataComp1 other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if (Count != other.Count) return false;
-      if (Name != other.Name) return false;
-      if (Id != other.Id) return false;
-      return true;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (Count != 0) hash ^= Count.GetHashCode();
-      if (Name.Length != 0) hash ^= Name.GetHashCode();
-      if (Id != 0) hash ^= Id.GetHashCode();
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
-      if (Count != 0) {
-        output.WriteRawTag(8);
-        output.WriteInt32(Count);
-      }
-      if (Name.Length != 0) {
-        output.WriteRawTag(18);
-        output.WriteString(Name);
-      }
-      if (Id != 0) {
-        output.WriteRawTag(24);
-        output.WriteInt32(Id);
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int CalculateSize() {
-      int size = 0;
-      if (Count != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Count);
-      }
-      if (Name.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
-      }
-      if (Id != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Id);
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(ConfigDataComp1 other) {
-      if (other == null) {
-        return;
-      }
-      if (other.Count != 0) {
-        Count = other.Count;
-      }
-      if (other.Name.Length != 0) {
-        Name = other.Name;
-      }
-      if (other.Id != 0) {
-        Id = other.Id;
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            input.SkipLastField();
-            break;
-          case 8: {
-            Count = input.ReadInt32();
-            break;
-          }
-          case 18: {
-            Name = input.ReadString();
-            break;
-          }
-          case 24: {
-            Id = input.ReadInt32();
             break;
           }
         }

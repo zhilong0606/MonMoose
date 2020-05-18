@@ -97,6 +97,7 @@ namespace ExcelDataExporter
             clientExportCheckBox.IsChecked = Config.instance.client.needExport;
             clientNameSpaceTextBox.Text = Config.instance.client.nameSpace;
             clientPrefixTextBox.Text = Config.instance.client.prefix;
+            clientPostfixTextBox.Text = Config.instance.client.postfix;
             clientStructureExportPathButton.Content = Config.instance.client.structureExportPath;
             clientDataExportPathButton.Content = Config.instance.client.dataExportPath;
             clientExportFlatCheckBox.IsChecked = Config.instance.client.exportMode == EExportModeType.Flat;
@@ -107,6 +108,7 @@ namespace ExcelDataExporter
             serverExportCheckBox.IsChecked = Config.instance.server.needExport;
             serverNameSpaceTextBox.Text = Config.instance.server.nameSpace;
             serverPrefixTextBox.Text = Config.instance.server.prefix;
+            serverPostfixTextBox.Text = Config.instance.server.postfix;
             serverStructureExportPathButton.Content = Config.instance.server.structureExportPath;
             serverDataExportPathButton.Content = Config.instance.server.dataExportPath;
             serverExportFlatCheckBox.IsChecked = Config.instance.server.exportMode == EExportModeType.Flat;
@@ -201,17 +203,19 @@ namespace ExcelDataExporter
             context.needGenerateLoader = Config.instance.needGenerateLoader;
 
             UserContext clientContext = new UserContext();
+            Config.instance.client.nameSpace = clientNameSpaceTextBox.Text;
+            Config.instance.client.prefix = clientPrefixTextBox.Text;
+            Config.instance.client.postfix = clientPostfixTextBox.Text;
             UpdateContext(clientContext, m_clientTagName, Config.instance.client);
             context.userContextList.Add(clientContext);
 
             UserContext serverContext = new UserContext();
+            Config.instance.server.nameSpace = serverNameSpaceTextBox.Text;
+            Config.instance.server.prefix = serverPrefixTextBox.Text;
+            Config.instance.server.postfix = serverPostfixTextBox.Text;
             UpdateContext(serverContext, m_serverTagName, Config.instance.server);
             context.userContextList.Add(serverContext);
 
-            Config.instance.client.nameSpace = clientNameSpaceTextBox.Text;
-            Config.instance.client.prefix = clientPrefixTextBox.Text;
-            Config.instance.server.nameSpace = serverNameSpaceTextBox.Text;
-            Config.instance.server.prefix = serverPrefixTextBox.Text;
             Config.SaveConfig();
 
             ProgramProcessStep m_program = new ProgramProcessStep(context);
@@ -227,6 +231,7 @@ namespace ExcelDataExporter
             ctx.name = name;
             ctx.namespaceStr = user.nameSpace;
             ctx.prefixStr = user.prefix;
+            ctx.postfixStr = user.postfix;
             ctx.structureExportPath = user.structureExportPath;
             ctx.dataExportPath = user.dataExportPath;
             ctx.exportMode = m_exportModeMap[(int)user.exportMode];

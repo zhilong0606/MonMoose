@@ -148,9 +148,7 @@ namespace Analyzer
 
         private DataValue AnalyzeBasicDataValue(BasicStructureInfo structureInfo, string str)
         {
-            BasicDataValue value = new BasicDataValue();
-            value.value = str;
-            return value;
+            return new BasicDataValue(str);
         }
 
         private DataValue AnalyzeEnumDataValue(EnumStructureInfo structureInfo, string str)

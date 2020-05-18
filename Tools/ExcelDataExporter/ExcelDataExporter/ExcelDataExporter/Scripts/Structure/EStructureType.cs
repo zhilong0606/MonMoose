@@ -14,6 +14,7 @@ namespace Structure
         Class,
         List,
         Dictionary,
+        Pack,
         Max,
     }
 }

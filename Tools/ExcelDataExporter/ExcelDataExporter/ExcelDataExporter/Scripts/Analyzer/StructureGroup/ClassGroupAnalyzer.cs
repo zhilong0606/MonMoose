@@ -25,12 +25,8 @@ namespace Analyzer
         protected override void OnCreateStructure(BaseStructureInfo structureInfo)
         {
             base.OnCreateStructure(structureInfo);
-            ListStructureInfo listStructureInfo = new ListStructureInfo(structureInfo);
-            StructureManager.Instance.AddStructureInfo(listStructureInfo);
-            ClassStructureInfo rootStructureInfo = new ClassStructureInfo(structureInfo.name + "List");
-            ClassMemberInfo memberInfo = new ClassMemberInfo(listStructureInfo, "list");
-            rootStructureInfo.AddBaseMember(memberInfo);
-            StructureManager.Instance.AddStructureInfo(rootStructureInfo);
+            PackStructureInfo packStructureInfo = new PackStructureInfo(structureInfo as ClassStructureInfo);
+            StructureManager.Instance.AddStructureInfo(packStructureInfo);
         }
 
         private void OnAddMember(BaseStructureInfo structureInfo, string name)

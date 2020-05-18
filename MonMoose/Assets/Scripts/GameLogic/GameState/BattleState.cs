@@ -1,4 +1,5 @@
 ﻿using MonMoose.Core;
+using MonMoose.StaticData;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -68,7 +69,9 @@ public class BattleState : State
             grid.Init(gridViews[i], gridViews[i].position);
             BattleGridManager.instance.AddGrid(grid);
         }
-        GameObject go = ResourceManager.instance.GetPrefab("Exported/Actor/001/Prefabs/Actor");
+
+        ActorStaticInfo info = StaticDataManager.instance.GetActorStaticInfo(1);
+        GameObject go = ResourceManager.instance.GetPrefab(info.PrefabPath);
         GameObject actorObj = GameObject.Instantiate<GameObject>(go);
         actorObj.transform.position = BattleGridManager.instance.GetGrid(0, 0).transPos;
     }

@@ -2,25 +2,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
-using UnityEngine;
+using MonMoose.Core;
 
-public partial class StaticDataManager
+public partial class StaticDataManager : Singleton<StaticDataManager>
 {
     private static Dictionary<string, StaticDataLoader> m_loaderMap = new Dictionary<string, StaticDataLoader>();
 
-    private static StaticDataManager m_instance;
-
-    public static StaticDataManager instance
+    protected override void Init()
     {
-        get
-        {
-            if (m_instance == null)
-            {
-                m_instance = new StaticDataManager();
-                m_instance.OnInit();
-            }
-            return m_instance;
-        }
+        OnInit();
     }
 
     public void Load(string folderPath, Func<string, byte[]> actionOnLoad)

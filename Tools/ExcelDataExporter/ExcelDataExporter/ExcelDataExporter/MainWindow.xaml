@@ -11,7 +11,7 @@
             <RowDefinition Height="22"/>
             <RowDefinition Height="40"/>
             <RowDefinition Height="1"/>
-            <RowDefinition Height="200"/>
+            <RowDefinition Height="240"/>
             <RowDefinition Height="1"/>
             <RowDefinition Height="40"/>
             <RowDefinition Height="1"/>
@@ -38,6 +38,7 @@
                 <RowDefinition Height="1*"/>
                 <RowDefinition Height="1*"/>
                 <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="160"/>
@@ -48,15 +49,17 @@
             <Label Grid.Row="0" Grid.Column="0" Content="导出端：" Height="28"  Padding="0" Margin="0,0,0,0" VerticalContentAlignment="Center" VerticalAlignment="Center"/>
             <Label Grid.Row="1" Grid.Column="0" Content="命名空间：" Height="28"  Padding="0" Margin="0,0,0,0" VerticalContentAlignment="Center" VerticalAlignment="Center"/>
             <Label Grid.Row="2" Grid.Column="0" Content="类名前缀：" Height="28"  Padding="0" Margin="0,0,0,0" VerticalContentAlignment="Center" VerticalAlignment="Center"/>
-            <Label Grid.Row="3" Grid.Column="0" Content="代码路径：" Height="28"  Padding="0" Margin="0,0,0,0" VerticalContentAlignment="Center" VerticalAlignment="Center"/>
-            <Label Grid.Row="4" Grid.Column="0" Content="数据路径：" Height="28"  Padding="0" Margin="0,0,0,0" VerticalContentAlignment="Center" VerticalAlignment="Center"/>
-            <Label Grid.Row="5" Grid.Column="0" Content="导出格式：" Height="28"  Padding="0" Margin="0,0,0,0" VerticalContentAlignment="Center" VerticalAlignment="Center"/>
+            <Label Grid.Row="3" Grid.Column="0" Content="类名后缀：" Height="28"  Padding="0" Margin="0,0,0,0" VerticalContentAlignment="Center" VerticalAlignment="Center"/>
+            <Label Grid.Row="4" Grid.Column="0" Content="代码路径：" Height="28"  Padding="0" Margin="0,0,0,0" VerticalContentAlignment="Center" VerticalAlignment="Center"/>
+            <Label Grid.Row="5" Grid.Column="0" Content="数据路径：" Height="28"  Padding="0" Margin="0,0,0,0" VerticalContentAlignment="Center" VerticalAlignment="Center"/>
+            <Label Grid.Row="6" Grid.Column="0" Content="导出格式：" Height="28"  Padding="0" Margin="0,0,0,0" VerticalContentAlignment="Center" VerticalAlignment="Center"/>
 
             <CheckBox Grid.Row="0" Grid.Column="1" x:Name="clientExportCheckBox" Content="客户端" Height="28"  Padding="0" Margin="0,0,0,0" VerticalContentAlignment="Center" VerticalAlignment="Center" Checked="clientExportCheckBox_Checked" Unchecked="clientExportCheckBox_Unchecked"/>
             <TextBox Grid.Row="1" Grid.Column="1" x:Name="clientNameSpaceTextBox" Text="" Height="28"  Padding="0" Margin="0,0,0,0" VerticalContentAlignment="Center" VerticalAlignment="Center"/>
             <TextBox Grid.Row="2" Grid.Column="1" x:Name="clientPrefixTextBox" Text="" Height="28"  Padding="0" Margin="0,0,0,0" VerticalContentAlignment="Center" VerticalAlignment="Center"/>
+            <TextBox Grid.Row="3" Grid.Column="1" x:Name="clientPostfixTextBox" Text="" Height="28"  Padding="0" Margin="0,0,0,0" VerticalContentAlignment="Center" VerticalAlignment="Center"/>
 
-            <Grid Grid.Row="3" Grid.Column="1">
+            <Grid Grid.Row="4" Grid.Column="1">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*"/>
                     <ColumnDefinition Width="10"/>
@@ -66,7 +69,7 @@
                 <Button Grid.Column="2" x:Name="clientStructureExportPathGotoButton" Content="打开路径" Height="28" Padding="0" Margin="0,0,0,0" VerticalAlignment="Center" HorizontalContentAlignment="Center" Click="clientStructureExportPathGotoButton_Click"/>
             </Grid>
 
-            <Grid Grid.Row="4" Grid.Column="1">
+            <Grid Grid.Row="5" Grid.Column="1">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*"/>
                     <ColumnDefinition Width="10"/>
@@ -75,7 +78,7 @@
                 <Button Grid.Column="0" x:Name="clientDataExportPathButton" Content="" Height="28" Padding="0" Margin="0,0,0,0" VerticalAlignment="Center" HorizontalContentAlignment="Left" Click="clientDataExportPathButton_Click"/>
                 <Button Grid.Column="2" x:Name="clientDataExportPathGotoButton" Content="打开路径" Height="28" Padding="0" Margin="0,0,0,0" VerticalAlignment="Center" HorizontalContentAlignment="Center" Click="clientDataExportPathGotoButton_Click"/>
             </Grid>
-            <Grid Grid.Row="5" Grid.Column="1">
+            <Grid Grid.Row="6" Grid.Column="1">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*"/>
                     <ColumnDefinition Width="1*"/>
@@ -91,9 +94,10 @@
             <CheckBox Grid.Row="0" Grid.Column="3" x:Name="serverExportCheckBox" Content="服务端" Height="28"  Padding="0" Margin="0,0,0,0" VerticalContentAlignment="Center" VerticalAlignment="Center" Checked="serverExportCheckBox_Checked" Unchecked="serverExportCheckBox_Unchecked"/>
             <TextBox Grid.Row="1" Grid.Column="3" x:Name="serverNameSpaceTextBox" Text="" Height="28"  Padding="0" Margin="0,0,0,0" VerticalContentAlignment="Center" VerticalAlignment="Center"/>
             <TextBox Grid.Row="2" Grid.Column="3" x:Name="serverPrefixTextBox" Text="" Height="28"  Padding="0" Margin="0,0,0,0" VerticalContentAlignment="Center" VerticalAlignment="Center"/>
+            <TextBox Grid.Row="3" Grid.Column="3" x:Name="serverPostfixTextBox" Text="" Height="28"  Padding="0" Margin="0,0,0,0" VerticalContentAlignment="Center" VerticalAlignment="Center"/>
 
 
-            <Grid Grid.Row="3" Grid.Column="3">
+            <Grid Grid.Row="4" Grid.Column="3">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*"/>
                     <ColumnDefinition Width="10"/>
@@ -103,7 +107,7 @@
                 <Button Grid.Column="2" x:Name="serverStructureExportPathGotoButton" Content="打开路径" Height="28" Padding="0" Margin="0,0,0,0" VerticalAlignment="Center" HorizontalContentAlignment="Center" Click="serverStructureExportPathGotoButton_Click"/>
             </Grid>
 
-            <Grid Grid.Row="4" Grid.Column="3">
+            <Grid Grid.Row="5" Grid.Column="3">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*"/>
                     <ColumnDefinition Width="10"/>
@@ -113,7 +117,7 @@
                 <Button Grid.Column="2" x:Name="serverDataExportPathGotoButton" Content="打开路径" Height="28" Padding="0" Margin="0,0,0,0" VerticalAlignment="Center" HorizontalContentAlignment="Center" Click="serverDataExportPathGotoButton_Click"/>
             </Grid>
 
-            <Grid Grid.Row="5" Grid.Column="3">
+            <Grid Grid.Row="6" Grid.Column="3">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*"/>
                     <ColumnDefinition Width="1*"/>

@@ -19,7 +19,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\</OutputPath>
+    <OutputPath>..\..\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -130,6 +130,7 @@
     <Compile Include="Scripts\Process\GenerateLoaderProcessStep.cs" />
     <Compile Include="Scripts\Process\UserContextProcessStep.cs" />
     <Compile Include="Scripts\StructureUtility.cs" />
+    <Compile Include="Scripts\Structure\StructureInfo\PackStructureInfo.cs" />
     <Compile Include="Scripts\Structure\StructureManager.cs" />
     <Compile Include="Scripts\Structure\EStructureType.cs" />
     <Compile Include="Scripts\Exporter\DataExporter.cs" />

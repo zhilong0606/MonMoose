@@ -153,4 +153,9 @@ public abstract class DataExporter : Exporter
     {
         return null;
     }
+
+    protected virtual object AnalyzeDataObject(int id, ClassStructureInfo structureInfo, DataObject dataObj)
+    {
+        return null;
+    }
 }

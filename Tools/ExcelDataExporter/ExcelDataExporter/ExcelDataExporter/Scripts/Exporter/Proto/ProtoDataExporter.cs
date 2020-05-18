@@ -30,7 +30,8 @@ public class ProtoDataExporter : DataExporter
     private void ExportData(ClassStructureInfo structureInfo, Dictionary<int, DataObject> map)
     {
         Type structureType = GetType(structureInfo);
-        Type listStructureType = m_context.assembly.GetType(GetTypeName(structureInfo) + "List");
+        PackStructureInfo packStructureInfo = StructureManager.Instance.GetStructureInfo(structureInfo.name + "List") as PackStructureInfo;
+        Type listStructureType = m_context.assembly.GetType(GetTypeName(packStructureInfo));
         FieldInfo listFieldInfo = listStructureType.GetField("list_", BindingFlags.NonPublic | BindingFlags.Instance);
 
         MethodInfo listAddMethodInfo = listFieldInfo.FieldType.GetMethod("Add", new[] {structureType}, new[] {new ParameterModifier(1)});
@@ -39,7 +40,7 @@ public class ProtoDataExporter : DataExporter
         MethodInfo writeMethod = listStructureType.GetMethod("WriteTo");
         foreach (var kv in map)
         {
-            Object obj = AnalyzeDataObject(structureInfo, kv.Value);
+            Object obj = AnalyzeDataObject(kv.Key, structureInfo, kv.Value);
             listAddMethodInfo.Invoke(listMemberObj, new[] {obj});
         }
         string outputPath = FolderManager.Instance.GetSubDirPath(m_context.name + "/" + m_context.exportMode.modeType.ToString(), EFolderType.Data) + "\\" + structureInfo.name;
@@ -115,6 +116,15 @@ public class ProtoDataExporter : DataExporter
         return obj;
     }
 
+    protected override object AnalyzeDataObject(int id, ClassStructureInfo structureInfo, DataObject dataObj)
+    {
+        object obj = AnalyzeDataObject(structureInfo, dataObj);
+        Type valueType = GetType(structureInfo);
+        FieldInfo fieldInfo = valueType.GetField("id_", BindingFlags.NonPublic | BindingFlags.Instance);
+        fieldInfo.SetValue(obj, id);
+        return obj;
+    }
+
     public string GetTypeName(BaseStructureInfo structureInfo)
     {
         switch (structureInfo.structureType)
@@ -122,6 +132,7 @@ public class ProtoDataExporter : DataExporter
             case EStructureType.Basic:
                 return "System." + (structureInfo as BasicStructureInfo).name;
             case EStructureType.Class:
+            {
                 string str = string.Empty;
                 if (!string.IsNullOrEmpty(m_context.namespaceStr))
                 {
@@ -131,7 +142,32 @@ public class ProtoDataExporter : DataExporter
                 {
                     str += m_context.prefixStr;
                 }
-                return str + structureInfo.name;
+                str += structureInfo.name;
+                if (!string.IsNullOrEmpty(m_context.postfixStr))
+                {
+                    str += m_context.postfixStr;
+                }
+                return str;
+                }
+            case EStructureType.Pack:
+            {
+                string str = string.Empty;
+                if (!string.IsNullOrEmpty(m_context.namespaceStr))
+                {
+                    str += m_context.namespaceStr + ".";
+                }
+                if (!string.IsNullOrEmpty(m_context.prefixStr))
+                {
+                    str += m_context.prefixStr;
+                }
+                str += (structureInfo as PackStructureInfo).classStructureInfo.name;
+                if (!string.IsNullOrEmpty(m_context.postfixStr))
+                {
+                    str += m_context.postfixStr;
+                }
+                str += "List";
+                return str;
+            }
             case EStructureType.Enum:
                 return structureInfo.name;
             case EStructureType.List:
