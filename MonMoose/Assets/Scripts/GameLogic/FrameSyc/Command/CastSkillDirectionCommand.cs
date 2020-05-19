@@ -29,6 +29,6 @@ public class CastSkillDirectionCommand : FrameCommand
     {
         Debug.LogError("CastSkillDirectionCommand Skill_" + slotType + ": " + direction);
         Player player = PlayerManager.instance.GetPlayer(playerID);
-        player.selectedActor.skillModule.skillSlots[slotType].CastSkillDirection(direction);
+        //player.selectedActor.skillModule.skillSlots[slotType].CastSkillDirection(direction);
     }
 }

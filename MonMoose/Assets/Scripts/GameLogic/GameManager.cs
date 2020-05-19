@@ -5,6 +5,7 @@ using UnityEngine;
 
 public enum EGameState
 {
+    GameInit,
     Lobby,
     Battle,
 }

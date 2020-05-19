@@ -22,8 +22,8 @@
 
     public override void Excute()
     {
-        Actor actor = PlayerManager.instance.GetPlayer(playerID).selectedActor;
-        actor.moveModule.MoveDir(direction);
-        actor.animationModule.Play("move");
+        //Actor actor = PlayerManager.instance.GetPlayer(playerId).selectedActor;
+        //actor.moveComponent.MoveDir(direction);
+        //actor.animationComponent.Play("move");
     }
 }

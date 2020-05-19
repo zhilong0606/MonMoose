@@ -2,11 +2,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using MonMoose.Core;
+using MonMoose.StaticData;
 using UnityEngine;
 
 public class AttributeInfo : AbstractObserver
 {
-    public int type;
     public ConstAttributeValue baseValue;
     public ConstAttributeValue extraValue;
     public List<RateAttributeValue> rateValueList = new List<RateAttributeValue>();

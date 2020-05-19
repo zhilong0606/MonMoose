@@ -6,7 +6,6 @@ public enum EventID
     /*******大厅*******/
 
     /********Moba*********/
-    FightScene_Awake,
     Frame_Tick,
     Actor_All_Initialized,
 }

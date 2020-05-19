@@ -8,7 +8,7 @@
     public override void Excute()
     {
         Actor actor = PlayerManager.instance.GetPlayer(playerID).selectedActor;
-        actor.moveModule.StopMove();
-        actor.animationModule.Stop("move");
+        //actor.moveComponent.StopMove();
+        //actor.animationComponent.Stop("move");
     }
 }

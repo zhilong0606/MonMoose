@@ -21,6 +21,7 @@ enum EAttributeType
 	EAttributeType_PhysicalDefence = 4;
 	EAttributeType_MagicalDefence = 5;
 	EAttributeType_MoveSpeed = 6;
+	EAttributeType_Max = 7;
 }
 
 message ActorStaticInfo

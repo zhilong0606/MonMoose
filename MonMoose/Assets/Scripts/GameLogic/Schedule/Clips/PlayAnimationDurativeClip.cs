@@ -8,13 +8,13 @@ public partial class PlayAnimationDurativeClip : DurativeScheduleClip
     public override void OnEnter(SkillUseContext context)
     {
         base.OnEnter(context);
-        context.sourceActor.animationModule.Play(animName, FrameSyncUtility.MilliToFloat(totalTime));
+        //context.sourceActor.animationComponent.Play(animName, FrameSyncUtility.MilliToFloat(totalTime));
     }
 
     public override void OnExit()
     {
         base.OnExit();
-        context.sourceActor.animationModule.Stop(animName);
+        //context.sourceActor.animationComponent.Stop(animName);
     }
 }
 

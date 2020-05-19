@@ -5,8 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class BattleState : State
 {
-    private BattleSystem battleSystem = new BattleSystem();
-
     public override int stateIndex
     {
         get { return (int)EGameState.Battle; }
@@ -14,27 +12,17 @@ public class BattleState : State
 
     public override void OnEnter()
     {
-        StartFightHandler.CreateInstance();
-        PlayerManager.CreateInstance();
+        BattleManager.CreateInstance();
         ActorManager.CreateInstance();
         SceneManager.LoadSceneAsync("BattleScene");
         SceneManager.sceneLoaded += OnSceneLoadCompleted;
         RegisterListener();
     }
-
-    private void OnSceneLoadCompleted(Scene arg0, LoadSceneMode arg1)
-    {
-        SceneManager.sceneLoaded -= OnSceneLoadCompleted;
-        InitScene();
-    }
-
-
+    
     public override void OnExit()
     {
         RemoveListener();
-        battleSystem.Clear();
-        StartFightHandler.DestroyInstance();
-        PlayerManager.DestroyInstance();
+        BattleManager.DestroyInstance();
         ActorManager.DestroyInstance();
     }
 
@@ -48,6 +36,12 @@ public class BattleState : State
     {
         EventManager.instance.UnregisterListener((int)EventID.Frame_Tick, OnFrameTick);
         EventManager.instance.UnregisterListener((int)EventID.Actor_All_Initialized, OnActorAllInitialized);
+    }
+
+    private void OnSceneLoadCompleted(Scene arg0, LoadSceneMode arg1)
+    {
+        SceneManager.sceneLoaded -= OnSceneLoadCompleted;
+        InitScene();
     }
 
     private void InitScene()
@@ -112,12 +106,10 @@ public class BattleState : State
 
     private void OnFrameTick()
     {
-        battleSystem.UpdateLogic();
-        ActorManager.instance.UpdateLogic();
+        ActorManager.instance.Tick();
     }
 
     private void OnActorAllInitialized()
     {
-        battleSystem.Init();
     }
 }

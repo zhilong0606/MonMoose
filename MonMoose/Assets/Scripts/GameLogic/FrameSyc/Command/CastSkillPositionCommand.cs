@@ -29,8 +29,8 @@ public class CastSkillPositionCommand : FrameCommand
 
     public override void Excute()
     {
-        Debug.LogError("CastSkillPositionCommand Skill_" + slotType + ": " + position);
-        Player player = PlayerManager.instance.GetPlayer(playerID);
-        player.selectedActor.skillModule.skillSlots[slotType].CastSkillPosition(position);
+        //Debug.LogError("CastSkillPositionCommand Skill_" + slotType + ": " + position);
+        //Player player = PlayerManager.instance.GetPlayer(playerId);
+        //player.selectedActor.skillModule.skillSlots[slotType].CastSkillPosition(position);
     }
 }

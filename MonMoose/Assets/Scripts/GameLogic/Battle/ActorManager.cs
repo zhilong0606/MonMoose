@@ -6,11 +6,11 @@ public class ActorManager : Singleton<ActorManager>
     public List<Actor> actorList = new List<Actor>();
     public List<Actor> heroList = new List<Actor>();
 
-    public void UpdateLogic()
+    public void Tick()
     {
         for (int i = 0; i < actorList.Count; i++)
         {
-            actorList[i].UpdateLogic();
+            actorList[i].Tick();
         }
     }
 

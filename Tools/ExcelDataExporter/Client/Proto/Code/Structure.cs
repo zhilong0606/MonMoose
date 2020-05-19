@@ -37,12 +37,13 @@ namespace MonMoose.StaticData {
             "V2FycmlvchABEh0KGUVBY3RvckNsYXNzVHlwZV9UZXN0VHlwZTIQAhIdChlF",
             "QWN0b3JDbGFzc1R5cGVfVGVzdFR5cGUzEAMSHgoaRUFjdG9yQ2xhc3NUeXBl",
             "X1Rlc3QzVHlwZTEQBBIfChtFQWN0b3JDbGFzc1R5cGVfVGVzMjF0VHlwZTIQ",
-            "BRIgChxFQWN0b3JDbGFzc1R5cGVfVGVzdGRkZFR5cGUzEAYq4AEKDkVBdHRy",
+            "BRIgChxFQWN0b3JDbGFzc1R5cGVfVGVzdGRkZFR5cGUzEAYq+AEKDkVBdHRy",
             "aWJ1dGVUeXBlEhcKE0VBdHRyaWJ1dGVUeXBlX05vbmUQABIVChFFQXR0cmli",
             "dXRlVHlwZV9IcBABEhkKFUVBdHRyaWJ1dGVUeXBlX0F0dGFjaxACEh4KGkVB",
             "dHRyaWJ1dGVUeXBlX0F0dGFja1NwZWVkEAMSIgoeRUF0dHJpYnV0ZVR5cGVf",
             "UGh5c2ljYWxEZWZlbmNlEAQSIQodRUF0dHJpYnV0ZVR5cGVfTWFnaWNhbERl",
-            "ZmVuY2UQBRIcChhFQXR0cmlidXRlVHlwZV9Nb3ZlU3BlZWQQBmIGcHJvdG8z"));
+            "ZmVuY2UQBRIcChhFQXR0cmlidXRlVHlwZV9Nb3ZlU3BlZWQQBhIWChJFQXR0",
+            "cmlidXRlVHlwZV9NYXgQB2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::MonMoose.StaticData.EActorClassType), typeof(global::MonMoose.StaticData.EAttributeType), }, new pbr::GeneratedClrTypeInfo[] {
@@ -74,6 +75,7 @@ namespace MonMoose.StaticData {
     [pbr::OriginalName("EAttributeType_PhysicalDefence")] PhysicalDefence = 4,
     [pbr::OriginalName("EAttributeType_MagicalDefence")] MagicalDefence = 5,
     [pbr::OriginalName("EAttributeType_MoveSpeed")] MoveSpeed = 6,
+    [pbr::OriginalName("EAttributeType_Max")] Max = 7,
   }
 
   #endregion

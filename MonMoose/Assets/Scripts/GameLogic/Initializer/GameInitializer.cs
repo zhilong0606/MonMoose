@@ -20,7 +20,6 @@ public class GameInitializer : Initializer
         UIWindowManager.CreateInstance();
         ResourceManager.CreateInstance();
         TimerManager.CreateInstance();
-        GameDataManager.CreateInstance();
         FrameSyncManager.CreateInstance();
         yield return null;
     }

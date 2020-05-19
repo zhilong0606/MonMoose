@@ -72,12 +72,10 @@ namespace MonMoose.Core
         {
             if (m_state == EState.Process)
             {
-                throw new Exception("Error: Initializer is Bysy!!!");
                 return false;
             }
             if (m_state == EState.Finish)
             {
-                throw new Exception("Error: Initializer is Already Finished!!!");
                 return false;
             }
             m_initialType = initialType;
@@ -86,7 +84,6 @@ namespace MonMoose.Core
             process = OnProcess();
             if (process == null)
             {
-                throw new Exception("Error: Return of Process is null, Please Use yield return null to Async!!!");
                 return false;
             }
             m_curStep = 0;

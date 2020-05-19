@@ -6,12 +6,23 @@ public class EntityComponent
 {
     protected Entity m_entity;
 
-    public void Tick(Fix32 deltaTime)
+    public void Init(Entity entity)
     {
-        OnTick(deltaTime);
+        m_entity = entity;
+        OnInit();
     }
 
-    protected virtual void OnTick(Fix32 deltaTime)
+    public void Tick()
+    {
+        OnTick();
+    }
+
+    protected virtual void OnInit()
+    {
+
+    }
+
+    protected virtual void OnTick()
     {
         
     }

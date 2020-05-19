@@ -10,15 +10,15 @@ public partial class HitActorDurativeClip : DurativeScheduleClip
     public override void OnEnter(SkillUseContext context)
     {
         base.OnEnter(context);
-        FixVec3 position = context.sourceActor.moveModule.Position;
-        List<Actor> actorList = ActorManager.instance.actorList;
-        for (int i = 0; i < actorList.Count; ++i)
-        {
-            if (actorList[i] != context.sourceActor && (actorList[i].moveModule.Position - position).sqrMagnitude <= radius * radius)
-            {
-                actorList[i].attributeModule.TakeDamage();
-            }
-        }
+        //FixVec3 position = context.sourceActor.moveComponent.Position;
+        //List<Actor> actorList = ActorManager.instance.actorList;
+        //for (int i = 0; i < actorList.Count; ++i)
+        //{
+        //    if (actorList[i] != context.sourceActor && (actorList[i].moveComponent.Position - position).sqrMagnitude <= radius * radius)
+        //    {
+        //        actorList[i].attributeComponent.TakeDamage();
+        //    }
+        //}
     }
 
     public override void OnExecute()
