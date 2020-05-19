@@ -86,6 +86,10 @@ public static class Utility
                 process.WaitForExit();
             }
         }
+        catch (Exception e)
+        {
+            int a = 0;
+        }
         finally
         {
             if (process != null)

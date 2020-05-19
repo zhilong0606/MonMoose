@@ -1,10 +1,8 @@
 ﻿using UnityEngine;
 
-public class Actor : MonoBehaviour
+public class Actor : Entity
 {
-    public int ownerID;
-
-    public ActorInfo actorInfo;
+    protected ActorInfo m_actorInfo;
     public ECampType camp;
 
     public SkillModule skillModule = new SkillModule();
@@ -14,12 +12,12 @@ public class Actor : MonoBehaviour
 
     public void Init(int actorID)
     {
-        actorInfo = GameDataManager.instance.actorInfoDic[actorID];
-        skillModule.Init(this);
-        moveModule.Init(this);
-        attributeModule.Init(this);
-        animationModule.Init(GetComponent<Animation>(), actorInfo.animationIDs);
-        animationModule.Play("idle");
+        //actorInfo = GameDataManager.instance.actorInfoDic[actorID];
+        //skillModule.Init(this);
+        //moveModule.Init(this);
+        //attributeModule.Init(this);
+        //animationModule.Init(GetComponent<Animation>(), actorInfo.animationIDs);
+        //animationModule.Play("idle");
     }
 
     public void Born(SpawnRegion region)

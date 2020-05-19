@@ -90,7 +90,7 @@ public class ProtoStructureExporter : StructureExporter
             {
                 foreach (EnumMemberInfo memberInfo in enumInfo.memberList)
                 {
-                    m_ilWriter.StartLine(memberInfo.name).Append(" = ").Append(memberInfo.index.ToString()).Append(";").EndLine();
+                    m_ilWriter.StartLine(enumInfo.name).Append("_").Append(memberInfo.name).Append(" = ").Append(memberInfo.index.ToString()).Append(";").EndLine();
                 }
             }
             m_ilWriter.EndCodeBlock();

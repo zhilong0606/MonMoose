@@ -3,13 +3,24 @@ package MonMoose.StaticData;
 
 enum EActorClassType
 {
-	None = 0;
-	Warrior = 1;
-	TestType2 = 2;
-	TestType3 = 3;
-	Test3Type1 = 4;
-	Tes21tType2 = 5;
-	TestdddType3 = 6;
+	EActorClassType_None = 0;
+	EActorClassType_Warrior = 1;
+	EActorClassType_TestType2 = 2;
+	EActorClassType_TestType3 = 3;
+	EActorClassType_Test3Type1 = 4;
+	EActorClassType_Tes21tType2 = 5;
+	EActorClassType_TestdddType3 = 6;
+}
+
+enum EAttributeType
+{
+	EAttributeType_None = 0;
+	EAttributeType_Hp = 1;
+	EAttributeType_Attack = 2;
+	EAttributeType_AttackSpeed = 3;
+	EAttributeType_PhysicalDefence = 4;
+	EAttributeType_MagicalDefence = 5;
+	EAttributeType_MoveSpeed = 6;
 }
 
 message ActorStaticInfo
@@ -23,7 +34,20 @@ message ActorStaticInfo
 	string PrefabPath = 7;
 }
 
+message AttributeStaticInfo
+{
+	int32 Id = 1;
+	string Name = 2;
+	bool IsSignInversed = 3;
+	string IconPath = 4;
+}
+
 message ActorStaticInfoList
 {
 	repeated ActorStaticInfo list = 1;
+}
+
+message AttributeStaticInfoList
+{
+	repeated AttributeStaticInfo list = 1;
 }

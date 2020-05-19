@@ -13,6 +13,7 @@ namespace Structure
         {
             Dictionary<int, string> basicNameMap = new Dictionary<int, string>()
             {
+                {(int)EBasicStructureType.Bool, "bool" },
                 {(int)EBasicStructureType.Int8, "byte" },
                 {(int)EBasicStructureType.Int16, "short" },
                 {(int)EBasicStructureType.Int32, "int" },
