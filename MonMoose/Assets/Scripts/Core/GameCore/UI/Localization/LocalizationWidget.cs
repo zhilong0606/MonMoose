@@ -1,59 +1,61 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class LocalizationWidget : MonoBehaviour
+namespace MonMoose.Core
 {
-    [SerializeField]
-    protected int m_id;
-    protected int m_language;
-
-    public int language
+    public class LocalizationWidget : MonoBehaviour
     {
-        set
+        [SerializeField] protected int m_id;
+        protected int m_language;
+
+        public int language
         {
-            if (value != m_language)
+            set
             {
-                m_language = value;
-                OnLanguageUpdate();
+                if (value != m_language)
+                {
+                    m_language = value;
+                    OnLanguageUpdate();
+                }
             }
         }
-    }
 
-    public virtual int id
-    {
-        get { return m_id; }
-        set
+        public virtual int id
         {
-            if (value != m_id)
+            get { return m_id; }
+            set
             {
-                m_id = value;
-                OnIdUpdate();
+                if (value != m_id)
+                {
+                    m_id = value;
+                    OnIdUpdate();
+                }
             }
         }
-    }
 
-    protected virtual void Awake()
-    {
-        //SettingManager.instance.RegisterListener(ESettingKey.Language, OnSettingLanguageChanged);
-    }
+        protected virtual void Awake()
+        {
+            //SettingManager.instance.RegisterListener(ESettingKey.Language, OnSettingLanguageChanged);
+        }
 
-    protected virtual void OnDestroy()
-    {
-        //SettingManager.instance.UnregisterListener(ESettingKey.Language, OnSettingLanguageChanged);
-    }
+        protected virtual void OnDestroy()
+        {
+            //SettingManager.instance.UnregisterListener(ESettingKey.Language, OnSettingLanguageChanged);
+        }
 
-    private void OnSettingLanguageChanged()
-    {
-        //language = (ELanguage)SettingManager.instance.GetEnumValue(ESettingKey.Language);
-    }
+        private void OnSettingLanguageChanged()
+        {
+            //language = (ELanguage)SettingManager.instance.GetEnumValue(ESettingKey.Language);
+        }
 
-    public virtual void OnLanguageUpdate()
-    {
+        public virtual void OnLanguageUpdate()
+        {
 
-    }
+        }
 
-    public virtual void OnIdUpdate()
-    {
+        public virtual void OnIdUpdate()
+        {
 
+        }
     }
 }

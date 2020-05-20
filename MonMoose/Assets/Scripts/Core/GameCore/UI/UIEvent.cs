@@ -2,17 +2,20 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class UIEvent : ClassPoolObj
+namespace MonMoose.Core
 {
-    public GameObject widget;
-    public PointerEventData eventData;
-    public object extraParam;
-
-    public void Recycle()
+    public class UIEvent : ClassPoolObj
     {
-        widget = null;
-        extraParam = null;
-        eventData = null;
+        public GameObject widget;
+        public PointerEventData eventData;
+        public object extraParam;
+
+        public void Recycle()
+        {
+            widget = null;
+            extraParam = null;
+            eventData = null;
+        }
     }
 }
 

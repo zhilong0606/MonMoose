@@ -2,35 +2,38 @@
 using System.Collections;
 using UnityEditor;
 
-[CustomEditor(typeof(UIImage))]
-public class UIImageInspector : Editor
+namespace MonMoose.Core
 {
-    public override void OnInspectorGUI()
+    [CustomEditor(typeof(UIImage))]
+    public class UIImageInspector : Editor
     {
-        base.OnInspectorGUI();
-        UIImage image = target as UIImage;
-        if (image != null)
+        public override void OnInspectorGUI()
         {
-            if (GUILayout.Button("SetNativeSize"))
+            base.OnInspectorGUI();
+            UIImage image = target as UIImage;
+            if (image != null)
             {
-                image.SetNativeSize();
-            }
-            if (GUILayout.Button("SetUIMat"))
-            {
-                GameObject go = Resources.Load("UIImageTemplate") as GameObject;
-                image.material = go.GetComponent<UIImage>().material;
-                if (image.sprite != null)
+                if (GUILayout.Button("SetNativeSize"))
                 {
-                    if (image.sprite.rect.width > image.sprite.rect.height)
-                    {
-                        image.TextureLayout = ETextureLayout.Horizonatal;
-                    }
-                    else
-                    {
-                        image.TextureLayout = ETextureLayout.Vertical;
-                    }
+                    image.SetNativeSize();
                 }
-                image.SetAllDirty();
+                if (GUILayout.Button("SetUIMat"))
+                {
+                    GameObject go = Resources.Load("UIImageTemplate") as GameObject;
+                    image.material = go.GetComponent<UIImage>().material;
+                    if (image.sprite != null)
+                    {
+                        if (image.sprite.rect.width > image.sprite.rect.height)
+                        {
+                            image.TextureLayout = ETextureLayout.Horizonatal;
+                        }
+                        else
+                        {
+                            image.TextureLayout = ETextureLayout.Vertical;
+                        }
+                    }
+                    image.SetAllDirty();
+                }
             }
         }
     }

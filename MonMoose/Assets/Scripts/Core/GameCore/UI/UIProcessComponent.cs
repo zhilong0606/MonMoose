@@ -3,24 +3,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class UIProcessComponent : UIComponent, IUIProcess
+namespace MonMoose.Core
 {
-    private Action<IUIProcess> m_actionOnEnd;
-
-    public virtual bool needSkip
+    public abstract class UIProcessComponent : UIComponent, IUIProcess
     {
-        get { return false; }
-    }
+        private Action<IUIProcess> m_actionOnEnd;
 
-    public abstract void StartProcess();
+        public virtual bool needSkip
+        {
+            get { return false; }
+        }
 
-    public void End()
-    {
-        //CSharpUtility.InvokeSafely(ref m_actionOnEnd, this);
-    }
+        public abstract void StartProcess();
 
-    public void SetActionOnEnd(Action<IUIProcess> actionOnEnd)
-    {
-        m_actionOnEnd = actionOnEnd;
+        public void End()
+        {
+            //CSharpUtility.InvokeSafely(ref m_actionOnEnd, this);
+        }
+
+        public void SetActionOnEnd(Action<IUIProcess> actionOnEnd)
+        {
+            m_actionOnEnd = actionOnEnd;
+        }
     }
 }

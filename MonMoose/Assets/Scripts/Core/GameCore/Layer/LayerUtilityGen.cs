@@ -1,13 +1,16 @@
 using System.Collections.Generic;
 
-public enum ELayerMaskType 
+namespace MonMoose.Core
 {
-	Count
-}
+    public enum ELayerMaskType
+    {
+        Count
+    }
 
-public static partial class LayerUtility 
-{
-	private static List<int> layerMaskList = new List<int>() 
-	{
-	};
-};
+    public static partial class LayerUtility
+    {
+        private static List<int> layerMaskList = new List<int>()
+        {
+        };
+    };
+}

@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IUIWindowHolder
+namespace MonMoose.Core
 {
-    UIWindow window { get; }
+    public interface IUIWindowHolder
+    {
+        UIWindow window { get; }
+    }
 }

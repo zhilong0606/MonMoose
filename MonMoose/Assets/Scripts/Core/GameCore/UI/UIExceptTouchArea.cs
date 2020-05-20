@@ -4,42 +4,45 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 
-public class UIExceptTouchArea : Image
+namespace MonMoose.Core
 {
-    public List<RectTransform> exceptList = new List<RectTransform>();
-    public Action OnTouched;
-
-    public override bool IsRaycastLocationValid(Vector2 sp, Camera eventCamera)
+    public class UIExceptTouchArea : Image
     {
-        if (RectTransformUtility.RectangleContainsScreenPoint(rectTransform, sp, eventCamera))
+        public List<RectTransform> exceptList = new List<RectTransform>();
+        public Action OnTouched;
+
+        public override bool IsRaycastLocationValid(Vector2 sp, Camera eventCamera)
         {
-            if (Input.touchCount > 0
+            if (RectTransformUtility.RectangleContainsScreenPoint(rectTransform, sp, eventCamera))
+            {
+                if (Input.touchCount > 0
 #if UNITY_EDITOR || UNITY_STANDALONE_WIN || UNITY_STANDALONE_OSX
-                || Input.GetMouseButton(0)
+                    || Input.GetMouseButton(0)
 #endif
                 )
-            {
-                bool valid = true;
-                for (int i = 0; i < exceptList.Count; ++i)
                 {
-                    if (RectTransformUtility.RectangleContainsScreenPoint(exceptList[i], sp, eventCamera))
+                    bool valid = true;
+                    for (int i = 0; i < exceptList.Count; ++i)
                     {
-                        valid = false;
-                        break;
+                        if (RectTransformUtility.RectangleContainsScreenPoint(exceptList[i], sp, eventCamera))
+                        {
+                            valid = false;
+                            break;
+                        }
+                    }
+                    if (valid && OnTouched != null)
+                    {
+                        OnTouched();
+                        gameObject.SetActiveSafely(false);
                     }
                 }
-                if (valid && OnTouched != null)
-                {
-                    OnTouched();
-                    gameObject.SetActiveSafely(false);
-                }
             }
+            return false;
         }
-        return false;
-    }
 
-    protected override void OnPopulateMesh(VertexHelper vh)
-    {
-        vh.Clear();
+        protected override void OnPopulateMesh(VertexHelper vh)
+        {
+            vh.Clear();
+        }
     }
 }

@@ -1,30 +1,33 @@
 ﻿using UnityEngine;
 
-public class GameObjectInventory : Inventory<GameObject>
+namespace MonMoose.Core
 {
-    public T GetComponent<T>(int index) where T : Component
+    public class GameObjectInventory : Inventory<GameObject>
     {
-        GameObject go = Get(index);
-        if (go == null)
+        public T GetComponent<T>(int index) where T : Component
         {
-            return null;
+            GameObject go = Get(index);
+            if (go == null)
+            {
+                return null;
+            }
+            T component = go.GetComponent<T>();
+            return component;
         }
-        T component = go.GetComponent<T>();
-        return component;
-    }
 
-    public T AddComponent<T>(int index) where T : Component
-    {
-        GameObject go = Get(index);
-        if (go == null)
+        public T AddComponent<T>(int index) where T : Component
         {
-            return null;
+            GameObject go = Get(index);
+            if (go == null)
+            {
+                return null;
+            }
+            T component = go.AddComponent<T>();
+            if (component == null)
+            {
+                Debug.LogError(typeof(T).ToString());
+            }
+            return component;
         }
-        T component = go.AddComponent<T>();
-        if (component == null)
-        {
-            Debug.LogError(typeof(T).ToString());
-        }
-        return component;
     }
 }

@@ -1,23 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using MonMoose.Core;
 using UnityEngine;
 
-public class CustemLerpInitializer : Initializer
+namespace MonMoose.Core
 {
-    private string path = "Exporter/Configs/Lerp/ScriptableObjectInventory";
-
-    protected override IEnumerator OnProcess()
+    public class CustemLerpInitializer : Initializer
     {
-        GameObject go = ResourceManager.instance.GetResource(path) as GameObject;
-        if (go != null)
+        private string path = "Exporter/Configs/Lerp/ScriptableObjectInventory";
+
+        protected override IEnumerator OnProcess()
         {
-            ScriptableObjectInventory inventory = go.GetComponent<ScriptableObjectInventory>();
-            for (int i = 0; i < inventory.Count; ++i)
+            GameObject go = ResourceManager.instance.GetResource(path) as GameObject;
+            if (go != null)
             {
-                LerpUtility.AddCustomFunc(i, inventory[i] as CurveLerpFunc);
+                ScriptableObjectInventory inventory = go.GetComponent<ScriptableObjectInventory>();
+                for (int i = 0; i < inventory.Count; ++i)
+                {
+                    LerpUtility.AddCustomFunc(i, inventory[i] as CurveLerpFunc);
+                }
             }
+            yield return null;
         }
-        yield return null;
     }
 }

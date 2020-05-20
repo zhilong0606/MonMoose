@@ -1,14 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using MonMoose.Core;
 
-public class CurveLerpFunc : BaseScriptableObject, ILerpFunc
+namespace MonMoose.Core
 {
-    public AnimationCurve m_curve = new AnimationCurve();
-
-    public float GetValue(float f)
+    public class CurveLerpFunc : BaseScriptableObject, ILerpFunc
     {
-        return m_curve.Evaluate(f);
+        public AnimationCurve m_curve = new AnimationCurve();
+
+        public float GetValue(float f)
+        {
+            return m_curve.Evaluate(f);
+        }
     }
 }

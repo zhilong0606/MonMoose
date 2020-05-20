@@ -1,76 +1,79 @@
 ﻿using UnityEngine;
 
-public class AnimationController : MonoBehaviour
+namespace MonMoose.Core
 {
-    public string[] clipNames;
-    private Animation animation;
-    private float curTime;
-    private System.Action callback;
-
-    public bool IsPlaying { get; private set; }
-
-    public void Init()
+    public class AnimationController : MonoBehaviour
     {
-        animation = GetComponent<Animation>();
-        IsPlaying = false;
-    }
+        public string[] clipNames;
+        private Animation animation;
+        private float curTime;
+        private System.Action callback;
 
-    private void Update()
-    {
-        if (IsPlaying)
+        public bool IsPlaying { get; private set; }
+
+        public void Init()
         {
-            curTime -= Time.deltaTime;
-            if (curTime < 0f)
+            animation = GetComponent<Animation>();
+            IsPlaying = false;
+        }
+
+        private void Update()
+        {
+            if (IsPlaying)
             {
-                IsPlaying = false;
-                if (callback != null)
+                curTime -= Time.deltaTime;
+                if (curTime < 0f)
                 {
-                    callback();
-                    callback = null;
+                    IsPlaying = false;
+                    if (callback != null)
+                    {
+                        callback();
+                        callback = null;
+                    }
                 }
             }
         }
-    }
 
-    public void Play(int clipIndex, System.Action callback = null, bool forcePlay = false)
-    {
-        if (clipNames == null || clipIndex >= clipNames.Length)
+        public void Play(int clipIndex, System.Action callback = null, bool forcePlay = false)
         {
-            return;
-        }
-        if (!IsPlaying)
-        {
-            animation.Play(clipNames[clipIndex]);
-            this.callback = callback;
-            IsPlaying = true;
-            curTime = animation[clipNames[clipIndex]].length;
-        }
-        else if (forcePlay)
-        {
-            animation.Play(clipNames[clipIndex]);
-            if (this.callback != null)
+            if (clipNames == null || clipIndex >= clipNames.Length)
             {
-                this.callback();
+                return;
             }
-            this.callback = callback;
-            IsPlaying = true;
-            curTime = animation[clipNames[clipIndex]].length;
+            if (!IsPlaying)
+            {
+                animation.Play(clipNames[clipIndex]);
+                this.callback = callback;
+                IsPlaying = true;
+                curTime = animation[clipNames[clipIndex]].length;
+            }
+            else if (forcePlay)
+            {
+                animation.Play(clipNames[clipIndex]);
+                if (this.callback != null)
+                {
+                    this.callback();
+                }
+                this.callback = callback;
+                IsPlaying = true;
+                curTime = animation[clipNames[clipIndex]].length;
+            }
         }
-    }
 
-    public void SetFrame(int clipIndex, float rate)
-    {
-        if (clipNames == null || clipIndex >= clipNames.Length)
+        public void SetFrame(int clipIndex, float rate)
         {
-            return;
+            if (clipNames == null || clipIndex >= clipNames.Length)
+            {
+                return;
+            }
+            animation.Play(clipNames[clipIndex]);
+            animation[clipNames[clipIndex]].normalizedTime = rate;
         }
-        animation.Play(clipNames[clipIndex]);
-        animation[clipNames[clipIndex]].normalizedTime = rate;
-    }
 
-    public void Stop()
-    {
-        animation.Stop();
-        callback = null;
+        public void Stop()
+        {
+            animation.Stop();
+            callback = null;
+        }
     }
 }

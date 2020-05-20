@@ -3,39 +3,42 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UICellSelectable : UICell, IUICellSelectable
+namespace MonMoose.Core
 {
-    private GameObject m_onObj;
-    private GameObject m_offObj;
-    private bool m_isOn;
-
-    public bool IsSelected
+    public class UICellSelectable : UICell, IUICellSelectable
     {
-        get { return m_isOn; }
-        set
+        private GameObject m_onObj;
+        private GameObject m_offObj;
+        private bool m_isOn;
+
+        public bool IsSelected
         {
-            m_isOn = value;
-            m_onObj.SetActiveSafely(value);
-            m_offObj.SetActiveSafely(!value);
+            get { return m_isOn; }
+            set
+            {
+                m_isOn = value;
+                m_onObj.SetActiveSafely(value);
+                m_offObj.SetActiveSafely(!value);
+            }
         }
-    }
 
-    protected override void OnInit(object param)
-    {
-        m_onObj = GetInventory().Get((int)EWidget.On);
-        m_offObj = GetInventory().Get((int)EWidget.Off);
-        Button btn = GetComponent<Button>();
-        btn.onClick.AddListener(OnBtnClicked);
-    }
+        protected override void OnInit(object param)
+        {
+            m_onObj = GetInventory().Get((int)EWidget.On);
+            m_offObj = GetInventory().Get((int)EWidget.Off);
+            Button btn = GetComponent<Button>();
+            btn.onClick.AddListener(OnBtnClicked);
+        }
 
-    private void OnBtnClicked()
-    {
-        Select();
-    }
+        private void OnBtnClicked()
+        {
+            Select();
+        }
 
-    private enum EWidget
-    {
-        Off,
-        On,
+        private enum EWidget
+        {
+            Off,
+            On,
+        }
     }
 }

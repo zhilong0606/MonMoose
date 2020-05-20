@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public static class CommonDefine
+namespace MonMoose.Core
 {
-    public static float FloatEpsilon = 0.000001f;
+    public static class CommonDefine
+    {
+        public static float FloatEpsilon = 0.000001f;
+    }
 }

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine.Sprites;
 
-namespace MobaGo.UI
+namespace MonMoose.Core
 {
     [AddComponentMenu("UI/UIMaskImage", 11)]
     public class UIMaskImage : Image

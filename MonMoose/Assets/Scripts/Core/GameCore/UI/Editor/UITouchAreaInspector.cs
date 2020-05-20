@@ -3,20 +3,23 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-[CustomEditor(typeof (UITouchArea))]
-[CanEditMultipleObjects]
-public class UITouchAreaInspector : Editor
+namespace MonMoose.Core
 {
-    public override void OnInspectorGUI()
+    [CustomEditor(typeof(UITouchArea))]
+    [CanEditMultipleObjects]
+    public class UITouchAreaInspector : Editor
     {
-        EditorGUI.BeginChangeCheck();
-        EditorGUILayout.PropertyField(serializedObject.FindProperty("showColor"));
-        EditorGUILayout.PropertyField(serializedObject.FindProperty("m_Color"));
-        EditorGUILayout.PropertyField(serializedObject.FindProperty("m_RaycastTarget"));
-        if (EditorGUI.EndChangeCheck())
+        public override void OnInspectorGUI()
         {
-            serializedObject.ApplyModifiedProperties();
-            EditorUtility.SetDirty(target);
+            EditorGUI.BeginChangeCheck();
+            EditorGUILayout.PropertyField(serializedObject.FindProperty("showColor"));
+            EditorGUILayout.PropertyField(serializedObject.FindProperty("m_Color"));
+            EditorGUILayout.PropertyField(serializedObject.FindProperty("m_RaycastTarget"));
+            if (EditorGUI.EndChangeCheck())
+            {
+                serializedObject.ApplyModifiedProperties();
+                EditorUtility.SetDirty(target);
+            }
         }
     }
 }

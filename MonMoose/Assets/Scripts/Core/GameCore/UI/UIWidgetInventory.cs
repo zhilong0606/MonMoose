@@ -2,45 +2,55 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UIWidgetInventory : GameObjectInventory
+namespace MonMoose.Core
 {
-    public const int defaultId = -1;
-
-    [SerializeField]
-    private int m_id = defaultId;
-
-    private UIComponent m_parent;
-
-    public int Id { get { return m_id; } }
-    public UIComponent parent { get { return m_parent; } set { m_parent = value; } }
-
-    public T GetComponent<T>(int index, bool needInit, object param = null) where T : UIComponent
+    public class UIWidgetInventory : GameObjectInventory
     {
-        GameObject go = Get(index);
-        if (go == null)
-        {
-            return null;
-        }
-        T component = go.GetComponent<T>();
-        if (component != null && needInit)
-        {
-            component.Initialize(m_parent, param);
-        }
-        return component;
-    }
+        public const int defaultId = -1;
 
-    public T AddComponent<T>(int index, bool needInit, object param = null) where T : UIComponent
-    {
-        GameObject go = Get(index);
-        if (go == null)
+        [SerializeField] private int m_id = defaultId;
+
+        private UIComponent m_parent;
+
+        public int Id
         {
-            return null;
+            get { return m_id; }
         }
-        T component = go.AddComponent<T>();
-        if (component != null && needInit)
+
+        public UIComponent parent
         {
-            component.Initialize(m_parent, param);
+            get { return m_parent; }
+            set { m_parent = value; }
         }
-        return component;
+
+        public T GetComponent<T>(int index, bool needInit, object param = null) where T : UIComponent
+        {
+            GameObject go = Get(index);
+            if (go == null)
+            {
+                return null;
+            }
+            T component = go.GetComponent<T>();
+            if (component != null && needInit)
+            {
+                component.Initialize(m_parent, param);
+            }
+            return component;
+        }
+
+        public T AddComponent<T>(int index, bool needInit, object param = null) where T : UIComponent
+        {
+            GameObject go = Get(index);
+            if (go == null)
+            {
+                return null;
+            }
+            T component = go.AddComponent<T>();
+            if (component != null && needInit)
+            {
+                component.Initialize(m_parent, param);
+            }
+            return component;
+        }
     }
 }

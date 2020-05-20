@@ -3,8 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IUIProcess
+namespace MonMoose.Core
 {
-    bool needSkip { get; }
-    void StartProcess();
+    public interface IUIProcess
+    {
+        bool needSkip { get; }
+        void StartProcess();
+    }
 }

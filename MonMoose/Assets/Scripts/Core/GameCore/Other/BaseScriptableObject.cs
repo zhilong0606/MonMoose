@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class BaseScriptableObject : ScriptableObject
+namespace MonMoose.Core
 {
+    public abstract class BaseScriptableObject : ScriptableObject
+    {
 
+    }
 }

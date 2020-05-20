@@ -3,7 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UISlider : MonoBehaviour {
+namespace MonMoose.Core
+{
+    public class UISlider : MonoBehaviour
+    {
 
-    public Image m_fillImage;
+        public Image m_fillImage;
+    }
 }

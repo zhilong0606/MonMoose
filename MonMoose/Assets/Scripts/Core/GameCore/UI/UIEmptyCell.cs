@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public sealed class UIEmptyCell : UICell
+namespace MonMoose.Core
 {
+    public sealed class UIEmptyCell : UICell
+    {
+    }
 }

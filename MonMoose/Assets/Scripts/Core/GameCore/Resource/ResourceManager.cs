@@ -1,15 +1,17 @@
-﻿using MonMoose.Core;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class ResourceManager : Singleton<ResourceManager>
+namespace MonMoose.Core
 {
-    public Object GetResource(string path)
+    public class ResourceManager : Singleton<ResourceManager>
     {
-        return Resources.Load(path);
-    }
+        public Object GetResource(string path)
+        {
+            return Resources.Load(path);
+        }
 
-    public GameObject GetPrefab(string path)
-    {
-        return Resources.Load(path) as GameObject;
+        public GameObject GetPrefab(string path)
+        {
+            return Resources.Load(path) as GameObject;
+        }
     }
 }

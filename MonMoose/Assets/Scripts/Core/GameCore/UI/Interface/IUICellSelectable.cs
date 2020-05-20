@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IUICellSelectable
+namespace MonMoose.Core
 {
-    bool IsSelected { get; set; }
+    public interface IUICellSelectable
+    {
+        bool IsSelected { get; set; }
+    }
 }

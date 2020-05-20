@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IUIUpdatable
+namespace MonMoose.Core
 {
-    void UpdateFloat(float deltaTime);
+    public interface IUIUpdatable
+    {
+        void UpdateFloat(float deltaTime);
+    }
 }

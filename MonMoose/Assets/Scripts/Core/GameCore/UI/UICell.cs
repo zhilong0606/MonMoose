@@ -3,84 +3,97 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public delegate void CellSelectChangedDelegate(int index, bool isSelected);
-public delegate void CellEventHappenedDelegate(int eventId, int index, object obj);
-public abstract class UICell : UIComponent
+namespace MonMoose.Core
 {
-    protected UIGrid m_ownerGrid;
-    protected bool m_isRecycled = true;
-    protected int m_index = 0;
-    protected object m_info;
+    public delegate void CellSelectChangedDelegate(int index, bool isSelected);
 
-    public event CellEventHappenedDelegate eventOnCellEventHappened;
+    public delegate void CellEventHappenedDelegate(int eventId, int index, object obj);
 
-    public bool isRecycled
+    public abstract class UICell : UIComponent
     {
-        get { return m_isRecycled; }
-    }
+        protected UIGrid m_ownerGrid;
+        protected bool m_isRecycled = true;
+        protected int m_index = 0;
+        protected object m_info;
 
-    public UIGrid ownerGrid
-    {
-        get { return m_ownerGrid; }
-        set { m_ownerGrid = value; }
-    }
+        public event CellEventHappenedDelegate eventOnCellEventHappened;
 
-    public int index
-    {
-        get { return m_index; }
-        set { m_index = value; }
-    }
-
-    public object info
-    {
-        get { return m_info; }
-    }
-    
-    protected virtual void OnUpdateCell() { }
-    protected virtual void OnRenovate() { }
-    protected virtual void OnRecycle() { }
-
-    protected void Select()
-    {
-        m_ownerGrid.SelectIndex(m_index);
-    }
-
-    protected void SendEvent(int eventId)
-    {
-        SendEvent(eventId, null);
-    }
-
-    protected void SendEvent(int eventId, object obj)
-    {
-        if (eventOnCellEventHappened != null)
+        public bool isRecycled
         {
-            eventOnCellEventHappened(eventId, m_index, obj);
+            get { return m_isRecycled; }
         }
-    }
 
-    public void UpdateCell(object info)
-    {
-        m_info = info;
-        OnUpdateCell();
-    }
-
-    public void Renovate()
-    {
-        if (m_isRecycled)
+        public UIGrid ownerGrid
         {
-            OnRenovate();
-            SetActive(true);
-            m_isRecycled = false;
+            get { return m_ownerGrid; }
+            set { m_ownerGrid = value; }
         }
-    }
 
-    public void Recycle()
-    {
-        if (!m_isRecycled)
+        public int index
         {
-            OnRecycle();
-            SetActive(false);
-            m_isRecycled = true;
+            get { return m_index; }
+            set { m_index = value; }
+        }
+
+        public object info
+        {
+            get { return m_info; }
+        }
+
+        protected virtual void OnUpdateCell()
+        {
+        }
+
+        protected virtual void OnRenovate()
+        {
+        }
+
+        protected virtual void OnRecycle()
+        {
+        }
+
+        protected void Select()
+        {
+            m_ownerGrid.SelectIndex(m_index);
+        }
+
+        protected void SendEvent(int eventId)
+        {
+            SendEvent(eventId, null);
+        }
+
+        protected void SendEvent(int eventId, object obj)
+        {
+            if (eventOnCellEventHappened != null)
+            {
+                eventOnCellEventHappened(eventId, m_index, obj);
+            }
+        }
+
+        public void UpdateCell(object info)
+        {
+            m_info = info;
+            OnUpdateCell();
+        }
+
+        public void Renovate()
+        {
+            if (m_isRecycled)
+            {
+                OnRenovate();
+                SetActive(true);
+                m_isRecycled = false;
+            }
+        }
+
+        public void Recycle()
+        {
+            if (!m_isRecycled)
+            {
+                OnRecycle();
+                SetActive(false);
+                m_isRecycled = true;
+            }
         }
     }
 }

@@ -3,24 +3,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UIWindowContext
+namespace MonMoose.Core
 {
-    private string m_path;
-    private Type m_type;
-
-    public string Path
+    public class UIWindowContext
     {
-        get { return m_path; }
-    }
+        private string m_path;
+        private Type m_type;
 
-    public Type Type
-    {
-        get { return m_type; }
-    }
+        public string Path
+        {
+            get { return m_path; }
+        }
 
-    public UIWindowContext(string path, Type type)
-    {
-        m_path = path;
-        m_type = type;
+        public Type Type
+        {
+            get { return m_type; }
+        }
+
+        public UIWindowContext(string path, Type type)
+        {
+            m_path = path;
+            m_type = type;
+        }
     }
 }

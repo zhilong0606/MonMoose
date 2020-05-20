@@ -1,4 +1,8 @@
-﻿public enum ECustemLerpFuncType
+﻿
+namespace MonMoose.Core
 {
-    Test,
+    public enum ECustemLerpFuncType
+    {
+        Test,
+    }
 }

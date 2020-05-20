@@ -1,20 +1,24 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class UIDragEventListener : UIEventListener , IDragHandler
+namespace MonMoose.Core
 {
-    public new static UIDragEventListener Get(GameObject go)
+    public class UIDragEventListener : UIEventListener, IDragHandler
     {
-        UIDragEventListener eventListener = go.GetComponent<UIDragEventListener>();
-        if (eventListener == null)
+        public new static UIDragEventListener Get(GameObject go)
         {
-            eventListener = go.AddComponent<UIDragEventListener>();
+            UIDragEventListener eventListener = go.GetComponent<UIDragEventListener>();
+            if (eventListener == null)
+            {
+                eventListener = go.AddComponent<UIDragEventListener>();
+            }
+            return eventListener;
         }
-        return eventListener;
-    }
-    public void OnDrag(PointerEventData eventData)
-    {
-        HandleEvent((int)UIEventType.Drag, eventData);
+
+        public void OnDrag(PointerEventData eventData)
+        {
+            HandleEvent((int)UIEventType.Drag, eventData);
+        }
     }
 }
 

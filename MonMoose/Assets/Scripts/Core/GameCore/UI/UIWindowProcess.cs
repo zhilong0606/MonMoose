@@ -3,42 +3,45 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UIWindowProcess
+namespace MonMoose.Core
 {
-    public Action OnEndCb;
-    private bool isStart = false;
-
-    public bool IsStart
+    public class UIWindowProcess
     {
-        get { return isStart; }
-    }
+        public Action OnEndCb;
+        private bool isStart = false;
 
-    public void UpdateLogic(float deltaTime)
-    {
-
-    }
-
-    public void Start()
-    {
-        isStart = true;
-        OnStart();
-    }
-    
-    public void End()
-    {
-        isStart = false;
-        OnEnd();
-        if (OnEndCb != null)
+        public bool IsStart
         {
-            OnEndCb();
+            get { return isStart; }
         }
-    }
 
-    protected virtual void OnStart()
-    {
-    }
+        public void UpdateLogic(float deltaTime)
+        {
 
-    protected virtual void OnEnd()
-    {
+        }
+
+        public void Start()
+        {
+            isStart = true;
+            OnStart();
+        }
+
+        public void End()
+        {
+            isStart = false;
+            OnEnd();
+            if (OnEndCb != null)
+            {
+                OnEndCb();
+            }
+        }
+
+        protected virtual void OnStart()
+        {
+        }
+
+        protected virtual void OnEnd()
+        {
+        }
     }
 }

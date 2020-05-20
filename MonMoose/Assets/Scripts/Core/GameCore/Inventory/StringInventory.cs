@@ -1,4 +1,8 @@
-﻿public class StringInventory : Inventory<string>
+﻿
+namespace MonMoose.Core
 {
+    public class StringInventory : Inventory<string>
+    {
 
+    }
 }

@@ -1,4 +1,7 @@
-﻿public class ScriptableObjectInventory : Inventory<BaseScriptableObject>
+﻿namespace MonMoose.Core
 {
+    public class ScriptableObjectInventory : Inventory<BaseScriptableObject>
+    {
 
+    }
 }

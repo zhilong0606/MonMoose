@@ -1,4 +1,8 @@
-﻿public class IntInventory : Inventory<int>
+﻿
+namespace MonMoose.Core
 {
+    public class IntInventory : Inventory<int>
+    {
 
+    }
 }

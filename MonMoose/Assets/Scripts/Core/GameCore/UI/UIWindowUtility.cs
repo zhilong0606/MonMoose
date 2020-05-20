@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public static class UIWindowUtility
+namespace MonMoose.Core
 {
-    
+    public static class UIWindowUtility
+    {
+
+    }
 }

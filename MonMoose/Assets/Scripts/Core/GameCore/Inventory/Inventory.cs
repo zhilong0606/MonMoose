@@ -1,23 +1,28 @@
 ﻿using UnityEngine;
 
-public class Inventory<T> : MonoBehaviour
+namespace MonMoose.Core
 {
-    [SerializeField]
-    private T[] m_items = new T[0];
-
-    public T this[int index]
+    public class Inventory<T> : MonoBehaviour
     {
-        get { return m_items[index]; }
-    }
+        [SerializeField] private T[] m_items = new T[0];
 
-    public int Count { get { return m_items.Length; } }
-
-    public T Get(int index)
-    {
-        if (index >= 0 && index < m_items.Length)
+        public T this[int index]
         {
-            return m_items[index];
+            get { return m_items[index]; }
         }
-        return default(T);
+
+        public int Count
+        {
+            get { return m_items.Length; }
+        }
+
+        public T Get(int index)
+        {
+            if (index >= 0 && index < m_items.Length)
+            {
+                return m_items[index];
+            }
+            return default(T);
+        }
     }
 }

@@ -1,12 +1,16 @@
-﻿public enum UIEventType
+﻿
+namespace MonMoose.Core
 {
-    PointerClick,
-    PointerDown,
-    PointerUp,
-    PointerEnter,
-    PointerExit,
-    Drag,
-    Enable,
-    Disable,
-    Count,
+    public enum UIEventType
+    {
+        PointerClick,
+        PointerDown,
+        PointerUp,
+        PointerEnter,
+        PointerExit,
+        Drag,
+        Enable,
+        Disable,
+        Count,
+    }
 }
