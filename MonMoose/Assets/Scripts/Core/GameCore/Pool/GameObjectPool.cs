@@ -7,6 +7,7 @@ using MonMoose.Core;
 public class GameObjectPool : MonoBehaviour
 {
     public delegate void ActionObjHolder(PoolObjHolder holder);
+    public delegate void ActionObjFuncInt(PoolObjHolder holder, int paramInt);
     [SerializeField]
     private GameObject m_dynamicObj;
     [SerializeField]
@@ -14,8 +15,11 @@ public class GameObjectPool : MonoBehaviour
     [SerializeField]
     private int m_capacity = 0;
 
+
     private List<PoolObjHolder> m_holderList = new List<PoolObjHolder>();
     private ActionObjHolder m_actionOnInit;
+    private ActionObjHolder m_actionOnFetch;
+    private ActionObjHolder m_actionOnRelease;
 
     public int capacity
     {
@@ -33,14 +37,34 @@ public class GameObjectPool : MonoBehaviour
         }
     }
 
+    public void Init(GameObject obj, ActionObjHolder actionOnInit = null)
+    {
+        m_dynamicObj = obj;
+        Init(actionOnInit);
+    }
+
+    public void Init(GameObject obj, ActionObjHolder actionOnInit, ActionObjHolder actionOnFetch, ActionObjHolder actionOnRelease)
+    {
+        m_dynamicObj = obj;
+        Init(actionOnInit, actionOnFetch, actionOnRelease);
+    }
+
     public void Init(ActionObjHolder actionOnInit = null)
     {
-        if (gameObject.IsParentOf(m_dynamicObj))
+        if (m_dynamicObj != null && transform != m_dynamicObj.transform.parent)
         {
-            m_dynamicObj.SetActiveSafely(false);
+            m_dynamicObj = Instantiate(m_dynamicObj, transform) as GameObject;
         }
+        m_dynamicObj.SetActiveSafely(false);
         m_actionOnInit = actionOnInit;
         capacity = m_capacity;
+    }
+
+    public void Init(ActionObjHolder actionOnInit, ActionObjHolder actionOnFetch, ActionObjHolder actionOnRelease)
+    {
+        Init(actionOnInit);
+        m_actionOnFetch = actionOnFetch;
+        m_actionOnRelease = actionOnRelease;
     }
 
     public PoolObjHolder Fetch()
@@ -49,6 +73,10 @@ public class GameObjectPool : MonoBehaviour
         if (holder != null)
         {
             holder.FetchTo(m_apearRoot != null ? m_apearRoot : gameObject);
+            if (m_actionOnFetch != null)
+            {
+                m_actionOnFetch(holder);
+            }
             return holder;
         }
         return null;
@@ -59,6 +87,10 @@ public class GameObjectPool : MonoBehaviour
         PoolObjHolder holder = Fetch();
         if (holder != null)
         {
+            if (m_actionOnFetch != null)
+            {
+                m_actionOnFetch(holder);
+            }
             return holder.GetComponent<T>();
         }
         return null;
@@ -66,10 +98,18 @@ public class GameObjectPool : MonoBehaviour
 
     public void Release(GameObject go)
     {
+        if (go == null)
+        {
+            return;
+        }
         for (int i = 0; i < m_holderList.Count; ++i)
         {
             if (m_holderList[i].obj == go)
             {
+                if (m_actionOnRelease != null)
+                {
+                    m_actionOnRelease(m_holderList[i]);
+                }
                 m_holderList[i].ReleaseTo(gameObject);
                 return;
             }
@@ -81,7 +121,22 @@ public class GameObjectPool : MonoBehaviour
     {
         for (int i = 0; i < m_holderList.Count; ++i)
         {
+            if (m_actionOnRelease != null)
+            {
+                m_actionOnRelease(m_holderList[i]);
+            }
             m_holderList[i].ReleaseTo(gameObject);
+        }
+    }
+
+    public void HandleFunc(ActionObjFuncInt handleFuncInt, int paramInt)
+    {
+        for (int i = 0; i < m_holderList.Count; ++i)
+        {
+            if (handleFuncInt != null)
+            {
+                handleFuncInt(m_holderList[i], paramInt);
+            }
         }
     }
 
@@ -126,7 +181,7 @@ public class GameObjectPool : MonoBehaviour
     public class PoolObjHolder : ClassPoolObj
     {
         private GameObject m_obj;
-        private List<Component> m_componentList;
+        private List<Component> m_componentList = new List<Component>();
         private bool m_isUsed = false;
 
         public bool isUsed
@@ -198,15 +253,9 @@ public class GameObjectPool : MonoBehaviour
             m_obj.SetParent(root);
         }
 
-        public override void OnFetch()
-        {
-            m_componentList = ListPool<Component>.Get();
-        }
-
         public override void OnRelease()
         {
-            ListPool<Component>.Release(m_componentList);
-            m_componentList = null;
+            m_componentList.Clear();
             m_obj = null;
         }
     }
