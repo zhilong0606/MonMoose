@@ -29,12 +29,10 @@ namespace MonMoose.Core
 
         ~StateMachine()
         {
-            Dictionary<int, State>.Enumerator enumerator = m_stateMap.GetEnumerator();
-            while (enumerator.MoveNext())
+            foreach (var kv in m_stateMap)
             {
-                enumerator.Current.Value.OnUninit();
+                kv.Value.OnUninit();
             }
-            enumerator.Dispose();
             m_stateMap.Clear();
             m_curState = null;
         }

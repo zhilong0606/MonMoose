@@ -1,4 +1,5 @@
-﻿using MonMoose.Core;
+﻿using System;
+using MonMoose.Core;
 
 namespace MonMoose.Logic
 {
@@ -11,12 +12,16 @@ namespace MonMoose.Logic
 
         public override void OnEnter()
         {
-            UIWindowManager.instance.OpenWindow((int)EWindowType.GameInitWindow);
+            UIWindowManager.instance.OpenWindow((int)EWindowType.GameInitWindow, (Action)OnGameInitEnd);
         }
 
         public override void OnExit()
         {
             UIWindowManager.instance.DestroyAllWindow();
+        }
+
+        private void OnGameInitEnd()
+        {
         }
     }
 }

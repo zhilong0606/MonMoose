@@ -2,23 +2,40 @@
 {
     public abstract class State
     {
+        protected StateMachine m_stateMachine;
         public abstract int stateIndex { get; }
+        public StateMachine stateMachine { get { return m_stateMachine; } }
 
-        public virtual void OnInit()
+        public void Init(StateMachine stateMachine)
         {
+            m_stateMachine = stateMachine;
+            OnInit();
         }
 
-        public virtual void OnEnter()
+        public void Uninit()
         {
+            OnUninit();
         }
 
-        public virtual void OnExit()
+        public void Enter()
         {
+            OnEnter();
         }
 
-        public virtual void OnUninit()
+        public void Exit()
         {
+            OnExit();
         }
+
+        public void Tick()
+        {
+            
+        }
+
+        protected virtual void OnInit() { }
+        protected virtual void OnUninit() { }
+        protected virtual void OnEnter() { }
+        protected virtual void OnExit() { }
 
         public virtual void OnTickFloat(float deltaTime)
         {

@@ -19,6 +19,7 @@ namespace MonMoose.Logic
         {
             stateMachine = new StateMachine(new State[]
             {
+                new GameInitState(),
                 new LobbyState(),
                 new BattleState(),
             });
@@ -28,6 +29,7 @@ namespace MonMoose.Logic
 
         private void OnInitFinish()
         {
+            stateMachine.ChangeState((int)EGameState.GameInit);
             stateMachine.ChangeState((int)EGameState.Lobby);
         }
 
