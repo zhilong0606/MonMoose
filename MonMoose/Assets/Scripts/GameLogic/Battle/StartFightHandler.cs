@@ -35,7 +35,7 @@ namespace MonMoose.Logic
         //    sceneInventory = GameObject.Find("SceneRoot").GetComponent<SceneObjInventory>();
         //    PlayerManager.instance.Ergodic(OnPlayerInit);
         //    EventManager.instance.Broadcast((int)EventID.Actor_All_Initialized);
-        //    UIWindowManager.instance.OpenWindow((int)EWindowType.JoystickWindow);
+        //    UIWindowManager.instance.OpenWindow((int)EWindowId.JoystickWindow);
         //}
 
         //private void OnPlayerInit(Player player)

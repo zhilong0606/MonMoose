@@ -13,6 +13,7 @@ namespace MonMoose.Logic
 
         protected override IEnumerator OnProcess()
         {
+            UIWindowManager.instance.OpenWindow((int)EWindowId.LoadingWindow);
             yield return null;
         }
     }

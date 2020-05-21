@@ -12,6 +12,22 @@ namespace MonMoose.Core
             }
         }
 
+        public static void SetActiveSafely(this UIComponent compo, bool isActive)
+        {
+            if (compo != null)
+            {
+                compo.SetActive(isActive);
+            }
+        }
+
+        public static void SetActiveSafely(this Component compo, bool isActive)
+        {
+            if (compo != null)
+            {
+                compo.gameObject.SetActiveSafely(isActive);
+            }
+        }
+
         public static GameObject FindChild(this GameObject go, string path)
         {
             if (go != null)

@@ -1,4 +1,5 @@
-﻿using MonMoose.Core;
+﻿using System;
+using MonMoose.Core;
 using MonMoose.StaticData;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -12,38 +13,59 @@ namespace MonMoose.Logic
             get { return (int)EGameState.Battle; }
         }
 
+        protected override void OnInit()
+        {
+            RegisterListener();
+        }
+
+        protected override void OnUninit()
+        {
+            RemoveListener();
+        }
+
         protected override void OnEnter()
         {
             BattleManager.CreateInstance();
             ActorManager.CreateInstance();
             SceneManager.LoadSceneAsync("BattleScene");
             SceneManager.sceneLoaded += OnSceneLoadCompleted;
-            RegisterListener();
         }
 
         protected override void OnExit()
         {
-            RemoveListener();
             BattleManager.DestroyInstance();
             ActorManager.DestroyInstance();
         }
 
         private void RegisterListener()
         {
+            EventManager.instance.RegisterListener((int)EventID.BattleStart_StartRequest_BtnClick, OnStartRequestByBtnClick);
             EventManager.instance.RegisterListener((int)EventID.Frame_Tick, OnFrameTick);
             EventManager.instance.RegisterListener((int)EventID.Actor_All_Initialized, OnActorAllInitialized);
         }
 
         private void RemoveListener()
         {
+            EventManager.instance.UnregisterListener((int)EventID.BattleStart_StartRequest_BtnClick, OnStartRequestByBtnClick);
             EventManager.instance.UnregisterListener((int)EventID.Frame_Tick, OnFrameTick);
             EventManager.instance.UnregisterListener((int)EventID.Actor_All_Initialized, OnActorAllInitialized);
+        }
+
+        private void OnStartRequestByBtnClick()
+        {
+            EventManager.instance.Broadcast((int)EventID.LoadingWindow_FadeInRequest, (Action)OnLoadingShowEnd);
+        }
+
+        private void OnLoadingShowEnd()
+        {
+            m_stateMachine.ChangeState((int)EGameState.Battle);
         }
 
         private void OnSceneLoadCompleted(Scene arg0, LoadSceneMode arg1)
         {
             SceneManager.sceneLoaded -= OnSceneLoadCompleted;
             InitScene();
+            EventManager.instance.Broadcast((int)EventID.LoadingWindow_FadeOutRequest);
         }
 
         private void InitScene()

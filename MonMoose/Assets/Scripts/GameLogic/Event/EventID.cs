@@ -10,5 +10,11 @@ namespace MonMoose.Logic
         /********Moba*********/
         Frame_Tick,
         Actor_All_Initialized,
+
+
+        LoadingWindow_FadeInRequest,
+        LoadingWindow_FadeOutRequest,
+
+        BattleStart_StartRequest_BtnClick,
     }
 }

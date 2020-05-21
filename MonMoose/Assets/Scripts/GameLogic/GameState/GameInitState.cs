@@ -12,9 +12,10 @@ namespace MonMoose.Logic
 
         protected override void OnEnter()
         {
-            GameInitializer initializer = new GameInitializer();
-            UIWindowManager.instance.OpenWindow((int)EWindowType.GameInitWindow, initializer);
-            initializer.StartAsync(OnGameInitEnd);
+            GameInitParam param = new GameInitParam();
+            param.initializer = new GameInitializer();
+            param.actionOnInitEnd = OnGameInitEnd;
+            UIWindowManager.instance.OpenWindow((int)EWindowId.GameInitWindow, param);
         }
 
         protected override void OnExit()

@@ -20,9 +20,4 @@
         Bg,
         Main,
     }
-
-    public class UIWindowDefine
-    {
-
-    }
 }

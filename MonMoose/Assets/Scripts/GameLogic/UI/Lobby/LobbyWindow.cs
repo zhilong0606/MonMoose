@@ -16,7 +16,7 @@ namespace MonMoose.Logic
 
         private void OnStartBtnClick()
         {
-            GameManager.instance.EnterBattle();
+            EventManager.instance.Broadcast((int)EventID.BattleStart_StartRequest_BtnClick);
         }
 
         private enum EWidget

@@ -60,15 +60,15 @@ namespace MonMoose.Core
             ChangeState(state);
         }
 
-        private void ChangeState(State state)
+        public void ChangeState(State state)
         {
-            if (state == null || m_curState == state)
-            {
-                return;
-            }
             if (m_curState != null)
             {
                 m_curState.Exit();
+            }
+            if (state == null || m_curState == state)
+            {
+                return;
             }
             m_curState = state;
             m_curState.Enter();
