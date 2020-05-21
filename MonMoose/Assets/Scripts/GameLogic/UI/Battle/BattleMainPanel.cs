@@ -1,12 +1,13 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using MonMoose.Core;
 
-public class BattleMainPanel : UIWindow
+namespace MonMoose.Logic
 {
-    protected override void OnInit(object param)
+    public class BattleMainPanel : UIWindow
     {
-        base.OnInit(param);
-        
+        protected override void OnInit(object param)
+        {
+            base.OnInit(param);
+
+        }
     }
 }

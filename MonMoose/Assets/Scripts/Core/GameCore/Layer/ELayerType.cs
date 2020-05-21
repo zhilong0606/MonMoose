@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-
-namespace MonMoose.Core
+﻿namespace MonMoose.Core
 {
     public enum ELayerType
     {

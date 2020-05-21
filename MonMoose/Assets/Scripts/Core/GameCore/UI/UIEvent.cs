@@ -1,5 +1,4 @@
-﻿using MonMoose.Core;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.EventSystems;
 
 namespace MonMoose.Core

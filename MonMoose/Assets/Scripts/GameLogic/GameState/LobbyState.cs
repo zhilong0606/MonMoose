@@ -1,21 +1,23 @@
 ﻿using MonMoose.Core;
-using UnityEngine.SceneManagement;
 
-public class LobbyState : State
+namespace MonMoose.Logic
 {
-    public override int stateIndex
+    public class LobbyState : State
     {
-        get { return (int)EGameState.Lobby; }
-    }
+        public override int stateIndex
+        {
+            get { return (int)EGameState.Lobby; }
+        }
 
-    public override void OnEnter()
-    {
-        UIWindowManager.instance.OpenWindow((int)EWindowType.LobbyWindow);
-    }
+        public override void OnEnter()
+        {
+            UIWindowManager.instance.OpenWindow((int)EWindowType.LobbyWindow);
+        }
 
-    public override void OnExit()
-    {
-        UIWindowManager.instance.DestroyAllWindow();
+        public override void OnExit()
+        {
+            UIWindowManager.instance.DestroyAllWindow();
+        }
     }
 }
 

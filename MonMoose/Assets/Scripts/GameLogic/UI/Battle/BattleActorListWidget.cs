@@ -1,27 +1,28 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using MonMoose.Core;
 
-public class BattleActorListWidget : UIComponent
+namespace MonMoose.Logic
 {
-    private GameObjectPool m_pool;
-
-    protected override void OnInit(object param)
+    public class BattleActorListWidget : UIComponent
     {
-        base.OnInit(param);
-        m_pool = GetInventory().GetComponent<GameObjectPool>((int)EWidget.Pool);
-        m_pool.Init(OnActorItemInit);
-    }
+        private GameObjectPool m_pool;
 
-    private void OnActorItemInit(GameObjectPool.PoolObjHolder holder)
-    {
-        BattleActorItemWidget widget = holder.obj.AddComponent<BattleActorItemWidget>();
-        widget.Initialize(this);
-        //holder.AddComponent()
-    }
+        protected override void OnInit(object param)
+        {
+            base.OnInit(param);
+            m_pool = GetInventory().GetComponent<GameObjectPool>((int)EWidget.Pool);
+            m_pool.Init(OnActorItemInit);
+        }
 
-    private enum EWidget
-    {
-        Pool,
+        private void OnActorItemInit(GameObjectPool.PoolObjHolder holder)
+        {
+            BattleActorItemWidget widget = holder.obj.AddComponent<BattleActorItemWidget>();
+            widget.Initialize(this);
+            //holder.AddComponent()
+        }
+
+        private enum EWidget
+        {
+            Pool,
+        }
     }
 }

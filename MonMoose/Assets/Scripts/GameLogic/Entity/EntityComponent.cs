@@ -1,29 +1,28 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class EntityComponent
+﻿namespace MonMoose.Logic
 {
-    protected Entity m_entity;
-
-    public void Init(Entity entity)
+    public class EntityComponent
     {
-        m_entity = entity;
-        OnInit();
-    }
+        protected Entity m_entity;
 
-    public void Tick()
-    {
-        OnTick();
-    }
+        public void Init(Entity entity)
+        {
+            m_entity = entity;
+            OnInit();
+        }
 
-    protected virtual void OnInit()
-    {
+        public void Tick()
+        {
+            OnTick();
+        }
 
-    }
+        protected virtual void OnInit()
+        {
 
-    protected virtual void OnTick()
-    {
-        
+        }
+
+        protected virtual void OnTick()
+        {
+
+        }
     }
 }

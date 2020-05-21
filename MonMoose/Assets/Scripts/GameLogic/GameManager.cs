@@ -1,59 +1,60 @@
-﻿using System;
-using System.Collections;
-using MonMoose.Core;
+﻿using MonMoose.Core;
 using UnityEngine;
 
-public enum EGameState
+namespace MonMoose.Logic
 {
-    GameInit,
-    Lobby,
-    Battle,
-}
-
-public class GameManager : MonoSingleton<GameManager>
-{
-    private GameInitializer m_initializer = new GameInitializer();
-    private StateMachine stateMachine;
-
-    protected override void Init()
+    public enum EGameState
     {
-        stateMachine = new StateMachine(new State[]
+        GameInit,
+        Lobby,
+        Battle,
+    }
+
+    public class GameManager : MonoSingleton<GameManager>
+    {
+        private GameInitializer m_initializer = new GameInitializer();
+        private StateMachine stateMachine;
+
+        protected override void Init()
         {
-            new LobbyState(),
-            new BattleState(),
-        });
-        RegisterListener();
-        m_initializer.StartAsync(OnInitFinish);
-    }
+            stateMachine = new StateMachine(new State[]
+            {
+                new LobbyState(),
+                new BattleState(),
+            });
+            RegisterListener();
+            m_initializer.StartAsync(OnInitFinish);
+        }
 
-    private void OnInitFinish()
-    {
-        stateMachine.ChangeState((int)EGameState.Lobby);
-    }
+        private void OnInitFinish()
+        {
+            stateMachine.ChangeState((int)EGameState.Lobby);
+        }
 
-    private void RegisterListener()
-    {
-    }
+        private void RegisterListener()
+        {
+        }
 
-    private void RemoveListener()
-    {
-    }
+        private void RemoveListener()
+        {
+        }
 
-    public void EnterBattle()
-    {
-        stateMachine.ChangeState((int)EGameState.Battle);
-    }
+        public void EnterBattle()
+        {
+            stateMachine.ChangeState((int)EGameState.Battle);
+        }
 
-    private void Update()
-    {
-        TickManager.instance.Tick(Time.deltaTime);
-        stateMachine.TickFloat(Time.deltaTime);
-    }
+        private void Update()
+        {
+            TickManager.instance.Tick(Time.deltaTime);
+            stateMachine.TickFloat(Time.deltaTime);
+        }
 
-    protected override void UnInit()
-    {
-        RemoveListener();
-        base.UnInit();
+        protected override void UnInit()
+        {
+            RemoveListener();
+            base.UnInit();
+        }
     }
 }
 

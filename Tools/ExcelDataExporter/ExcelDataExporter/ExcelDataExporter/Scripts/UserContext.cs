@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 public class UserContext
 {
     public string name;
+    public string usingNamespaceStr;
     public string namespaceStr;
     public string prefixStr;
     public string postfixStr;

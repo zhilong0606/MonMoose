@@ -1,31 +1,34 @@
 ﻿using UnityEngine;
 
-public class CastSkillTargetCommand : FrameCommand
+namespace MonMoose.Logic
 {
-    public short slotType;
-    public short targetID;
-
-    public CastSkillTargetCommand()
+    public class CastSkillTargetCommand : FrameCommand
     {
-        commandType = EFrameCommandType.CastSkillTarget;
-    }
+        public short slotType;
+        public short targetID;
 
-    public override void Serialize(out byte[] buffer)
-    {
-        buffer = new byte[4];
-        int offset = 0;
-        ByteBufferUtility.WriteShort(ref buffer, ref offset, slotType);
-        ByteBufferUtility.WriteShort(ref buffer, ref offset, targetID);
-    }
+        public CastSkillTargetCommand()
+        {
+            commandType = EFrameCommandType.CastSkillTarget;
+        }
 
-    public override void Deserialise(ref byte[] buffer, ref int offset)
-    {
-        slotType = ByteBufferUtility.ReadShort(ref buffer, ref offset);
-        targetID = ByteBufferUtility.ReadShort(ref buffer, ref offset);
-    }
+        public override void Serialize(out byte[] buffer)
+        {
+            buffer = new byte[4];
+            int offset = 0;
+            ByteBufferUtility.WriteShort(ref buffer, ref offset, slotType);
+            ByteBufferUtility.WriteShort(ref buffer, ref offset, targetID);
+        }
 
-    public override void Excute()
-    {
-        Debug.LogError("Skill_" + slotType + ": " + targetID);
+        public override void Deserialise(ref byte[] buffer, ref int offset)
+        {
+            slotType = ByteBufferUtility.ReadShort(ref buffer, ref offset);
+            targetID = ByteBufferUtility.ReadShort(ref buffer, ref offset);
+        }
+
+        public override void Excute()
+        {
+            Debug.LogError("Skill_" + slotType + ": " + targetID);
+        }
     }
 }

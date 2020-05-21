@@ -1,16 +1,19 @@
 ﻿
-[ScheduleClip]
-public partial class MoveActorDurativeClip : DurativeScheduleClip
+namespace MonMoose.Logic
 {
-    public override void OnEnter(SkillUseContext context)
+    [ScheduleClip]
+    public partial class MoveActorDurativeClip : DurativeScheduleClip
     {
-        base.OnEnter(context);
-        //context.sourceActor.moveComponent.MovePos(context.targetPosition, totalTime);
-    }
+        public override void OnEnter(SkillUseContext context)
+        {
+            base.OnEnter(context);
+            //context.sourceActor.moveComponent.MovePos(context.targetPosition, totalTime);
+        }
 
-    public override void OnExit()
-    {
-        base.OnExit();
-        //context.sourceActor.moveComponent.StopMove();
+        public override void OnExit()
+        {
+            base.OnExit();
+            //context.sourceActor.moveComponent.StopMove();
+        }
     }
 }

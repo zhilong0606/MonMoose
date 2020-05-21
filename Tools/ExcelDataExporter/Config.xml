@@ -3,6 +3,7 @@
   <excelFolderPath>./../../StaticData/</excelFolderPath>
   <client>
     <needExport>true</needExport>
+    <usingNameSpace>MonMoose.Core</usingNameSpace>
     <nameSpace>MonMoose.StaticData</nameSpace>
     <prefix />
     <postfix>StaticInfo</postfix>
@@ -12,6 +13,7 @@
   </client>
   <server>
     <needExport>false</needExport>
+    <usingNameSpace />
     <nameSpace />
     <prefix />
     <postfix />

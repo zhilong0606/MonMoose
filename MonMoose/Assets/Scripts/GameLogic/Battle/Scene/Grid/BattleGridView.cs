@@ -1,15 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class BattleGridView : MonoBehaviour
+namespace MonMoose.Logic
 {
-    [SerializeField]
-    private Grid2D m_position;
-
-    public Grid2D position
+    public class BattleGridView : MonoBehaviour
     {
-        get { return m_position; }
-        set { m_position = value; }
+        [SerializeField] private Grid2D m_position;
+
+        public Grid2D position
+        {
+            get { return m_position; }
+            set { m_position = value; }
+        }
     }
 }

@@ -1,13 +1,16 @@
 ﻿
-public class InstantScheduleClip : ScheduleClip
+namespace MonMoose.Logic
 {
-    public sealed override void OnExecute()
+    public class InstantScheduleClip : ScheduleClip
     {
-        base.OnExecute();
-    }
+        public sealed override void OnExecute()
+        {
+            base.OnExecute();
+        }
 
-    public sealed override void OnExit()
-    {
-        base.OnExit();
+        public sealed override void OnExit()
+        {
+            base.OnExit();
+        }
     }
 }

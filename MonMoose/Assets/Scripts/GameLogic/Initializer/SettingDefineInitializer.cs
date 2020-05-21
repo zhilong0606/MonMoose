@@ -1,21 +1,22 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using MonMoose.Core;
-using UnityEngine;
 
-public enum ESettingKey
+namespace MonMoose.Logic
 {
-    None,
-    MineSweeper_Difficulty,
-    MineSweeper_BestTime,
-    MineSweeper_TotalPlayCount,
-    MineSweeper_WinCount,
-}
-
-public class SettingDefineInitializer : Initializer
-{
-    protected override IEnumerator OnProcess()
+    public enum ESettingKey
     {
-        yield return null;
+        None,
+        MineSweeper_Difficulty,
+        MineSweeper_BestTime,
+        MineSweeper_TotalPlayCount,
+        MineSweeper_WinCount,
+    }
+
+    public class SettingDefineInitializer : Initializer
+    {
+        protected override IEnumerator OnProcess()
+        {
+            yield return null;
+        }
     }
 }

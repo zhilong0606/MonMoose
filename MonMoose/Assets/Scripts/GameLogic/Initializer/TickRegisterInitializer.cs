@@ -1,13 +1,14 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using MonMoose.Core;
-using UnityEngine;
 
-public class TickRegisterInitializer : Initializer
+namespace MonMoose.Logic
 {
-    protected override IEnumerator OnProcess()
+    public class TickRegisterInitializer : Initializer
     {
-        TickManager.instance.RegisterGlobalTick(FrameSyncManager.instance.Tick);
-        yield return null;
+        protected override IEnumerator OnProcess()
+        {
+            TickManager.instance.RegisterGlobalTick(FrameSyncManager.instance.Tick);
+            yield return null;
+        }
     }
 }

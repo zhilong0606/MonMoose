@@ -1,22 +1,22 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using MonMoose.Core;
-using UnityEngine;
+﻿using MonMoose.Core;
 
-public class GameInitState : State
+namespace MonMoose.Logic
 {
-    public override int stateIndex
+    public class GameInitState : State
     {
-        get { return (int)EGameState.GameInit; }
-    }
+        public override int stateIndex
+        {
+            get { return (int)EGameState.GameInit; }
+        }
 
-    public override void OnEnter()
-    {
-        UIWindowManager.instance.OpenWindow((int)EWindowType.InitWindow);
-    }
+        public override void OnEnter()
+        {
+            UIWindowManager.instance.OpenWindow((int)EWindowType.GameInitWindow);
+        }
 
-    public override void OnExit()
-    {
-        UIWindowManager.instance.DestroyAllWindow();
+        public override void OnExit()
+        {
+            UIWindowManager.instance.DestroyAllWindow();
+        }
     }
 }

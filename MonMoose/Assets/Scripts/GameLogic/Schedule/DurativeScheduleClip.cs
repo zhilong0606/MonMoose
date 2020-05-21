@@ -1,5 +1,8 @@
 ﻿
-public class DurativeScheduleClip : ScheduleClip
+namespace MonMoose.Logic
 {
+    public class DurativeScheduleClip : ScheduleClip
+    {
 
+    }
 }

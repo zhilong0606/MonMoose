@@ -1,36 +1,41 @@
 ﻿
-public class Skill
+namespace MonMoose.Logic
 {
-    //public SkillInfo info;
-    private float coolTimeLeft;
-    private bool isCoolDown = true;
-    private Schedule schedule;
-    //private ScheduleContext m_actionContext = new ScheduleContext();
-
-    public Skill(int skillID)
+    public class Skill
     {
-        //info = GameDataManager.instance.skillInfoDic[skillID];
-        //schedule = ScheduleManager.instance.Load(info.actionPath);
-    }
+        //public SkillInfo info;
+        private float coolTimeLeft;
 
-    public void Cast(SkillUseContext context)
-    {
-        isCoolDown = false;
-        //m_actionContext.apointType = info.appointType;
-        //m_actionContext.sourceActor = PlayerManager.instance.HostPlayer.selectedActor;
-        schedule.Start(context);
-    }
+        private bool isCoolDown = true;
 
-    public void UpdateLogic()
-    {
-        coolTimeLeft -= FrameSyncDefine.DeltaTime;
-        if (coolTimeLeft <= 0)
+        private Schedule schedule;
+        //private ScheduleContext m_actionContext = new ScheduleContext();
+
+        public Skill(int skillID)
         {
-            isCoolDown = true;
+            //info = GameDataManager.instance.skillInfoDic[skillID];
+            //schedule = ScheduleManager.instance.Load(info.actionPath);
         }
-        if (schedule.IsStart)
+
+        public void Cast(SkillUseContext context)
         {
-            schedule.Execute();
+            isCoolDown = false;
+            //m_actionContext.apointType = info.appointType;
+            //m_actionContext.sourceActor = PlayerManager.instance.HostPlayer.selectedActor;
+            schedule.Start(context);
+        }
+
+        public void UpdateLogic()
+        {
+            coolTimeLeft -= FrameSyncDefine.DeltaTime;
+            if (coolTimeLeft <= 0)
+            {
+                isCoolDown = true;
+            }
+            if (schedule.IsStart)
+            {
+                schedule.Execute();
+            }
         }
     }
 }

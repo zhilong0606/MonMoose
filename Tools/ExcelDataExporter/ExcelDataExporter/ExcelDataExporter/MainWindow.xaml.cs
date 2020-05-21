@@ -95,6 +95,7 @@ namespace ExcelDataExporter
             excelFolderPathButton.Content = Config.instance.excelFolderPath;
 
             clientExportCheckBox.IsChecked = Config.instance.client.needExport;
+            clientUsingNameSpaceTextBox.Text = Config.instance.client.usingNameSpace;
             clientNameSpaceTextBox.Text = Config.instance.client.nameSpace;
             clientPrefixTextBox.Text = Config.instance.client.prefix;
             clientPostfixTextBox.Text = Config.instance.client.postfix;
@@ -106,6 +107,7 @@ namespace ExcelDataExporter
             clientExportJsonCheckBox.IsChecked = Config.instance.client.exportMode == EExportModeType.Json;
 
             serverExportCheckBox.IsChecked = Config.instance.server.needExport;
+            serverUsingNameSpaceTextBox.Text = Config.instance.server.usingNameSpace;
             serverNameSpaceTextBox.Text = Config.instance.server.nameSpace;
             serverPrefixTextBox.Text = Config.instance.server.prefix;
             serverPostfixTextBox.Text = Config.instance.server.postfix;
@@ -203,6 +205,7 @@ namespace ExcelDataExporter
             context.needGenerateLoader = Config.instance.needGenerateLoader;
 
             UserContext clientContext = new UserContext();
+            Config.instance.client.usingNameSpace = clientUsingNameSpaceTextBox.Text;
             Config.instance.client.nameSpace = clientNameSpaceTextBox.Text;
             Config.instance.client.prefix = clientPrefixTextBox.Text;
             Config.instance.client.postfix = clientPostfixTextBox.Text;
@@ -210,6 +213,7 @@ namespace ExcelDataExporter
             context.userContextList.Add(clientContext);
 
             UserContext serverContext = new UserContext();
+            Config.instance.server.usingNameSpace = serverUsingNameSpaceTextBox.Text;
             Config.instance.server.nameSpace = serverNameSpaceTextBox.Text;
             Config.instance.server.prefix = serverPrefixTextBox.Text;
             Config.instance.server.postfix = serverPostfixTextBox.Text;
@@ -229,6 +233,7 @@ namespace ExcelDataExporter
             ctx.tagNameList.Add(name);
             ctx.tagNameList.Add(m_allTagName);
             ctx.name = name;
+            ctx.usingNamespaceStr = user.usingNameSpace;
             ctx.namespaceStr = user.nameSpace;
             ctx.prefixStr = user.prefix;
             ctx.postfixStr = user.postfix;

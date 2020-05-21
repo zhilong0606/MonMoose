@@ -1,70 +1,72 @@
 ﻿using System.Collections.Generic;
 
-public class Schedule
+namespace MonMoose.Logic
 {
-    private SkillUseContext context;
-    private List<ScheduleClip> motionList = new List<ScheduleClip>();
-
-    private int totalTime;
-    private int curTime;
-    private bool isStart;
-
-    public bool IsStart
+    public class Schedule
     {
-        get { return isStart; }
-    }
+        private SkillUseContext context;
+        private List<ScheduleClip> motionList = new List<ScheduleClip>();
 
-    public void Start(SkillUseContext context)
-    {
-        isStart = true;
-        curTime = 0;
-        this.context = context;
-    }
+        private int totalTime;
+        private int curTime;
+        private bool isStart;
 
-    public void AddMotion(ScheduleClip scheduleClip)
-    {
-        motionList.Add(scheduleClip);
-    }
-
-    public void Execute()
-    {
-        int newTime = curTime + FrameSyncDefine.DeltaTime;
-        for (int i = 0; i < motionList.Count; ++i)
+        public bool IsStart
         {
-            ScheduleClip scheduleClip = motionList[i];
-            if (scheduleClip.startTime >= curTime && scheduleClip.startTime < newTime)
+            get { return isStart; }
+        }
+
+        public void Start(SkillUseContext context)
+        {
+            isStart = true;
+            curTime = 0;
+            this.context = context;
+        }
+
+        public void AddMotion(ScheduleClip scheduleClip)
+        {
+            motionList.Add(scheduleClip);
+        }
+
+        public void Execute()
+        {
+            int newTime = curTime + FrameSyncDefine.DeltaTime;
+            for (int i = 0; i < motionList.Count; ++i)
             {
-                scheduleClip.OnEnter(context);
+                ScheduleClip scheduleClip = motionList[i];
+                if (scheduleClip.startTime >= curTime && scheduleClip.startTime < newTime)
+                {
+                    scheduleClip.OnEnter(context);
+                }
+            }
+
+            for (int i = 0; i < motionList.Count; ++i)
+            {
+                ScheduleClip scheduleClip = motionList[i];
+                if (scheduleClip.IsStart)
+                {
+                    scheduleClip.OnExecute();
+                }
+            }
+
+            for (int i = 0; i < motionList.Count; ++i)
+            {
+                ScheduleClip scheduleClip = motionList[i];
+                if (scheduleClip.startTime + scheduleClip.totalTime >= curTime && scheduleClip.startTime + scheduleClip.totalTime < newTime)
+                {
+                    scheduleClip.OnExit();
+                }
+            }
+            curTime = newTime;
+            if (curTime >= totalTime)
+            {
+                isStart = false;
             }
         }
 
-        for (int i = 0; i < motionList.Count; ++i)
+        public void Load(System.Xml.XmlElement element)
         {
-            ScheduleClip scheduleClip = motionList[i];
-            if (scheduleClip.IsStart)
-            {
-                scheduleClip.OnExecute();
-            }
+            totalTime = int.Parse(element.Attributes["totalTime"].Value);
         }
-
-        for (int i = 0; i < motionList.Count; ++i)
-        {
-            ScheduleClip scheduleClip = motionList[i];
-            if (scheduleClip.startTime + scheduleClip.totalTime >= curTime && scheduleClip.startTime + scheduleClip.totalTime < newTime)
-            {
-                scheduleClip.OnExit();
-            }
-        }
-        curTime = newTime;
-        if (curTime >= totalTime)
-        {
-            isStart = false;
-        }
-    }
-
-    public void Load(System.Xml.XmlElement element)
-    {
-        totalTime = int.Parse(element.Attributes["totalTime"].Value);
     }
 }
-

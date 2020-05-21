@@ -3,15 +3,18 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-[CustomEditor(typeof(BattleGridCreater))]
-public class BattleGridCreaterInspector : Editor
+namespace MonMoose.Logic
 {
-    public override void OnInspectorGUI()
+    [CustomEditor(typeof(BattleGridCreater))]
+    public class BattleGridCreaterInspector : Editor
     {
-        base.OnInspectorGUI();
-        if (GUILayout.Button("Create"))
+        public override void OnInspectorGUI()
         {
-            (target as BattleGridCreater).Create();
+            base.OnInspectorGUI();
+            if (GUILayout.Button("Create"))
+            {
+                (target as BattleGridCreater).Create();
+            }
         }
     }
 }

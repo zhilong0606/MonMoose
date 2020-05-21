@@ -1,10 +1,11 @@
-﻿using UnityEngine;
-
-public class SkillUseContext
+﻿namespace MonMoose.Logic
 {
-    public Actor sourceActor;
-    public Actor targetActor;
-    public FixVec3 targetPosition;
-    public FixVec3 targetDirection;
-    public ESkillAppointType apointType;
+    public class SkillUseContext
+    {
+        public Actor sourceActor;
+        public Actor targetActor;
+        public FixVec3 targetPosition;
+        public FixVec3 targetDirection;
+        public ESkillAppointType apointType;
+    }
 }

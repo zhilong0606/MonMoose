@@ -1,51 +1,53 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using MonMoose.Core;
 
-public class BattleGridManager : Singleton<BattleGridManager>
+namespace MonMoose.Logic
 {
-    public List<BattleGrid> m_gridList = new List<BattleGrid>();
-
-    protected override void UnInit()
+    public class BattleGridManager : Singleton<BattleGridManager>
     {
-        ClearGrid();
-    }
+        public List<BattleGrid> m_gridList = new List<BattleGrid>();
 
-    public void AddGrid(BattleGrid grid)
-    {
-        if (!m_gridList.Contains(grid))
+        protected override void UnInit()
         {
-            m_gridList.Add(grid);
+            ClearGrid();
         }
-    }
 
-    public void RemoveGrid(BattleGrid grid)
-    {
-        m_gridList.Remove(grid);
-    }
-
-    public void ClearGrid()
-    {
-        m_gridList.Clear();
-    }
-
-    public BattleGrid GetGrid(int x, int y)
-    {
-        for (int i = 0; i < m_gridList.Count; ++i)
+        public void AddGrid(BattleGrid grid)
         {
-            if (m_gridList[i].gridPos.x == x && m_gridList[i].gridPos.y == y)
+            if (!m_gridList.Contains(grid))
             {
-                return m_gridList[i];
+                m_gridList.Add(grid);
             }
         }
-        return null;
+
+        public void RemoveGrid(BattleGrid grid)
+        {
+            m_gridList.Remove(grid);
+        }
+
+        public void ClearGrid()
+        {
+            m_gridList.Clear();
+        }
+
+        public BattleGrid GetGrid(int x, int y)
+        {
+            for (int i = 0; i < m_gridList.Count; ++i)
+            {
+                if (m_gridList[i].gridPos.x == x && m_gridList[i].gridPos.y == y)
+                {
+                    return m_gridList[i];
+                }
+            }
+            return null;
+        }
+
+        public BattleGrid GetGrid(Grid2D gridPos)
+        {
+            return GetGrid(gridPos.x, gridPos.y);
+        }
+
+
+
     }
-
-    public BattleGrid GetGrid(Grid2D gridPos)
-    {
-        return GetGrid(gridPos.x, gridPos.y);
-    }
-
-
-
 }

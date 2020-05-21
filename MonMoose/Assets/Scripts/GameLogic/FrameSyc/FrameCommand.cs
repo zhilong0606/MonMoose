@@ -1,33 +1,36 @@
 ﻿using MonMoose.Core;
 
-public class FrameCommand : ClassPoolObj
+namespace MonMoose.Logic
 {
-    public int playerID;
-    public int frameNum;
-    public EFrameCommandType commandType;
-
-    public static FrameCommand GetCommand(EFrameCommandType type)
+    public class FrameCommand : ClassPoolObj
     {
-        switch (type)
+        public int playerID;
+        public int frameNum;
+        public EFrameCommandType commandType;
+
+        public static FrameCommand GetCommand(EFrameCommandType type)
         {
-            case EFrameCommandType.MoveDirection:
-                return ClassPoolManager.instance.Fetch<MoveDirectionCommand>();
+            switch (type)
+            {
+                case EFrameCommandType.MoveDirection:
+                    return ClassPoolManager.instance.Fetch<MoveDirectionCommand>();
+            }
+            return null;
         }
-        return null;
-    }
 
-    public virtual void Serialize(out byte[] buffer)
-    {
-        buffer = null;
-    }
+        public virtual void Serialize(out byte[] buffer)
+        {
+            buffer = null;
+        }
 
-    public virtual void Deserialise(ref byte[] buffer, ref int offset)
-    {
-        
-    }
+        public virtual void Deserialise(ref byte[] buffer, ref int offset)
+        {
 
-    public virtual void Excute()
-    {
-        
+        }
+
+        public virtual void Excute()
+        {
+
+        }
     }
 }

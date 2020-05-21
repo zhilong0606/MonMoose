@@ -1,27 +1,32 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using System.Collections.Generic;
 
-public class Entity
+namespace MonMoose.Logic
 {
-    protected EntityView m_view;
-    public EntityView view { get { return m_view; } }
-
-    protected List<EntityComponent> m_componentList = new List<EntityComponent>();
-
-    public void Init()
+    public class Entity
     {
-        for (int i = 0; i < m_componentList.Count; ++i)
+        protected EntityView m_view;
+
+        public EntityView view
         {
-            m_componentList[i].Init(this);
+            get { return m_view; }
         }
-    }
 
-    public void Tick()
-    {
-        for (int i = 0; i < m_componentList.Count; ++i)
+        protected List<EntityComponent> m_componentList = new List<EntityComponent>();
+
+        public void Init()
         {
-            m_componentList[i].Tick();
+            for (int i = 0; i < m_componentList.Count; ++i)
+            {
+                m_componentList[i].Init(this);
+            }
+        }
+
+        public void Tick()
+        {
+            for (int i = 0; i < m_componentList.Count; ++i)
+            {
+                m_componentList[i].Tick();
+            }
         }
     }
 }

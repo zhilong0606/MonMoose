@@ -1,43 +1,46 @@
 ﻿using System.Xml;
 using MonMoose.Core;
 
-public class ScheduleClip : ClassPoolObj
+namespace MonMoose.Logic
 {
-    protected SkillUseContext context;
-
-    public int startTime;
-    public int totalTime;
-    public bool isStart = false;
-
-    public bool IsStart
+    public class ScheduleClip : ClassPoolObj
     {
-        get { return isStart; }
-    }
+        protected SkillUseContext context;
 
-    public virtual void OnEnter(SkillUseContext context)
-    {
-        isStart = true;
-        this.context = context;
-    }
+        public int startTime;
+        public int totalTime;
+        public bool isStart = false;
 
-    public virtual void OnExecute()
-    {
+        public bool IsStart
+        {
+            get { return isStart; }
+        }
 
-    }
+        public virtual void OnEnter(SkillUseContext context)
+        {
+            isStart = true;
+            this.context = context;
+        }
 
-    public virtual void OnExit()
-    {
-        isStart = true;
-    }
+        public virtual void OnExecute()
+        {
 
-    public void Stop()
-    {
-        isStart = false;
-    }
+        }
 
-    public virtual void Load(XmlElement element)
-    {
-        startTime = int.Parse(element.GetAttribute("startTime"));
-        totalTime = int.Parse(element.GetAttribute("totalTime"));
+        public virtual void OnExit()
+        {
+            isStart = true;
+        }
+
+        public void Stop()
+        {
+            isStart = false;
+        }
+
+        public virtual void Load(XmlElement element)
+        {
+            startTime = int.Parse(element.GetAttribute("startTime"));
+            totalTime = int.Parse(element.GetAttribute("totalTime"));
+        }
     }
 }

@@ -1,19 +1,23 @@
-﻿public class ActorMoveComponent : MoveComponent
+﻿
+namespace MonMoose.Logic
 {
-    private Actor actor;
-
-    public void Init(Actor actor)
+    public class ActorMoveComponent : MoveComponent
     {
-        this.actor = actor;
-    }
+        private Actor actor;
 
-    protected override void OnStartMove()
-    {
-        //actor.animationComponent.Play("move");
-    }
+        public void Init(Actor actor)
+        {
+            this.actor = actor;
+        }
 
-    protected override void OnStopMove()
-    {
-        //actor.animationComponent.Stop("move");
+        protected override void OnStartMove()
+        {
+            //actor.animationComponent.Play("move");
+        }
+
+        protected override void OnStopMove()
+        {
+            //actor.animationComponent.Stop("move");
+        }
     }
 }

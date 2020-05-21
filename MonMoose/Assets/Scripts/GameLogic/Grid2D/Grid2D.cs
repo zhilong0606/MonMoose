@@ -1,17 +1,17 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
-[Serializable]
-public struct Grid2D
+namespace MonMoose.Logic
 {
-    public int x;
-    public int y;
-
-    public Grid2D(int x, int y)
+    [Serializable]
+    public struct Grid2D
     {
-        this.x = x;
-        this.y = y;
+        public int x;
+        public int y;
+
+        public Grid2D(int x, int y)
+        {
+            this.x = x;
+            this.y = y;
+        }
     }
 }

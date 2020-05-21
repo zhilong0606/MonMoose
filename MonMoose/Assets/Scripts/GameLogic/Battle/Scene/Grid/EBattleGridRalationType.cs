@@ -1,15 +1,14 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public enum EBattleGridRalationType
+﻿namespace MonMoose.Logic
 {
-    None = -1,
+    public enum EBattleGridRalationType
+    {
+        None = -1,
 
-    Up,
-    Right,
-    Down,
-    Left,
+        Up,
+        Right,
+        Down,
+        Left,
 
-    Max,
+        Max,
+    }
 }

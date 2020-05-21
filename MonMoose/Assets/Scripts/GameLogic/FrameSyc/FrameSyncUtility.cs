@@ -1,12 +1,16 @@
-﻿public static class FrameSyncUtility
+﻿
+namespace MonMoose.Logic
 {
-    public static float MilliToFloat(int time)
+    public static class FrameSyncUtility
     {
-        return (float) time / FrameSyncDefine.Precision;
-    }
+        public static float MilliToFloat(int time)
+        {
+            return (float)time / FrameSyncDefine.Precision;
+        }
 
-    public static Fix32 MilliToFix(int milli)
-    {
-        return new Fix32(milli, 1000);
+        public static Fix32 MilliToFix(int milli)
+        {
+            return new Fix32(milli, 1000);
+        }
     }
 }

@@ -1,29 +1,33 @@
-﻿public class MoveDirectionCommand : FrameCommand
+﻿
+namespace MonMoose.Logic
 {
-    public FixVec3 direction;
-
-    public MoveDirectionCommand()
+    public class MoveDirectionCommand : FrameCommand
     {
-        commandType = EFrameCommandType.MoveDirection;
-    }
+        public FixVec3 direction;
 
-    public override void Serialize(out byte[] buffer)
-    {
-        buffer = new byte[2];
-        int offset = 0;
-        ByteBufferUtility.WriteInt(ref buffer, ref offset, direction.y.raw);
-    }
+        public MoveDirectionCommand()
+        {
+            commandType = EFrameCommandType.MoveDirection;
+        }
 
-    public override void Deserialise(ref byte[] buffer, ref int offset)
-    {
-        int y = ByteBufferUtility.ReadInt(ref buffer, ref offset);
-        direction = new FixVec3(0, Fix32.Raw(y), 0);
-    }
+        public override void Serialize(out byte[] buffer)
+        {
+            buffer = new byte[2];
+            int offset = 0;
+            ByteBufferUtility.WriteInt(ref buffer, ref offset, direction.y.raw);
+        }
 
-    public override void Excute()
-    {
-        //Actor actor = PlayerManager.instance.GetPlayer(playerId).selectedActor;
-        //actor.moveComponent.MoveDir(direction);
-        //actor.animationComponent.Play("move");
+        public override void Deserialise(ref byte[] buffer, ref int offset)
+        {
+            int y = ByteBufferUtility.ReadInt(ref buffer, ref offset);
+            direction = new FixVec3(0, Fix32.Raw(y), 0);
+        }
+
+        public override void Excute()
+        {
+            //Actor actor = PlayerManager.instance.GetPlayer(playerId).selectedActor;
+            //actor.moveComponent.MoveDir(direction);
+            //actor.animationComponent.Play("move");
+        }
     }
 }

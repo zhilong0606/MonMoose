@@ -23,30 +23,37 @@ public class ProtoLoaderExporter : LoaderExporter
         m_loaderWriter.AppendLine("using System.Collections.Generic;");
         m_loaderWriter.AppendLine(string.Format("using {0};", m_context.namespaceStr));
         m_loaderWriter.AppendLine("");
-        m_loaderWriter.AppendLine("public partial class StaticDataManager");
+        m_loaderWriter.AppendLine(string.Format("namespace {0}", m_context.usingNamespaceStr));
         m_loaderWriter.AppendLine("{");
         m_loaderWriter.StartTab();
         {
-            m_loaderWriter.AppendLine("partial void OnInit()");
+            m_loaderWriter.AppendLine("public partial class StaticDataManager");
             m_loaderWriter.AppendLine("{");
             m_loaderWriter.StartTab();
             {
+                m_loaderWriter.AppendLine("partial void OnInit()");
+                m_loaderWriter.AppendLine("{");
+                m_loaderWriter.StartTab();
+                {
+                    foreach (var kv in DataObjectManager.Instance.structureMap)
+                    {
+                        m_loaderWriter.AppendLine(string.Format(m_initLoaderFormat, kv.Key.name, m_context.prefixStr, m_context.postfixStr));
+                    }
+                }
+                m_loaderWriter.EndTab();
+                m_loaderWriter.AppendLine("}");
                 foreach (var kv in DataObjectManager.Instance.structureMap)
                 {
-                    m_loaderWriter.AppendLine(string.Format(m_initLoaderFormat, kv.Key.name, m_context.prefixStr, m_context.postfixStr));
+                    string structureName = kv.Key.name;
+                    m_loaderWriter.AppendLine("");
+                    m_loaderWriter.AppendLine(string.Format(m_annotationFormat, structureName));
+                    m_loaderWriter.AppendLine(string.Format(m_listDefineFormat, structureName, m_context.prefixStr, m_context.postfixStr));
+                    m_loaderWriter.AppendLine(string.Format(m_getItemFuncFormat, structureName, m_context.prefixStr, m_context.postfixStr));
+                    m_loaderWriter.AppendLine(string.Format(m_getEnumeratorFuncFormat, structureName, m_context.prefixStr, m_context.postfixStr));
                 }
             }
             m_loaderWriter.EndTab();
             m_loaderWriter.AppendLine("}");
-            foreach (var kv in DataObjectManager.Instance.structureMap)
-            {
-                string structureName = kv.Key.name;
-                m_loaderWriter.AppendLine("");
-                m_loaderWriter.AppendLine(string.Format(m_annotationFormat, structureName));
-                m_loaderWriter.AppendLine(string.Format(m_listDefineFormat, structureName, m_context.prefixStr, m_context.postfixStr));
-                m_loaderWriter.AppendLine(string.Format(m_getItemFuncFormat, structureName, m_context.prefixStr, m_context.postfixStr));
-                m_loaderWriter.AppendLine(string.Format(m_getEnumeratorFuncFormat, structureName, m_context.prefixStr, m_context.postfixStr));
-            }
         }
         m_loaderWriter.EndTab();
         m_loaderWriter.AppendLine("}");

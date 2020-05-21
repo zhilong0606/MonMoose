@@ -1,14 +1,18 @@
-﻿public class StopMoveCommand : FrameCommand
+﻿
+namespace MonMoose.Logic
 {
-    public StopMoveCommand()
+    public class StopMoveCommand : FrameCommand
     {
-        commandType = EFrameCommandType.StopMove;
-    }
+        public StopMoveCommand()
+        {
+            commandType = EFrameCommandType.StopMove;
+        }
 
-    public override void Excute()
-    {
-        Actor actor = PlayerManager.instance.GetPlayer(playerID).selectedActor;
-        //actor.moveComponent.StopMove();
-        //actor.animationComponent.Stop("move");
+        public override void Excute()
+        {
+            Actor actor = PlayerManager.instance.GetPlayer(playerID).selectedActor;
+            //actor.moveComponent.StopMove();
+            //actor.animationComponent.Stop("move");
+        }
     }
 }

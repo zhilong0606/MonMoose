@@ -1,8 +1,6 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using MonMoose.Core;
 using UnityEngine.EventSystems;
 
 namespace MonMoose.Core

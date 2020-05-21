@@ -1,8 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using MonMoose.Core;
 
-public class BattleActorItemWidget : UIComponent
+namespace MonMoose.Logic
 {
+    public class BattleActorItemWidget : UIComponent
+    {
 
+    }
 }

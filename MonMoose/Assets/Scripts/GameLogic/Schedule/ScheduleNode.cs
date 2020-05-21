@@ -1,7 +1,10 @@
 ﻿
 using MonMoose.Core;
 
-public class ScheduleNode : ClassPoolObj
+namespace MonMoose.Logic
 {
+    public class ScheduleNode : ClassPoolObj
+    {
 
+    }
 }

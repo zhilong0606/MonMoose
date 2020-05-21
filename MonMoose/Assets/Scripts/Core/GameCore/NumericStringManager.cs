@@ -1,6 +1,4 @@
-﻿using MonMoose.Core;
-
-namespace MonMoose.Core
+﻿namespace MonMoose.Core
 {
     public class NumericStringManager : Singleton<NumericStringManager>
     {

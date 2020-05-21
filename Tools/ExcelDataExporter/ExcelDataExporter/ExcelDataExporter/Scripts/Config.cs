@@ -26,6 +26,8 @@ public class Config
         [XmlElement]
         public bool needExport = true;
         [XmlElement]
+        public string usingNameSpace = string.Empty;
+        [XmlElement]
         public string nameSpace = string.Empty;
         [XmlElement]
         public string prefix = string.Empty;

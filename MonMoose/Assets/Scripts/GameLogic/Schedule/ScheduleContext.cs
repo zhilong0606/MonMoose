@@ -1,9 +1,12 @@
 ﻿
-public class ScheduleContext
+namespace MonMoose.Logic
 {
-    public Actor sourceActor;
-    public Actor targetActor;
-    public FixVec3 targetPosition;
-    public FixVec3 targetDirection;
-    public ESkillAppointType apointType;
+    public class ScheduleContext
+    {
+        public Actor sourceActor;
+        public Actor targetActor;
+        public FixVec3 targetPosition;
+        public FixVec3 targetDirection;
+        public ESkillAppointType apointType;
+    }
 }

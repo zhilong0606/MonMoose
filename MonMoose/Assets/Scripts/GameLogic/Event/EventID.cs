@@ -1,11 +1,14 @@
 ﻿
-public enum EventID
+namespace MonMoose.Logic
 {
-    None,
+    public enum EventID
+    {
+        None,
 
-    /*******大厅*******/
+        /*******大厅*******/
 
-    /********Moba*********/
-    Frame_Tick,
-    Actor_All_Initialized,
+        /********Moba*********/
+        Frame_Tick,
+        Actor_All_Initialized,
+    }
 }

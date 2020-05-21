@@ -1,20 +1,22 @@
 ﻿
-[ScheduleClip]
-public partial class PlayAnimationDurativeClip : DurativeScheduleClip
+namespace MonMoose.Logic
 {
-    [ScheduleClipMember("AnimName", MotionMemberType.Value)]
-    public string animName;
-
-    public override void OnEnter(SkillUseContext context)
+    [ScheduleClip]
+    public partial class PlayAnimationDurativeClip : DurativeScheduleClip
     {
-        base.OnEnter(context);
-        //context.sourceActor.animationComponent.Play(animName, FrameSyncUtility.MilliToFloat(totalTime));
-    }
+        [ScheduleClipMember("AnimName", MotionMemberType.Value)] public string animName;
 
-    public override void OnExit()
-    {
-        base.OnExit();
-        //context.sourceActor.animationComponent.Stop(animName);
+        public override void OnEnter(SkillUseContext context)
+        {
+            base.OnEnter(context);
+            //context.sourceActor.animationComponent.Play(animName, FrameSyncUtility.MilliToFloat(totalTime));
+        }
+
+        public override void OnExit()
+        {
+            base.OnExit();
+            //context.sourceActor.animationComponent.Stop(animName);
+        }
     }
 }
 

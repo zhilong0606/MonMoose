@@ -1,14 +1,14 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using MonMoose.StaticData;
-using UnityEngine;
+﻿using MonMoose.StaticData;
 
-public class ActorInfo
+namespace MonMoose.Logic
 {
-    private ActorStaticInfo m_staticInfo;
-
-    public void Init(ActorStaticInfo staticInfo)
+    public class ActorInfo : EntityInfoComponent
     {
-        
+        private ActorStaticInfo m_staticInfo;
+
+        public void Init(ActorStaticInfo staticInfo)
+        {
+
+        }
     }
 }

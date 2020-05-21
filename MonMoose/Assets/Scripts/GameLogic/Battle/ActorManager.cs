@@ -1,22 +1,25 @@
 ﻿using System.Collections.Generic;
 using MonMoose.Core;
 
-public class ActorManager : Singleton<ActorManager>
+namespace MonMoose.Logic
 {
-    public List<Actor> actorList = new List<Actor>();
-    public List<Actor> heroList = new List<Actor>();
-
-    public void Tick()
+    public class ActorManager : Singleton<ActorManager>
     {
-        for (int i = 0; i < actorList.Count; i++)
+        public List<Actor> actorList = new List<Actor>();
+        public List<Actor> heroList = new List<Actor>();
+
+        public void Tick()
         {
-            actorList[i].Tick();
+            for (int i = 0; i < actorList.Count; i++)
+            {
+                actorList[i].Tick();
+            }
         }
-    }
 
-    public void AddHero(Actor actor)
-    {
-        actorList.Add(actor);
-        heroList.Add(actor);
+        public void AddHero(Actor actor)
+        {
+            actorList.Add(actor);
+            heroList.Add(actor);
+        }
     }
 }

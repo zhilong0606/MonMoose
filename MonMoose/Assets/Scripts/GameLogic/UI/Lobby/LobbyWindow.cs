@@ -1,25 +1,27 @@
 ﻿
 using MonMoose.Core;
-using UnityEngine;
 using UnityEngine.UI;
 
-public class LobbyWindow : UIWindow
+namespace MonMoose.Logic
 {
-    protected override void OnInit(object param)
+    public class LobbyWindow : UIWindow
     {
-        base.OnInit(param);
-        Button startBtn = GetInventory().GetComponent<Button>((int)EWidget.StartBtn);
+        protected override void OnInit(object param)
+        {
+            base.OnInit(param);
+            Button startBtn = GetInventory().GetComponent<Button>((int)EWidget.StartBtn);
 
-        startBtn.onClick.AddListener(OnStartBtnClick);
-    }
+            startBtn.onClick.AddListener(OnStartBtnClick);
+        }
 
-    private void OnStartBtnClick()
-    {
-        GameManager.Instance.EnterBattle();
-    }
+        private void OnStartBtnClick()
+        {
+            GameManager.Instance.EnterBattle();
+        }
 
-    private enum EWidget
-    {
-        StartBtn,
+        private enum EWidget
+        {
+            StartBtn,
+        }
     }
 }

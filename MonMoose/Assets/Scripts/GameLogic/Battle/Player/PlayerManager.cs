@@ -2,32 +2,35 @@
 using System.Collections.Generic;
 using MonMoose.Core;
 
-public class PlayerManager : Singleton<PlayerManager>
+namespace MonMoose.Logic
 {
-    private List<Player> playerList = new List<Player>();
-
-    public void AddPlayer(Player player)
+    public class PlayerManager : Singleton<PlayerManager>
     {
-        playerList.Add(player);
-    }
+        private List<Player> playerList = new List<Player>();
 
-    public Player GetPlayer(int playerId)
-    {
-        for (int i = 0; i < playerList.Count; ++i)
+        public void AddPlayer(Player player)
         {
-            if (playerList[i].playerId == playerId)
-            {
-                return playerList[i];
-            }
+            playerList.Add(player);
         }
-        return null;
-    }
 
-    public void Ergodic(Action<Player> OnItemErgodic)
-    {
-        for (int i = 0; i < playerList.Count; ++i)
+        public Player GetPlayer(int playerId)
         {
-            OnItemErgodic(playerList[i]);
+            for (int i = 0; i < playerList.Count; ++i)
+            {
+                if (playerList[i].playerId == playerId)
+                {
+                    return playerList[i];
+                }
+            }
+            return null;
+        }
+
+        public void Ergodic(Action<Player> OnItemErgodic)
+        {
+            for (int i = 0; i < playerList.Count; ++i)
+            {
+                OnItemErgodic(playerList[i]);
+            }
         }
     }
 }

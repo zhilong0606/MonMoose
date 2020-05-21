@@ -1,7 +1,11 @@
-﻿public static class FrameCommandUtility
+﻿
+namespace MonMoose.Logic
 {
-    public static void SendMoveDirectionCommand()
+    public static class FrameCommandUtility
     {
-        
+        public static void SendMoveDirectionCommand()
+        {
+
+        }
     }
 }

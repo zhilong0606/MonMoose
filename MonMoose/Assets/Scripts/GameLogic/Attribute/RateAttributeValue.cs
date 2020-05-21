@@ -1,17 +1,15 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class RateAttributeValue : AttributeValue
+﻿namespace MonMoose.Logic
 {
-    public override EType Type
+    public class RateAttributeValue : AttributeValue
     {
-        get { return EType.Rate; }
-    }
+        public override EType Type
+        {
+            get { return EType.Rate; }
+        }
 
-    public override Fix32 Calculate(Fix32 f)
-    {
-        return f * (1 + m_value * new Fix32(1, 100));
+        public override Fix32 Calculate(Fix32 f)
+        {
+            return f * (1 + m_value * new Fix32(1, 100));
+        }
     }
 }

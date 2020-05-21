@@ -1,35 +1,38 @@
 ﻿using MonMoose.Core;
 
-public class BattleManager : Singleton<BattleManager>
+namespace MonMoose.Logic
 {
-    //private SkillController skillController = new SkillController();
-    //private MoveController moveController = new MoveController();
-
-    public void Init()
+    public class BattleManager : Singleton<BattleManager>
     {
-        //skillController.Init();
-        //moveController.Init();
-        //RegisterListener();
-    }
+        //private SkillController skillController = new SkillController();
+        //private MoveController moveController = new MoveController();
 
-    private void RegisterListener()
-    {
+        public void Init()
+        {
+            //skillController.Init();
+            //moveController.Init();
+            //RegisterListener();
+        }
 
-    }
+        private void RegisterListener()
+        {
 
-    private void RemoveListener()
-    {
+        }
 
-    }
+        private void RemoveListener()
+        {
 
-    public void UpdateLogic()
-    {
-    }
+        }
 
-    public void Clear()
-    {
-        //skillController.Clear();
-        //moveController.Clear();
-        RemoveListener();
+        public void UpdateLogic()
+        {
+        }
+
+        public void Clear()
+        {
+            //skillController.Clear();
+            //moveController.Clear();
+            RemoveListener();
+        }
     }
 }
