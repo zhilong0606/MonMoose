@@ -10,18 +10,21 @@ namespace MonMoose.Logic
             get { return (int)EGameState.GameInit; }
         }
 
-        public override void OnEnter()
+        protected override void OnEnter()
         {
-            UIWindowManager.instance.OpenWindow((int)EWindowType.GameInitWindow, (Action)OnGameInitEnd);
+            GameInitializer initializer = new GameInitializer();
+            UIWindowManager.instance.OpenWindow((int)EWindowType.GameInitWindow, initializer);
+            initializer.StartAsync(OnGameInitEnd);
         }
 
-        public override void OnExit()
+        protected override void OnExit()
         {
             UIWindowManager.instance.DestroyAllWindow();
         }
 
         private void OnGameInitEnd()
         {
+            m_stateMachine.ChangeState((int)EGameState.Lobby);
         }
     }
 }

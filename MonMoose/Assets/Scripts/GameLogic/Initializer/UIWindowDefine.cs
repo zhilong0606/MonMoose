@@ -10,18 +10,13 @@ namespace MonMoose.Logic
         LobbyWindow,
     }
 
-    public class UIWindowDefineInitializer : Initializer
+    public static class UIWindowDefine
     {
-        public UIWindowDefineInitializer()
-        {
-        }
-
-        protected override IEnumerator OnProcess()
+        public static void Define()
         {
             UIWindowManager.instance.RegisterWindowContext((int)EWindowType.GameInitWindow, new UIWindowContext("UI/GameInit/Prefabs/GameInitWindow", typeof(GameInitWindow)));
 
             UIWindowManager.instance.RegisterWindowContext((int)EWindowType.LobbyWindow, new UIWindowContext("Exported/UI/Lobby/Prefabs/LobbyWindow", typeof(LobbyWindow)));
-            yield return null;
         }
     }
 }

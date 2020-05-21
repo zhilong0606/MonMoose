@@ -4,74 +4,84 @@ namespace MonMoose.Core
 {
     public class MonoSingleton<T> : MonoBehaviour where T : MonoSingleton<T>
     {
-        private static T instance;
+        [SerializeField]
+        private bool m_dontDestroy;
 
-        public static T Instance
+        private static T m_instance;
+
+        public static T instance
         {
             get
             {
                 CreateInstance();
-                return instance;
+                return m_instance;
             }
         }
 
-        public static void CreateInstance(bool bDontDestroy = false)
+        public static void CreateInstance(bool dontDestroy = false)
         {
-            if (instance == null)
+            if (m_instance == null)
             {
+                m_instance.m_dontDestroy = dontDestroy;
                 GameObject go = new GameObject(typeof(T).Name);
-                instance = go.AddComponent<T>();
-                instance.Init();
-                if (bDontDestroy)
-                {
-                    DontDestroyOnLoad(go);
-                }
+                CreateInstanceInternal(go);
             }
         }
 
         public static void DestroyInstance()
         {
-            if (instance != null)
+            if (m_instance != null)
             {
-                Destroy(instance);
+                Destroy(m_instance);
             }
         }
 
-        public static bool HasInstance()
+        public static bool hasInstance()
         {
-            return instance != null;
+            return m_instance != null;
+        }
+
+        private static void CreateInstanceInternal(GameObject go)
+        {
+            m_instance = go.GetComponent<T>();
+            if (m_instance == null)
+            {
+                m_instance = go.AddComponent<T>();
+            }
+            m_instance.OnInit();
+            if (m_instance.m_dontDestroy)
+            {
+                DontDestroyOnLoad(go);
+            }
         }
 
         void Awake()
         {
-            if (instance == null)
+            if (m_instance == null)
             {
-                instance = this as T;
-                instance.Init();
-                DontDestroyOnLoad(gameObject);
+                CreateInstanceInternal(gameObject);
             }
             else
             {
                 Destroy(gameObject);
-                //Debug.LogError("Error: " + typeof(T).Name + " Has More than One instance!!!!");
             }
         }
 
         void OnDestroy()
         {
-            if (instance != null)
+            if (m_instance != null)
             {
-                UnInit();
-                instance = null;
+                OnUninit();
+                m_instance = null;
             }
         }
 
-        protected virtual void Init()
+        protected virtual void OnInit()
         {
 
         }
 
-        protected virtual void UnInit()
+        protected virtual void OnUninit()
         {
 
         }

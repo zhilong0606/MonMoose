@@ -9,7 +9,7 @@ namespace MonMoose.Core
         private Dictionary<int, EventBlockGroup> m_blockGroupMap = new Dictionary<int, EventBlockGroup>();
         private Dictionary<int, int> m_eventId2groupIdMap = new Dictionary<int, int>();
 
-        protected override void UnInit()
+        protected override void OnUninit()
         {
             m_eventGroupMap.Clear();
         }

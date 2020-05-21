@@ -1,9 +1,9 @@
-﻿
-using MonMoose.Core;
+﻿using MonMoose.Core;
 using UnityEngine.UI;
 
 namespace MonMoose.Logic
 {
+
     public class LobbyWindow : UIWindow
     {
         protected override void OnInit(object param)
@@ -16,7 +16,7 @@ namespace MonMoose.Logic
 
         private void OnStartBtnClick()
         {
-            GameManager.Instance.EnterBattle();
+            GameManager.instance.EnterBattle();
         }
 
         private enum EWidget

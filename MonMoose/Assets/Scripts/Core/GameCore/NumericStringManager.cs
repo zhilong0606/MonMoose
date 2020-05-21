@@ -8,7 +8,7 @@
         private string[] negativeStrs = new string[4096];
         private string[] percentageStrs = new string[101];
 
-        protected override void Init()
+        protected override void OnInit()
         {
             for (int i = 0; i < positiveStrs.Length; ++i)
             {

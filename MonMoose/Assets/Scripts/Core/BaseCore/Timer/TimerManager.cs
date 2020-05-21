@@ -9,12 +9,12 @@ namespace MonMoose.Core
         private List<int> m_activeIdList = new List<int>();
         private int m_idCursor;
 
-        protected override void Init()
+        protected override void OnInit()
         {
             m_timerMap.onAddTimer = OnAddTimer;
             m_timerMap.onRemoveTimer = OnRemoveTimer;
             TickManager.instance.RegisterGlobalTick(Tick);
-            base.Init();
+            base.OnInit();
         }
 
         private void OnAddTimer(int id)

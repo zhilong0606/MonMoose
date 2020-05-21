@@ -7,7 +7,7 @@ namespace MonMoose.Logic
     {
         public List<BattleGrid> m_gridList = new List<BattleGrid>();
 
-        protected override void UnInit()
+        protected override void OnUninit()
         {
             ClearGrid();
         }

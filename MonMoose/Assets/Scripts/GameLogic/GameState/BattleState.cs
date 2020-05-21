@@ -12,7 +12,7 @@ namespace MonMoose.Logic
             get { return (int)EGameState.Battle; }
         }
 
-        public override void OnEnter()
+        protected override void OnEnter()
         {
             BattleManager.CreateInstance();
             ActorManager.CreateInstance();
@@ -21,7 +21,7 @@ namespace MonMoose.Logic
             RegisterListener();
         }
 
-        public override void OnExit()
+        protected override void OnExit()
         {
             RemoveListener();
             BattleManager.DestroyInstance();
@@ -74,37 +74,37 @@ namespace MonMoose.Logic
 
         private BattleGrid m_downGrid;
 
-        public override void OnTickFloat(float deltaTime)
-        {
-            base.OnTickFloat(deltaTime);
-            if (Input.GetMouseButtonDown(0))
-            {
-                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-                RaycastHit hit;
-                if (Physics.Raycast(ray, out hit, LayerMask.GetMask("BattleGrid")))
-                {
-                    BattleGridView view = hit.transform.GetComponent<BattleGridView>();
-                    if (view != null)
-                    {
-                        m_downGrid = BattleGridManager.instance.GetGrid(view.position);
-                    }
-                }
-            }
+        //public override void OnTickFloat(float deltaTime)
+        //{
+        //    base.OnTickFloat(deltaTime);
+        //    if (Input.GetMouseButtonDown(0))
+        //    {
+        //        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        //        RaycastHit hit;
+        //        if (Physics.Raycast(ray, out hit, LayerMask.GetMask("BattleGrid")))
+        //        {
+        //            BattleGridView view = hit.transform.GetComponent<BattleGridView>();
+        //            if (view != null)
+        //            {
+        //                m_downGrid = BattleGridManager.instance.GetGrid(view.position);
+        //            }
+        //        }
+        //    }
 
-            if (Input.GetMouseButtonUp(0))
-            {
-                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-                RaycastHit hit;
-                if (Physics.Raycast(ray, out hit, LayerMask.GetMask("BattleGrid")))
-                {
-                    BattleGridView view = hit.transform.GetComponent<BattleGridView>();
-                    if (view != null)
-                    {
+        //    if (Input.GetMouseButtonUp(0))
+        //    {
+        //        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        //        RaycastHit hit;
+        //        if (Physics.Raycast(ray, out hit, LayerMask.GetMask("BattleGrid")))
+        //        {
+        //            BattleGridView view = hit.transform.GetComponent<BattleGridView>();
+        //            if (view != null)
+        //            {
 
-                    }
-                }
-            }
-        }
+        //            }
+        //        }
+        //    }
+        //}
 
         private void OnFrameTick()
         {

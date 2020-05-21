@@ -12,25 +12,24 @@ namespace MonMoose.Logic
 
     public class GameManager : MonoSingleton<GameManager>
     {
-        private GameInitializer m_initializer = new GameInitializer();
-        private StateMachine stateMachine;
+        private StateMachine stateMachine = new StateMachine();
 
-        protected override void Init()
+        protected override void OnInit()
         {
-            stateMachine = new StateMachine(new State[]
-            {
+            stateMachine.Init(
                 new GameInitState(),
                 new LobbyState(),
-                new BattleState(),
-            });
+                new BattleState()
+                );
             RegisterListener();
-            m_initializer.StartAsync(OnInitFinish);
+            InitGlobalDefine();
+            stateMachine.ChangeState((int)EGameState.GameInit);
         }
 
-        private void OnInitFinish()
+        protected override void OnUninit()
         {
-            stateMachine.ChangeState((int)EGameState.GameInit);
-            stateMachine.ChangeState((int)EGameState.Lobby);
+            RemoveListener();
+            base.OnUninit();
         }
 
         private void RegisterListener()
@@ -41,6 +40,15 @@ namespace MonMoose.Logic
         {
         }
 
+        private void InitGlobalDefine()
+        {
+            EventManager.CreateInstance();
+            UIWindowManager.CreateInstance();
+            ResourceManager.CreateInstance();
+            TimerManager.CreateInstance();
+            UIWindowDefine.Define();
+        }
+
         public void EnterBattle()
         {
             stateMachine.ChangeState((int)EGameState.Battle);
@@ -49,13 +57,6 @@ namespace MonMoose.Logic
         private void Update()
         {
             TickManager.instance.Tick(Time.deltaTime);
-            stateMachine.TickFloat(Time.deltaTime);
-        }
-
-        protected override void UnInit()
-        {
-            RemoveListener();
-            base.UnInit();
         }
     }
 }

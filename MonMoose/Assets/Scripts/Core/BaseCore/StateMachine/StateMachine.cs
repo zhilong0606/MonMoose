@@ -5,7 +5,7 @@ namespace MonMoose.Core
 {
     public class StateMachine
     {
-        private Dictionary<int, State> m_stateMap = new Dictionary<int, State>();
+        private List<State> m_stateList = new List<State>();
         private State m_curState;
 
         public State curState
@@ -18,28 +18,36 @@ namespace MonMoose.Core
             get { return m_curState.stateIndex; }
         }
 
-        public StateMachine(State[] states)
+        public void Init(params State[] states)
         {
             for (int i = 0; i < states.Length; ++i)
             {
                 State state = states[i];
-                m_stateMap.Add(state.stateIndex, state);
+                state.Init(this);
+                m_stateList.Add(state);
             }
         }
 
-        ~StateMachine()
+        public void Uninit()
         {
-            foreach (var kv in m_stateMap)
+            for (int i = 0; i < m_stateList.Count; ++i)
             {
-                kv.Value.OnUninit();
+                m_stateList[i].Uninit();
             }
-            m_stateMap.Clear();
+            m_stateList.Clear();
             m_curState = null;
         }
 
         public State GetState(int stateIndex)
         {
-            return m_stateMap.GetClassValue(stateIndex);
+            for (int i = 0; i < m_stateList.Count; ++i)
+            {
+                if (m_stateList[i].stateIndex == stateIndex)
+                {
+                    return m_stateList[i];
+                }
+            }
+            return null;
         }
 
         public void ChangeState(int stateIndex)
@@ -60,26 +68,10 @@ namespace MonMoose.Core
             }
             if (m_curState != null)
             {
-                m_curState.OnExit();
+                m_curState.Exit();
             }
             m_curState = state;
-            m_curState.OnEnter();
-        }
-
-        public void TickFloat(float deltaTime)
-        {
-            if (m_curState != null)
-            {
-                m_curState.OnTickFloat(deltaTime);
-            }
-        }
-
-        public void TickInt(int deltaTime)
-        {
-            if (m_curState != null)
-            {
-                m_curState.OnTickInt(deltaTime);
-            }
+            m_curState.Enter();
         }
     }
 }

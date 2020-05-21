@@ -19,7 +19,7 @@ namespace MonMoose.Core
         private bool m_needUpdateSort = false;
         private int m_cameraStartDepth = 10;
 
-        protected override void Init()
+        protected override void OnInit()
         {
             GameObject immortalRoot = GameObject.Find("Immortal");
             m_uiRoot = immortalRoot.FindChild("UIRoot");

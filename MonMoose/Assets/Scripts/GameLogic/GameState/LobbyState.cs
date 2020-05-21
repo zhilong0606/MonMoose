@@ -9,12 +9,12 @@ namespace MonMoose.Logic
             get { return (int)EGameState.Lobby; }
         }
 
-        public override void OnEnter()
+        protected override void OnEnter()
         {
             UIWindowManager.instance.OpenWindow((int)EWindowType.LobbyWindow);
         }
 
-        public override void OnExit()
+        protected override void OnExit()
         {
             UIWindowManager.instance.DestroyAllWindow();
         }

@@ -7,17 +7,12 @@ namespace MonMoose.Logic
     {
         public GameInitializer()
         {
-            AddSubInitializer(new UIWindowDefineInitializer());
             AddSubInitializer(new StaticDataInitializer());
-            AddSubInitializer(new SettingDefineInitializer());
+            AddSubInitializer(new ResourceInitializer());
         }
 
         protected override IEnumerator OnProcess()
         {
-            EventManager.CreateInstance();
-            UIWindowManager.CreateInstance();
-            ResourceManager.CreateInstance();
-            TimerManager.CreateInstance();
             yield return null;
         }
     }

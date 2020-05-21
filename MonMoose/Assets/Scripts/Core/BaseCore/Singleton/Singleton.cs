@@ -14,7 +14,7 @@
             }
         }
 
-        public static bool HasInstance
+        public static bool hasInstance
         {
             get { return m_instance != null; }
         }
@@ -28,7 +28,7 @@
                     if (m_instance == null)
                     {
                         m_instance = new T();
-                        m_instance.Init();
+                        m_instance.OnInit();
                     }
                 }
             }
@@ -38,17 +38,17 @@
         {
             if (m_instance != null)
             {
-                m_instance.UnInit();
+                m_instance.OnUninit();
                 m_instance = null;
             }
         }
 
-        protected virtual void Init()
+        protected virtual void OnInit()
         {
 
         }
 
-        protected virtual void UnInit()
+        protected virtual void OnUninit()
         {
 
         }

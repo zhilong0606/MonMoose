@@ -8,9 +8,9 @@ namespace MonMoose.Core
     {
         private static Dictionary<string, StaticDataLoader> m_loaderMap = new Dictionary<string, StaticDataLoader>();
 
-        protected override void Init()
+        protected override void OnInit()
         {
-            OnInit();
+            OnInitLoaders();
         }
 
         public void Load(string folderPath, Func<string, byte[]> actionOnLoad)
@@ -31,6 +31,6 @@ namespace MonMoose.Core
             }
         }
 
-        partial void OnInit();
+        partial void OnInitLoaders();
     }
 }

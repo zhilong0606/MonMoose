@@ -31,7 +31,7 @@ public class ProtoLoaderExporter : LoaderExporter
             m_loaderWriter.AppendLine("{");
             m_loaderWriter.StartTab();
             {
-                m_loaderWriter.AppendLine("partial void OnInit()");
+                m_loaderWriter.AppendLine("partial void OnInitLoaders()");
                 m_loaderWriter.AppendLine("{");
                 m_loaderWriter.StartTab();
                 {
