@@ -94,23 +94,23 @@ namespace MonMoose.Core
             }
         }
 
-        public void UpdateCameraAndDepth(ref UICamera lastCamera, ref int depth)
+        public void UpdateCameraAndDepth(ref Camera lastCamera, ref int depth)
         {
             SetCanvasDepth(BgCanvas, ref lastCamera, ref depth);
             SetModelDepth(ModelCamera, ref lastCamera, ref depth);
             SetCanvasDepth(MainCanvas, ref lastCamera, ref depth);
         }
 
-        private void SetCanvasDepth(UIWindowCanvas canvas, ref UICamera lastCamera, ref int depth)
+        private void SetCanvasDepth(UIWindowCanvas canvas, ref Camera lastCamera, ref int depth)
         {
             if (canvas != null && canvas.isActiveAndEnabled)
             {
                 if (lastCamera == null)
                 {
-                    UICamera uiCamera = UIWindowManager.instance.NewCamera();
+                    Camera uiCamera = UIWindowManager.instance.NewCamera();
                     canvas.uiCamera = uiCamera;
                     lastCamera = uiCamera;
-                    uiCamera.Depth = depth++;
+                    uiCamera.depth = depth++;
                 }
                 else
                 {
@@ -119,7 +119,7 @@ namespace MonMoose.Core
             }
         }
 
-        private void SetModelDepth(UIModelDisplay display, ref UICamera lastCamera, ref int depth)
+        private void SetModelDepth(UIModelDisplay display, ref Camera lastCamera, ref int depth)
         {
             if (display != null)
             {

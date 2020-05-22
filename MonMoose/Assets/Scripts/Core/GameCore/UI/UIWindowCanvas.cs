@@ -10,7 +10,6 @@ namespace MonMoose.Core
         private Canvas m_canvas;
         private BaseRaycaster m_raycaster;
         private CanvasScaler m_scaler;
-        private UICamera m_camera;
 
         public UIWindow window
         {
@@ -32,14 +31,10 @@ namespace MonMoose.Core
             get { return m_scaler; }
         }
 
-        public UICamera uiCamera
+        public Camera uiCamera
         {
-            get { return m_camera; }
-            set
-            {
-                m_camera = value;
-                m_canvas.worldCamera = value.camera;
-            }
+            get { return m_canvas.worldCamera; }
+            set { m_canvas.worldCamera = value; }
         }
 
         public int sortingOrder

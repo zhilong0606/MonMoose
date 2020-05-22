@@ -11,7 +11,7 @@ namespace MonMoose.Core
         private Dictionary<int, UIWindowContext> m_windowContextMap = new Dictionary<int, UIWindowContext>();
         private List<UIWindow> m_windowList = new List<UIWindow>();
         private List<UIWindow> m_sortList = new List<UIWindow>();
-        private List<UICamera> m_cameraList = new List<UICamera>();
+        private List<Camera> m_cameraList = new List<Camera>();
         private int m_cameraIndex = 0;
         private List<int> m_releaseList = new List<int>();
         private Stack<UIWindow> m_windowStack = new Stack<UIWindow>();
@@ -24,14 +24,8 @@ namespace MonMoose.Core
             GameObject immortalRoot = GameObject.Find("Immortal");
             m_uiRoot = immortalRoot.FindChild("UIRoot");
             m_cameraPool = immortalRoot.FindChild("UICameraRoot").GetComponent<GameObjectPool>();
-            m_cameraPool.Init(OnCameraInit);
+            m_cameraPool.Init();
             TickManager.instance.RegisterGlobalTick(Tick);
-        }
-
-        private void OnCameraInit(GameObjectPool.PoolObjHolder holder)
-        {
-            UICamera camera = holder.GetComponent<UICamera>();
-            camera.Init();
         }
 
         public void RegisterWindowContext(int windowId, UIWindowContext context)
@@ -178,7 +172,7 @@ namespace MonMoose.Core
             m_sortList.Sort(UIWindow.Sort);
             m_cameraIndex = 0;
             int depth = m_cameraStartDepth;
-            UICamera lastCamera = null;
+            Camera lastCamera = null;
             for (int i = 0; i < m_sortList.Count; ++i)
             {
                 UIWindow window = m_sortList[i];
@@ -195,16 +189,16 @@ namespace MonMoose.Core
             m_sortList.Clear();
         }
 
-        public UICamera NewCamera()
+        public Camera NewCamera()
         {
-            UICamera camera = null;
+            Camera camera = null;
             if (m_cameraIndex < m_cameraList.Count)
             {
                 camera = m_cameraList[m_cameraIndex];
             }
             else
             {
-                camera = m_cameraPool.FetchComponent<UICamera>();
+                camera = m_cameraPool.FetchComponent<Camera>();
                 m_cameraList.Add(camera);
             }
             m_cameraIndex++;
