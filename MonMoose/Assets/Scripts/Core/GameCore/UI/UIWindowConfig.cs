@@ -108,13 +108,13 @@ namespace MonMoose.Core
                 if (lastCamera == null)
                 {
                     Camera uiCamera = UIWindowManager.instance.NewCamera();
-                    canvas.uiCamera = uiCamera;
+                    canvas.camera = uiCamera;
                     lastCamera = uiCamera;
                     uiCamera.depth = depth++;
                 }
                 else
                 {
-                    canvas.uiCamera = lastCamera;
+                    canvas.camera = lastCamera;
                 }
             }
         }

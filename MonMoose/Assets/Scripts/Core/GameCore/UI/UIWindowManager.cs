@@ -102,12 +102,9 @@ namespace MonMoose.Core
                         if (window != null)
                         {
                             window.PreInitialize(windowId, config);
-                            if (window.gameObject != null)
-                            {
-                                window.m_onSetActiveCb = OnWindowSetActive;
-                                AddWindow(windowId, window);
-                                UpdateWindowSort();
-                            }
+                            window.m_onSetActiveCb = OnWindowSetActive;
+                            AddWindow(windowId, window);
+                            UpdateWindowSort();
                             window.Initialize(null, param);
                         }
                         else

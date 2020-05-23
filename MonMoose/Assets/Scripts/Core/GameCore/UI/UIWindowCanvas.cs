@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 namespace MonMoose.Core
 {
-    public class UIWindowCanvas : MonoBehaviour, IUIWindowHolder
+    public class UIWindowCanvas : UICameraHolder, IUIWindowHolder
     {
         private UIWindow m_window;
         private Canvas m_canvas;
@@ -31,7 +31,7 @@ namespace MonMoose.Core
             get { return m_scaler; }
         }
 
-        public Camera uiCamera
+        public override Camera camera
         {
             get { return m_canvas.worldCamera; }
             set { m_canvas.worldCamera = value; }
