@@ -1,0 +1,16 @@
+﻿namespace MonMoose.Logic.Battle
+{
+    public enum ECampType
+    {
+        None,
+        Camp1,
+        Camp2,
+        Camp3,
+        Count,
+    }
+
+    public class FightDefine
+    {
+
+    }
+}

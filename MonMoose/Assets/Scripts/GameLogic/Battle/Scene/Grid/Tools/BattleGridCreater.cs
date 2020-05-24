@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using MonMoose.Logic.Battle;
+using UnityEngine;
 
 namespace MonMoose.Logic
 {
@@ -27,7 +28,7 @@ namespace MonMoose.Logic
                 {
                     GameObject go = GameObject.Instantiate(m_prefab, transform);
                     BattleGridView view = go.AddComponent<BattleGridView>();
-                    view.position = new Grid2D(i, j);
+                    view.position = new GridPosition(i, j);
                     view.transform.position = CalcPosition(i, j);
                     views[i, j] = view;
                 }

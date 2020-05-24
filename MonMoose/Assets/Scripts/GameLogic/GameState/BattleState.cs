@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using MonMoose.Core;
+using MonMoose.Logic.Battle;
 using MonMoose.StaticData;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -8,6 +10,8 @@ namespace MonMoose.Logic
 {
     public class BattleState : State
     {
+        private BattleBase m_battleInstance;
+
         public override int stateIndex
         {
             get { return (int)EGameState.Battle; }
@@ -26,29 +30,33 @@ namespace MonMoose.Logic
         protected override void OnEnter()
         {
             BattleManager.CreateInstance();
-            ActorManager.CreateInstance();
-            SceneManager.LoadSceneAsync("BattleScene");
-            SceneManager.sceneLoaded += OnSceneLoadCompleted;
+            m_battleInstance = new BattleBase();
+            BattleInitializer initializer = new BattleInitializer();
+            m_battleInstance.Init(GetTestBattleInitData());
+            initializer.Init(m_battleInstance);
+            initializer.StartAsync(OnLoadEnd);
+        }
+
+        private void OnLoadEnd()
+        {
+            EventManager.instance.Broadcast((int)EventID.LoadingWindow_FadeOutRequest);
         }
 
         protected override void OnExit()
         {
             BattleManager.DestroyInstance();
-            ActorManager.DestroyInstance();
         }
 
         private void RegisterListener()
         {
             EventManager.instance.RegisterListener((int)EventID.BattleStart_StartRequest_BtnClick, OnStartRequestByBtnClick);
             EventManager.instance.RegisterListener((int)EventID.Frame_Tick, OnFrameTick);
-            EventManager.instance.RegisterListener((int)EventID.Actor_All_Initialized, OnActorAllInitialized);
         }
 
         private void RemoveListener()
         {
             EventManager.instance.UnregisterListener((int)EventID.BattleStart_StartRequest_BtnClick, OnStartRequestByBtnClick);
             EventManager.instance.UnregisterListener((int)EventID.Frame_Tick, OnFrameTick);
-            EventManager.instance.UnregisterListener((int)EventID.Actor_All_Initialized, OnActorAllInitialized);
         }
 
         private void OnStartRequestByBtnClick()
@@ -61,37 +69,22 @@ namespace MonMoose.Logic
             m_stateMachine.ChangeState((int)EGameState.Battle);
         }
 
-        private void OnSceneLoadCompleted(Scene arg0, LoadSceneMode arg1)
+        private BattleInitData GetTestBattleInitData()
         {
-            SceneManager.sceneLoaded -= OnSceneLoadCompleted;
-            InitScene();
-            EventManager.instance.Broadcast((int)EventID.LoadingWindow_FadeOutRequest);
-        }
-
-        private void InitScene()
-        {
-            GameObject sceneConfigRoot = GameObject.Find("SceneConfigRoot");
-            if (sceneConfigRoot == null)
+            BattleInitData battleInitData = new BattleInitData();
+            battleInitData.id = 1;
             {
-                return;
+                BattleTeamInitData teamInitData = new BattleTeamInitData();
+                teamInitData.isAI = false;
+                teamInitData.camp = ECampType.Camp1;
+                {
+                    ActorInitData actorInitData = new ActorInitData();
+                    actorInitData.id = 1;
+                    teamInitData.actorList.Add(actorInitData);
+                }
+                battleInitData.teamList.Add(teamInitData);
             }
-            BattleSceneConfig sceneConfig = sceneConfigRoot.GetComponent<BattleSceneConfig>();
-            if (sceneConfig == null)
-            {
-                return;
-            }
-            BattleGridView[] gridViews = sceneConfig.gridRoot.GetComponentsInChildren<BattleGridView>();
-            for (int i = 0; i < gridViews.Length; ++i)
-            {
-                BattleGrid grid = new BattleGrid();
-                grid.Init(gridViews[i], gridViews[i].position);
-                BattleGridManager.instance.AddGrid(grid);
-            }
-
-            ActorStaticInfo info = StaticDataManager.instance.GetActorStaticInfo(1);
-            GameObject go = ResourceManager.instance.GetPrefab(info.PrefabPath);
-            GameObject actorObj = GameObject.Instantiate<GameObject>(go);
-            actorObj.transform.position = BattleGridManager.instance.GetGrid(0, 0).transPos;
+            return battleInitData;
         }
 
         private BattleGrid m_downGrid;
@@ -129,11 +122,6 @@ namespace MonMoose.Logic
         //}
 
         private void OnFrameTick()
-        {
-            ActorManager.instance.Tick();
-        }
-
-        private void OnActorAllInitialized()
         {
         }
     }

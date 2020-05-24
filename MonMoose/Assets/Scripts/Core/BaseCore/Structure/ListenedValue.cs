@@ -34,7 +34,7 @@ namespace MonMoose.Core
 
         private static bool EqualFloat(float f1, float f2)
         {
-            return Math.Abs(f1 - f2) <= CommonDefine.FloatEpsilon;
+            return Math.Abs(f1 - f2) <= BaseCoreDefine.FloatEpsilon;
         }
 
         private static bool EqualDouble(double d1, double d2)

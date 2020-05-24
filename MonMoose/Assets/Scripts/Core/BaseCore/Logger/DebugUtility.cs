@@ -1,32 +1,35 @@
 ﻿using System;
 
-public static class DebugUtility
+namespace MonMoose.Core
 {
-    public static Action<string> actionOnLog;
-    public static Action<string> actionOnLogWarning;
-    public static Action<string> actionOnLogError;
-
-    public static void Log(string str)
+    public static class DebugUtility
     {
-        if (actionOnLog != null)
+        public static Action<string> actionOnLog;
+        public static Action<string> actionOnLogWarning;
+        public static Action<string> actionOnLogError;
+
+        public static void Log(string str)
         {
-            actionOnLog(str);
+            if (actionOnLog != null)
+            {
+                actionOnLog(str);
+            }
         }
-    }
 
-    public static void LogWarning(string str)
-    {
-        if (actionOnLogWarning != null)
+        public static void LogWarning(string str)
         {
-            actionOnLogWarning(str);
+            if (actionOnLogWarning != null)
+            {
+                actionOnLogWarning(str);
+            }
         }
-    }
 
-    public static void LogError(string str)
-    {
-        if (actionOnLogError != null)
+        public static void LogError(string str)
         {
-            actionOnLogError(str);
+            if (actionOnLogError != null)
+            {
+                actionOnLogError(str);
+            }
         }
     }
 }

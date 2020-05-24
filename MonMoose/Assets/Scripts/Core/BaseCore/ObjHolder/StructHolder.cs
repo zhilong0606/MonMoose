@@ -1,13 +1,14 @@
 ﻿
-using MonMoose.Core;
-
-public class StructHolder<T> : ClassPoolObj
-    where T : struct
+namespace MonMoose.Core
 {
-    public T value;
-
-    public override void OnRelease()
+    public class StructHolder<T> : ClassPoolObj
+        where T : struct
     {
-        value = default(T);
+        public T value;
+
+        public override void OnRelease()
+        {
+            value = default(T);
+        }
     }
 }

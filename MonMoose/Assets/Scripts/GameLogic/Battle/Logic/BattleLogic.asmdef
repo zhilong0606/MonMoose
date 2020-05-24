@@ -1,0 +1,10 @@
+{
+    "name": "BattleLogic",
+    "references": [
+        "StaticData"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false
+}

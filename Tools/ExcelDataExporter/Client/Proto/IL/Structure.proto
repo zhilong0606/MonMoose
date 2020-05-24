@@ -24,6 +24,12 @@ enum EAttributeType
 	EAttributeType_Max = 7;
 }
 
+enum EGridType
+{
+	EGridType_None = 0;
+	EGridType_Normal = 1;
+}
+
 message ActorStaticInfo
 {
 	int32 Id = 1;
@@ -43,6 +49,29 @@ message AttributeStaticInfo
 	string IconPath = 4;
 }
 
+message BattleSceneStaticInfo
+{
+	int32 Id = 1;
+	string Name = 2;
+	repeated int32 StageIdList = 3;
+}
+
+message BattleStageStaticInfo
+{
+	int32 Id = 1;
+	string Name = 2;
+	int32 LeftWidth = 3;
+	int32 RightWidth = 4;
+	int32 Height = 5;
+	repeated int32 GridIdList = 6;
+}
+
+message GridStaticInfo
+{
+	int32 Id = 1;
+	string Name = 2;
+}
+
 message ActorStaticInfoList
 {
 	repeated ActorStaticInfo list = 1;
@@ -51,4 +80,19 @@ message ActorStaticInfoList
 message AttributeStaticInfoList
 {
 	repeated AttributeStaticInfo list = 1;
+}
+
+message BattleSceneStaticInfoList
+{
+	repeated BattleSceneStaticInfo list = 1;
+}
+
+message BattleStageStaticInfoList
+{
+	repeated BattleStageStaticInfo list = 1;
+}
+
+message GridStaticInfoList
+{
+	repeated GridStaticInfo list = 1;
 }

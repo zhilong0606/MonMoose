@@ -7,10 +7,10 @@ namespace MonMoose.Core
     {
         public static bool SetColor(ref Color currentValue, Color newValue)
         {
-            if (Math.Abs(currentValue.r - newValue.r) < CommonDefine.FloatEpsilon
-                && Math.Abs(currentValue.g - newValue.g) < CommonDefine.FloatEpsilon
-                && Math.Abs(currentValue.b - newValue.b) < CommonDefine.FloatEpsilon
-                && Math.Abs(currentValue.a - newValue.a) < CommonDefine.FloatEpsilon)
+            if (Math.Abs(currentValue.r - newValue.r) < BaseCoreDefine.FloatEpsilon
+                && Math.Abs(currentValue.g - newValue.g) < BaseCoreDefine.FloatEpsilon
+                && Math.Abs(currentValue.b - newValue.b) < BaseCoreDefine.FloatEpsilon
+                && Math.Abs(currentValue.a - newValue.a) < BaseCoreDefine.FloatEpsilon)
             {
                 return false;
             }

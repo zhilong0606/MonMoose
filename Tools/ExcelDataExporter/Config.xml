@@ -3,11 +3,11 @@
   <excelFolderPath>./../../StaticData/</excelFolderPath>
   <client>
     <needExport>true</needExport>
-    <usingNameSpace>MonMoose.Core</usingNameSpace>
+    <usingNameSpace>MonMoose.StaticData</usingNameSpace>
     <nameSpace>MonMoose.StaticData</nameSpace>
     <prefix />
     <postfix>StaticInfo</postfix>
-    <structureExportPath>./../../MonMoose/Assets/Scripts/GameLogic/StaticData/AutoGen/</structureExportPath>
+    <structureExportPath>./../../MonMoose/Assets/Scripts/Core/StaticData/AutoGen/</structureExportPath>
     <dataExportPath>./../../MonMoose/Assets/Resources/Exported/StaticData/</dataExportPath>
     <exportMode>Proto</exportMode>
   </client>

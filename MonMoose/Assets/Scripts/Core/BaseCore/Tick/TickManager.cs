@@ -120,7 +120,7 @@ namespace MonMoose.Core
                 for (int j = 0; j < list.Count; ++j)
                 {
                     Action<float> action = list[j];
-                    if (action != null && action.Target != null)
+                    if (action != null)
                     {
                         action(deltaTime);
                     }

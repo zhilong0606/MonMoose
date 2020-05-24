@@ -1,0 +1,8 @@
+{
+    "name": "BaseCore",
+    "references": [],
+    "optionalUnityReferences": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false
+}
