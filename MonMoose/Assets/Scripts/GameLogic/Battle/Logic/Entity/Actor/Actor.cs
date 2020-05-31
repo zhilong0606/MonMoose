@@ -3,11 +3,11 @@
     public class Actor : Entity
     {
         protected ActorInfoComponent m_actorInfo = new ActorInfoComponent();
+        
 
-        public void Init(int actorID)
+        protected override void OnInitComponent()
         {
-            //ActorStaticInfo staticInfo = StaticDataManager.instance.GetActorStaticInfo(actorID);
-            //m_actorInfo.Init(staticInfo);
+            base.OnInitComponent();
         }
     }
 }
