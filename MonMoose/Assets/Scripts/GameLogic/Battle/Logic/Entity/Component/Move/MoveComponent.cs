@@ -2,6 +2,11 @@
 {
     public class MoveComponent : EntityComponent
     {
+        public override EEntityComponentType type
+        {
+            get { return EEntityComponentType.Move; }
+        }
+        
         //private Fix32 speed = new Fix32(3, 10);
         //private GameObject targetObj;
         //private FixVec3 position;

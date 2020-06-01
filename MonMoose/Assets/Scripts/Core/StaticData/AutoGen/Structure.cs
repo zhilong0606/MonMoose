@@ -34,33 +34,33 @@ namespace MonMoose.StaticData {
             "YXRpY0luZm8SCgoCSWQYASABKAUSDAoETmFtZRgCIAEoCRIRCglMZWZ0V2lk",
             "dGgYAyABKAUSEgoKUmlnaHRXaWR0aBgEIAEoBRIOCgZIZWlnaHQYBSABKAUS",
             "EgoKR3JpZElkTGlzdBgGIAMoBSIqCg5HcmlkU3RhdGljSW5mbxIKCgJJZBgB",
-            "IAEoBRIMCgROYW1lGAIgASgJIlQKEEVudGl0eVN0YXRpY0luZm8SCgoCSWQY",
+            "IAEoBRIMCgROYW1lGAIgASgJImMKEEVudGl0eVN0YXRpY0luZm8SCgoCSWQY",
             "ASABKAUSNAoKRW50aXR5VHlwZRgCIAEoDjIgLk1vbk1vb3NlLlN0YXRpY0Rh",
-            "dGEuRUVudGl0eVR5cGUiSQoTQWN0b3JTdGF0aWNJbmZvTGlzdBIyCgRsaXN0",
-            "GAEgAygLMiQuTW9uTW9vc2UuU3RhdGljRGF0YS5BY3RvclN0YXRpY0luZm8i",
-            "UQoXQXR0cmlidXRlU3RhdGljSW5mb0xpc3QSNgoEbGlzdBgBIAMoCzIoLk1v",
-            "bk1vb3NlLlN0YXRpY0RhdGEuQXR0cmlidXRlU3RhdGljSW5mbyJVChlCYXR0",
-            "bGVTY2VuZVN0YXRpY0luZm9MaXN0EjgKBGxpc3QYASADKAsyKi5Nb25Nb29z",
-            "ZS5TdGF0aWNEYXRhLkJhdHRsZVNjZW5lU3RhdGljSW5mbyJVChlCYXR0bGVT",
-            "dGFnZVN0YXRpY0luZm9MaXN0EjgKBGxpc3QYASADKAsyKi5Nb25Nb29zZS5T",
-            "dGF0aWNEYXRhLkJhdHRsZVN0YWdlU3RhdGljSW5mbyJHChJHcmlkU3RhdGlj",
-            "SW5mb0xpc3QSMQoEbGlzdBgBIAMoCzIjLk1vbk1vb3NlLlN0YXRpY0RhdGEu",
-            "R3JpZFN0YXRpY0luZm8iSwoURW50aXR5U3RhdGljSW5mb0xpc3QSMwoEbGlz",
-            "dBgBIAMoCzIlLk1vbk1vb3NlLlN0YXRpY0RhdGEuRW50aXR5U3RhdGljSW5m",
-            "byrpAQoPRUFjdG9yQ2xhc3NUeXBlEhgKFEVBY3RvckNsYXNzVHlwZV9Ob25l",
-            "EAASGwoXRUFjdG9yQ2xhc3NUeXBlX1dhcnJpb3IQARIdChlFQWN0b3JDbGFz",
-            "c1R5cGVfVGVzdFR5cGUyEAISHQoZRUFjdG9yQ2xhc3NUeXBlX1Rlc3RUeXBl",
-            "MxADEh4KGkVBY3RvckNsYXNzVHlwZV9UZXN0M1R5cGUxEAQSHwobRUFjdG9y",
-            "Q2xhc3NUeXBlX1RlczIxdFR5cGUyEAUSIAocRUFjdG9yQ2xhc3NUeXBlX1Rl",
-            "c3RkZGRUeXBlMxAGKvgBCg5FQXR0cmlidXRlVHlwZRIXChNFQXR0cmlidXRl",
-            "VHlwZV9Ob25lEAASFQoRRUF0dHJpYnV0ZVR5cGVfSHAQARIZChVFQXR0cmli",
-            "dXRlVHlwZV9BdHRhY2sQAhIeChpFQXR0cmlidXRlVHlwZV9BdHRhY2tTcGVl",
-            "ZBADEiIKHkVBdHRyaWJ1dGVUeXBlX1BoeXNpY2FsRGVmZW5jZRAEEiEKHUVB",
-            "dHRyaWJ1dGVUeXBlX01hZ2ljYWxEZWZlbmNlEAUSHAoYRUF0dHJpYnV0ZVR5",
-            "cGVfTW92ZVNwZWVkEAYSFgoSRUF0dHJpYnV0ZVR5cGVfTWF4EAcqNQoJRUdy",
-            "aWRUeXBlEhIKDkVHcmlkVHlwZV9Ob25lEAASFAoQRUdyaWRUeXBlX05vcm1h",
-            "bBABKjoKC0VFbnRpdHlUeXBlEhQKEEVFbnRpdHlUeXBlX05vbmUQABIVChFF",
-            "RW50aXR5VHlwZV9BY3RvchABYgZwcm90bzM="));
+            "dGEuRUVudGl0eVR5cGUSDQoFUmVmSWQYAyABKAUiSQoTQWN0b3JTdGF0aWNJ",
+            "bmZvTGlzdBIyCgRsaXN0GAEgAygLMiQuTW9uTW9vc2UuU3RhdGljRGF0YS5B",
+            "Y3RvclN0YXRpY0luZm8iUQoXQXR0cmlidXRlU3RhdGljSW5mb0xpc3QSNgoE",
+            "bGlzdBgBIAMoCzIoLk1vbk1vb3NlLlN0YXRpY0RhdGEuQXR0cmlidXRlU3Rh",
+            "dGljSW5mbyJVChlCYXR0bGVTY2VuZVN0YXRpY0luZm9MaXN0EjgKBGxpc3QY",
+            "ASADKAsyKi5Nb25Nb29zZS5TdGF0aWNEYXRhLkJhdHRsZVNjZW5lU3RhdGlj",
+            "SW5mbyJVChlCYXR0bGVTdGFnZVN0YXRpY0luZm9MaXN0EjgKBGxpc3QYASAD",
+            "KAsyKi5Nb25Nb29zZS5TdGF0aWNEYXRhLkJhdHRsZVN0YWdlU3RhdGljSW5m",
+            "byJHChJHcmlkU3RhdGljSW5mb0xpc3QSMQoEbGlzdBgBIAMoCzIjLk1vbk1v",
+            "b3NlLlN0YXRpY0RhdGEuR3JpZFN0YXRpY0luZm8iSwoURW50aXR5U3RhdGlj",
+            "SW5mb0xpc3QSMwoEbGlzdBgBIAMoCzIlLk1vbk1vb3NlLlN0YXRpY0RhdGEu",
+            "RW50aXR5U3RhdGljSW5mbyrpAQoPRUFjdG9yQ2xhc3NUeXBlEhgKFEVBY3Rv",
+            "ckNsYXNzVHlwZV9Ob25lEAASGwoXRUFjdG9yQ2xhc3NUeXBlX1dhcnJpb3IQ",
+            "ARIdChlFQWN0b3JDbGFzc1R5cGVfVGVzdFR5cGUyEAISHQoZRUFjdG9yQ2xh",
+            "c3NUeXBlX1Rlc3RUeXBlMxADEh4KGkVBY3RvckNsYXNzVHlwZV9UZXN0M1R5",
+            "cGUxEAQSHwobRUFjdG9yQ2xhc3NUeXBlX1RlczIxdFR5cGUyEAUSIAocRUFj",
+            "dG9yQ2xhc3NUeXBlX1Rlc3RkZGRUeXBlMxAGKvgBCg5FQXR0cmlidXRlVHlw",
+            "ZRIXChNFQXR0cmlidXRlVHlwZV9Ob25lEAASFQoRRUF0dHJpYnV0ZVR5cGVf",
+            "SHAQARIZChVFQXR0cmlidXRlVHlwZV9BdHRhY2sQAhIeChpFQXR0cmlidXRl",
+            "VHlwZV9BdHRhY2tTcGVlZBADEiIKHkVBdHRyaWJ1dGVUeXBlX1BoeXNpY2Fs",
+            "RGVmZW5jZRAEEiEKHUVBdHRyaWJ1dGVUeXBlX01hZ2ljYWxEZWZlbmNlEAUS",
+            "HAoYRUF0dHJpYnV0ZVR5cGVfTW92ZVNwZWVkEAYSFgoSRUF0dHJpYnV0ZVR5",
+            "cGVfTWF4EAcqNQoJRUdyaWRUeXBlEhIKDkVHcmlkVHlwZV9Ob25lEAASFAoQ",
+            "RUdyaWRUeXBlX05vcm1hbBABKjoKC0VFbnRpdHlUeXBlEhQKEEVFbnRpdHlU",
+            "eXBlX05vbmUQABIVChFFRW50aXR5VHlwZV9BY3RvchABYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::MonMoose.StaticData.EActorClassType), typeof(global::MonMoose.StaticData.EAttributeType), typeof(global::MonMoose.StaticData.EGridType), typeof(global::MonMoose.StaticData.EEntityType), }, new pbr::GeneratedClrTypeInfo[] {
@@ -69,7 +69,7 @@ namespace MonMoose.StaticData {
             new pbr::GeneratedClrTypeInfo(typeof(global::MonMoose.StaticData.BattleSceneStaticInfo), global::MonMoose.StaticData.BattleSceneStaticInfo.Parser, new[]{ "Id", "Name", "StageIdList" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::MonMoose.StaticData.BattleStageStaticInfo), global::MonMoose.StaticData.BattleStageStaticInfo.Parser, new[]{ "Id", "Name", "LeftWidth", "RightWidth", "Height", "GridIdList" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::MonMoose.StaticData.GridStaticInfo), global::MonMoose.StaticData.GridStaticInfo.Parser, new[]{ "Id", "Name" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::MonMoose.StaticData.EntityStaticInfo), global::MonMoose.StaticData.EntityStaticInfo.Parser, new[]{ "Id", "EntityType" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::MonMoose.StaticData.EntityStaticInfo), global::MonMoose.StaticData.EntityStaticInfo.Parser, new[]{ "Id", "EntityType", "RefId" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::MonMoose.StaticData.ActorStaticInfoList), global::MonMoose.StaticData.ActorStaticInfoList.Parser, new[]{ "List" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::MonMoose.StaticData.AttributeStaticInfoList), global::MonMoose.StaticData.AttributeStaticInfoList.Parser, new[]{ "List" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::MonMoose.StaticData.BattleSceneStaticInfoList), global::MonMoose.StaticData.BattleSceneStaticInfoList.Parser, new[]{ "List" }, null, null, null),
@@ -1189,6 +1189,7 @@ namespace MonMoose.StaticData {
     public EntityStaticInfo(EntityStaticInfo other) : this() {
       id_ = other.id_;
       entityType_ = other.entityType_;
+      refId_ = other.refId_;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1218,6 +1219,17 @@ namespace MonMoose.StaticData {
       }
     }
 
+    /// <summary>Field number for the "RefId" field.</summary>
+    public const int RefIdFieldNumber = 3;
+    private int refId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int RefId {
+      get { return refId_; }
+      set {
+        refId_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as EntityStaticInfo);
@@ -1233,6 +1245,7 @@ namespace MonMoose.StaticData {
       }
       if (Id != other.Id) return false;
       if (EntityType != other.EntityType) return false;
+      if (RefId != other.RefId) return false;
       return true;
     }
 
@@ -1241,6 +1254,7 @@ namespace MonMoose.StaticData {
       int hash = 1;
       if (Id != 0) hash ^= Id.GetHashCode();
       if (EntityType != 0) hash ^= EntityType.GetHashCode();
+      if (RefId != 0) hash ^= RefId.GetHashCode();
       return hash;
     }
 
@@ -1259,6 +1273,10 @@ namespace MonMoose.StaticData {
         output.WriteRawTag(16);
         output.WriteEnum((int) EntityType);
       }
+      if (RefId != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(RefId);
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1269,6 +1287,9 @@ namespace MonMoose.StaticData {
       }
       if (EntityType != 0) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) EntityType);
+      }
+      if (RefId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(RefId);
       }
       return size;
     }
@@ -1283,6 +1304,9 @@ namespace MonMoose.StaticData {
       }
       if (other.EntityType != 0) {
         EntityType = other.EntityType;
+      }
+      if (other.RefId != 0) {
+        RefId = other.RefId;
       }
     }
 
@@ -1300,6 +1324,10 @@ namespace MonMoose.StaticData {
           }
           case 16: {
             entityType_ = (global::MonMoose.StaticData.EEntityType) input.ReadEnum();
+            break;
+          }
+          case 24: {
+            RefId = input.ReadInt32();
             break;
           }
         }

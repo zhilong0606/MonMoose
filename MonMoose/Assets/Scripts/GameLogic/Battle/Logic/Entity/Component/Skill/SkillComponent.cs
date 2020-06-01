@@ -9,6 +9,11 @@ namespace MonMoose.Logic.Battle
         public SkillSlot[] skillSlots = new SkillSlot[(int)ESkillSlotType.Count];
         private List<Skill> skillList = new List<Skill>();
 
+        public override EEntityComponentType type
+        {
+            get { return EEntityComponentType.Skill; }
+        }
+
         public void Init(Actor actor)
         {
             this.actor = actor;

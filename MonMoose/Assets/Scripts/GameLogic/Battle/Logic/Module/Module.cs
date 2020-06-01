@@ -5,12 +5,12 @@ namespace MonMoose.Logic.Battle
 {
     public abstract class Module
     {
-        protected BattleBase m_battle;
+        protected BattleBase m_battleInstance;
 
-        public void Init(BattleBase battle)
+        public void Init(BattleBase battleInstance, BattleInitData initData)
         {
-            m_battle = battle;
-            OnInit();
+            m_battleInstance = battleInstance;
+            OnInit(initData);
         }
 
         public void Tick()
@@ -18,7 +18,7 @@ namespace MonMoose.Logic.Battle
 
         }
 
-        protected virtual void OnInit()
+        protected virtual void OnInit(BattleInitData initData)
         {
 
         }

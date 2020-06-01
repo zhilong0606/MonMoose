@@ -33,13 +33,12 @@ namespace MonMoose.Logic
             BattleManager.CreateInstance();
             m_battleInstance = new BattleBase();
             BattleInitializer initializer = new BattleInitializer();
-            m_battleInstance.Init(GetTestBattleInitData());
-            initializer.Init(m_battleInstance);
             initializer.StartAsync(OnLoadEnd);
         }
 
         private void OnLoadEnd()
         {
+            m_battleInstance.Init(GetTestBattleInitData());
             EventManager.instance.Broadcast((int)EventID.LoadingWindow_FadeOutRequest);
         }
 
@@ -85,7 +84,19 @@ namespace MonMoose.Logic
                 }
                 battleInitData.teamList.Add(teamInitData);
             }
+            battleInitData.funcOnGetView = OnGetView;
             return battleInitData;
+        }
+
+        private EntityView OnGetView(int id)
+        {
+            EntityStaticInfo entityStaticInfo = StaticDataManager.instance.GetEntityStaticInfo(id);
+            ActorStaticInfo actorStaticInfo = StaticDataManager.instance.GetActorStaticInfo(entityStaticInfo.RefId);
+            GameObject prefab = ResourceManager.instance.GetPrefab(actorStaticInfo.PrefabPath);
+            GameObject go = GameObject.Instantiate(prefab);
+            ActorView view = new ActorView();
+            view.Init(go);
+            return view;
         }
 
         private Grid m_downGrid;

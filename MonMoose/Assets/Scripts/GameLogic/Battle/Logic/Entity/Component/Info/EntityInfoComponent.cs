@@ -4,20 +4,31 @@ namespace MonMoose.Logic.Battle
 {
     public class EntityInfoComponent : EntityComponent
     {
-        private Actor actor;
-        private int curLevel;
-        private int curHp;
+        protected EntityStaticInfo m_entityStaticInfo;
+        protected int curLevel;
+        protected int curHp;
 
-        AttributeHandler[] handlers = new AttributeHandler[(int)EAttributeType.Max];
+        protected AttributeHandler[] handlers = new AttributeHandler[(int)EAttributeType.Max];
 
-        public void Init(Actor actor)
+        public override EEntityComponentType type
         {
-            this.actor = actor;
+            get { return EEntityComponentType.Info; }
+        }
+
+        protected sealed override void OnInit()
+        {
+            base.OnInit();
+            m_entityStaticInfo = StaticDataManager.instance.GetEntityStaticInfo(m_entity.entityRid);
             //handlers[(int) EAttributeType.MaxHp] = new AttributeHandler(this.actor.actorInfo.maxHp, 0, int.MaxValue, 0, LevelDependentCalculator);
             //handlers[(int) EAttributeType.PhysicalAttack] = new AttributeHandler(this.actor.actorInfo.physicalAttack, 0, int.MaxValue, 0, LevelDependentCalculator);
 
             curHp = handlers[(int)EAttributeType.Hp].TotalValue;
             curLevel = 1;
+        }
+
+        protected virtual void OnInitSpecific()
+        {
+
         }
 
         public void TakeDamage()

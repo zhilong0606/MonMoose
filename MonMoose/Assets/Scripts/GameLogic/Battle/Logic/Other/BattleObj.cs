@@ -7,9 +7,9 @@ namespace MonMoose.Logic.Battle
     {
         protected BattleBase m_battleInstance;
 
-        protected void GetInsFrom(BattleObj obj)
+        public void SetBattleInstance(BattleBase battleInstance)
         {
-            m_battleInstance = obj.m_battleInstance;
+            m_battleInstance = battleInstance;
         }
     }
 }

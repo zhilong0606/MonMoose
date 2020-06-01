@@ -1,7 +1,9 @@
 ﻿namespace MonMoose.Logic.Battle
 {
-    public class EntityComponent : BattleObj
+    public abstract class EntityComponent : BattleObj
     {
+        public abstract EEntityComponentType type { get; }
+
         protected Entity m_entity;
 
         public void Init(Entity entity)

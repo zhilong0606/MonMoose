@@ -7,7 +7,7 @@ namespace MonMoose.Logic.Battle
     {
         protected int m_uid;
         protected int m_entityRid;
-        protected int m_specificInfoRid;
+        protected EntityView m_view;
         protected List<EntityComponent> m_componentList = new List<EntityComponent>();
 
         public int uid
@@ -20,16 +20,36 @@ namespace MonMoose.Logic.Battle
             get { return m_entityRid; }
         }
 
+        public EntityView view
+        {
+            get { return m_view; }
+        }
+
         public void Init(int uid, int rid)
         {
             m_uid = uid;
             m_entityRid = rid;
             OnInitComponent();
+            m_view = m_battleInstance.GetEntityView(rid);
             for (int i = 0; i < m_componentList.Count; ++i)
             {
                 m_componentList[i].Init(this);
             }
+            m_view.CreateView();
+            m_view.SetPosition(new FixVec2(1f, 1f));
+        }
 
+        public T GetComponent<T>() where T : EntityComponent
+        {
+            for (int i = 0; i < m_componentList.Count; ++i)
+            {
+                T component = m_componentList[i] as T;
+                if (component != null)
+                {
+                    return component;
+                }
+            }
+            return null;
         }
 
         public void Tick()

@@ -82,6 +82,7 @@ message EntityStaticInfo
 {
 	int32 Id = 1;
 	EEntityType EntityType = 2;
+	int32 RefId = 3;
 }
 
 message ActorStaticInfoList

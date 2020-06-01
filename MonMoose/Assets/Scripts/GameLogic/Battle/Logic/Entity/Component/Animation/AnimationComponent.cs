@@ -2,6 +2,10 @@
 {
     public class AnimationComponent : EntityComponent
     {
+        public override EEntityComponentType type
+        {
+            get { return EEntityComponentType.Animation; }
+        }
         //private Animation animation;
 
         //private List<AnimationPlayContext> contextList = new List<AnimationPlayContext>();

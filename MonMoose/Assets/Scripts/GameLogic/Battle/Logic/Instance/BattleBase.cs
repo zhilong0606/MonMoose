@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using MonMoose.StaticData;
 
@@ -9,28 +10,62 @@ namespace MonMoose.Logic.Battle
         private List<Team> m_teamList = new List<Team>();
         private List<Entity> m_entityList = new List<Entity>();
         private BattleSceneStaticInfo m_staticInfo;
+        private Func<int, EntityView> m_funcOnGetView;
 
+        private DebugModule m_debugModule = new DebugModule();
         private PoolModule m_poolModule = new PoolModule();
+        private ObjIdModule m_objIdModule = new ObjIdModule();
         private StageModule m_stageModule = new StageModule();
+        private List<Module> m_moduleList = new List<Module>();
+
+        public DebugModule debugModule
+        {
+            get { return m_debugModule; }
+        }
 
         public void Init(BattleInitData battleInitData)
         {
-            m_battleContext = new BattleContext();
-            m_battleContext.battleBase = this;
-
             m_staticInfo = StaticDataManager.instance.GetBattleSceneStaticInfo(battleInitData.id);
+            m_funcOnGetView = battleInitData.funcOnGetView;
+            InitModuleList(battleInitData);
+            InitTeamList(battleInitData);
+        }
+
+        private void InitModuleList(BattleInitData battleInitData)
+        {
+            m_moduleList.Add(m_debugModule);
+            m_moduleList.Add(m_poolModule);
+            m_moduleList.Add(m_stageModule);
+
+            for (int i = 0; i < m_moduleList.Count; ++i)
+            {
+                m_moduleList[i].Init(this, battleInitData);
+            }
+        }
+
+        private void InitTeamList(BattleInitData battleInitData)
+        {
             battleInitData.teamList.Sort(TeamInitData.Sort);
             for (int i = 0; i < battleInitData.teamList.Count; ++i)
             {
-                Team team = new Team();
-
-                TeamContext teamContext = new TeamContext();
-                teamContext.battleContext = m_battleContext;
-                teamContext.team = team;
-
-                team.Init(battleInitData.teamList[i], teamContext);
+                Team team = FetchPoolObj<Team>();
+                team.Init(battleInitData.teamList[i]);
                 m_teamList.Add(team);
             }
+        }
+
+        public void Start()
+        {
+
+        }
+
+        public EntityView GetEntityView(int entityId)
+        {
+            if (m_funcOnGetView != null)
+            {
+                return m_funcOnGetView(entityId);
+            }
+            return null;
         }
 
         public Grid GetGrid(int x, int y)
@@ -40,10 +75,24 @@ namespace MonMoose.Logic.Battle
 
         public Grid GetGrid(GridPosition gridPos)
         {
-            return GetGrid(gridPos.x, gridPos.y);
+            return m_stageModule.GetGrid(gridPos);
         }
 
-        public T FetchPoolObj<T>() where T : class { return m_poolModule.Fetch<T>(); }
+        public int CreateObjId(EBattleObjType type)
+        {
+            return m_objIdModule.CreateObjId(type);
+        }
+
+        public T FetchPoolObj<T>() where T : class
+        {
+            T obj = m_poolModule.Fetch<T>();
+            BattleObj battleObj = obj as BattleObj;
+            if (battleObj != null)
+            {
+                battleObj.SetBattleInstance(this);
+            }
+            return obj;
+        }
 
         public void Tick()
         {

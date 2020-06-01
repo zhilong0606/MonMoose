@@ -11,13 +11,6 @@ namespace MonMoose.Logic
 {
     public class BattleInitializer : Initializer
     {
-        private BattleBase m_battleInstance;
-
-        public void Init(BattleBase battleInstance)
-        {
-            m_battleInstance = battleInstance;
-        }
-
         protected override IEnumerator OnProcess()
         {
             string battleSceneName = "BattleScene";
@@ -26,7 +19,9 @@ namespace MonMoose.Logic
             {
                 yield return null;
             }
+            yield return null;
             InitScene();
+            yield return null;
             //m_battleInitData.teamList.Sort(TeamInitData.Sort);
             //for (int i = 0; i < m_battleInitData.teamList.Count; ++i)
             //{
@@ -67,11 +62,6 @@ namespace MonMoose.Logic
                 //grid.Init(gridViews[i], gridViews[i].position);
                 //BattleGridManager.instance.AddGrid(grid);
             }
-
-            ActorStaticInfo info = StaticDataManager.instance.GetActorStaticInfo(1);
-            GameObject go = ResourceManager.instance.GetPrefab(info.PrefabPath);
-            GameObject actorObj = GameObject.Instantiate<GameObject>(go);
-            //actorObj.transform.position = BattleGridManager.instance.GetGrid(0, 0).transPos;
         }
     }
 }
