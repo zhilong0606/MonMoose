@@ -30,6 +30,12 @@ enum EGridType
 	EGridType_Normal = 1;
 }
 
+enum EEntityType
+{
+	EEntityType_None = 0;
+	EEntityType_Actor = 1;
+}
+
 message ActorStaticInfo
 {
 	int32 Id = 1;
@@ -72,6 +78,12 @@ message GridStaticInfo
 	string Name = 2;
 }
 
+message EntityStaticInfo
+{
+	int32 Id = 1;
+	EEntityType EntityType = 2;
+}
+
 message ActorStaticInfoList
 {
 	repeated ActorStaticInfo list = 1;
@@ -95,4 +107,9 @@ message BattleStageStaticInfoList
 message GridStaticInfoList
 {
 	repeated GridStaticInfo list = 1;
+}
+
+message EntityStaticInfoList
+{
+	repeated EntityStaticInfo list = 1;
 }

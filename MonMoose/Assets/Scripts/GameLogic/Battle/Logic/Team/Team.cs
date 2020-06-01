@@ -2,7 +2,7 @@
 
 namespace MonMoose.Logic.Battle
 {
-    public class BattleTeam
+    public class Team
     {
         public int id;
         public ECampType camp;
@@ -10,8 +10,10 @@ namespace MonMoose.Logic.Battle
         public bool isAI = false;
         public List<Actor> actorList = new List<Actor>();
 
-        public void Init(BattleTeamInitData initData)
+        public void Init(TeamInitData initData)
         {
+            teamContext.team = this;
+
             id = initData.id;
             camp = initData.camp;
             name = initData.name;
@@ -20,18 +22,16 @@ namespace MonMoose.Logic.Battle
             for (int i = 0; i < initData.actorList.Count; ++i)
             {
                 Actor actor = new Actor();
+
+                //EntityContext context = 
             }
         }
 
         public void Tick()
         {
-            for (int i = 0; i < actorList.Count; ++i)
-            {
-                actorList[i].Tick();
-            }
         }
 
-        public static int Sort(BattleTeam x, BattleTeam y)
+        public static int Sort(Team x, Team y)
         {
             return x.id.CompareTo(y.id);
         }

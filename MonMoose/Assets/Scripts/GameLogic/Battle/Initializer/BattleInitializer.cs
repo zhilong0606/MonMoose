@@ -5,6 +5,7 @@ using MonMoose.Core;
 using MonMoose.Logic.Battle;
 using MonMoose.StaticData;
 using UnityEngine.SceneManagement;
+using Grid = MonMoose.Logic.Battle.Grid;
 
 namespace MonMoose.Logic
 {
@@ -26,11 +27,11 @@ namespace MonMoose.Logic
                 yield return null;
             }
             InitScene();
-            //m_battleInitData.teamList.Sort(BattleTeamInitData.Sort);
+            //m_battleInitData.teamList.Sort(TeamInitData.Sort);
             //for (int i = 0; i < m_battleInitData.teamList.Count; ++i)
             //{
-            //    BattleTeamInitData teamInitData = m_battleInitData.teamList[i];
-            //    BattleTeam team = new BattleTeam();
+            //    TeamInitData teamInitData = m_battleInitData.teamList[i];
+            //    Team team = new Team();
             //    team.id = teamInitData.id;
             //    team.camp = teamInitData.camp;
             //    team.name = teamInitData.name;
@@ -62,7 +63,7 @@ namespace MonMoose.Logic
             BattleGridView[] gridViews = sceneConfig.gridRoot.GetComponentsInChildren<BattleGridView>();
             for (int i = 0; i < gridViews.Length; ++i)
             {
-                BattleGrid grid = new BattleGrid();
+                Grid grid = new Grid();
                 //grid.Init(gridViews[i], gridViews[i].position);
                 //BattleGridManager.instance.AddGrid(grid);
             }

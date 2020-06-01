@@ -6,6 +6,6 @@ namespace MonMoose.Logic.Battle
     public class BattleInitData
     {
         public int id;
-        public List<BattleTeamInitData> teamList = new List<BattleTeamInitData>();
+        public List<TeamInitData> teamList = new List<TeamInitData>();
     }
 }

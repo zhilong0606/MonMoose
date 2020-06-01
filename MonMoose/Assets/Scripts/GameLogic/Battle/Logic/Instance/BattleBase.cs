@@ -6,58 +6,54 @@ namespace MonMoose.Logic.Battle
 {
     public class BattleBase
     {
-        private List<BattleTeam> m_teamList = new List<BattleTeam>();
-        private List<BattleStage> m_stageList = new List<BattleStage>();
+        private List<Team> m_teamList = new List<Team>();
+        private List<Entity> m_entityList = new List<Entity>();
         private BattleSceneStaticInfo m_staticInfo;
-        private int m_curStageIndex = 0;
 
-        public BattleStage curStage
-        {
-            get
-            {
-                if (m_curStageIndex >= 0 && m_curStageIndex < m_stageList.Count)
-                {
-                    return m_stageList[m_curStageIndex];
-                }
-                return null;
-            }
-        }
+        private PoolModule m_poolModule = new PoolModule();
+        private StageModule m_stageModule = new StageModule();
 
         public void Init(BattleInitData battleInitData)
         {
+            m_battleContext = new BattleContext();
+            m_battleContext.battleBase = this;
+
             m_staticInfo = StaticDataManager.instance.GetBattleSceneStaticInfo(battleInitData.id);
-            battleInitData.teamList.Sort(BattleTeamInitData.Sort);
+            battleInitData.teamList.Sort(TeamInitData.Sort);
             for (int i = 0; i < battleInitData.teamList.Count; ++i)
             {
-                BattleTeam battleTeam = new BattleTeam();
-                battleTeam.Init(battleInitData.teamList[i]);
+                Team team = new Team();
+
+                TeamContext teamContext = new TeamContext();
+                teamContext.battleContext = m_battleContext;
+                teamContext.team = team;
+
+                team.Init(battleInitData.teamList[i], teamContext);
+                m_teamList.Add(team);
             }
         }
 
-        public void Start()
+        public Grid GetGrid(int x, int y)
         {
-            m_curStageIndex = 0;
+            return m_stageModule.GetGrid(x, y);
         }
 
-        public BattleGrid GetGrid(int x, int y)
-        {
-            if (curStage != null)
-            {
-                return curStage.GetGrid(x, y);
-            }
-            return null;
-        }
-
-        public BattleGrid GetGrid(GridPosition gridPos)
+        public Grid GetGrid(GridPosition gridPos)
         {
             return GetGrid(gridPos.x, gridPos.y);
         }
+
+        public T FetchPoolObj<T>() where T : class { return m_poolModule.Fetch<T>(); }
 
         public void Tick()
         {
             for (int i = 0; i < m_teamList.Count; ++i)
             {
                 m_teamList[i].Tick();
+            }
+            for (int i = 0; i < m_entityList.Count; ++i)
+            {
+                m_entityList[i].Tick();
             }
         }
     }

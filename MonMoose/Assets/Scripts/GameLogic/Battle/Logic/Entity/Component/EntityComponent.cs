@@ -1,6 +1,6 @@
 ﻿namespace MonMoose.Logic.Battle
 {
-    public class EntityComponent
+    public class EntityComponent : BattleObj
     {
         protected Entity m_entity;
 

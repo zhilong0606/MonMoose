@@ -7,6 +7,7 @@
 
         protected override void OnInitComponent()
         {
+            m_actorInfo = new ActorInfoComponent();
             base.OnInitComponent();
         }
     }

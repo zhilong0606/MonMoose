@@ -34,41 +34,48 @@ namespace MonMoose.StaticData {
             "YXRpY0luZm8SCgoCSWQYASABKAUSDAoETmFtZRgCIAEoCRIRCglMZWZ0V2lk",
             "dGgYAyABKAUSEgoKUmlnaHRXaWR0aBgEIAEoBRIOCgZIZWlnaHQYBSABKAUS",
             "EgoKR3JpZElkTGlzdBgGIAMoBSIqCg5HcmlkU3RhdGljSW5mbxIKCgJJZBgB",
-            "IAEoBRIMCgROYW1lGAIgASgJIkkKE0FjdG9yU3RhdGljSW5mb0xpc3QSMgoE",
-            "bGlzdBgBIAMoCzIkLk1vbk1vb3NlLlN0YXRpY0RhdGEuQWN0b3JTdGF0aWNJ",
-            "bmZvIlEKF0F0dHJpYnV0ZVN0YXRpY0luZm9MaXN0EjYKBGxpc3QYASADKAsy",
-            "KC5Nb25Nb29zZS5TdGF0aWNEYXRhLkF0dHJpYnV0ZVN0YXRpY0luZm8iVQoZ",
-            "QmF0dGxlU2NlbmVTdGF0aWNJbmZvTGlzdBI4CgRsaXN0GAEgAygLMiouTW9u",
-            "TW9vc2UuU3RhdGljRGF0YS5CYXR0bGVTY2VuZVN0YXRpY0luZm8iVQoZQmF0",
-            "dGxlU3RhZ2VTdGF0aWNJbmZvTGlzdBI4CgRsaXN0GAEgAygLMiouTW9uTW9v",
-            "c2UuU3RhdGljRGF0YS5CYXR0bGVTdGFnZVN0YXRpY0luZm8iRwoSR3JpZFN0",
-            "YXRpY0luZm9MaXN0EjEKBGxpc3QYASADKAsyIy5Nb25Nb29zZS5TdGF0aWNE",
-            "YXRhLkdyaWRTdGF0aWNJbmZvKukBCg9FQWN0b3JDbGFzc1R5cGUSGAoURUFj",
-            "dG9yQ2xhc3NUeXBlX05vbmUQABIbChdFQWN0b3JDbGFzc1R5cGVfV2Fycmlv",
-            "chABEh0KGUVBY3RvckNsYXNzVHlwZV9UZXN0VHlwZTIQAhIdChlFQWN0b3JD",
-            "bGFzc1R5cGVfVGVzdFR5cGUzEAMSHgoaRUFjdG9yQ2xhc3NUeXBlX1Rlc3Qz",
-            "VHlwZTEQBBIfChtFQWN0b3JDbGFzc1R5cGVfVGVzMjF0VHlwZTIQBRIgChxF",
-            "QWN0b3JDbGFzc1R5cGVfVGVzdGRkZFR5cGUzEAYq+AEKDkVBdHRyaWJ1dGVU",
-            "eXBlEhcKE0VBdHRyaWJ1dGVUeXBlX05vbmUQABIVChFFQXR0cmlidXRlVHlw",
-            "ZV9IcBABEhkKFUVBdHRyaWJ1dGVUeXBlX0F0dGFjaxACEh4KGkVBdHRyaWJ1",
-            "dGVUeXBlX0F0dGFja1NwZWVkEAMSIgoeRUF0dHJpYnV0ZVR5cGVfUGh5c2lj",
-            "YWxEZWZlbmNlEAQSIQodRUF0dHJpYnV0ZVR5cGVfTWFnaWNhbERlZmVuY2UQ",
-            "BRIcChhFQXR0cmlidXRlVHlwZV9Nb3ZlU3BlZWQQBhIWChJFQXR0cmlidXRl",
-            "VHlwZV9NYXgQByo1CglFR3JpZFR5cGUSEgoORUdyaWRUeXBlX05vbmUQABIU",
-            "ChBFR3JpZFR5cGVfTm9ybWFsEAFiBnByb3RvMw=="));
+            "IAEoBRIMCgROYW1lGAIgASgJIlQKEEVudGl0eVN0YXRpY0luZm8SCgoCSWQY",
+            "ASABKAUSNAoKRW50aXR5VHlwZRgCIAEoDjIgLk1vbk1vb3NlLlN0YXRpY0Rh",
+            "dGEuRUVudGl0eVR5cGUiSQoTQWN0b3JTdGF0aWNJbmZvTGlzdBIyCgRsaXN0",
+            "GAEgAygLMiQuTW9uTW9vc2UuU3RhdGljRGF0YS5BY3RvclN0YXRpY0luZm8i",
+            "UQoXQXR0cmlidXRlU3RhdGljSW5mb0xpc3QSNgoEbGlzdBgBIAMoCzIoLk1v",
+            "bk1vb3NlLlN0YXRpY0RhdGEuQXR0cmlidXRlU3RhdGljSW5mbyJVChlCYXR0",
+            "bGVTY2VuZVN0YXRpY0luZm9MaXN0EjgKBGxpc3QYASADKAsyKi5Nb25Nb29z",
+            "ZS5TdGF0aWNEYXRhLkJhdHRsZVNjZW5lU3RhdGljSW5mbyJVChlCYXR0bGVT",
+            "dGFnZVN0YXRpY0luZm9MaXN0EjgKBGxpc3QYASADKAsyKi5Nb25Nb29zZS5T",
+            "dGF0aWNEYXRhLkJhdHRsZVN0YWdlU3RhdGljSW5mbyJHChJHcmlkU3RhdGlj",
+            "SW5mb0xpc3QSMQoEbGlzdBgBIAMoCzIjLk1vbk1vb3NlLlN0YXRpY0RhdGEu",
+            "R3JpZFN0YXRpY0luZm8iSwoURW50aXR5U3RhdGljSW5mb0xpc3QSMwoEbGlz",
+            "dBgBIAMoCzIlLk1vbk1vb3NlLlN0YXRpY0RhdGEuRW50aXR5U3RhdGljSW5m",
+            "byrpAQoPRUFjdG9yQ2xhc3NUeXBlEhgKFEVBY3RvckNsYXNzVHlwZV9Ob25l",
+            "EAASGwoXRUFjdG9yQ2xhc3NUeXBlX1dhcnJpb3IQARIdChlFQWN0b3JDbGFz",
+            "c1R5cGVfVGVzdFR5cGUyEAISHQoZRUFjdG9yQ2xhc3NUeXBlX1Rlc3RUeXBl",
+            "MxADEh4KGkVBY3RvckNsYXNzVHlwZV9UZXN0M1R5cGUxEAQSHwobRUFjdG9y",
+            "Q2xhc3NUeXBlX1RlczIxdFR5cGUyEAUSIAocRUFjdG9yQ2xhc3NUeXBlX1Rl",
+            "c3RkZGRUeXBlMxAGKvgBCg5FQXR0cmlidXRlVHlwZRIXChNFQXR0cmlidXRl",
+            "VHlwZV9Ob25lEAASFQoRRUF0dHJpYnV0ZVR5cGVfSHAQARIZChVFQXR0cmli",
+            "dXRlVHlwZV9BdHRhY2sQAhIeChpFQXR0cmlidXRlVHlwZV9BdHRhY2tTcGVl",
+            "ZBADEiIKHkVBdHRyaWJ1dGVUeXBlX1BoeXNpY2FsRGVmZW5jZRAEEiEKHUVB",
+            "dHRyaWJ1dGVUeXBlX01hZ2ljYWxEZWZlbmNlEAUSHAoYRUF0dHJpYnV0ZVR5",
+            "cGVfTW92ZVNwZWVkEAYSFgoSRUF0dHJpYnV0ZVR5cGVfTWF4EAcqNQoJRUdy",
+            "aWRUeXBlEhIKDkVHcmlkVHlwZV9Ob25lEAASFAoQRUdyaWRUeXBlX05vcm1h",
+            "bBABKjoKC0VFbnRpdHlUeXBlEhQKEEVFbnRpdHlUeXBlX05vbmUQABIVChFF",
+            "RW50aXR5VHlwZV9BY3RvchABYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
-          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::MonMoose.StaticData.EActorClassType), typeof(global::MonMoose.StaticData.EAttributeType), typeof(global::MonMoose.StaticData.EGridType), }, new pbr::GeneratedClrTypeInfo[] {
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::MonMoose.StaticData.EActorClassType), typeof(global::MonMoose.StaticData.EAttributeType), typeof(global::MonMoose.StaticData.EGridType), typeof(global::MonMoose.StaticData.EEntityType), }, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::MonMoose.StaticData.ActorStaticInfo), global::MonMoose.StaticData.ActorStaticInfo.Parser, new[]{ "Id", "Name", "Type", "MoveSpeed", "Attack", "Deffence", "PrefabPath" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::MonMoose.StaticData.AttributeStaticInfo), global::MonMoose.StaticData.AttributeStaticInfo.Parser, new[]{ "Id", "Name", "IsSignInversed", "IconPath" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::MonMoose.StaticData.BattleSceneStaticInfo), global::MonMoose.StaticData.BattleSceneStaticInfo.Parser, new[]{ "Id", "Name", "StageIdList" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::MonMoose.StaticData.BattleStageStaticInfo), global::MonMoose.StaticData.BattleStageStaticInfo.Parser, new[]{ "Id", "Name", "LeftWidth", "RightWidth", "Height", "GridIdList" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::MonMoose.StaticData.GridStaticInfo), global::MonMoose.StaticData.GridStaticInfo.Parser, new[]{ "Id", "Name" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::MonMoose.StaticData.EntityStaticInfo), global::MonMoose.StaticData.EntityStaticInfo.Parser, new[]{ "Id", "EntityType" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::MonMoose.StaticData.ActorStaticInfoList), global::MonMoose.StaticData.ActorStaticInfoList.Parser, new[]{ "List" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::MonMoose.StaticData.AttributeStaticInfoList), global::MonMoose.StaticData.AttributeStaticInfoList.Parser, new[]{ "List" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::MonMoose.StaticData.BattleSceneStaticInfoList), global::MonMoose.StaticData.BattleSceneStaticInfoList.Parser, new[]{ "List" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::MonMoose.StaticData.BattleStageStaticInfoList), global::MonMoose.StaticData.BattleStageStaticInfoList.Parser, new[]{ "List" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::MonMoose.StaticData.GridStaticInfoList), global::MonMoose.StaticData.GridStaticInfoList.Parser, new[]{ "List" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::MonMoose.StaticData.GridStaticInfoList), global::MonMoose.StaticData.GridStaticInfoList.Parser, new[]{ "List" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::MonMoose.StaticData.EntityStaticInfoList), global::MonMoose.StaticData.EntityStaticInfoList.Parser, new[]{ "List" }, null, null, null)
           }));
     }
     #endregion
@@ -99,6 +106,11 @@ namespace MonMoose.StaticData {
   public enum EGridType {
     [pbr::OriginalName("EGridType_None")] None = 0,
     [pbr::OriginalName("EGridType_Normal")] Normal = 1,
+  }
+
+  public enum EEntityType {
+    [pbr::OriginalName("EEntityType_None")] None = 0,
+    [pbr::OriginalName("EEntityType_Actor")] Actor = 1,
   }
 
   #endregion
@@ -1151,6 +1163,151 @@ namespace MonMoose.StaticData {
 
   }
 
+  public sealed partial class EntityStaticInfo : pb::IMessage<EntityStaticInfo> {
+    private static readonly pb::MessageParser<EntityStaticInfo> _parser = new pb::MessageParser<EntityStaticInfo>(() => new EntityStaticInfo());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<EntityStaticInfo> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::MonMoose.StaticData.StructureReflection.Descriptor.MessageTypes[5]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public EntityStaticInfo() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public EntityStaticInfo(EntityStaticInfo other) : this() {
+      id_ = other.id_;
+      entityType_ = other.entityType_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public EntityStaticInfo Clone() {
+      return new EntityStaticInfo(this);
+    }
+
+    /// <summary>Field number for the "Id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private int id_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Id {
+      get { return id_; }
+      set {
+        id_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "EntityType" field.</summary>
+    public const int EntityTypeFieldNumber = 2;
+    private global::MonMoose.StaticData.EEntityType entityType_ = 0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::MonMoose.StaticData.EEntityType EntityType {
+      get { return entityType_; }
+      set {
+        entityType_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as EntityStaticInfo);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(EntityStaticInfo other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Id != other.Id) return false;
+      if (EntityType != other.EntityType) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Id != 0) hash ^= Id.GetHashCode();
+      if (EntityType != 0) hash ^= EntityType.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Id != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Id);
+      }
+      if (EntityType != 0) {
+        output.WriteRawTag(16);
+        output.WriteEnum((int) EntityType);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Id != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Id);
+      }
+      if (EntityType != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) EntityType);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(EntityStaticInfo other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Id != 0) {
+        Id = other.Id;
+      }
+      if (other.EntityType != 0) {
+        EntityType = other.EntityType;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            Id = input.ReadInt32();
+            break;
+          }
+          case 16: {
+            entityType_ = (global::MonMoose.StaticData.EEntityType) input.ReadEnum();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
   public sealed partial class ActorStaticInfoList : pb::IMessage<ActorStaticInfoList> {
     private static readonly pb::MessageParser<ActorStaticInfoList> _parser = new pb::MessageParser<ActorStaticInfoList>(() => new ActorStaticInfoList());
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1158,7 +1315,7 @@ namespace MonMoose.StaticData {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::MonMoose.StaticData.StructureReflection.Descriptor.MessageTypes[5]; }
+      get { return global::MonMoose.StaticData.StructureReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1267,7 +1424,7 @@ namespace MonMoose.StaticData {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::MonMoose.StaticData.StructureReflection.Descriptor.MessageTypes[6]; }
+      get { return global::MonMoose.StaticData.StructureReflection.Descriptor.MessageTypes[7]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1376,7 +1533,7 @@ namespace MonMoose.StaticData {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::MonMoose.StaticData.StructureReflection.Descriptor.MessageTypes[7]; }
+      get { return global::MonMoose.StaticData.StructureReflection.Descriptor.MessageTypes[8]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1485,7 +1642,7 @@ namespace MonMoose.StaticData {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::MonMoose.StaticData.StructureReflection.Descriptor.MessageTypes[8]; }
+      get { return global::MonMoose.StaticData.StructureReflection.Descriptor.MessageTypes[9]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1594,7 +1751,7 @@ namespace MonMoose.StaticData {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::MonMoose.StaticData.StructureReflection.Descriptor.MessageTypes[9]; }
+      get { return global::MonMoose.StaticData.StructureReflection.Descriptor.MessageTypes[10]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1672,6 +1829,115 @@ namespace MonMoose.StaticData {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(GridStaticInfoList other) {
+      if (other == null) {
+        return;
+      }
+      list_.Add(other.list_);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 10: {
+            list_.AddEntriesFrom(input, _repeated_list_codec);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class EntityStaticInfoList : pb::IMessage<EntityStaticInfoList> {
+    private static readonly pb::MessageParser<EntityStaticInfoList> _parser = new pb::MessageParser<EntityStaticInfoList>(() => new EntityStaticInfoList());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<EntityStaticInfoList> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::MonMoose.StaticData.StructureReflection.Descriptor.MessageTypes[11]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public EntityStaticInfoList() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public EntityStaticInfoList(EntityStaticInfoList other) : this() {
+      list_ = other.list_.Clone();
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public EntityStaticInfoList Clone() {
+      return new EntityStaticInfoList(this);
+    }
+
+    /// <summary>Field number for the "list" field.</summary>
+    public const int ListFieldNumber = 1;
+    private static readonly pb::FieldCodec<global::MonMoose.StaticData.EntityStaticInfo> _repeated_list_codec
+        = pb::FieldCodec.ForMessage(10, global::MonMoose.StaticData.EntityStaticInfo.Parser);
+    private readonly pbc::RepeatedField<global::MonMoose.StaticData.EntityStaticInfo> list_ = new pbc::RepeatedField<global::MonMoose.StaticData.EntityStaticInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<global::MonMoose.StaticData.EntityStaticInfo> List {
+      get { return list_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as EntityStaticInfoList);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(EntityStaticInfoList other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!list_.Equals(other.list_)) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= list_.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      list_.WriteTo(output, _repeated_list_codec);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      size += list_.CalculateSize(_repeated_list_codec);
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(EntityStaticInfoList other) {
       if (other == null) {
         return;
       }

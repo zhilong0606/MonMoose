@@ -12,6 +12,7 @@ namespace MonMoose.StaticData
 			m_loaderMap.Add("BattleScene", new ProtoDataLoader<BattleSceneStaticInfo, BattleSceneStaticInfoList>(m_BattleSceneList, BattleSceneStaticInfoList.Parser.ParseFrom, (fromList, toList) => { toList.Clear(); toList.AddRange(fromList.List); }));
 			m_loaderMap.Add("BattleStage", new ProtoDataLoader<BattleStageStaticInfo, BattleStageStaticInfoList>(m_BattleStageList, BattleStageStaticInfoList.Parser.ParseFrom, (fromList, toList) => { toList.Clear(); toList.AddRange(fromList.List); }));
 			m_loaderMap.Add("Grid", new ProtoDataLoader<GridStaticInfo, GridStaticInfoList>(m_GridList, GridStaticInfoList.Parser.ParseFrom, (fromList, toList) => { toList.Clear(); toList.AddRange(fromList.List); }));
+			m_loaderMap.Add("Entity", new ProtoDataLoader<EntityStaticInfo, EntityStaticInfoList>(m_EntityList, EntityStaticInfoList.Parser.ParseFrom, (fromList, toList) => { toList.Clear(); toList.AddRange(fromList.List); }));
 		}
 
 		//Actor
@@ -38,5 +39,10 @@ namespace MonMoose.StaticData
 		private List<GridStaticInfo> m_GridList = new List<GridStaticInfo>();
 		public GridStaticInfo GetGridStaticInfo(int id) { foreach (var info in m_GridList) if (info.Id == id) return info; return null; }
 		public IEnumerator<GridStaticInfo> GetGridStaticInfoEnumerator() { return m_GridList.GetEnumerator(); }
+
+		//Entity
+		private List<EntityStaticInfo> m_EntityList = new List<EntityStaticInfo>();
+		public EntityStaticInfo GetEntityStaticInfo(int id) { foreach (var info in m_EntityList) if (info.Id == id) return info; return null; }
+		public IEnumerator<EntityStaticInfo> GetEntityStaticInfoEnumerator() { return m_EntityList.GetEnumerator(); }
 	}
 }

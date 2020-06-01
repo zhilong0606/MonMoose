@@ -5,6 +5,7 @@ using MonMoose.Logic.Battle;
 using MonMoose.StaticData;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Grid = MonMoose.Logic.Battle.Grid;
 
 namespace MonMoose.Logic
 {
@@ -74,7 +75,7 @@ namespace MonMoose.Logic
             BattleInitData battleInitData = new BattleInitData();
             battleInitData.id = 1;
             {
-                BattleTeamInitData teamInitData = new BattleTeamInitData();
+                TeamInitData teamInitData = new TeamInitData();
                 teamInitData.isAI = false;
                 teamInitData.camp = ECampType.Camp1;
                 {
@@ -87,7 +88,7 @@ namespace MonMoose.Logic
             return battleInitData;
         }
 
-        private BattleGrid m_downGrid;
+        private Grid m_downGrid;
 
         //public override void OnTickFloat(float deltaTime)
         //{
@@ -96,7 +97,7 @@ namespace MonMoose.Logic
         //    {
         //        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         //        RaycastHit hit;
-        //        if (Physics.Raycast(ray, out hit, LayerMask.GetMask("BattleGrid")))
+        //        if (Physics.Raycast(ray, out hit, LayerMask.GetMask("Grid")))
         //        {
         //            BattleGridView view = hit.transform.GetComponent<BattleGridView>();
         //            if (view != null)
@@ -110,7 +111,7 @@ namespace MonMoose.Logic
         //    {
         //        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         //        RaycastHit hit;
-        //        if (Physics.Raycast(ray, out hit, LayerMask.GetMask("BattleGrid")))
+        //        if (Physics.Raycast(ray, out hit, LayerMask.GetMask("Grid")))
         //        {
         //            BattleGridView view = hit.transform.GetComponent<BattleGridView>();
         //            if (view != null)
