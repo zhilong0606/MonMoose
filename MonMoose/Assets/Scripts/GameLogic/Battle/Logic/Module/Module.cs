@@ -7,10 +7,10 @@ namespace MonMoose.Logic.Battle
     {
         protected BattleBase m_battleInstance;
 
-        public void Init(BattleBase battleInstance, BattleInitData initData)
+        public void Init(BattleBase battleInstance, BattleInitData battleInitData)
         {
             m_battleInstance = battleInstance;
-            OnInit(initData);
+            OnInit(battleInitData);
         }
 
         public void Tick()

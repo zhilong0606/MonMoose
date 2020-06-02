@@ -6,10 +6,10 @@ namespace MonMoose.Logic.Battle
 {
     internal static class BattleFactory
     {
-        public static Entity CreateEntity(BattleBase battleInstance, int entityRid, int uid)
+        public static Entity CreateEntity(BattleBase battleInstance, EntityInitData initData, int uid)
         {
             Entity entity = null;
-            EntityStaticInfo info = StaticDataManager.instance.GetEntityStaticInfo(entityRid);
+            EntityStaticInfo info = StaticDataManager.instance.GetEntityStaticInfo(initData.id);
             switch (info.EntityType)
             {
                 case EEntityType.Actor:
@@ -18,7 +18,7 @@ namespace MonMoose.Logic.Battle
             }
             if (entity != null)
             {
-                entity.Init(uid, info.RefId);
+                entity.Init(uid, initData);
             }
             return entity;
         }

@@ -6,9 +6,14 @@ namespace MonMoose.Logic.Battle
     {
         private ActorStaticInfo m_actorStaticInfo;
 
-        protected override void OnInitSpecific()
+        public ActorStaticInfo actorStaticInfo
         {
-            base.OnInitSpecific();
+            get { return m_actorStaticInfo; }
+        }
+
+        protected override void OnInitSpecific(EntityInitData entityInitData)
+        {
+            base.OnInitSpecific(entityInitData);
             m_actorStaticInfo = StaticDataManager.instance.GetActorStaticInfo(m_entityStaticInfo.RefId);
         }
     }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace MonMoose.Logic.Battle
 {
-    public class BattleObj : PoolObj
+    public abstract class BattleObj : PoolObj
     {
         protected BattleBase m_battleInstance;
 

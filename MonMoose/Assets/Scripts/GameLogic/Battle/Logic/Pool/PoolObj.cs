@@ -1,6 +1,6 @@
 ﻿namespace MonMoose.Logic.Battle
 {
-    public class PoolObj
+    public abstract class PoolObj
     {
         public Pool creater { get; set; }
 

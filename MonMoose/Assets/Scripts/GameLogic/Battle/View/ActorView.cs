@@ -5,23 +5,15 @@ using UnityEngine;
 
 namespace MonMoose.Logic
 {
-    public class ActorView : EntityView
+    public class ActorView : EntityObjView
     {
-        private GameObject m_obj;
-
-        public void Init(GameObject obj)
+        protected override string prefabPath
         {
-            m_obj = obj;
-        }
-
-        public override void SetPosition(FixVec2 pos)
-        {
-            m_obj.transform.position = new Vector3((float)pos.x, 0f, (float)pos.y);
-        }
-
-        public override void CreateView()
-        {
-            base.CreateView();
+            get
+            {
+                ActorInfoComponent infoComponent = m_entity.GetComponent<ActorInfoComponent>();
+                return infoComponent.actorStaticInfo.PrefabPath;
+            }
         }
     }
 }

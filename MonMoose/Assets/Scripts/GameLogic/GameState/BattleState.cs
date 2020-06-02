@@ -78,9 +78,10 @@ namespace MonMoose.Logic
                 teamInitData.isAI = false;
                 teamInitData.camp = ECampType.Camp1;
                 {
-                    ActorInitData actorInitData = new ActorInitData();
-                    actorInitData.id = 1;
-                    teamInitData.actorList.Add(actorInitData);
+                    EntityInitData entityInitData = new EntityInitData();
+                    entityInitData.id = 1;
+                    entityInitData.pos = new GridPosition(1, 2);
+                    teamInitData.actorList.Add(entityInitData);
                 }
                 battleInitData.teamList.Add(teamInitData);
             }
@@ -91,12 +92,12 @@ namespace MonMoose.Logic
         private EntityView OnGetView(int id)
         {
             EntityStaticInfo entityStaticInfo = StaticDataManager.instance.GetEntityStaticInfo(id);
-            ActorStaticInfo actorStaticInfo = StaticDataManager.instance.GetActorStaticInfo(entityStaticInfo.RefId);
-            GameObject prefab = ResourceManager.instance.GetPrefab(actorStaticInfo.PrefabPath);
-            GameObject go = GameObject.Instantiate(prefab);
-            ActorView view = new ActorView();
-            view.Init(go);
-            return view;
+            switch (entityStaticInfo.EntityType)
+            {
+                case EEntityType.Actor:
+                    return m_battleInstance.FetchPoolObj<ActorView>();
+            }
+            return null;
         }
 
         private Grid m_downGrid;

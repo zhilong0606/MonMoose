@@ -15,18 +15,19 @@ namespace MonMoose.Logic.Battle
             get { return EEntityComponentType.Info; }
         }
 
-        protected sealed override void OnInit()
+        protected override void OnInit(EntityInitData entityInitData)
         {
-            base.OnInit();
-            m_entityStaticInfo = StaticDataManager.instance.GetEntityStaticInfo(m_entity.entityRid);
+            base.OnInit(entityInitData);
+            m_entityStaticInfo = StaticDataManager.instance.GetEntityStaticInfo(entityInitData.id);
+            OnInitSpecific(entityInitData);
             //handlers[(int) EAttributeType.MaxHp] = new AttributeHandler(this.actor.actorInfo.maxHp, 0, int.MaxValue, 0, LevelDependentCalculator);
             //handlers[(int) EAttributeType.PhysicalAttack] = new AttributeHandler(this.actor.actorInfo.physicalAttack, 0, int.MaxValue, 0, LevelDependentCalculator);
 
-            curHp = handlers[(int)EAttributeType.Hp].TotalValue;
+            //curHp = handlers[(int)EAttributeType.Hp].TotalValue;
             curLevel = 1;
         }
 
-        protected virtual void OnInitSpecific()
+        protected virtual void OnInitSpecific(EntityInitData entityInitData)
         {
 
         }

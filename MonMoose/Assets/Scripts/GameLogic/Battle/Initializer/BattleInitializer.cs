@@ -22,25 +22,6 @@ namespace MonMoose.Logic
             yield return null;
             InitScene();
             yield return null;
-            //m_battleInitData.teamList.Sort(TeamInitData.Sort);
-            //for (int i = 0; i < m_battleInitData.teamList.Count; ++i)
-            //{
-            //    TeamInitData teamInitData = m_battleInitData.teamList[i];
-            //    Team team = new Team();
-            //    team.id = teamInitData.id;
-            //    team.camp = teamInitData.camp;
-            //    team.name = teamInitData.name;
-            //    team.isAI = teamInitData.isAI;
-            //    for (int j = 0; j < teamInitData.actorList.Count; ++j)
-            //    {
-            //        ActorInitData actorInitData = teamInitData.actorList[j];
-            //        Actor actor = new Actor();
-            //        actor.Init(actorInitData.id);
-            //        //ActorManager.instance.AddHero(actor);
-            //        yield return null;
-            //    }
-            //    //BattlePlayerManager.instance.AddPlayer(player);
-            //}
         }
 
         private void InitScene()
@@ -58,9 +39,7 @@ namespace MonMoose.Logic
             BattleGridView[] gridViews = sceneConfig.gridRoot.GetComponentsInChildren<BattleGridView>();
             for (int i = 0; i < gridViews.Length; ++i)
             {
-                Grid grid = new Grid();
-                //grid.Init(gridViews[i], gridViews[i].position);
-                //BattleGridManager.instance.AddGrid(grid);
+                BattleGridManager.instance.AddGridView(gridViews[i]);
             }
         }
     }

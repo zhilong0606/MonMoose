@@ -8,7 +8,7 @@ namespace MonMoose.Logic.Battle
         public int id;
         public ECampType camp;
         public string name;
-        public List<ActorInitData> actorList = new List<ActorInitData>();
+        public List<EntityInitData> actorList = new List<EntityInitData>();
         public bool isAI = false;
 
         public static int Sort(TeamInitData x, TeamInitData y)

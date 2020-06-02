@@ -16,11 +16,11 @@ namespace MonMoose.Logic.Battle
             camp = initData.camp;
             name = initData.name;
             isAI = initData.isAI;
-            initData.actorList.Sort(ActorInitData.Sort);
+            initData.actorList.Sort(EntityInitData.Sort);
             for (int i = 0; i < initData.actorList.Count; ++i)
             {
-                ActorInitData actorInitData = initData.actorList[i];
-                Entity entity = BattleFactory.CreateEntity(m_battleInstance, actorInitData.id, m_battleInstance.CreateObjId(EBattleObjType.Entity));
+                EntityInitData entityInitData = initData.actorList[i];
+                Entity entity = BattleFactory.CreateEntity(m_battleInstance, entityInitData, m_battleInstance.CreateObjId(EBattleObjType.Entity));
                 entityList.Add(entity);
             }
         }

@@ -1,13 +1,28 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using MonMoose.StaticData;
 using UnityEngine;
 
 namespace MonMoose.Logic.Battle
 {
-    public class StageModule : Module
+    public class SceneModule : Module
     {
+        private BattleSceneStaticInfo m_staticInfo;
         private List<Stage> m_stageList = new List<Stage>();
         private int m_curStageIndex = 0;
+
+        protected override void OnInit(BattleInitData battleInitData)
+        {
+            base.OnInit(battleInitData);
+            m_staticInfo = StaticDataManager.instance.GetBattleSceneStaticInfo(battleInitData.id);
+            for (int i = 0; i < m_staticInfo.StageIdList.Count; ++i)
+            {
+                int stageRid = m_staticInfo.StageIdList[i];
+                Stage stage = m_battleInstance.FetchPoolObj<Stage>();
+                stage.Init(stageRid);
+                m_stageList.Add(stage);
+            }
+        }
 
         public Stage GetCurStage()
         {

@@ -9,13 +9,13 @@ namespace MonMoose.Logic.Battle
     {
         private List<Team> m_teamList = new List<Team>();
         private List<Entity> m_entityList = new List<Entity>();
-        private BattleSceneStaticInfo m_staticInfo;
         private Func<int, EntityView> m_funcOnGetView;
 
         private DebugModule m_debugModule = new DebugModule();
         private PoolModule m_poolModule = new PoolModule();
         private ObjIdModule m_objIdModule = new ObjIdModule();
-        private StageModule m_stageModule = new StageModule();
+        private SceneModule m_sceneModule = new SceneModule();
+
         private List<Module> m_moduleList = new List<Module>();
 
         public DebugModule debugModule
@@ -25,7 +25,6 @@ namespace MonMoose.Logic.Battle
 
         public void Init(BattleInitData battleInitData)
         {
-            m_staticInfo = StaticDataManager.instance.GetBattleSceneStaticInfo(battleInitData.id);
             m_funcOnGetView = battleInitData.funcOnGetView;
             InitModuleList(battleInitData);
             InitTeamList(battleInitData);
@@ -35,7 +34,8 @@ namespace MonMoose.Logic.Battle
         {
             m_moduleList.Add(m_debugModule);
             m_moduleList.Add(m_poolModule);
-            m_moduleList.Add(m_stageModule);
+            m_moduleList.Add(m_objIdModule);
+            m_moduleList.Add(m_sceneModule);
 
             for (int i = 0; i < m_moduleList.Count; ++i)
             {
@@ -65,17 +65,17 @@ namespace MonMoose.Logic.Battle
             {
                 return m_funcOnGetView(entityId);
             }
-            return null;
+            return FetchPoolObj<EmptyView>();
         }
 
         public Grid GetGrid(int x, int y)
         {
-            return m_stageModule.GetGrid(x, y);
+            return m_sceneModule.GetGrid(x, y);
         }
 
         public Grid GetGrid(GridPosition gridPos)
         {
-            return m_stageModule.GetGrid(gridPos);
+            return m_sceneModule.GetGrid(gridPos);
         }
 
         public int CreateObjId(EBattleObjType type)

@@ -7,6 +7,8 @@ namespace MonMoose.Logic.Battle
     {
         None = -1,
         Info,
+        Init,
+        Location,
         Move,
         Animation,
         Skill,
