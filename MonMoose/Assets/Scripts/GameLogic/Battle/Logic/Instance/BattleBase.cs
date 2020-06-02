@@ -15,6 +15,8 @@ namespace MonMoose.Logic.Battle
         private PoolModule m_poolModule = new PoolModule();
         private ObjIdModule m_objIdModule = new ObjIdModule();
         private SceneModule m_sceneModule = new SceneModule();
+        private FrameSyncSender m_frameSyncSender = new FrameSyncSender();
+        private FrameSyncManager m_frameSyncManager = new FrameSyncManager();
 
         private List<Module> m_moduleList = new List<Module>();
 
@@ -26,6 +28,7 @@ namespace MonMoose.Logic.Battle
         public void Init(BattleInitData battleInitData)
         {
             m_funcOnGetView = battleInitData.funcOnGetView;
+            m_frameSyncManager.Init(this, FrameTick);
             InitModuleList(battleInitData);
             InitTeamList(battleInitData);
         }
@@ -57,6 +60,15 @@ namespace MonMoose.Logic.Battle
         public void Start()
         {
 
+        }
+
+        public FrameSyncSender GetSender()
+        {
+            if (m_frameSyncSender == null)
+            {
+                m_frameSyncSender = new FrameSyncSender();
+            }
+            return m_frameSyncSender;
         }
 
         public EntityView GetEntityView(int entityId)
@@ -94,7 +106,12 @@ namespace MonMoose.Logic.Battle
             return obj;
         }
 
-        public void Tick()
+        public void Tick(float deltaTime)
+        {
+            m_frameSyncManager.Tick(deltaTime);
+        }
+
+        internal void FrameTick()
         {
             for (int i = 0; i < m_teamList.Count; ++i)
             {

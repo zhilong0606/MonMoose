@@ -2,7 +2,7 @@
 {
     public class MoveDirectionCommand : FrameCommand
     {
-        //public FixVec3 direction;
+        public FixVec3 direction;
 
         public MoveDirectionCommand()
         {

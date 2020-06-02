@@ -2,7 +2,7 @@
 
 namespace MonMoose.Logic.Battle
 {
-    public class FrameCommandGroup/* : ClassPoolObj*/
+    public class FrameCommandGroup : BattleObj
     {
         public const int bitFlagSize = (FrameSyncDefine.CommandTypeCount - 1) / 8 + 1;
         public FrameCommand[] commands = new FrameCommand[FrameSyncDefine.CommandTypeCount];

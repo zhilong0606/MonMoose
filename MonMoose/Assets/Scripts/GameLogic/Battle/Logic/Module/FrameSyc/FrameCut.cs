@@ -2,10 +2,15 @@
 
 namespace MonMoose.Logic.Battle
 {
-    public class FrameCut /*: ClassPoolObj*/
+    public class FrameCut : BattleObj
     {
         private List<FrameCommandGroup> groupList = new List<FrameCommandGroup>();
-        public int frameIndex = 0;
+        private int m_frameIndex = 0;
+
+        public int frameIndex
+        {
+            get { return m_frameIndex; }
+        }
 
         public void Deserialize()
         {
@@ -25,7 +30,7 @@ namespace MonMoose.Logic.Battle
         /***For Local Use***/
         public void LocalDeserialize(int frameIndex, FrameCommandGroup group)
         {
-            this.frameIndex = frameIndex;
+            m_frameIndex = frameIndex;
             groupList.Add(group);
         }
     }

@@ -1,14 +1,27 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace MonMoose.Logic.Battle
 {
-    public class FrameSyncManager /*: Singleton<FrameSyncManager>*/
+    public class FrameSyncManager
     {
         private FrameCommandGroup curGroup;
         private List<FrameCut> cutList = new List<FrameCut>();
-        private int curFrameIndex;
-        private float curTime = 0f;
+
         private bool isStart = false;
+        private Fix32 m_time;
+        private Fix32 m_deltaTime;
+        private int curFrameIndex;
+
+        private float curTime = 0f;
+        private BattleBase m_battleInstance;
+        private Action m_actionOnFrameTick;
+
+        public void Init(BattleBase battleInstance, Action actionOnFrameTick)
+        {
+            m_battleInstance = battleInstance;
+            m_actionOnFrameTick = actionOnFrameTick;
+        }
 
         public void Start()
         {
@@ -48,7 +61,6 @@ namespace MonMoose.Logic.Battle
             {
                 return;
             }
-            curTime += deltaTime;
             while (curTime > FrameSyncDefine.TimeInterval)
             {
                 curTime -= FrameSyncDefine.TimeInterval;
@@ -56,9 +68,9 @@ namespace MonMoose.Logic.Battle
                 {
                     if (FrameSyncDefine.IsLocalSync)
                     {
-                        //FrameCut cut = ClassPoolManager.instance.Fetch<FrameCut>();
-                        //cut.LocalDeserialize(curFrameIndex, curGroup);
-                        //cutList.Add(cut);
+                        FrameCut cut = m_battleInstance.FetchPoolObj<FrameCut>();
+                        cut.LocalDeserialize(curFrameIndex, curGroup);
+                        cutList.Add(cut);
                     }
                     //Will DO::Send CurGroup
                     /*************/
@@ -91,6 +103,14 @@ namespace MonMoose.Logic.Battle
                 //curGroup = ClassPoolManager.instance.Fetch<FrameCommandGroup>();
             }
             curGroup.AddCommand(command);
+        }
+
+        private void NotifyFrameTick()
+        {
+            if (m_actionOnFrameTick != null)
+            {
+                m_actionOnFrameTick();
+            }
         }
     }
 }
