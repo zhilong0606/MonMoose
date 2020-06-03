@@ -43,5 +43,18 @@
 
             return value;
         }
+
+        public static void WriteByte(ref byte[] buffer, ref int offset, byte value)
+        {
+            buffer[offset] = value;
+            offset++;
+        }
+
+        public static byte ReadByte(ref byte[] buffer, ref int offset)
+        {
+            byte value = buffer[offset];
+            offset++;
+            return value;
+        }
     }
 }

@@ -73,5 +73,13 @@ namespace MonMoose.Core
             m_curState = state;
             m_curState.Enter();
         }
+
+        public void Tick()
+        {
+            if (m_curState != null)
+            {
+                m_curState.Tick();
+            }
+        }
     }
 }

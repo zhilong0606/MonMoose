@@ -11,7 +11,7 @@ namespace MonMoose.Logic
 
         protected override void OnEnter()
         {
-            UIWindowManager.instance.OpenWindow((int)EWindowId.LobbyWindow);
+            UIWindowManager.instance.OpenWindow((int)EWindowId.Lobby);
         }
 
         protected override void OnExit()

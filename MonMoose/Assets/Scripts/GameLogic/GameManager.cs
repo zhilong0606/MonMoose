@@ -12,18 +12,23 @@ namespace MonMoose.Logic
 
     public class GameManager : MonoSingleton<GameManager>
     {
-        private StateMachine stateMachine = new StateMachine();
+        private StateMachine m_stateMachine = new StateMachine();
+
+        public StateMachine stateMachine
+        {
+            get { return m_stateMachine; }
+        }
 
         protected override void OnInit()
         {
-            stateMachine.Init(
+            m_stateMachine.Init(
                 new GameInitState(),
                 new LobbyState(),
                 new BattleState()
                 );
             RegisterListener();
             InitGlobalDefine();
-            stateMachine.ChangeState((int)EGameState.GameInit);
+            m_stateMachine.ChangeState((int)EGameState.GameInit);
         }
 
         protected override void OnUninit()
@@ -49,13 +54,9 @@ namespace MonMoose.Logic
             UIWindowDefine.Define();
         }
 
-        public void EnterBattle()
-        {
-            stateMachine.ChangeState((int)EGameState.Battle);
-        }
-
         private void Update()
         {
+            m_stateMachine.Tick();
             TickManager.instance.Tick(Time.deltaTime);
         }
     }

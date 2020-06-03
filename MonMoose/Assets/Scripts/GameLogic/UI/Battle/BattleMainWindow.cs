@@ -1,0 +1,28 @@
+﻿using MonMoose.Core;
+using UnityEngine;
+
+namespace MonMoose.Logic
+{
+    public class BattleMainWindow : UIWindow
+    {
+        protected override void OnInit(object param)
+        {
+            base.OnInit(param);
+
+        }
+
+        private KeyCode[] codes = new KeyCode[] {KeyCode.A, KeyCode.S, KeyCode.D, KeyCode.W};
+
+        public void Update()
+        {
+            for (int i = 0; i < codes.Length; ++i)
+            {
+                if (Input.GetKeyDown(codes[i]))
+                {
+                    BattleState battleState = GameManager.instance.stateMachine.GetState((int)EGameState.Battle) as BattleState;
+                    battleState.Send(codes[i]);
+                }
+            }
+        }
+    }
+}

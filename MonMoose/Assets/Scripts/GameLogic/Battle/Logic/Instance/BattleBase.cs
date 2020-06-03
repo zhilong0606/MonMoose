@@ -15,20 +15,13 @@ namespace MonMoose.Logic.Battle
         private PoolModule m_poolModule = new PoolModule();
         private ObjIdModule m_objIdModule = new ObjIdModule();
         private SceneModule m_sceneModule = new SceneModule();
-        private FrameSyncSender m_frameSyncSender = new FrameSyncSender();
-        private FrameSyncManager m_frameSyncManager = new FrameSyncManager();
+        private FrameSyncModule m_frameSyncModule = new FrameSyncModule();
 
         private List<Module> m_moduleList = new List<Module>();
-
-        public DebugModule debugModule
-        {
-            get { return m_debugModule; }
-        }
 
         public void Init(BattleInitData battleInitData)
         {
             m_funcOnGetView = battleInitData.funcOnGetView;
-            m_frameSyncManager.Init(this, FrameTick);
             InitModuleList(battleInitData);
             InitTeamList(battleInitData);
         }
@@ -39,6 +32,7 @@ namespace MonMoose.Logic.Battle
             m_moduleList.Add(m_poolModule);
             m_moduleList.Add(m_objIdModule);
             m_moduleList.Add(m_sceneModule);
+            m_moduleList.Add(m_frameSyncModule);
 
             for (int i = 0; i < m_moduleList.Count; ++i)
             {
@@ -54,7 +48,9 @@ namespace MonMoose.Logic.Battle
                 Team team = FetchPoolObj<Team>();
                 team.Init(battleInitData.teamList[i]);
                 m_teamList.Add(team);
+                m_entityList.AddRange(team.entityList);
             }
+            m_entityList.Sort(Entity.Sort);
         }
 
         public void Start()
@@ -64,11 +60,7 @@ namespace MonMoose.Logic.Battle
 
         public FrameSyncSender GetSender()
         {
-            if (m_frameSyncSender == null)
-            {
-                m_frameSyncSender = new FrameSyncSender();
-            }
-            return m_frameSyncSender;
+            return m_frameSyncModule.GetSender();
         }
 
         public EntityView GetEntityView(int entityId)
@@ -78,6 +70,18 @@ namespace MonMoose.Logic.Battle
                 return m_funcOnGetView(entityId);
             }
             return FetchPoolObj<EmptyView>();
+        }
+
+        public Entity GetEntity(int uid)
+        {
+            for (int i = 0; i < m_entityList.Count; ++i)
+            {
+                if (m_entityList[i].uid == uid)
+                {
+                    return m_entityList[i];
+                }
+            }
+            return null;
         }
 
         public Grid GetGrid(int x, int y)
@@ -106,13 +110,22 @@ namespace MonMoose.Logic.Battle
             return obj;
         }
 
+        public void Log(int level, string str)
+        {
+            m_debugModule.Log(level, str);
+        }
+
         public void Tick(float deltaTime)
         {
-            m_frameSyncManager.Tick(deltaTime);
+            m_frameSyncModule.Tick(deltaTime);
         }
 
         internal void FrameTick()
         {
+            for (int i = 0; i < m_moduleList.Count; ++i)
+            {
+                m_moduleList[i].Tick();
+            }
             for (int i = 0; i < m_teamList.Count; ++i)
             {
                 m_teamList[i].Tick();

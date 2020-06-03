@@ -2,9 +2,9 @@
 {
     public class StopMoveCommand : FrameCommand
     {
-        public StopMoveCommand()
+        public override EFrameCommandType commandType
         {
-            commandType = EFrameCommandType.StopMove;
+            get { return EFrameCommandType.StopMove; }
         }
 
         public override void Excute()

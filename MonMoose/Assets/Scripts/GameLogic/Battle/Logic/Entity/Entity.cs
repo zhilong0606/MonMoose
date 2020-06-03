@@ -60,5 +60,10 @@ namespace MonMoose.Logic.Battle
         {
             
         }
+
+        public static int Sort(Entity x, Entity y)
+        {
+            return x.uid.CompareTo(y.uid);
+        }
     }
 }

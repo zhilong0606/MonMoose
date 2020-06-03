@@ -10,7 +10,7 @@ namespace MonMoose.Logic.Battle
 
         public static void Log(BattleBase battleInstance, string str)
         {
-            battleInstance.debugModule.Log(m_logLevel, str);
+            battleInstance.Log(m_logLevel, str);
         }
 
         public static void Log<T1>(BattleBase battleInstance, string str, T1 p1)
@@ -40,7 +40,7 @@ namespace MonMoose.Logic.Battle
 
         public static void LogError(BattleBase battleInstance, string str)
         {
-            battleInstance.debugModule.Log(m_errorLevel, str);
+            battleInstance.Log(m_errorLevel, str);
         }
 
         public static void LogError<T1>(BattleBase battleInstance, string str, T1 p1)

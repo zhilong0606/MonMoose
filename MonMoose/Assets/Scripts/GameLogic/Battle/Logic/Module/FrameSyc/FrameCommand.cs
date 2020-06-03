@@ -1,29 +1,36 @@
 ﻿namespace MonMoose.Logic.Battle
 {
-    public class FrameCommand /*: ClassPoolObj*/
+    public abstract class FrameCommand : BattleObj
     {
-        public int playerID;
-        public int frameNum;
-        public EFrameCommandType commandType;
+        //public int playerId;
 
-        public static FrameCommand GetCommand(EFrameCommandType type)
+        public abstract EFrameCommandType commandType { get; }
+
+        public virtual int bufferLength
         {
-            //switch (type)
-            //{
-            //    case EFrameCommandType.MoveDirection:
-            //        return ClassPoolManager.instance.Fetch<MoveDirectionCommand>();
-            //}
-            return null;
+            get { return 4; }
         }
-
+        
         public virtual void Serialize(out byte[] buffer)
         {
-            buffer = null;
+            buffer = new byte[bufferLength];
+            int offset = 0;
+            OnSerialized(ref buffer, ref offset);
         }
 
-        public virtual void Deserialise(ref byte[] buffer, ref int offset)
+        public void Deserialise(ref byte[] buffer, ref int offset)
         {
+            OnDeserialised(ref buffer, ref offset);
+        }
 
+        protected virtual void OnSerialized(ref byte[] buffer, ref int offset)
+        {
+            //ByteBufferUtility.WriteInt(ref buffer, ref offset, playerId);
+        }
+
+        public virtual void OnDeserialised(ref byte[] buffer, ref int offset)
+        {
+            //playerId = ByteBufferUtility.ReadInt(ref buffer, ref offset);
         }
 
         public virtual void Excute()

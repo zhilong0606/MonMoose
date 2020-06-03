@@ -34,9 +34,15 @@
             m_isRunning = false;
         }
 
+        public void Tick()
+        {
+            OnTick();
+        }
+
         protected virtual void OnInit() { }
         protected virtual void OnUninit() { }
         protected virtual void OnEnter() { }
         protected virtual void OnExit() { }
+        protected virtual void OnTick() { }
     }
 }

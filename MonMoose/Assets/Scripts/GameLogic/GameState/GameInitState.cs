@@ -15,7 +15,7 @@ namespace MonMoose.Logic
             GameInitParam param = new GameInitParam();
             param.initializer = new GameInitializer();
             param.actionOnInitEnd = OnGameInitEnd;
-            UIWindowManager.instance.OpenWindow((int)EWindowId.GameInitWindow, param);
+            UIWindowManager.instance.OpenWindow((int)EWindowId.GameInit, param);
         }
 
         protected override void OnExit()

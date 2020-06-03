@@ -12,6 +12,8 @@ namespace MonMoose.Logic
     public class BattleState : State
     {
         private BattleBase m_battleInstance;
+        private FrameSyncSender m_sender;
+        private bool m_isLoadEnd;
 
         public override int stateIndex
         {
@@ -32,12 +34,14 @@ namespace MonMoose.Logic
         {
             BattleManager.CreateInstance();
             m_battleInstance = new BattleBase();
+            m_sender = m_battleInstance.GetSender();
             BattleInitializer initializer = new BattleInitializer();
             initializer.StartAsync(OnLoadEnd);
         }
 
         private void OnLoadEnd()
         {
+            m_isLoadEnd = true;
             m_battleInstance.Init(GetTestBattleInitData());
             EventManager.instance.Broadcast((int)EventID.LoadingWindow_FadeOutRequest);
         }
@@ -134,8 +138,36 @@ namespace MonMoose.Logic
         //    }
         //}
 
+        public void Send(KeyCode code)
+        {
+            switch (code)
+            {
+                case KeyCode.W:
+                    m_sender.SendMoveToGrid(10001, new GridPosition(1, 4));
+                    break;
+                case KeyCode.S:
+                    m_sender.SendMoveToGrid(10001, new GridPosition(1, 3));
+                    break;
+                case KeyCode.A:
+                    m_sender.SendMoveToGrid(10001, new GridPosition(0, 3));
+                    break;
+                case KeyCode.D:
+                    m_sender.SendMoveToGrid(10001, new GridPosition(2, 3));
+                    break;
+            }
+        }
+
         private void OnFrameTick()
         {
+        }
+
+        protected override void OnTick()
+        {
+            base.OnTick();
+            if (m_isLoadEnd)
+            {
+                m_battleInstance.Tick(Time.deltaTime);
+            }
         }
     }
 }

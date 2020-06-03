@@ -26,5 +26,11 @@ namespace MonMoose.Logic.Battle
             m_offset = offset;
             m_entity.view.SetPosition(m_grid, m_offset, isTeleport);
         }
+
+        public void SetPosition(GridPosition gridPosition, FixVec2 offset, bool isTeleport)
+        {
+            m_grid = m_battleInstance.GetGrid(gridPosition);
+            SetPosition(m_grid, offset, isTeleport);
+        }
     }
 }

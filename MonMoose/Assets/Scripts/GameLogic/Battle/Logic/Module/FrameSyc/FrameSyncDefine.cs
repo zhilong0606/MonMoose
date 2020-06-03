@@ -2,7 +2,7 @@
 {
     public enum EFrameCommandType
     {
-        MoveDirection,
+        MoveToGrid,
         StopMove,
         CastSkillTarget,
         CastSkillPosition,

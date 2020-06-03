@@ -22,6 +22,8 @@ namespace MonMoose.Logic
             yield return null;
             InitScene();
             yield return null;
+            InitUI();
+            yield return null;
         }
 
         private void InitScene()
@@ -41,6 +43,11 @@ namespace MonMoose.Logic
             {
                 BattleGridManager.instance.AddGridView(gridViews[i]);
             }
+        }
+
+        private void InitUI()
+        {
+            UIWindowManager.instance.OpenWindow((int)EWindowId.BattleMain);
         }
     }
 }
