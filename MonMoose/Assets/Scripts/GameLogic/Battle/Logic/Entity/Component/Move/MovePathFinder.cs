@@ -74,7 +74,7 @@ namespace MonMoose.Logic.Battle
             newPath.grid = grid;
             newPath.nextPath = path;
             newPath.g = (path.grid.GetCost(m_entity) + grid.GetCost(m_entity)) / 2f + path.g;
-            newPath.h = grid.gridPosition.DistanceTo(path.grid.gridPosition);
+            newPath.h = grid.gridPosition.DistanceTo(m_targetGrid.gridPosition);
             newPath.f = newPath.g + newPath.h;
             AddToOpenList(newPath);
         }
