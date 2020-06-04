@@ -31,5 +31,10 @@ namespace MonMoose.Logic.Battle
             m_stagePosition = stagePosition;
             m_size = size;
         }
+
+        public float GetCost(Entity entity)
+        {
+            return 1f;
+        }
     }
 }

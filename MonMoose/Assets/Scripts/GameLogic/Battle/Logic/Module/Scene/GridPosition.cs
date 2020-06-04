@@ -26,5 +26,10 @@ namespace MonMoose.Logic.Battle
         {
             return lhs.x != rhs.x || lhs.y != rhs.y;
         }
+
+        public int DistanceTo(GridPosition pos)
+        {
+            return Math.Abs(pos.x - x) + Math.Abs(pos.y - y);
+        }
     }
 }

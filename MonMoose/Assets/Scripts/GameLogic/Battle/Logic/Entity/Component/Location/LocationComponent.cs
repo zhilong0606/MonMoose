@@ -13,6 +13,16 @@ namespace MonMoose.Logic.Battle
             get { return EEntityComponentType.Location; }
         }
 
+        public Grid grid
+        {
+            get { return m_grid; }
+        }
+
+        public FixVec2 offset
+        {
+            get { return m_offset; }
+        }
+
         protected override void OnInit(EntityInitData entityInitData)
         {
             base.OnInit(entityInitData);

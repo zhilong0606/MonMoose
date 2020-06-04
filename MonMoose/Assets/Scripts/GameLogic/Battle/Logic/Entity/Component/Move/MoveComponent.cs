@@ -1,4 +1,6 @@
-﻿namespace MonMoose.Logic.Battle
+﻿using System.Collections.Generic;
+
+namespace MonMoose.Logic.Battle
 {
     public class MoveComponent : EntityComponent
     {
@@ -7,6 +9,80 @@
             get { return EEntityComponentType.Move; }
         }
         
+        private Grid m_curGrid;
+        private Grid m_targetGrid;
+        private FixVec2 m_offset;
+        private List<Grid> m_pathGridList = new List<Grid>();
+        private bool m_isStart;
+
+        private int m_curIndex;
+        private bool m_isArrived;
+
+        public void MoveToGrid(GridPosition gridPos)
+        {
+            Grid targetGrid = m_battleInstance.GetGrid(gridPos);
+            MovePathFinder pathFinder = m_battleInstance.FetchPoolObj<MovePathFinder>();
+            pathFinder.FindPath(m_entity, targetGrid, m_pathGridList);
+            if (m_pathGridList.Count < 2)
+            {
+                return;
+            }
+            m_curGrid = m_entity.GetComponent<LocationComponent>().grid;
+            m_targetGrid = targetGrid;
+            m_offset = m_entity.GetComponent<LocationComponent>().offset;
+            m_curIndex = 0;
+            m_isStart = true;
+            m_isArrived = false;
+        }
+
+        protected override void OnTick()
+        {
+            if (m_isStart)
+            {
+                Grid formGrid = m_pathGridList[m_curIndex];
+                Grid toGrid = m_pathGridList[m_curIndex + 1];
+                FixVec2 toVec = new FixVec2(toGrid.gridPosition.x - formGrid.gridPosition.x, toGrid.gridPosition.y - formGrid.gridPosition.y);
+                FixVec2 deltaPos = toVec * new Fix32(50, 1000) * new Fix32(500, 1000);
+                FixVec2 offset = m_offset + deltaPos;
+                Grid grid = formGrid;
+                Fix32 half = new Fix32(500, 1000);
+                if (offset.x > half)
+                {
+                    grid = toGrid;
+                    offset.x = offset.x - 1;
+                }
+                else if(offset.x < - half)
+                {
+                    grid = toGrid;
+                    offset.x = 1 + offset.x;
+                }
+                if (offset.y > half)
+                {
+                    grid = toGrid;
+                    offset.y = offset.y - 1;
+                }
+                else if (offset.y < -half)
+                {
+                    grid = toGrid;
+                    offset.y = 1 + offset.y;
+                }
+
+                if (grid == toGrid && (offset.x * m_offset.x >= 0 && offset.y * m_offset.y >= 0))
+                {
+                    m_offset = FixVec2.zero;
+                    m_curIndex++;
+                    if (m_curIndex == m_pathGridList.Count - 1)
+                    {
+                        m_isStart = false;
+                    }
+                }
+
+                m_offset = m_offset + deltaPos;
+                m_entity.GetComponent<LocationComponent>().SetPosition(grid, offset, true);
+            }
+            base.OnTick();
+        }
+
         //private Fix32 speed = new Fix32(3, 10);
         //private GameObject targetObj;
         //private FixVec3 position;

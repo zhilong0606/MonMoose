@@ -39,10 +39,10 @@
             Entity entity = m_battleInstance.GetEntity(entityId);
             if (entity != null)
             {
-                LocationComponent locationComponent = entity.GetComponent<LocationComponent>();
-                if (locationComponent != null)
+                MoveComponent moveComponent = entity.GetComponent<MoveComponent>();
+                if (moveComponent != null)
                 {
-                    locationComponent.SetPosition(gridPos, FixVec2.zero, true);
+                    moveComponent.MoveToGrid(gridPos);
                 }
             }
         }
