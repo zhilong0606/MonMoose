@@ -16,7 +16,6 @@ namespace MonMoose.Logic.Battle
             camp = initData.camp;
             name = initData.name;
             isAI = initData.isAI;
-            initData.actorList.Sort(EntityInitData.Sort);
             for (int i = 0; i < initData.actorList.Count; ++i)
             {
                 EntityInitData entityInitData = initData.actorList[i];

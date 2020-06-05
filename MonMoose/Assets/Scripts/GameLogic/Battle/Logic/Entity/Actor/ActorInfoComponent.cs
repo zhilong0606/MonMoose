@@ -11,6 +11,11 @@ namespace MonMoose.Logic.Battle
             get { return m_actorStaticInfo; }
         }
 
+        public override int size
+        {
+            get { return m_actorStaticInfo.Size; }
+        }
+
         protected override void OnInitSpecific(EntityInitData entityInitData)
         {
             base.OnInitSpecific(entityInitData);

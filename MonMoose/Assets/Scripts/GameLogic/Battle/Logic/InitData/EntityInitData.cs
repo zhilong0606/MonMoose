@@ -9,10 +9,5 @@ namespace MonMoose.Logic.Battle
         public int level;
         public GridPosition pos;
         public List<SkillInitData> skillList = new List<SkillInitData>();
-
-        public static int Sort(EntityInitData x, EntityInitData y)
-        {
-            return x.id.CompareTo(y.id);
-        }
     }
 }

@@ -15,6 +15,11 @@ namespace MonMoose.Logic.Battle
             get { return EEntityComponentType.Info; }
         }
 
+        public virtual int size
+        {
+            get { return 1; }
+        }
+
         protected override void OnInit(EntityInitData entityInitData)
         {
             base.OnInit(entityInitData);

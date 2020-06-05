@@ -45,6 +45,7 @@ message ActorStaticInfo
 	int32 Attack = 5;
 	int32 Deffence = 6;
 	string PrefabPath = 7;
+	int32 Size = 8;
 }
 
 message AttributeStaticInfo

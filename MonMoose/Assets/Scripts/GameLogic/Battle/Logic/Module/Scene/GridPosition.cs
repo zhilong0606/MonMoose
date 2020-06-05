@@ -27,6 +27,20 @@ namespace MonMoose.Logic.Battle
             return lhs.x != rhs.x || lhs.y != rhs.y;
         }
 
+        public static GridPosition operator +(GridPosition lhs, GridPosition rhs)
+        {
+            lhs.x += rhs.x;
+            lhs.y += rhs.y;
+            return lhs;
+        }
+
+        public static GridPosition operator -(GridPosition lhs, GridPosition rhs)
+        {
+            lhs.x -= rhs.x;
+            lhs.y -= rhs.y;
+            return lhs;
+        }
+
         public int DistanceTo(GridPosition pos)
         {
             return Math.Abs(pos.x - x) + Math.Abs(pos.y - y);

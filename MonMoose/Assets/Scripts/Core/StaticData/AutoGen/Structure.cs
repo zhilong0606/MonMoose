@@ -23,48 +23,49 @@ namespace MonMoose.StaticData {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ch9DbGllbnQvUHJvdG8vSUwvU3RydWN0dXJlLnByb3RvEhNNb25Nb29zZS5T",
-            "dGF0aWNEYXRhIqgBCg9BY3RvclN0YXRpY0luZm8SCgoCSWQYASABKAUSDAoE",
+            "dGF0aWNEYXRhIrYBCg9BY3RvclN0YXRpY0luZm8SCgoCSWQYASABKAUSDAoE",
             "TmFtZRgCIAEoCRIyCgRUeXBlGAMgASgOMiQuTW9uTW9vc2UuU3RhdGljRGF0",
             "YS5FQWN0b3JDbGFzc1R5cGUSEQoJTW92ZVNwZWVkGAQgASgFEg4KBkF0dGFj",
             "axgFIAEoBRIQCghEZWZmZW5jZRgGIAEoBRISCgpQcmVmYWJQYXRoGAcgASgJ",
-            "IlkKE0F0dHJpYnV0ZVN0YXRpY0luZm8SCgoCSWQYASABKAUSDAoETmFtZRgC",
-            "IAEoCRIWCg5Jc1NpZ25JbnZlcnNlZBgDIAEoCBIQCghJY29uUGF0aBgEIAEo",
-            "CSJGChVCYXR0bGVTY2VuZVN0YXRpY0luZm8SCgoCSWQYASABKAUSDAoETmFt",
-            "ZRgCIAEoCRITCgtTdGFnZUlkTGlzdBgDIAMoBSJ8ChVCYXR0bGVTdGFnZVN0",
-            "YXRpY0luZm8SCgoCSWQYASABKAUSDAoETmFtZRgCIAEoCRIRCglMZWZ0V2lk",
-            "dGgYAyABKAUSEgoKUmlnaHRXaWR0aBgEIAEoBRIOCgZIZWlnaHQYBSABKAUS",
-            "EgoKR3JpZElkTGlzdBgGIAMoBSIqCg5HcmlkU3RhdGljSW5mbxIKCgJJZBgB",
-            "IAEoBRIMCgROYW1lGAIgASgJImMKEEVudGl0eVN0YXRpY0luZm8SCgoCSWQY",
-            "ASABKAUSNAoKRW50aXR5VHlwZRgCIAEoDjIgLk1vbk1vb3NlLlN0YXRpY0Rh",
-            "dGEuRUVudGl0eVR5cGUSDQoFUmVmSWQYAyABKAUiSQoTQWN0b3JTdGF0aWNJ",
-            "bmZvTGlzdBIyCgRsaXN0GAEgAygLMiQuTW9uTW9vc2UuU3RhdGljRGF0YS5B",
-            "Y3RvclN0YXRpY0luZm8iUQoXQXR0cmlidXRlU3RhdGljSW5mb0xpc3QSNgoE",
-            "bGlzdBgBIAMoCzIoLk1vbk1vb3NlLlN0YXRpY0RhdGEuQXR0cmlidXRlU3Rh",
-            "dGljSW5mbyJVChlCYXR0bGVTY2VuZVN0YXRpY0luZm9MaXN0EjgKBGxpc3QY",
-            "ASADKAsyKi5Nb25Nb29zZS5TdGF0aWNEYXRhLkJhdHRsZVNjZW5lU3RhdGlj",
-            "SW5mbyJVChlCYXR0bGVTdGFnZVN0YXRpY0luZm9MaXN0EjgKBGxpc3QYASAD",
-            "KAsyKi5Nb25Nb29zZS5TdGF0aWNEYXRhLkJhdHRsZVN0YWdlU3RhdGljSW5m",
-            "byJHChJHcmlkU3RhdGljSW5mb0xpc3QSMQoEbGlzdBgBIAMoCzIjLk1vbk1v",
-            "b3NlLlN0YXRpY0RhdGEuR3JpZFN0YXRpY0luZm8iSwoURW50aXR5U3RhdGlj",
-            "SW5mb0xpc3QSMwoEbGlzdBgBIAMoCzIlLk1vbk1vb3NlLlN0YXRpY0RhdGEu",
-            "RW50aXR5U3RhdGljSW5mbyrpAQoPRUFjdG9yQ2xhc3NUeXBlEhgKFEVBY3Rv",
-            "ckNsYXNzVHlwZV9Ob25lEAASGwoXRUFjdG9yQ2xhc3NUeXBlX1dhcnJpb3IQ",
-            "ARIdChlFQWN0b3JDbGFzc1R5cGVfVGVzdFR5cGUyEAISHQoZRUFjdG9yQ2xh",
-            "c3NUeXBlX1Rlc3RUeXBlMxADEh4KGkVBY3RvckNsYXNzVHlwZV9UZXN0M1R5",
-            "cGUxEAQSHwobRUFjdG9yQ2xhc3NUeXBlX1RlczIxdFR5cGUyEAUSIAocRUFj",
-            "dG9yQ2xhc3NUeXBlX1Rlc3RkZGRUeXBlMxAGKvgBCg5FQXR0cmlidXRlVHlw",
-            "ZRIXChNFQXR0cmlidXRlVHlwZV9Ob25lEAASFQoRRUF0dHJpYnV0ZVR5cGVf",
-            "SHAQARIZChVFQXR0cmlidXRlVHlwZV9BdHRhY2sQAhIeChpFQXR0cmlidXRl",
-            "VHlwZV9BdHRhY2tTcGVlZBADEiIKHkVBdHRyaWJ1dGVUeXBlX1BoeXNpY2Fs",
-            "RGVmZW5jZRAEEiEKHUVBdHRyaWJ1dGVUeXBlX01hZ2ljYWxEZWZlbmNlEAUS",
-            "HAoYRUF0dHJpYnV0ZVR5cGVfTW92ZVNwZWVkEAYSFgoSRUF0dHJpYnV0ZVR5",
-            "cGVfTWF4EAcqNQoJRUdyaWRUeXBlEhIKDkVHcmlkVHlwZV9Ob25lEAASFAoQ",
-            "RUdyaWRUeXBlX05vcm1hbBABKjoKC0VFbnRpdHlUeXBlEhQKEEVFbnRpdHlU",
-            "eXBlX05vbmUQABIVChFFRW50aXR5VHlwZV9BY3RvchABYgZwcm90bzM="));
+            "EgwKBFNpemUYCCABKAUiWQoTQXR0cmlidXRlU3RhdGljSW5mbxIKCgJJZBgB",
+            "IAEoBRIMCgROYW1lGAIgASgJEhYKDklzU2lnbkludmVyc2VkGAMgASgIEhAK",
+            "CEljb25QYXRoGAQgASgJIkYKFUJhdHRsZVNjZW5lU3RhdGljSW5mbxIKCgJJ",
+            "ZBgBIAEoBRIMCgROYW1lGAIgASgJEhMKC1N0YWdlSWRMaXN0GAMgAygFInwK",
+            "FUJhdHRsZVN0YWdlU3RhdGljSW5mbxIKCgJJZBgBIAEoBRIMCgROYW1lGAIg",
+            "ASgJEhEKCUxlZnRXaWR0aBgDIAEoBRISCgpSaWdodFdpZHRoGAQgASgFEg4K",
+            "BkhlaWdodBgFIAEoBRISCgpHcmlkSWRMaXN0GAYgAygFIioKDkdyaWRTdGF0",
+            "aWNJbmZvEgoKAklkGAEgASgFEgwKBE5hbWUYAiABKAkiYwoQRW50aXR5U3Rh",
+            "dGljSW5mbxIKCgJJZBgBIAEoBRI0CgpFbnRpdHlUeXBlGAIgASgOMiAuTW9u",
+            "TW9vc2UuU3RhdGljRGF0YS5FRW50aXR5VHlwZRINCgVSZWZJZBgDIAEoBSJJ",
+            "ChNBY3RvclN0YXRpY0luZm9MaXN0EjIKBGxpc3QYASADKAsyJC5Nb25Nb29z",
+            "ZS5TdGF0aWNEYXRhLkFjdG9yU3RhdGljSW5mbyJRChdBdHRyaWJ1dGVTdGF0",
+            "aWNJbmZvTGlzdBI2CgRsaXN0GAEgAygLMiguTW9uTW9vc2UuU3RhdGljRGF0",
+            "YS5BdHRyaWJ1dGVTdGF0aWNJbmZvIlUKGUJhdHRsZVNjZW5lU3RhdGljSW5m",
+            "b0xpc3QSOAoEbGlzdBgBIAMoCzIqLk1vbk1vb3NlLlN0YXRpY0RhdGEuQmF0",
+            "dGxlU2NlbmVTdGF0aWNJbmZvIlUKGUJhdHRsZVN0YWdlU3RhdGljSW5mb0xp",
+            "c3QSOAoEbGlzdBgBIAMoCzIqLk1vbk1vb3NlLlN0YXRpY0RhdGEuQmF0dGxl",
+            "U3RhZ2VTdGF0aWNJbmZvIkcKEkdyaWRTdGF0aWNJbmZvTGlzdBIxCgRsaXN0",
+            "GAEgAygLMiMuTW9uTW9vc2UuU3RhdGljRGF0YS5HcmlkU3RhdGljSW5mbyJL",
+            "ChRFbnRpdHlTdGF0aWNJbmZvTGlzdBIzCgRsaXN0GAEgAygLMiUuTW9uTW9v",
+            "c2UuU3RhdGljRGF0YS5FbnRpdHlTdGF0aWNJbmZvKukBCg9FQWN0b3JDbGFz",
+            "c1R5cGUSGAoURUFjdG9yQ2xhc3NUeXBlX05vbmUQABIbChdFQWN0b3JDbGFz",
+            "c1R5cGVfV2FycmlvchABEh0KGUVBY3RvckNsYXNzVHlwZV9UZXN0VHlwZTIQ",
+            "AhIdChlFQWN0b3JDbGFzc1R5cGVfVGVzdFR5cGUzEAMSHgoaRUFjdG9yQ2xh",
+            "c3NUeXBlX1Rlc3QzVHlwZTEQBBIfChtFQWN0b3JDbGFzc1R5cGVfVGVzMjF0",
+            "VHlwZTIQBRIgChxFQWN0b3JDbGFzc1R5cGVfVGVzdGRkZFR5cGUzEAYq+AEK",
+            "DkVBdHRyaWJ1dGVUeXBlEhcKE0VBdHRyaWJ1dGVUeXBlX05vbmUQABIVChFF",
+            "QXR0cmlidXRlVHlwZV9IcBABEhkKFUVBdHRyaWJ1dGVUeXBlX0F0dGFjaxAC",
+            "Eh4KGkVBdHRyaWJ1dGVUeXBlX0F0dGFja1NwZWVkEAMSIgoeRUF0dHJpYnV0",
+            "ZVR5cGVfUGh5c2ljYWxEZWZlbmNlEAQSIQodRUF0dHJpYnV0ZVR5cGVfTWFn",
+            "aWNhbERlZmVuY2UQBRIcChhFQXR0cmlidXRlVHlwZV9Nb3ZlU3BlZWQQBhIW",
+            "ChJFQXR0cmlidXRlVHlwZV9NYXgQByo1CglFR3JpZFR5cGUSEgoORUdyaWRU",
+            "eXBlX05vbmUQABIUChBFR3JpZFR5cGVfTm9ybWFsEAEqOgoLRUVudGl0eVR5",
+            "cGUSFAoQRUVudGl0eVR5cGVfTm9uZRAAEhUKEUVFbnRpdHlUeXBlX0FjdG9y",
+            "EAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::MonMoose.StaticData.EActorClassType), typeof(global::MonMoose.StaticData.EAttributeType), typeof(global::MonMoose.StaticData.EGridType), typeof(global::MonMoose.StaticData.EEntityType), }, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::MonMoose.StaticData.ActorStaticInfo), global::MonMoose.StaticData.ActorStaticInfo.Parser, new[]{ "Id", "Name", "Type", "MoveSpeed", "Attack", "Deffence", "PrefabPath" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::MonMoose.StaticData.ActorStaticInfo), global::MonMoose.StaticData.ActorStaticInfo.Parser, new[]{ "Id", "Name", "Type", "MoveSpeed", "Attack", "Deffence", "PrefabPath", "Size" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::MonMoose.StaticData.AttributeStaticInfo), global::MonMoose.StaticData.AttributeStaticInfo.Parser, new[]{ "Id", "Name", "IsSignInversed", "IconPath" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::MonMoose.StaticData.BattleSceneStaticInfo), global::MonMoose.StaticData.BattleSceneStaticInfo.Parser, new[]{ "Id", "Name", "StageIdList" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::MonMoose.StaticData.BattleStageStaticInfo), global::MonMoose.StaticData.BattleStageStaticInfo.Parser, new[]{ "Id", "Name", "LeftWidth", "RightWidth", "Height", "GridIdList" }, null, null, null),
@@ -147,6 +148,7 @@ namespace MonMoose.StaticData {
       attack_ = other.attack_;
       deffence_ = other.deffence_;
       prefabPath_ = other.prefabPath_;
+      size_ = other.size_;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -231,6 +233,17 @@ namespace MonMoose.StaticData {
       }
     }
 
+    /// <summary>Field number for the "Size" field.</summary>
+    public const int SizeFieldNumber = 8;
+    private int size_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Size {
+      get { return size_; }
+      set {
+        size_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as ActorStaticInfo);
@@ -251,6 +264,7 @@ namespace MonMoose.StaticData {
       if (Attack != other.Attack) return false;
       if (Deffence != other.Deffence) return false;
       if (PrefabPath != other.PrefabPath) return false;
+      if (Size != other.Size) return false;
       return true;
     }
 
@@ -264,6 +278,7 @@ namespace MonMoose.StaticData {
       if (Attack != 0) hash ^= Attack.GetHashCode();
       if (Deffence != 0) hash ^= Deffence.GetHashCode();
       if (PrefabPath.Length != 0) hash ^= PrefabPath.GetHashCode();
+      if (Size != 0) hash ^= Size.GetHashCode();
       return hash;
     }
 
@@ -302,6 +317,10 @@ namespace MonMoose.StaticData {
         output.WriteRawTag(58);
         output.WriteString(PrefabPath);
       }
+      if (Size != 0) {
+        output.WriteRawTag(64);
+        output.WriteInt32(Size);
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -327,6 +346,9 @@ namespace MonMoose.StaticData {
       }
       if (PrefabPath.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(PrefabPath);
+      }
+      if (Size != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Size);
       }
       return size;
     }
@@ -356,6 +378,9 @@ namespace MonMoose.StaticData {
       }
       if (other.PrefabPath.Length != 0) {
         PrefabPath = other.PrefabPath;
+      }
+      if (other.Size != 0) {
+        Size = other.Size;
       }
     }
 
@@ -393,6 +418,10 @@ namespace MonMoose.StaticData {
           }
           case 58: {
             PrefabPath = input.ReadString();
+            break;
+          }
+          case 64: {
+            Size = input.ReadInt32();
             break;
           }
         }

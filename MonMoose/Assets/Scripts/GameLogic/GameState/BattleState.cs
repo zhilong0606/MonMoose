@@ -83,8 +83,37 @@ namespace MonMoose.Logic
                 teamInitData.camp = ECampType.Camp1;
                 {
                     EntityInitData entityInitData = new EntityInitData();
+                    entityInitData.id = 2;
+                    entityInitData.pos = new GridPosition(7, 2);
+                    teamInitData.actorList.Add(entityInitData);
+
+                    entityInitData = new EntityInitData();
                     entityInitData.id = 1;
-                    entityInitData.pos = new GridPosition(1, 2);
+                    entityInitData.pos = new GridPosition(6, 3);
+                    teamInitData.actorList.Add(entityInitData);
+                    entityInitData = new EntityInitData();
+                    entityInitData.id = 1;
+                    entityInitData.pos = new GridPosition(6, 2);
+                    teamInitData.actorList.Add(entityInitData);
+
+                    entityInitData = new EntityInitData();
+                    entityInitData.id = 1;
+                    entityInitData.pos = new GridPosition(3, 0);
+                    teamInitData.actorList.Add(entityInitData);
+
+                    entityInitData = new EntityInitData();
+                    entityInitData.id = 1;
+                    entityInitData.pos = new GridPosition(3, 1);
+                    teamInitData.actorList.Add(entityInitData);
+
+                    //entityInitData = new EntityInitData();
+                    //entityInitData.id = 1;
+                    //entityInitData.pos = new GridPosition(3, 3);
+                    //teamInitData.actorList.Add(entityInitData);
+
+                    entityInitData = new EntityInitData();
+                    entityInitData.id = 1;
+                    entityInitData.pos = new GridPosition(2, 0);
                     teamInitData.actorList.Add(entityInitData);
                 }
                 battleInitData.teamList.Add(teamInitData);
@@ -153,6 +182,9 @@ namespace MonMoose.Logic
                     break;
                 case KeyCode.D:
                     m_sender.SendMoveToGrid(10001, new GridPosition(2, 3));
+                    break;
+                case KeyCode.X:
+                    m_sender.SendMoveToGrid(10001, new GridPosition(1, 1));
                     break;
             }
         }

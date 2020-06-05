@@ -19,6 +19,11 @@ namespace MonMoose.Logic.Battle
 
         private List<Module> m_moduleList = new List<Module>();
 
+        public List<Entity> entityList
+        {
+            get { return m_entityList; }
+        }
+
         public void Init(BattleInitData battleInitData)
         {
             m_funcOnGetView = battleInitData.funcOnGetView;
@@ -82,6 +87,19 @@ namespace MonMoose.Logic.Battle
                 }
             }
             return null;
+        }
+
+        public bool IsGridEmpty(GridPosition pos)
+        {
+            Grid grid = GetGrid(pos);
+            for (int i = 0; i < m_entityList.Count; ++i)
+            {
+                if (m_entityList[i].GetComponent<LocationComponent>().locateGrid == grid)
+                {
+                    return false;
+                }
+            }
+            return true;
         }
 
         public Grid GetGrid(int x, int y)

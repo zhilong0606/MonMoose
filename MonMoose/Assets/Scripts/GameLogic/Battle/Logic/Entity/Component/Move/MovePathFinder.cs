@@ -15,8 +15,8 @@ namespace MonMoose.Logic.Battle
         {
             gridList.Clear();
             m_entity = entity;
-            m_startGrid = entity.GetComponent<LocationComponent>().grid;
-            if (entity.GetComponent<LocationComponent>().grid == m_targetGrid)
+            m_startGrid = entity.GetComponent<LocationComponent>().locateGrid;
+            if (entity.GetComponent<LocationComponent>().locateGrid == m_targetGrid)
             {
                 return false;
             }
@@ -66,7 +66,7 @@ namespace MonMoose.Logic.Battle
         private void AddNewPath(MovePath path, int offsetX, int offsetY)
         {
             Grid grid = m_battleInstance.GetGrid(path.grid.gridPosition.x + offsetX, path.grid.gridPosition.y + offsetY);
-            if (grid == null || CheckInCloseList(grid))
+            if (grid == null || CheckInCloseList(grid) || !m_entity.GetComponent<LocationComponent>().CanLocate(grid))
             {
                 return;
             }

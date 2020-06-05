@@ -27,7 +27,7 @@ namespace MonMoose.Logic.Battle
             {
                 return;
             }
-            m_curGrid = m_entity.GetComponent<LocationComponent>().grid;
+            m_curGrid = m_entity.GetComponent<LocationComponent>().locateGrid;
             m_targetGrid = targetGrid;
             m_offset = m_entity.GetComponent<LocationComponent>().offset;
             m_curIndex = 0;
@@ -42,7 +42,7 @@ namespace MonMoose.Logic.Battle
                 Grid formGrid = m_pathGridList[m_curIndex];
                 Grid toGrid = m_pathGridList[m_curIndex + 1];
                 FixVec2 toVec = new FixVec2(toGrid.gridPosition.x - formGrid.gridPosition.x, toGrid.gridPosition.y - formGrid.gridPosition.y);
-                FixVec2 deltaPos = toVec * new Fix32(50, 1000) * new Fix32(500, 1000);
+                FixVec2 deltaPos = toVec * new Fix32(50, 1000) * new Fix32(2000, 1000);
                 FixVec2 offset = m_offset + deltaPos;
                 Grid grid = formGrid;
                 Fix32 half = new Fix32(500, 1000);

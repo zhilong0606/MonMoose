@@ -11,7 +11,7 @@ namespace MonMoose.Logic
 
         }
 
-        private KeyCode[] codes = new KeyCode[] {KeyCode.A, KeyCode.S, KeyCode.D, KeyCode.W};
+        private KeyCode[] codes = new KeyCode[] {KeyCode.A, KeyCode.S, KeyCode.D, KeyCode.W, KeyCode.X};
 
         public void Update()
         {
