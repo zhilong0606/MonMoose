@@ -24,10 +24,10 @@ enum EAttributeType
 	EAttributeType_Max = 7;
 }
 
-enum EGridType
+enum ETerrainType
 {
-	EGridType_None = 0;
-	EGridType_Normal = 1;
+	ETerrainType_None = 0;
+	ETerrainType_Normal = 1;
 }
 
 enum EEntityType
@@ -73,10 +73,11 @@ message BattleStageStaticInfo
 	repeated int32 GridIdList = 6;
 }
 
-message GridStaticInfo
+message TerrainStaticInfo
 {
 	int32 Id = 1;
 	string Name = 2;
+	int32 WalkSpeed = 3;
 }
 
 message EntityStaticInfo
@@ -106,9 +107,9 @@ message BattleStageStaticInfoList
 	repeated BattleStageStaticInfo list = 1;
 }
 
-message GridStaticInfoList
+message TerrainStaticInfoList
 {
-	repeated GridStaticInfo list = 1;
+	repeated TerrainStaticInfo list = 1;
 }
 
 message EntityStaticInfoList

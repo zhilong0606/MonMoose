@@ -19,12 +19,32 @@
 
         }
 
+        public virtual void StartMove()
+        {
+
+        }
+
+        public virtual void StopMove()
+        {
+
+        }
+
         public virtual void CreateView()
         {
 
         }
 
         public virtual void DestroyView()
+        {
+
+        }
+
+        public virtual void SetForward(FixVec2 forward)
+        {
+
+        }
+
+        public virtual void Tick(float deltaTime)
         {
 
         }

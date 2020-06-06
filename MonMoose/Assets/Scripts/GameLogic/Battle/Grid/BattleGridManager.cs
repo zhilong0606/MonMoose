@@ -28,12 +28,12 @@ namespace MonMoose.Logic
             return null;
         }
 
-        public Vector3 GetWorldPosition(GridPosition gridPos, Vector2 offset)
+        public Vector3 GetWorldPosition(GridPosition gridPos, FixVec2 offset)
         {
             BattleGridView gridView = GetGridView(gridPos);
             if (gridView != null)
             {
-                return gridView.transform.position + new Vector3(offset.x, 0f, offset.y);
+                return gridView.transform.position + new Vector3((float)offset.x, 0f, (float)offset.y);
             }
             return Vector3.zero;
         }

@@ -78,7 +78,7 @@ public static partial class MathFix
         return value;
     }
 
-    public static Fix32 Sign(Fix32 value)
+    public static int Sign(Fix32 value)
     {
         if (value < 0)
             return -1;
@@ -133,6 +133,10 @@ public static partial class MathFix
 
     internal static uint SqrtULong(ulong N)
     {
+        if (N == 0L)
+        {
+            return 0;
+        }
         ulong x = 1L << ((31 + (Fix32.FractionalBits + 2) + 1) / 2);
         while (true)
         {

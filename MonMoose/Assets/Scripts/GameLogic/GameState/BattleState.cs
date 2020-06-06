@@ -83,7 +83,7 @@ namespace MonMoose.Logic
                 teamInitData.camp = ECampType.Camp1;
                 {
                     EntityInitData entityInitData = new EntityInitData();
-                    entityInitData.id = 2;
+                    entityInitData.id = 1;
                     entityInitData.pos = new GridPosition(7, 2);
                     teamInitData.actorList.Add(entityInitData);
 
@@ -181,7 +181,7 @@ namespace MonMoose.Logic
                     m_sender.SendMoveToGrid(10001, new GridPosition(0, 3));
                     break;
                 case KeyCode.D:
-                    m_sender.SendMoveToGrid(10001, new GridPosition(2, 3));
+                    m_sender.SendMoveToGrid(10001, new GridPosition(7, 2));
                     break;
                 case KeyCode.X:
                     m_sender.SendMoveToGrid(10001, new GridPosition(1, 1));

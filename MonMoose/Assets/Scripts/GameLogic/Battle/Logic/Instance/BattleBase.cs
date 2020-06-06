@@ -16,6 +16,7 @@ namespace MonMoose.Logic.Battle
         private ObjIdModule m_objIdModule = new ObjIdModule();
         private SceneModule m_sceneModule = new SceneModule();
         private FrameSyncModule m_frameSyncModule = new FrameSyncModule();
+        private MovePathFindModule m_pathFindModule = new MovePathFindModule();
 
         private List<Module> m_moduleList = new List<Module>();
 
@@ -38,6 +39,7 @@ namespace MonMoose.Logic.Battle
             m_moduleList.Add(m_objIdModule);
             m_moduleList.Add(m_sceneModule);
             m_moduleList.Add(m_frameSyncModule);
+            m_moduleList.Add(m_pathFindModule);
 
             for (int i = 0; i < m_moduleList.Count; ++i)
             {
@@ -128,6 +130,11 @@ namespace MonMoose.Logic.Battle
             return obj;
         }
 
+        public bool FindPath(Entity entity, Grid startGrid, FixVec2 offset, Grid targetGrid, List<Grid> gridList)
+        {
+            return m_pathFindModule.FindPath(entity, startGrid, offset, targetGrid, gridList);
+        }
+
         public void Log(int level, string str)
         {
             m_debugModule.Log(level, str);
@@ -136,6 +143,10 @@ namespace MonMoose.Logic.Battle
         public void Tick(float deltaTime)
         {
             m_frameSyncModule.Tick(deltaTime);
+            for (int i = 0; i < m_entityList.Count; ++i)
+            {
+                m_entityList[i].view.Tick(deltaTime);
+            }
         }
 
         internal void FrameTick()

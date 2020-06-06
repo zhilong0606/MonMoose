@@ -16,6 +16,7 @@ public struct Fix32
     public static readonly Fix32 MaxValue = Raw(int.MaxValue);
     public static readonly Fix32 zero = new Fix32(0);
     public static readonly Fix32 one = new Fix32(1);
+    public static readonly Fix32 half = new Fix32(1, 2);
     public static readonly Fix32 Epsilon = Raw(1);
     
     public int raw;

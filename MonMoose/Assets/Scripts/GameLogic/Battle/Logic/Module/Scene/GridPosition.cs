@@ -45,5 +45,10 @@ namespace MonMoose.Logic.Battle
         {
             return Math.Abs(pos.x - x) + Math.Abs(pos.y - y);
         }
+
+        public FixVec2 ToFix()
+        {
+            return new FixVec2(x, y);
+        }
     }
 }

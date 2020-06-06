@@ -9,6 +9,7 @@ namespace MonMoose.Logic.Battle
         protected Grid m_locateGrid;
         protected List<Grid> m_occupyGridList = new List<Grid>();
         protected FixVec2 m_offset;
+        protected FixVec2 m_forward;
 
         public override EEntityComponentType type
         {
@@ -31,6 +32,12 @@ namespace MonMoose.Logic.Battle
             SetPosition(entityInitData.pos, FixVec2.zero, true);
         }
 
+        public void SetForward(FixVec2 forward)
+        {
+            m_forward = forward;
+            m_entity.view.SetForward(forward);
+        }
+
         public void SetPosition(GridPosition gridPosition, FixVec2 offset, bool isTeleport)
         {
             Grid grid = m_battleInstance.GetGrid(gridPosition);
@@ -43,22 +50,15 @@ namespace MonMoose.Logic.Battle
             {
                 return;
             }
+
+            if (m_locateGrid != grid)
+            {
+                LeaveGrids();
+                OccupyGrid(grid);
+            }
             m_locateGrid = grid;
             m_offset = offset;
-            m_entity.view.SetPosition(grid, m_offset, isTeleport);
-            m_occupyGridList.Clear();
-            EntityInfoComponent infoComponent = m_entity.GetComponent<EntityInfoComponent>();
-            for (int i = 0; i < infoComponent.size; ++i)
-            {
-                for (int j = 0; j < infoComponent.size; ++j)
-                {
-                    Grid g = m_battleInstance.GetGrid(grid.gridPosition + new GridPosition(i, j));
-                    if (g != null)
-                    {
-                        m_occupyGridList.Add(g);
-                    }
-                }
-            }
+            m_entity.view.SetPosition(m_locateGrid, m_offset, isTeleport);
         }
 
         public bool IsOccupyGrid(Grid grid)
@@ -78,22 +78,40 @@ namespace MonMoose.Logic.Battle
                     {
                         return false;
                     }
-
-                    for (int k = 0; k < m_battleInstance.entityList.Count; ++k)
+                    if (!g.CanLocate(m_entity))
                     {
-                        Entity entity = m_battleInstance.entityList[k];
-                        if (entity == m_entity)
-                        {
-                            continue;
-                        }
-                        if (entity.GetComponent<LocationComponent>().IsOccupyGrid(g))
-                        {
-                            return false;
-                        }
+                        return false;
                     }
                 }
             }
             return true;
+        }
+
+        private void OccupyGrid(Grid grid)
+        {
+            EntityInfoComponent infoComponent = m_entity.GetComponent<EntityInfoComponent>();
+            for (int i = 0; i < infoComponent.size; ++i)
+            {
+                for (int j = 0; j < infoComponent.size; ++j)
+                {
+                    Grid g = m_battleInstance.GetGrid(grid.gridPosition + new GridPosition(i, j));
+                    if (g != null)
+                    {
+                        g.AddOccupiedEntity(m_entity);
+                        m_occupyGridList.Add(g);
+                    }
+                }
+            }
+        }
+
+        private void LeaveGrids()
+        {
+            for (int i = 0; i < m_occupyGridList.Count; ++i)
+            {
+                m_occupyGridList[i].RemoveOccupiedEntity(m_entity);
+            }
+
+            m_occupyGridList.Clear();
         }
     }
 }
