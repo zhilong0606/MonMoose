@@ -50,5 +50,10 @@ namespace MonMoose.Logic.Battle
         {
             return new FixVec2(x, y);
         }
+
+        public override string ToString()
+        {
+            return string.Format("({0}, {1})", x, y);
+        }
     }
 }
