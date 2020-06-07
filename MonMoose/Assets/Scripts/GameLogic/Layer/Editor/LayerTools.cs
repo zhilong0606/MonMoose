@@ -22,7 +22,7 @@ namespace MonMoose.Core
 
     public class LayerGenerateWindow : EditorWindow
     {
-        private const string LayerFolderPath = "/Scripts/GameCore/Layer/";
+        private const string LayerFolderPath = "/Scripts/GameLogic/Layer/";
         private const string LayerEditorFolderPath = LayerFolderPath + "Editor/";
         private const string LayerInfoFilePath = LayerEditorFolderPath + "LayerInfo.xml";
         private const string LayerCacheFilePath = LayerEditorFolderPath + "LayerMaskCache.txt";
@@ -203,6 +203,9 @@ namespace MonMoose.Core
             stringBuilder.Remove(0, stringBuilder.Length);
             tabIndex = 0;
             Tab().Append("using System.Collections.Generic;\r\n\r\n");
+            Tab().Append("namespace MonMoose.Logic\r\n");
+            Tab().Append("{\r\n");
+            tabIndex++;
             Tab().Append("public enum ELayerMaskType \r\n");
             Tab().Append("{\r\n");
             tabIndex++;
@@ -217,7 +220,7 @@ namespace MonMoose.Core
             Tab().Append("public static partial class LayerUtility \r\n");
             Tab().Append("{\r\n");
             tabIndex++;
-            Tab().Append("private static List<int> layerMaskList = new List<int>() \r\n");
+            Tab().Append("private static List<int> m_layerMaskList = new List<int>() \r\n");
             Tab().Append("{\r\n");
             tabIndex++;
             for (int i = 0; i < maskCellList.Count; ++i)
@@ -235,6 +238,8 @@ namespace MonMoose.Core
                 }
                 Tab().Append(mask).Append(", \t//").Append(str).Append("\r\n");
             }
+            tabIndex--;
+            Tab().Append("};\r\n");
             tabIndex--;
             Tab().Append("};\r\n");
             tabIndex--;

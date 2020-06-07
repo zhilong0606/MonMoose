@@ -8,6 +8,7 @@ namespace Analyzer
 {
     public enum EAnalyzeStep
     {
+        AnalyzeConfig,
         AnalyzeMember,
         CheckDefaultValue,
         AnalyzeData,

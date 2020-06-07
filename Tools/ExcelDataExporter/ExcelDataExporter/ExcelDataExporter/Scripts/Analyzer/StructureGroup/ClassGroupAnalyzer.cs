@@ -11,6 +11,7 @@ namespace Analyzer
 
         public ClassGroupAnalyzer(string name) : base(name)
         {
+            RegisterAnalyzeStep(EAnalyzeStep.AnalyzeConfig, AnalyzeConfig);
             RegisterAnalyzeStep(EAnalyzeStep.AnalyzeMember, AnalyzeMember);
             RegisterAnalyzeStep(EAnalyzeStep.CheckDefaultValue, CheckDefaultValue);
             RegisterAnalyzeStep(EAnalyzeStep.AnalyzeData, AnalyzeData);
@@ -20,6 +21,7 @@ namespace Analyzer
         {
             analyzer.actionOnAddMemeber = OnAddMember;
             analyzer.actionOnAddData = OnAddData;
+            analyzer.actionOnSetEnumId = OnSetEnumId;
         }
 
         protected override void OnCreateStructure(BaseStructureInfo structureInfo)
@@ -37,6 +39,19 @@ namespace Analyzer
         private void OnAddData(int id, DataObject dataObject)
         {
             DataObjectManager.Instance.AddDataObject(m_structureInfo, id, dataObject);
+        }
+
+        private void OnSetEnumId()
+        {
+            m_structureInfo.isEnumId = true;
+        }
+
+        private void AnalyzeConfig(UserContext context)
+        {
+            foreach (ClassTableAnalyzer analyzer in m_tableAnalyzerList)
+            {
+                analyzer.AnalyzeConfig(context);
+            }
         }
 
         private void AnalyzeMember(UserContext context)

@@ -13,6 +13,7 @@ namespace MonMoose.StaticData
 			m_loaderMap.Add("BattleStage", new ProtoDataLoader<BattleStageStaticInfo, BattleStageStaticInfoList>(m_BattleStageList, BattleStageStaticInfoList.Parser.ParseFrom, (fromList, toList) => { toList.Clear(); toList.AddRange(fromList.List); }));
 			m_loaderMap.Add("Terrain", new ProtoDataLoader<TerrainStaticInfo, TerrainStaticInfoList>(m_TerrainList, TerrainStaticInfoList.Parser.ParseFrom, (fromList, toList) => { toList.Clear(); toList.AddRange(fromList.List); }));
 			m_loaderMap.Add("Entity", new ProtoDataLoader<EntityStaticInfo, EntityStaticInfoList>(m_EntityList, EntityStaticInfoList.Parser.ParseFrom, (fromList, toList) => { toList.Clear(); toList.AddRange(fromList.List); }));
+			m_loaderMap.Add("PrefabPath", new ProtoDataLoader<PrefabPathStaticInfo, PrefabPathStaticInfoList>(m_PrefabPathList, PrefabPathStaticInfoList.Parser.ParseFrom, (fromList, toList) => { toList.Clear(); toList.AddRange(fromList.List); }));
 		}
 
 		//Actor
@@ -44,5 +45,10 @@ namespace MonMoose.StaticData
 		private List<EntityStaticInfo> m_EntityList = new List<EntityStaticInfo>();
 		public EntityStaticInfo GetEntityStaticInfo(int id) { foreach (var info in m_EntityList) if (info.Id == id) return info; return null; }
 		public IEnumerator<EntityStaticInfo> GetEntityStaticInfoEnumerator() { return m_EntityList.GetEnumerator(); }
+
+		//PrefabPath
+		private List<PrefabPathStaticInfo> m_PrefabPathList = new List<PrefabPathStaticInfo>();
+		public PrefabPathStaticInfo GetPrefabPathStaticInfo(EPrefabPathId id) { foreach (var info in m_PrefabPathList) if (info.Id == (int)id) return info; return null; }
+		public IEnumerator<PrefabPathStaticInfo> GetPrefabPathStaticInfoEnumerator() { return m_PrefabPathList.GetEnumerator(); }
 	}
 }

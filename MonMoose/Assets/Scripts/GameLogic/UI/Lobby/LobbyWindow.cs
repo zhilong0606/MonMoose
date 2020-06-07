@@ -1,7 +1,7 @@
 ﻿using MonMoose.Core;
 using UnityEngine.UI;
 
-namespace MonMoose.Logic
+namespace MonMoose.Logic.UI
 {
 
     public class LobbyWindow : UIWindow

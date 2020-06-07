@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using MonMoose.Core;
 using UnityEngine;
 
-namespace MonMoose.Logic
+namespace MonMoose.Logic.UI
 {
     public class LoadingWindow : UIWindow
     {

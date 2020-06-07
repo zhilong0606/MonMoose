@@ -21,14 +21,33 @@ namespace Analyzer
         private const int m_dataStartRowIndex = 7;
         private const int m_dataStartColmIndex = 1;
         private const string m_idNameStr = "Id";
+        private const int m_classConfigRowIndex = 0;
+        private const int m_classConfigColmIndex = 2;
 
         private Dictionary<int, FieldAnalyzer> m_fieldAnalyzerMap = new Dictionary<int, FieldAnalyzer>();
+        private EnumStructureInfo m_enumIdStructureInfo;
+        private bool m_isEnumId;
+        private int m_enumIdCursor;
         
         public Action<BaseStructureInfo, string> actionOnAddMemeber;
         public Action<int, DataObject> actionOnAddData;
+        public Action actionOnSetEnumId;
 
         public ClassTableAnalyzer(StringTable table, TableHeaderAnalyzer headerAnalyzer) : base(table, headerAnalyzer)
         {
+        }
+
+        public void AnalyzeConfig(UserContext context)
+        {
+            m_isEnumId = m_table[m_classConfigRowIndex, m_classConfigColmIndex] == "EnumId";
+            if (m_isEnumId)
+            {
+                m_enumIdStructureInfo = new EnumStructureInfo(string.Format("E{0}Id", name));
+                EnumMemberInfo defaultMember = new EnumMemberInfo("None", m_enumIdCursor++);
+                m_enumIdStructureInfo.AddMember(defaultMember);
+                StructureManager.Instance.AddStructureInfo(m_enumIdStructureInfo);
+                actionOnSetEnumId();
+            }
         }
 
         public void AnalyzeMember(UserContext context)
@@ -71,11 +90,21 @@ namespace Analyzer
                 {
                     continue;
                 }
-                int id;
-                if (!int.TryParse(idStr, out id))
+
+                int id = 0;
+                if (m_isEnumId)
                 {
-                    Debug.LogError(StaticString.WrongFieldValueFormat, name, "Id", idStr);
-                    continue;
+                    id = m_enumIdCursor++;
+                    EnumMemberInfo enumIdMember = new EnumMemberInfo(idStr, id);
+                    m_enumIdStructureInfo.AddMember(enumIdMember);
+                }
+                else
+                {
+                    if (!int.TryParse(idStr, out id))
+                    {
+                        Debug.LogError(StaticString.WrongFieldValueFormat, name, "Id", idStr);
+                        continue;
+                    }
                 }
                 DataObject dataObject = new DataObject();
                 for (int j = m_dataStartColmIndex; j < m_table.colmCount; ++j)
@@ -206,6 +235,5 @@ namespace Analyzer
             }
             return dataValue;
         }
-
     }
 }

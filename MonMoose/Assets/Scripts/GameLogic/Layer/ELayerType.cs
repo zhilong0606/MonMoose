@@ -1,4 +1,4 @@
-﻿namespace MonMoose.Core
+﻿namespace MonMoose.Logic
 {
     public enum ELayerType
     {

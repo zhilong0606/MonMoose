@@ -1,5 +1,6 @@
 ﻿using System;
 using MonMoose.Core;
+using MonMoose.Logic.UI;
 
 namespace MonMoose.Logic
 {

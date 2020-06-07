@@ -5,6 +5,8 @@ namespace Structure
 {
     public class ClassStructureInfo : MemberedStrucureInfo<ClassMemberInfo>
     {
+        public bool isEnumId;
+
         public sealed override EStructureType structureType { get { return EStructureType.Class; } }
         
         public ClassStructureInfo(string name) : base(name) { }

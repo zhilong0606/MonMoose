@@ -13,5 +13,9 @@ namespace MonMoose.Logic
         LoadingWindow_FadeOutRequest,
 
         BattleStart_StartRequest_BtnClick,
+
+        BattlePrepare_DragActor_Start,
+        BattlePrepare_DragActor_Stop,
+        BattlePrepare_DragActor_Cancel,
     }
 }

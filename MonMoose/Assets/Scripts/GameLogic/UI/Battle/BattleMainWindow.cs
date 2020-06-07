@@ -1,7 +1,7 @@
 ﻿using MonMoose.Core;
 using UnityEngine;
 
-namespace MonMoose.Logic
+namespace MonMoose.Logic.UI
 {
     public class BattleMainWindow : UIWindow
     {
@@ -13,8 +13,9 @@ namespace MonMoose.Logic
 
         private KeyCode[] codes = new KeyCode[] {KeyCode.A, KeyCode.S, KeyCode.D, KeyCode.W, KeyCode.X};
 
-        public void Update()
+        protected override void Update()
         {
+            base.Update();
             for (int i = 0; i < codes.Length; ++i)
             {
                 if (Input.GetKeyDown(codes[i]))

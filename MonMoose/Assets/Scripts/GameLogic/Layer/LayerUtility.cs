@@ -1,11 +1,11 @@
 ﻿
-namespace MonMoose.Core
+namespace MonMoose.Logic
 {
     public static partial class LayerUtility
     {
         public static int GetLayerMask(ELayerMaskType type)
         {
-            return layerMaskList[(int)type];
+            return m_layerMaskList[(int)type];
         }
 
         public static bool GetLayerInMask(int mask, ELayerType layerType)

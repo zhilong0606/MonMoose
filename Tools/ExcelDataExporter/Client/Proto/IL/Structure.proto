@@ -5,11 +5,10 @@ enum EActorClassType
 {
 	EActorClassType_None = 0;
 	EActorClassType_Warrior = 1;
-	EActorClassType_TestType2 = 2;
-	EActorClassType_TestType3 = 3;
-	EActorClassType_Test3Type1 = 4;
-	EActorClassType_Tes21tType2 = 5;
-	EActorClassType_TestdddType3 = 6;
+	EActorClassType_Prist = 2;
+	EActorClassType_Archer = 3;
+	EActorClassType_Mage = 4;
+	EActorClassType_Shaman = 5;
 }
 
 enum EAttributeType
@@ -34,6 +33,12 @@ enum EEntityType
 {
 	EEntityType_None = 0;
 	EEntityType_Actor = 1;
+}
+
+enum EPrefabPathId
+{
+	EPrefabPathId_None = 0;
+	EPrefabPathId_BattlePrefabActorItem = 1;
 }
 
 message ActorStaticInfo
@@ -87,6 +92,12 @@ message EntityStaticInfo
 	int32 RefId = 3;
 }
 
+message PrefabPathStaticInfo
+{
+	int32 Id = 1;
+	string Path = 2;
+}
+
 message ActorStaticInfoList
 {
 	repeated ActorStaticInfo list = 1;
@@ -115,4 +126,9 @@ message TerrainStaticInfoList
 message EntityStaticInfoList
 {
 	repeated EntityStaticInfo list = 1;
+}
+
+message PrefabPathStaticInfoList
+{
+	repeated PrefabPathStaticInfo list = 1;
 }
