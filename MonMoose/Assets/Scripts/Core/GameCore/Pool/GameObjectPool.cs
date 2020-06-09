@@ -16,8 +16,6 @@ namespace MonMoose.Core
 
         private List<PoolObjHolder> m_holderList = new List<PoolObjHolder>();
         private ActionObjHolder m_actionOnInit;
-        private ActionObjHolder m_actionOnFetch;
-        private ActionObjHolder m_actionOnRelease;
 
         public int capacity
         {
@@ -41,12 +39,6 @@ namespace MonMoose.Core
             Init(actionOnInit);
         }
 
-        public void Init(GameObject obj, ActionObjHolder actionOnInit, ActionObjHolder actionOnFetch, ActionObjHolder actionOnRelease)
-        {
-            m_dynamicObj = obj;
-            Init(actionOnInit, actionOnFetch, actionOnRelease);
-        }
-
         public void Init(ActionObjHolder actionOnInit = null)
         {
             if (m_dynamicObj != null && transform != m_dynamicObj.transform.parent)
@@ -58,23 +50,12 @@ namespace MonMoose.Core
             capacity = m_capacity;
         }
 
-        public void Init(ActionObjHolder actionOnInit, ActionObjHolder actionOnFetch, ActionObjHolder actionOnRelease)
-        {
-            Init(actionOnInit);
-            m_actionOnFetch = actionOnFetch;
-            m_actionOnRelease = actionOnRelease;
-        }
-
         public PoolObjHolder Fetch()
         {
             PoolObjHolder holder = GetHolder();
             if (holder != null)
             {
                 holder.FetchTo(m_apearRoot != null ? m_apearRoot : gameObject);
-                if (m_actionOnFetch != null)
-                {
-                    m_actionOnFetch(holder);
-                }
                 return holder;
             }
             return null;
@@ -85,10 +66,6 @@ namespace MonMoose.Core
             PoolObjHolder holder = Fetch();
             if (holder != null)
             {
-                if (m_actionOnFetch != null)
-                {
-                    m_actionOnFetch(holder);
-                }
                 return holder.GetComponent<T>();
             }
             return null;
@@ -104,10 +81,6 @@ namespace MonMoose.Core
             {
                 if (m_holderList[i].obj == go)
                 {
-                    if (m_actionOnRelease != null)
-                    {
-                        m_actionOnRelease(m_holderList[i]);
-                    }
                     m_holderList[i].ReleaseTo(gameObject);
                     return;
                 }
@@ -119,10 +92,6 @@ namespace MonMoose.Core
         {
             for (int i = 0; i < m_holderList.Count; ++i)
             {
-                if (m_actionOnRelease != null)
-                {
-                    m_actionOnRelease(m_holderList[i]);
-                }
                 m_holderList[i].ReleaseTo(gameObject);
             }
         }
@@ -215,7 +184,12 @@ namespace MonMoose.Core
                         count++;
                     }
                 }
-                if (count > 1)
+                if (count == 0)
+                {
+                    component = m_obj.GetComponent<T>();
+                    AddComponent(component);
+                }
+                else if (count > 1)
                 {
                     Debug.LogError("Error: Component geted is not unique");
                 }
