@@ -24,7 +24,7 @@ namespace MonMoose.Logic.Battle
         protected override void OnInitSpecific(EntityInitData entityInitData)
         {
             base.OnInitSpecific(entityInitData);
-            m_actorStaticInfo = StaticDataManager.instance.GetActorStaticInfo(m_entityStaticInfo.RefId);
+            m_actorStaticInfo = StaticDataManager.instance.GetActorStaticInfo(m_entityStaticInfo.SpecificId);
         }
     }
 }

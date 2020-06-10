@@ -12,6 +12,11 @@ namespace MonMoose.Logic.UI
 
         protected int m_actorId;
 
+        public int actorId
+        {
+            get { return m_actorId; }
+        }
+
         protected override void OnInit(object param)
         {
             base.OnInit(param);

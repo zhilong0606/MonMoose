@@ -334,7 +334,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab40b4dae2044e249a40ef0506c86633, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_dontDestroy: 0
+  m_dontDestroy: 1
   m_pPool: {fileID: 347587690}
 --- !u!4 &636816647
 Transform:

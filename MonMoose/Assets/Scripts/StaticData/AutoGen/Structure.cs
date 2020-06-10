@@ -35,37 +35,37 @@ namespace MonMoose.StaticData {
             "ASgJEhEKCUxlZnRXaWR0aBgDIAEoBRISCgpSaWdodFdpZHRoGAQgASgFEg4K",
             "BkhlaWdodBgFIAEoBRISCgpHcmlkSWRMaXN0GAYgAygFIkAKEVRlcnJhaW5T",
             "dGF0aWNJbmZvEgoKAklkGAEgASgFEgwKBE5hbWUYAiABKAkSEQoJV2Fsa1Nw",
-            "ZWVkGAMgASgFImMKEEVudGl0eVN0YXRpY0luZm8SCgoCSWQYASABKAUSNAoK",
+            "ZWVkGAMgASgFImgKEEVudGl0eVN0YXRpY0luZm8SCgoCSWQYASABKAUSNAoK",
             "RW50aXR5VHlwZRgCIAEoDjIgLk1vbk1vb3NlLlN0YXRpY0RhdGEuRUVudGl0",
-            "eVR5cGUSDQoFUmVmSWQYAyABKAUiMAoUUHJlZmFiUGF0aFN0YXRpY0luZm8S",
-            "CgoCSWQYASABKAUSDAoEUGF0aBgCIAEoCSJJChNBY3RvclN0YXRpY0luZm9M",
-            "aXN0EjIKBGxpc3QYASADKAsyJC5Nb25Nb29zZS5TdGF0aWNEYXRhLkFjdG9y",
-            "U3RhdGljSW5mbyJRChdBdHRyaWJ1dGVTdGF0aWNJbmZvTGlzdBI2CgRsaXN0",
-            "GAEgAygLMiguTW9uTW9vc2UuU3RhdGljRGF0YS5BdHRyaWJ1dGVTdGF0aWNJ",
-            "bmZvIlUKGUJhdHRsZVNjZW5lU3RhdGljSW5mb0xpc3QSOAoEbGlzdBgBIAMo",
-            "CzIqLk1vbk1vb3NlLlN0YXRpY0RhdGEuQmF0dGxlU2NlbmVTdGF0aWNJbmZv",
-            "IlUKGUJhdHRsZVN0YWdlU3RhdGljSW5mb0xpc3QSOAoEbGlzdBgBIAMoCzIq",
-            "Lk1vbk1vb3NlLlN0YXRpY0RhdGEuQmF0dGxlU3RhZ2VTdGF0aWNJbmZvIk0K",
-            "FVRlcnJhaW5TdGF0aWNJbmZvTGlzdBI0CgRsaXN0GAEgAygLMiYuTW9uTW9v",
-            "c2UuU3RhdGljRGF0YS5UZXJyYWluU3RhdGljSW5mbyJLChRFbnRpdHlTdGF0",
-            "aWNJbmZvTGlzdBIzCgRsaXN0GAEgAygLMiUuTW9uTW9vc2UuU3RhdGljRGF0",
-            "YS5FbnRpdHlTdGF0aWNJbmZvIlMKGFByZWZhYlBhdGhTdGF0aWNJbmZvTGlz",
-            "dBI3CgRsaXN0GAEgAygLMikuTW9uTW9vc2UuU3RhdGljRGF0YS5QcmVmYWJQ",
-            "YXRoU3RhdGljSW5mbyq1AQoPRUFjdG9yQ2xhc3NUeXBlEhgKFEVBY3RvckNs",
-            "YXNzVHlwZV9Ob25lEAASGwoXRUFjdG9yQ2xhc3NUeXBlX1dhcnJpb3IQARIZ",
-            "ChVFQWN0b3JDbGFzc1R5cGVfUHJpc3QQAhIaChZFQWN0b3JDbGFzc1R5cGVf",
-            "QXJjaGVyEAMSGAoURUFjdG9yQ2xhc3NUeXBlX01hZ2UQBBIaChZFQWN0b3JD",
-            "bGFzc1R5cGVfU2hhbWFuEAUq+AEKDkVBdHRyaWJ1dGVUeXBlEhcKE0VBdHRy",
-            "aWJ1dGVUeXBlX05vbmUQABIVChFFQXR0cmlidXRlVHlwZV9IcBABEhkKFUVB",
-            "dHRyaWJ1dGVUeXBlX0F0dGFjaxACEh4KGkVBdHRyaWJ1dGVUeXBlX0F0dGFj",
-            "a1NwZWVkEAMSIgoeRUF0dHJpYnV0ZVR5cGVfUGh5c2ljYWxEZWZlbmNlEAQS",
-            "IQodRUF0dHJpYnV0ZVR5cGVfTWFnaWNhbERlZmVuY2UQBRIcChhFQXR0cmli",
-            "dXRlVHlwZV9Nb3ZlU3BlZWQQBhIWChJFQXR0cmlidXRlVHlwZV9NYXgQByo+",
-            "CgxFVGVycmFpblR5cGUSFQoRRVRlcnJhaW5UeXBlX05vbmUQABIXChNFVGVy",
-            "cmFpblR5cGVfTm9ybWFsEAEqOgoLRUVudGl0eVR5cGUSFAoQRUVudGl0eVR5",
-            "cGVfTm9uZRAAEhUKEUVFbnRpdHlUeXBlX0FjdG9yEAEqUAoNRVByZWZhYlBh",
-            "dGhJZBIWChJFUHJlZmFiUGF0aElkX05vbmUQABInCiNFUHJlZmFiUGF0aElk",
-            "X0JhdHRsZVByZWZhYkFjdG9ySXRlbRABYgZwcm90bzM="));
+            "eVR5cGUSEgoKU3BlY2lmaWNJZBgDIAEoBSIwChRQcmVmYWJQYXRoU3RhdGlj",
+            "SW5mbxIKCgJJZBgBIAEoBRIMCgRQYXRoGAIgASgJIkkKE0FjdG9yU3RhdGlj",
+            "SW5mb0xpc3QSMgoEbGlzdBgBIAMoCzIkLk1vbk1vb3NlLlN0YXRpY0RhdGEu",
+            "QWN0b3JTdGF0aWNJbmZvIlEKF0F0dHJpYnV0ZVN0YXRpY0luZm9MaXN0EjYK",
+            "BGxpc3QYASADKAsyKC5Nb25Nb29zZS5TdGF0aWNEYXRhLkF0dHJpYnV0ZVN0",
+            "YXRpY0luZm8iVQoZQmF0dGxlU2NlbmVTdGF0aWNJbmZvTGlzdBI4CgRsaXN0",
+            "GAEgAygLMiouTW9uTW9vc2UuU3RhdGljRGF0YS5CYXR0bGVTY2VuZVN0YXRp",
+            "Y0luZm8iVQoZQmF0dGxlU3RhZ2VTdGF0aWNJbmZvTGlzdBI4CgRsaXN0GAEg",
+            "AygLMiouTW9uTW9vc2UuU3RhdGljRGF0YS5CYXR0bGVTdGFnZVN0YXRpY0lu",
+            "Zm8iTQoVVGVycmFpblN0YXRpY0luZm9MaXN0EjQKBGxpc3QYASADKAsyJi5N",
+            "b25Nb29zZS5TdGF0aWNEYXRhLlRlcnJhaW5TdGF0aWNJbmZvIksKFEVudGl0",
+            "eVN0YXRpY0luZm9MaXN0EjMKBGxpc3QYASADKAsyJS5Nb25Nb29zZS5TdGF0",
+            "aWNEYXRhLkVudGl0eVN0YXRpY0luZm8iUwoYUHJlZmFiUGF0aFN0YXRpY0lu",
+            "Zm9MaXN0EjcKBGxpc3QYASADKAsyKS5Nb25Nb29zZS5TdGF0aWNEYXRhLlBy",
+            "ZWZhYlBhdGhTdGF0aWNJbmZvKrUBCg9FQWN0b3JDbGFzc1R5cGUSGAoURUFj",
+            "dG9yQ2xhc3NUeXBlX05vbmUQABIbChdFQWN0b3JDbGFzc1R5cGVfV2Fycmlv",
+            "chABEhkKFUVBY3RvckNsYXNzVHlwZV9QcmlzdBACEhoKFkVBY3RvckNsYXNz",
+            "VHlwZV9BcmNoZXIQAxIYChRFQWN0b3JDbGFzc1R5cGVfTWFnZRAEEhoKFkVB",
+            "Y3RvckNsYXNzVHlwZV9TaGFtYW4QBSr4AQoORUF0dHJpYnV0ZVR5cGUSFwoT",
+            "RUF0dHJpYnV0ZVR5cGVfTm9uZRAAEhUKEUVBdHRyaWJ1dGVUeXBlX0hwEAES",
+            "GQoVRUF0dHJpYnV0ZVR5cGVfQXR0YWNrEAISHgoaRUF0dHJpYnV0ZVR5cGVf",
+            "QXR0YWNrU3BlZWQQAxIiCh5FQXR0cmlidXRlVHlwZV9QaHlzaWNhbERlZmVu",
+            "Y2UQBBIhCh1FQXR0cmlidXRlVHlwZV9NYWdpY2FsRGVmZW5jZRAFEhwKGEVB",
+            "dHRyaWJ1dGVUeXBlX01vdmVTcGVlZBAGEhYKEkVBdHRyaWJ1dGVUeXBlX01h",
+            "eBAHKj4KDEVUZXJyYWluVHlwZRIVChFFVGVycmFpblR5cGVfTm9uZRAAEhcK",
+            "E0VUZXJyYWluVHlwZV9Ob3JtYWwQASo6CgtFRW50aXR5VHlwZRIUChBFRW50",
+            "aXR5VHlwZV9Ob25lEAASFQoRRUVudGl0eVR5cGVfQWN0b3IQASpQCg1FUHJl",
+            "ZmFiUGF0aElkEhYKEkVQcmVmYWJQYXRoSWRfTm9uZRAAEicKI0VQcmVmYWJQ",
+            "YXRoSWRfQmF0dGxlUHJlZmFiQWN0b3JJdGVtEAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::MonMoose.StaticData.EActorClassType), typeof(global::MonMoose.StaticData.EAttributeType), typeof(global::MonMoose.StaticData.ETerrainType), typeof(global::MonMoose.StaticData.EEntityType), typeof(global::MonMoose.StaticData.EPrefabPathId), }, new pbr::GeneratedClrTypeInfo[] {
@@ -74,7 +74,7 @@ namespace MonMoose.StaticData {
             new pbr::GeneratedClrTypeInfo(typeof(global::MonMoose.StaticData.BattleSceneStaticInfo), global::MonMoose.StaticData.BattleSceneStaticInfo.Parser, new[]{ "Id", "Name", "StageIdList" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::MonMoose.StaticData.BattleStageStaticInfo), global::MonMoose.StaticData.BattleStageStaticInfo.Parser, new[]{ "Id", "Name", "LeftWidth", "RightWidth", "Height", "GridIdList" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::MonMoose.StaticData.TerrainStaticInfo), global::MonMoose.StaticData.TerrainStaticInfo.Parser, new[]{ "Id", "Name", "WalkSpeed" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::MonMoose.StaticData.EntityStaticInfo), global::MonMoose.StaticData.EntityStaticInfo.Parser, new[]{ "Id", "EntityType", "RefId" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::MonMoose.StaticData.EntityStaticInfo), global::MonMoose.StaticData.EntityStaticInfo.Parser, new[]{ "Id", "EntityType", "SpecificId" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::MonMoose.StaticData.PrefabPathStaticInfo), global::MonMoose.StaticData.PrefabPathStaticInfo.Parser, new[]{ "Id", "Path" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::MonMoose.StaticData.ActorStaticInfoList), global::MonMoose.StaticData.ActorStaticInfoList.Parser, new[]{ "List" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::MonMoose.StaticData.AttributeStaticInfoList), global::MonMoose.StaticData.AttributeStaticInfoList.Parser, new[]{ "List" }, null, null, null),
@@ -1256,7 +1256,7 @@ namespace MonMoose.StaticData {
     public EntityStaticInfo(EntityStaticInfo other) : this() {
       id_ = other.id_;
       entityType_ = other.entityType_;
-      refId_ = other.refId_;
+      specificId_ = other.specificId_;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1286,14 +1286,14 @@ namespace MonMoose.StaticData {
       }
     }
 
-    /// <summary>Field number for the "RefId" field.</summary>
-    public const int RefIdFieldNumber = 3;
-    private int refId_;
+    /// <summary>Field number for the "SpecificId" field.</summary>
+    public const int SpecificIdFieldNumber = 3;
+    private int specificId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int RefId {
-      get { return refId_; }
+    public int SpecificId {
+      get { return specificId_; }
       set {
-        refId_ = value;
+        specificId_ = value;
       }
     }
 
@@ -1312,7 +1312,7 @@ namespace MonMoose.StaticData {
       }
       if (Id != other.Id) return false;
       if (EntityType != other.EntityType) return false;
-      if (RefId != other.RefId) return false;
+      if (SpecificId != other.SpecificId) return false;
       return true;
     }
 
@@ -1321,7 +1321,7 @@ namespace MonMoose.StaticData {
       int hash = 1;
       if (Id != 0) hash ^= Id.GetHashCode();
       if (EntityType != 0) hash ^= EntityType.GetHashCode();
-      if (RefId != 0) hash ^= RefId.GetHashCode();
+      if (SpecificId != 0) hash ^= SpecificId.GetHashCode();
       return hash;
     }
 
@@ -1340,9 +1340,9 @@ namespace MonMoose.StaticData {
         output.WriteRawTag(16);
         output.WriteEnum((int) EntityType);
       }
-      if (RefId != 0) {
+      if (SpecificId != 0) {
         output.WriteRawTag(24);
-        output.WriteInt32(RefId);
+        output.WriteInt32(SpecificId);
       }
     }
 
@@ -1355,8 +1355,8 @@ namespace MonMoose.StaticData {
       if (EntityType != 0) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) EntityType);
       }
-      if (RefId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(RefId);
+      if (SpecificId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(SpecificId);
       }
       return size;
     }
@@ -1372,8 +1372,8 @@ namespace MonMoose.StaticData {
       if (other.EntityType != 0) {
         EntityType = other.EntityType;
       }
-      if (other.RefId != 0) {
-        RefId = other.RefId;
+      if (other.SpecificId != 0) {
+        SpecificId = other.SpecificId;
       }
     }
 
@@ -1394,7 +1394,7 @@ namespace MonMoose.StaticData {
             break;
           }
           case 24: {
-            RefId = input.ReadInt32();
+            SpecificId = input.ReadInt32();
             break;
           }
         }

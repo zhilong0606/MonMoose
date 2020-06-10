@@ -63,7 +63,6 @@ namespace MonMoose.Logic.UI
                     else
                     {
                         Debug.LogError(view.gridPosition);
-
                     }
                     //EventManager.instance.Broadcast((int)EventID.BattlePrepare_DragActor_Stop)
                 }

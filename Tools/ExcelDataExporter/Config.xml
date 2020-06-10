@@ -7,7 +7,7 @@
     <nameSpace>MonMoose.StaticData</nameSpace>
     <prefix />
     <postfix>StaticInfo</postfix>
-    <structureExportPath>./../../MonMoose/Assets/Scripts/Core/StaticData/AutoGen/</structureExportPath>
+    <structureExportPath>./../../MonMoose/Assets/Scripts/StaticData/AutoGen/</structureExportPath>
     <dataExportPath>./../../MonMoose/Assets/Resources/Exported/StaticData/</dataExportPath>
     <exportMode>Proto</exportMode>
   </client>

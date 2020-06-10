@@ -49,8 +49,10 @@ namespace MonMoose.StaticData
                     loader.Load(fileInfo.Name, fileInfo.FullName, buffer);
                 }
             }
+            OnLoadAllEnd();
         }
 
         partial void OnInitLoaders();
+        partial void OnLoadAllEnd();
     }
 }
