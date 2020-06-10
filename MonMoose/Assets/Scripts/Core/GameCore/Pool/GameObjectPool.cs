@@ -44,6 +44,7 @@ namespace MonMoose.Core
             if (m_dynamicObj != null && transform != m_dynamicObj.transform.parent)
             {
                 m_dynamicObj = Instantiate(m_dynamicObj, transform) as GameObject;
+                m_dynamicObj.name = m_dynamicObj.name.Substring(0, m_dynamicObj.name.Length - "(Clone)".Length);
             }
             m_dynamicObj.SetActiveSafely(false);
             m_actionOnInit = actionOnInit;
