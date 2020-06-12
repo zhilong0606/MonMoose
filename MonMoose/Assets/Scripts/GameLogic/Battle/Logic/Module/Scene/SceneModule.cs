@@ -24,6 +24,12 @@ namespace MonMoose.Logic.Battle
             }
         }
 
+        public void Start()
+        {
+            m_curStageIndex = 0;
+            GetCurStage().Enter();
+        }
+
         public Stage GetCurStage()
         {
             if (m_curStageIndex >= 0 && m_curStageIndex < m_stageList.Count)

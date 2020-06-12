@@ -1,11 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using MonMoose.Core;
-using MonMoose.Logic.Battle;
 using MonMoose.StaticData;
 using UnityEngine;
 
-namespace MonMoose.Logic
+namespace MonMoose.Logic.Battle
 {
     public abstract class EntityObjView : EntityView
     {

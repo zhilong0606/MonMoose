@@ -20,7 +20,7 @@ namespace MonMoose.StaticData
             }
         }
 
-        public EntityStaticInfo GetEntityInfo(EEntityType type, int specificId)
+        public EntityStaticInfo GetEntityStaticInfo(EEntityType type, int specificId)
         {
             EntityStaticInfo staticInfo = null;
             Dictionary<int, EntityStaticInfo> specificMap = null;

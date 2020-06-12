@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using MonMoose.Core;
+using MonMoose.Logic.Battle;
 using MonMoose.StaticData;
 
 namespace MonMoose.Logic.UI
@@ -62,7 +63,9 @@ namespace MonMoose.Logic.UI
                     }
                     else
                     {
-                        Debug.LogError(view.gridPosition);
+                        ActorStaticInfo entityInfo = StaticDataManager.instance.GetActorStaticInfo(m_actorItemWidget.actorId);
+                        GameObject go = GameObjectPoolManager.instance.Fetch(entityInfo.PrefabPath);
+                        go.transform.position = view.transform.position;
                     }
                     //EventManager.instance.Broadcast((int)EventID.BattlePrepare_DragActor_Stop)
                 }

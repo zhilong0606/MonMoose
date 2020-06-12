@@ -19,6 +19,7 @@ namespace MonMoose.Logic.Battle
             if (entity != null)
             {
                 entity.Init(uid, initData);
+                battleInstance.AddEntity(entity);
             }
             return entity;
         }

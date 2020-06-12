@@ -76,6 +76,7 @@ message BattleStageStaticInfo
 	int32 RightWidth = 4;
 	int32 Height = 5;
 	repeated int32 GridIdList = 6;
+	repeated StageActorStaticInfo EntityList = 7;
 }
 
 message TerrainStaticInfo
@@ -96,6 +97,15 @@ message PrefabPathStaticInfo
 {
 	int32 Id = 1;
 	string Path = 2;
+}
+
+message StageActorStaticInfo
+{
+	int32 Uid = 1;
+	int32 Rid = 2;
+	int32 Level = 3;
+	int32 PosX = 4;
+	int32 PosY = 5;
 }
 
 message ActorStaticInfoList

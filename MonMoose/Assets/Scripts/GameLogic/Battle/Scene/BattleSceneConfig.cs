@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace MonMoose.Logic
+namespace MonMoose.Logic.Battle
 {
     public class BattleSceneConfig : MonoBehaviour
     {

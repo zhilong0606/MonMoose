@@ -12,6 +12,7 @@ namespace MonMoose.Logic
     public class BattleState : State
     {
         private BattleBase m_battleInstance;
+        private StateMachine m_battleStateMachine = new StateMachine();
         private FrameSyncSender m_sender;
         private bool m_isLoadEnd;
 
@@ -22,6 +23,10 @@ namespace MonMoose.Logic
 
         protected override void OnInit()
         {
+            m_battleStateMachine.Init(
+                new BattlePrepareState(),
+                new BattleMainState()
+            );
             RegisterListener();
         }
 
@@ -43,6 +48,8 @@ namespace MonMoose.Logic
         {
             m_isLoadEnd = true;
             m_battleInstance.Init(GetTestBattleInitData());
+            m_battleInstance.Start();
+            m_battleStateMachine.ChangeState((int)EBattleState.Prepare);
             EventManager.instance.Broadcast((int)EventID.LoadingWindow_FadeOutRequest);
         }
 
@@ -87,34 +94,34 @@ namespace MonMoose.Logic
                     entityInitData.pos = new GridPosition(7, 2);
                     teamInitData.actorList.Add(entityInitData);
 
-                    entityInitData = new EntityInitData();
-                    entityInitData.id = 1;
-                    entityInitData.pos = new GridPosition(6, 3);
-                    teamInitData.actorList.Add(entityInitData);
-                    entityInitData = new EntityInitData();
-                    entityInitData.id = 1;
-                    entityInitData.pos = new GridPosition(6, 2);
-                    teamInitData.actorList.Add(entityInitData);
-
-                    entityInitData = new EntityInitData();
-                    entityInitData.id = 1;
-                    entityInitData.pos = new GridPosition(3, 0);
-                    teamInitData.actorList.Add(entityInitData);
-
-                    entityInitData = new EntityInitData();
-                    entityInitData.id = 1;
-                    entityInitData.pos = new GridPosition(3, 1);
-                    teamInitData.actorList.Add(entityInitData);
+                    //entityInitData = new EntityInitData();
+                    //entityInitData.id = 1;
+                    //entityInitData.pos = new GridPosition(6, 3);
+                    //teamInitData.actorList.Add(entityInitData);
+                    //entityInitData = new EntityInitData();
+                    //entityInitData.id = 1;
+                    //entityInitData.pos = new GridPosition(6, 2);
+                    //teamInitData.actorList.Add(entityInitData);
 
                     //entityInitData = new EntityInitData();
                     //entityInitData.id = 1;
-                    //entityInitData.pos = new GridPosition(3, 3);
+                    //entityInitData.pos = new GridPosition(3, 0);
                     //teamInitData.actorList.Add(entityInitData);
 
-                    entityInitData = new EntityInitData();
-                    entityInitData.id = 1;
-                    entityInitData.pos = new GridPosition(2, 0);
-                    teamInitData.actorList.Add(entityInitData);
+                    //entityInitData = new EntityInitData();
+                    //entityInitData.id = 1;
+                    //entityInitData.pos = new GridPosition(3, 1);
+                    //teamInitData.actorList.Add(entityInitData);
+
+                    ////entityInitData = new EntityInitData();
+                    ////entityInitData.id = 1;
+                    ////entityInitData.pos = new GridPosition(3, 3);
+                    ////teamInitData.actorList.Add(entityInitData);
+
+                    //entityInitData = new EntityInitData();
+                    //entityInitData.id = 1;
+                    //entityInitData.pos = new GridPosition(2, 0);
+                    //teamInitData.actorList.Add(entityInitData);
                 }
                 battleInitData.teamList.Add(teamInitData);
             }

@@ -12,6 +12,8 @@ namespace MonMoose.Logic.Battle
         private int m_gridHeight;
         private FixVec2 m_stageSize;
 
+        private List<KeyValuePair<int, EntityInitData>> m_entityInitDataList = new List<KeyValuePair<int, EntityInitData>>();
+
         public void Init(int id)
         {
             m_staticInfo = StaticDataManager.instance.GetBattleStageStaticInfo(id);
@@ -28,6 +30,15 @@ namespace MonMoose.Logic.Battle
                 grid.Init(m_staticInfo.GridIdList[i], new GridPosition(gridPosX, gridPosY), new FixVec2(stagePosX, stagePosY), gridSize);
                 m_gridList.Add(grid);
             }
+            for (int i = 0; i < m_staticInfo.EntityList.Count; ++i)
+            {
+                StageActorStaticInfo actorInfo = m_staticInfo.EntityList[i];
+                EntityInitData initData = new EntityInitData();
+                initData.id = actorInfo.Rid;
+                initData.level = actorInfo.Level;
+                initData.pos = new GridPosition(actorInfo.PosX, actorInfo.PosY);
+                m_entityInitDataList.Add(new KeyValuePair<int, EntityInitData>(actorInfo.Uid, initData));
+            }
         }
 
         public Grid GetGrid(int x, int y)
@@ -40,6 +51,14 @@ namespace MonMoose.Logic.Battle
                 }
             }
             return null;
+        }
+
+        public void Enter()
+        {
+            for (int i = 0; i < m_entityInitDataList.Count; ++i)
+            {
+                BattleFactory.CreateEntity(m_battleInstance, m_entityInitDataList[i].Value, m_entityInitDataList[i].Key);
+            }
         }
     }
 }

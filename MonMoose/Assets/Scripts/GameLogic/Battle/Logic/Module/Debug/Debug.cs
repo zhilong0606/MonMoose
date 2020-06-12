@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace MonMoose.Logic.Battle
 {
-    public static class Debug
+    internal static class Debug
     {
         private const int m_logLevel = 0;
         private const int m_errorLevel = 2;

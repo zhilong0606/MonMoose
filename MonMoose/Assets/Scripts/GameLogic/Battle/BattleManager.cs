@@ -1,7 +1,7 @@
 ﻿using MonMoose.Core;
 using UnityEngine;
 
-namespace MonMoose.Logic
+namespace MonMoose.Logic.Battle
 {
     public class BattleManager : Singleton<BattleManager>
     {

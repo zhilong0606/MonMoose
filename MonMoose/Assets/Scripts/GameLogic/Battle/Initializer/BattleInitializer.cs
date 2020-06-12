@@ -7,7 +7,7 @@ using MonMoose.StaticData;
 using UnityEngine.SceneManagement;
 using Grid = MonMoose.Logic.Battle.Grid;
 
-namespace MonMoose.Logic
+namespace MonMoose.Logic.Battle
 {
     public class BattleInitializer : Initializer
     {

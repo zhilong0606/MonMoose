@@ -6,7 +6,7 @@ using System.Text;
 using MonMoose.Logic.Battle;
 using UnityEditor;
 
-namespace MonMoose.Logic
+namespace MonMoose.Logic.Battle
 {
     public static class ScheduleTool
     {

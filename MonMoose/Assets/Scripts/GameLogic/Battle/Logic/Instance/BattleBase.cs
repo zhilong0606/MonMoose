@@ -55,19 +55,23 @@ namespace MonMoose.Logic.Battle
                 Team team = FetchPoolObj<Team>();
                 team.Init(battleInitData.teamList[i]);
                 m_teamList.Add(team);
-                m_entityList.AddRange(team.entityList);
             }
             m_entityList.Sort(Entity.Sort);
         }
 
         public void Start()
         {
-
+            m_sceneModule.Start();
         }
 
         public FrameSyncSender GetSender()
         {
             return m_frameSyncModule.GetSender();
+        }
+
+        public void AddEntity(Entity entity)
+        {
+            m_entityList.Add(entity);
         }
 
         public EntityView GetEntityView(int entityId)
