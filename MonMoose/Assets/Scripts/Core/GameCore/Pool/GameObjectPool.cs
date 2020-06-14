@@ -72,21 +72,25 @@ namespace MonMoose.Core
             return null;
         }
 
-        public void Release(GameObject go)
+        public bool Release(GameObject go, bool silentErrorLog = false)
         {
             if (go == null)
             {
-                return;
+                return false;
             }
             for (int i = 0; i < m_holderList.Count; ++i)
             {
                 if (m_holderList[i].obj == go)
                 {
                     m_holderList[i].ReleaseTo(gameObject);
-                    return;
+                    return true;
                 }
             }
-            Debug.LogError(go.name + "is Not in Pool, But Trying Release this");
+            if (silentErrorLog)
+            {
+                Debug.LogError(go.name + "is Not in Pool, But Trying Release this");
+            }
+            return false;
         }
 
         public void ReleaseAll()

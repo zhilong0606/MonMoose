@@ -39,6 +39,7 @@ namespace MonMoose.Logic
         {
             BattleManager.CreateInstance();
             m_battleInstance = new BattleBase();
+            BattleManager.instance.SetBattleInstance(m_battleInstance);
             m_sender = m_battleInstance.GetSender();
             BattleInitializer initializer = new BattleInitializer();
             initializer.StartAsync(OnLoadEnd);

@@ -95,6 +95,18 @@ namespace MonMoose.Logic.Battle
             return null;
         }
 
+        public void GetEntitysByGrid(GridPosition gridPos, List<Entity> outList)
+        {
+            outList.Clear();
+            for (int i = 0; i < m_entityList.Count; ++i)
+            {
+                if (m_entityList[i].GetComponent<LocationComponent>().IsOccupyGridPosition(gridPos))
+                {
+                    outList.Add(m_entityList[i]);
+                }
+            }
+        }
+
         public bool IsGridEmpty(GridPosition pos)
         {
             Grid grid = GetGrid(pos);

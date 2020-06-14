@@ -43,6 +43,18 @@ namespace MonMoose.Core
             return pool.Fetch().obj;
         }
 
+        public bool Release(GameObject go)
+        {
+            foreach (var kv in m_poolMap)
+            {
+                if (kv.Value.Release(go))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
 
         private GameObjectPool GetPool(string name)
         {

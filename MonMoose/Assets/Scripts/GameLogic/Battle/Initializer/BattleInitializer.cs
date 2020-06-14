@@ -19,7 +19,6 @@ namespace MonMoose.Logic.Battle
             {
                 yield return null;
             }
-            BattleManager.CreateInstance();
             BattleTouchSystem.CreateInstance();
             yield return null;
             InitScene();
@@ -40,7 +39,7 @@ namespace MonMoose.Logic.Battle
             {
                 return;
             }
-            BattleManager.instance.Init(sceneConfig);
+            BattleManager.instance.SetSceneConfig(sceneConfig);
             BattleGridView[] gridViews = sceneConfig.gridRoot.GetComponentsInChildren<BattleGridView>();
             for (int i = 0; i < gridViews.Length; ++i)
             {

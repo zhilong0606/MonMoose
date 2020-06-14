@@ -14,8 +14,7 @@ namespace MonMoose.Logic
 
         BattleStart_StartRequest_BtnClick,
 
-        BattlePrepare_DragActor_Start,
-        BattlePrepare_DragActor_Stop,
-        BattlePrepare_DragActor_Cancel,
+        BattlePrepare_ActorItemShow,
+        BattlePrepare_ActorItemHide,
     }
 }

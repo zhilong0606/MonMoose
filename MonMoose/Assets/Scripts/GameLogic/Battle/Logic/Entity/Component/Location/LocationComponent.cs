@@ -61,6 +61,18 @@ namespace MonMoose.Logic.Battle
             m_entity.view.SetPosition(m_locateGrid, m_offset, isTeleport);
         }
 
+        public bool IsOccupyGridPosition(GridPosition gridPos)
+        {
+            for (int i = 0; i < m_occupyGridList.Count; ++i)
+            {
+                if (m_occupyGridList[i].gridPosition == gridPos)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
         public bool IsOccupyGrid(Grid grid)
         {
             return m_occupyGridList.Contains(grid);

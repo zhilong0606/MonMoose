@@ -51,6 +51,7 @@ namespace MonMoose.Logic
             UIWindowManager.CreateInstance();
             ResourceManager.CreateInstance();
             TimerManager.CreateInstance();
+            InputManager.CreateInstance();
             UIWindowDefine.Define();
         }
 

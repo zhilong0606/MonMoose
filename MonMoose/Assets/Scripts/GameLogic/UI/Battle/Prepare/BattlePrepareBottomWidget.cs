@@ -31,24 +31,18 @@ namespace MonMoose.Logic.UI
         protected override void RegisterListener()
         {
             base.RegisterListener();
-            EventManager.instance.RegisterListener<int>((int)EventID.BattlePrepare_DragActor_Cancel, OnDragActorCancel);
+            EventManager.instance.RegisterListener<int>((int)EventID.BattlePrepare_ActorItemShow, OnActorItemShow);
+            EventManager.instance.RegisterListener<int>((int)EventID.BattlePrepare_ActorItemHide, OnActorItemHide);
         }
 
         protected override void UnregisterListener()
         {
             base.UnregisterListener();
-            EventManager.instance.UnregisterListener<int>((int)EventID.BattlePrepare_DragActor_Cancel, OnDragActorCancel);
+            EventManager.instance.UnregisterListener<int>((int)EventID.BattlePrepare_ActorItemShow, OnActorItemShow);
+            EventManager.instance.UnregisterListener<int>((int)EventID.BattlePrepare_ActorItemHide, OnActorItemHide);
         }
 
-        private void OnActorItemInit(GameObjectPool.PoolObjHolder holder)
-        {
-            BattlePrepareActorItemWidget widget = holder.obj.AddComponent<BattlePrepareActorItemWidget>();
-            widget.Initialize(this);
-            widget.actionOnDragStart = OnDragStart;
-            holder.AddComponent(widget);
-        }
-
-        private void OnDragActorCancel(int actorId)
+        private void OnActorItemShow(int actorId)
         {
             BattlePrepareActorItemWidget widget;
             if (m_actorItemMap.TryGetValue(actorId, out widget))
@@ -57,14 +51,20 @@ namespace MonMoose.Logic.UI
             }
         }
 
-        private void OnDragStart(int actorId)
+        private void OnActorItemHide(int actorId)
         {
             BattlePrepareActorItemWidget widget;
             if (m_actorItemMap.TryGetValue(actorId, out widget))
             {
                 widget.SetActive(false);
-                EventManager.instance.Broadcast((int)EventID.BattlePrepare_DragActor_Start, actorId);
             }
+        }
+
+        private void OnActorItemInit(GameObjectPool.PoolObjHolder holder)
+        {
+            BattlePrepareActorItemWidget widget = holder.obj.AddComponent<BattlePrepareActorItemWidget>();
+            widget.Initialize(this);
+            holder.AddComponent(widget);
         }
 
         private void OnStartBtnClicked()
