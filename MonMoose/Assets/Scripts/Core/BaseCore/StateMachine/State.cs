@@ -22,10 +22,14 @@
             m_isInited = false;
         }
 
-        public void Enter()
+        public void Enter(StateContext context)
         {
             m_isRunning = true;
-            OnEnter();
+            OnEnter(context);
+            if (context != null)
+            {
+                context.Release();
+            }
         }
 
         public void Exit()
@@ -41,7 +45,7 @@
 
         protected virtual void OnInit() { }
         protected virtual void OnUninit() { }
-        protected virtual void OnEnter() { }
+        protected virtual void OnEnter(StateContext context) { }
         protected virtual void OnExit() { }
         protected virtual void OnTick() { }
     }

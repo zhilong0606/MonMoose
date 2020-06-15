@@ -11,7 +11,7 @@ namespace MonMoose.Logic
             get { return (int)EGameState.GameInit; }
         }
 
-        protected override void OnEnter()
+        protected override void OnEnter(StateContext context)
         {
             GameInitParam param = new GameInitParam();
             param.initializer = new GameInitializer();

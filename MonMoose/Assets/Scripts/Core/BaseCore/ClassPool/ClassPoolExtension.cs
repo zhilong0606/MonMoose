@@ -4,7 +4,7 @@
     {
         public static void Release(this IClassPoolObj obj)
         {
-            if (obj.creater != null)
+            if (obj != null && obj.creater != null)
             {
                 obj.creater.Release(obj);
             }

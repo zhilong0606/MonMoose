@@ -50,17 +50,17 @@ namespace MonMoose.Core
             return null;
         }
 
-        public void ChangeState(int stateIndex)
+        public void ChangeState(int stateIndex, StateContext context = null)
         {
             State state = GetState(stateIndex);
             if (state == null)
             {
                 throw new Exception(string.Format("Error: State with Index {0} not exist!!", stateIndex));
             }
-            ChangeState(state);
+            ChangeState(state, context);
         }
 
-        public void ChangeState(State state)
+        public void ChangeState(State state, StateContext context = null)
         {
             if (m_curState != null)
             {
@@ -71,7 +71,7 @@ namespace MonMoose.Core
                 return;
             }
             m_curState = state;
-            m_curState.Enter();
+            m_curState.Enter(context);
         }
 
         public void Tick()

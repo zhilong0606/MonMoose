@@ -10,7 +10,7 @@ namespace MonMoose.Logic
             get { return (int)EGameState.Lobby; }
         }
 
-        protected override void OnEnter()
+        protected override void OnEnter(StateContext context)
         {
             UIWindowManager.instance.OpenWindow((int)EWindowId.Lobby);
         }

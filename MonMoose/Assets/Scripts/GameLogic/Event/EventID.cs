@@ -16,5 +16,6 @@ namespace MonMoose.Logic
 
         BattlePrepare_ActorItemShow,
         BattlePrepare_ActorItemHide,
+        BattlePrepare_Finish,
     }
 }

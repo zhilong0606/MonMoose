@@ -69,7 +69,7 @@ namespace MonMoose.Logic.UI
 
         private void OnStartBtnClicked()
         {
-
+            EventManager.instance.Broadcast((int)EventID.BattlePrepare_Finish);
         }
 
         private enum EWidget

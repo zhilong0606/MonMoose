@@ -35,7 +35,7 @@ namespace MonMoose.Logic
             RemoveListener();
         }
 
-        protected override void OnEnter()
+        protected override void OnEnter(StateContext context)
         {
             BattleManager.CreateInstance();
             m_battleInstance = new BattleBase();
