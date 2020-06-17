@@ -5,6 +5,9 @@ namespace MonMoose.Core
 {
     public abstract class StateContext : ClassPoolObj
     {
-        public abstract int id { get; }
+        public virtual int id
+        {
+            get { return 0; }
+        }
     }
 }

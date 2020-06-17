@@ -20,6 +20,7 @@ namespace MonMoose.Logic.Battle
             {
                 EntityInitData entityInitData = initData.actorList[i];
                 Entity entity = BattleFactory.CreateEntity(m_battleInstance, entityInitData, m_battleInstance.CreateObjId(EBattleObjType.Entity));
+                entity.SetTeam(this);
                 entityList.Add(entity);
             }
         }

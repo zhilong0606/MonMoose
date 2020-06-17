@@ -7,6 +7,7 @@ namespace MonMoose.Logic.Battle
     {
         protected int m_uid;
         protected EntityView m_view;
+        protected Team m_team;
         protected List<EntityComponent> m_componentList = new List<EntityComponent>();
 
         public int uid
@@ -33,6 +34,11 @@ namespace MonMoose.Logic.Battle
             {
                 m_componentList[i].Init(this, initData);
             }
+        }
+
+        public void SetTeam(Team team)
+        {
+            m_team = team;
         }
 
         public T GetComponent<T>() where T : EntityComponent

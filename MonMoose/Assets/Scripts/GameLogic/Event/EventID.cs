@@ -7,10 +7,7 @@ namespace MonMoose.Logic
         
         
         Frame_Tick,
-
-
-        LoadingWindow_FadeInRequest,
-        LoadingWindow_FadeOutRequest,
+        
 
         BattleStart_StartRequest_BtnClick,
 

@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace MonMoose.Logic.UI
 {
-    public class LoadingBlackFadeWidget : UIComponent
+    public class LoadingFadeBlackWidget : UIComponent
     {
         private AnimationController m_animCtrl;
         private Action m_actionOnFadeInEnd;

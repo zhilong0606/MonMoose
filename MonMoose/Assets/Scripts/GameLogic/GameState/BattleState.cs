@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using MonMoose.Core;
 using MonMoose.Logic.Battle;
+using MonMoose.Logic.UI;
 using MonMoose.StaticData;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -51,7 +52,7 @@ namespace MonMoose.Logic
             m_battleInstance.Init(GetTestBattleInitData());
             m_battleInstance.Start();
             m_battleStateMachine.ChangeState((int)EBattleState.Prepare);
-            EventManager.instance.Broadcast((int)EventID.LoadingWindow_FadeOutRequest);
+            LoadingWindow.CloseLoading(ELoadingId.BattleScene);
         }
 
         protected override void OnExit()
@@ -61,24 +62,12 @@ namespace MonMoose.Logic
 
         private void RegisterListener()
         {
-            EventManager.instance.RegisterListener((int)EventID.BattleStart_StartRequest_BtnClick, OnStartRequestByBtnClick);
             EventManager.instance.RegisterListener((int)EventID.Frame_Tick, OnFrameTick);
         }
 
         private void RemoveListener()
         {
-            EventManager.instance.UnregisterListener((int)EventID.BattleStart_StartRequest_BtnClick, OnStartRequestByBtnClick);
             EventManager.instance.UnregisterListener((int)EventID.Frame_Tick, OnFrameTick);
-        }
-
-        private void OnStartRequestByBtnClick()
-        {
-            EventManager.instance.Broadcast((int)EventID.LoadingWindow_FadeInRequest, (Action)OnLoadingShowEnd);
-        }
-
-        private void OnLoadingShowEnd()
-        {
-            m_stateMachine.ChangeState((int)EGameState.Battle);
         }
 
         private BattleInitData GetTestBattleInitData()
