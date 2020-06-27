@@ -12,5 +12,6 @@ namespace MonMoose.Logic.Battle
         Move,
         Animation,
         Skill,
+        Prepare,
     }
 }

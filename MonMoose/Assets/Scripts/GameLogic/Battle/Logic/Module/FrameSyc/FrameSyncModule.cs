@@ -5,33 +5,39 @@ namespace MonMoose.Logic.Battle
 {
     public class FrameSyncModule : Module
     {
-        private bool isStart = false;
-        private Dcm32 m_time;
-        private Dcm32 m_deltaTime;
+        private bool isStart;
         private EBattlePlayMode m_playMode;
-        private Action<byte[]> m_actionOnSendMsg;
         
-        private FrameSyncSender m_sender = new FrameSyncSender();
         private FrameSyncReceiver m_receiver = new FrameSyncReceiver();
-        private FrameSyncDummyServer m_dummyServer = new FrameSyncDummyServer();
+        private FrameSyncServer m_server;
+        private FrameSyncSender m_sender;
 
         public bool isLocal
         {
             get { return m_playMode == EBattlePlayMode.Local; }
         }
 
+        public FrameSyncSender sender
+        {
+            get { return m_sender; }
+        }
+
         protected override void OnInit(BattleInitData initData)
         {
             base.OnInit(initData);
+            m_server = initData.server;
+            m_sender = initData.sender;
             m_playMode = initData.playMode;
-            m_actionOnSendMsg = initData.actionOnSendMsg;
-            m_sender.Init(m_battleInstance, this);
             m_receiver.Init(m_battleInstance, this);
-            m_dummyServer.Init(m_battleInstance, this);
+            if (m_server != null)
+            {
+                m_server.Init(m_battleInstance, this);
+            }
         }
 
         public void Start()
         {
+
             isStart = true;
         }
 
@@ -45,6 +51,14 @@ namespace MonMoose.Logic.Battle
             isStart = false;
         }
 
+        public void WaitFrameCommand(EFrameCommandType cmdType)
+        {
+            if (m_server != null)
+            {
+                m_server.WaitFrameCommand(cmdType);
+            }
+        }
+
         public void ReceiveFrameCut(FrameCut cut)
         {
             m_receiver.Receive(cut);
@@ -52,30 +66,10 @@ namespace MonMoose.Logic.Battle
 
         public void Tick(float deltaTime)
         {
-            m_dummyServer.Tick(deltaTime);
-        }
-
-        protected override void OnTick()
-        {
-            base.OnTick();
-        }
-
-        public FrameSyncSender GetSender()
-        {
-            return m_sender;
-        }
-
-        public void SendMsg(byte[] buffer)
-        {
-            if (m_actionOnSendMsg != null)
+            if (m_server != null)
             {
-                m_actionOnSendMsg(buffer);
+                m_server.Tick(deltaTime);
             }
-        }
-
-        public void SendDummyServer(FrameCommand cmd)
-        {
-            m_dummyServer.Receive(cmd);
         }
     }
 }

@@ -28,6 +28,7 @@ namespace MonMoose.Logic.Battle
             m_view.SetEntity(this);
 
             m_componentList.Add(m_battleInstance.FetchPoolObj<LocationComponent>());
+            m_componentList.Add(m_battleInstance.FetchPoolObj<EntityPrepareComponent>());
             OnInitComponent();
             m_componentList.Sort(EntityComponent.Sort);
             for (int i = 0; i < m_componentList.Count; ++i)

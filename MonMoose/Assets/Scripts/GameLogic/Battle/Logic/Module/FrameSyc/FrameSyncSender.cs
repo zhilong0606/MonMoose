@@ -8,12 +8,17 @@ namespace MonMoose.Logic.Battle
     public class FrameSyncSender
     {
         private BattleBase m_battleInstance;
-        private FrameSyncModule m_frameSyncModule;
+        private IFrameSyncSenderHandler m_handler;
 
-        internal void Init(BattleBase battleInstance, FrameSyncModule frameSyncModule)
+        public void Init(BattleBase battleInstance)
         {
             m_battleInstance = battleInstance;
-            m_frameSyncModule = frameSyncModule;
+        }
+
+        public void SendStagePrepare()
+        {
+            StagePrepareCommand cmd = m_battleInstance.FetchPoolObj<StagePrepareCommand>();
+            SendCommand(cmd);
         }
 
         public void SendMoveToGrid(int entityId, GridPosition gridPos)
@@ -24,18 +29,14 @@ namespace MonMoose.Logic.Battle
             SendCommand(cmd);
         }
 
+        public void RegisterHandler(IFrameSyncSenderHandler handler)
+        {
+            m_handler = handler;
+        }
+
         private void SendCommand(FrameCommand cmd)
         {
-            if (m_frameSyncModule.isLocal)
-            {
-                m_frameSyncModule.SendDummyServer(cmd);
-            }
-            else
-            {
-                byte[] buffer;
-                cmd.Serialize(out buffer);
-                m_frameSyncModule.SendMsg(buffer);
-            }
+            m_handler.Send(cmd);
         }
     }
 }

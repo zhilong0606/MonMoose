@@ -59,6 +59,16 @@ namespace MonMoose.Logic.Battle
             {
                 BattleFactory.CreateEntity(m_battleInstance, m_entityInitDataList[i].Value, m_entityInitDataList[i].Key);
             }
+            m_battleInstance.WaitFrameCommand(EFrameCommandType.StagePrepare);
+            if (m_battleInstance.sender != null)
+            {
+                m_battleInstance.sender.SendStagePrepare();
+            }
+        }
+
+        public void Start()
+        {
+
         }
     }
 }

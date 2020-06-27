@@ -25,6 +25,11 @@ namespace MonMoose.Logic.Battle
             get { return m_entityList; }
         }
 
+        public FrameSyncSender sender
+        {
+            get { return m_frameSyncModule.sender; }
+        }
+
         public void Init(BattleInitData battleInitData)
         {
             m_funcOnGetView = battleInitData.funcOnGetView;
@@ -64,11 +69,6 @@ namespace MonMoose.Logic.Battle
             m_sceneModule.Start();
         }
 
-        public FrameSyncSender GetSender()
-        {
-            return m_frameSyncModule.GetSender();
-        }
-
         public void AddEntity(Entity entity)
         {
             m_entityList.Add(entity);
@@ -90,6 +90,28 @@ namespace MonMoose.Logic.Battle
                 if (m_entityList[i].uid == uid)
                 {
                     return m_entityList[i];
+                }
+            }
+            return null;
+        }
+
+        public void GetEntityListByTeamId(int teamId, List<Entity> entityList)
+        {
+            entityList.Clear();
+            Team team = GetTeam(teamId);
+            if (team != null)
+            {
+                entityList.AddRange(team.entityList);
+            }
+        }
+
+        public Team GetTeam(int teamId)
+        {
+            for (int i = 0; i < m_teamList.Count; ++i)
+            {
+                if (m_teamList[i].id == teamId)
+                {
+                    return m_teamList[i];
                 }
             }
             return null;
@@ -128,6 +150,11 @@ namespace MonMoose.Logic.Battle
         public Grid GetGrid(GridPosition gridPos)
         {
             return m_sceneModule.GetGrid(gridPos);
+        }
+
+        public void WaitFrameCommand(EFrameCommandType cmdType)
+        {
+            m_frameSyncModule.WaitFrameCommand(cmdType);
         }
 
         public int CreateObjId(EBattleObjType type)

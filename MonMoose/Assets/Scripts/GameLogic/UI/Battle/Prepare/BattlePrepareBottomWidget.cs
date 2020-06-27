@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using MonMoose.Core;
+using MonMoose.Logic.Battle;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,6 +11,7 @@ namespace MonMoose.Logic.UI
     {
         private GameObjectPool m_pool;
         private Dictionary<int, BattlePrepareActorItemWidget> m_actorItemMap = new Dictionary<int, BattlePrepareActorItemWidget>();
+        private List<Entity> m_entityList = new List<Entity>();
 
         protected override void OnInit(object param)
         {
@@ -19,12 +21,13 @@ namespace MonMoose.Logic.UI
             Button startBtn = GetInventory().GetComponent<Button>((int)EWidget.StartBtn);
             startBtn.onClick.AddListener(OnStartBtnClicked);
 
-            int[] testActorIds = new int[] {1001, 1002, 1003, 1004, 1005};
-            for (int i = 0; i < testActorIds.Length; ++i)
+            int hostTeamId = BattleManager.instance.hostTeamId;
+            BattleManager.instance.battleInstance.GetEntityListByTeamId(hostTeamId, m_entityList);
+            for (int i = 0; i < m_entityList.Count; ++i)
             {
                 BattlePrepareActorItemWidget widget = m_pool.FetchComponent<BattlePrepareActorItemWidget>();
-                widget.SetActor(testActorIds[i]);
-                m_actorItemMap.Add(testActorIds[i], widget);
+                widget.SetActor(m_entityList[i].GetComponent<ActorInfoComponent>().actorStaticInfo.Id);
+                m_actorItemMap.Add(widget.actorId, widget);
             }
         }
 

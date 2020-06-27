@@ -2,6 +2,8 @@
 {
     public enum EFrameCommandType
     {
+        StagePrepare,
+        StageStart,
         MoveToGrid,
         StopMove,
         CastSkillTarget,

@@ -34,7 +34,7 @@
             gridPos = new GridPosition(x, y);
         }
 
-        public override void Excute()
+        public override void Excute(int playerId)
         {
             Entity entity = m_battleInstance.GetEntity(entityId);
             if (entity != null)

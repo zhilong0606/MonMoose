@@ -84,7 +84,7 @@ namespace MonMoose.Logic.Battle
             {
                 if (m_commands[i] != null)
                 {
-                    m_commands[i].Excute();
+                    m_commands[i].Excute(playerId);
                     m_commands[i].Release();
                     m_commands[i] = null;
                 }

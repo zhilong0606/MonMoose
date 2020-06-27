@@ -2,8 +2,6 @@
 {
     public abstract class FrameCommand : BattleObj
     {
-        //public int playerId;
-
         public abstract EFrameCommandType commandType { get; }
 
         public virtual int bufferLength
@@ -33,7 +31,7 @@
             //playerId = ByteBufferUtility.ReadInt(ref buffer, ref offset);
         }
 
-        public virtual void Excute()
+        public virtual void Excute(int playerId)
         {
 
         }

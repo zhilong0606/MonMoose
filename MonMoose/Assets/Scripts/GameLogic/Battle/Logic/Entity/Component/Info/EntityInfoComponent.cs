@@ -7,12 +7,18 @@ namespace MonMoose.Logic.Battle
         protected EntityStaticInfo m_entityStaticInfo;
         protected int curLevel;
         protected int curHp;
+        protected int m_entityId;
 
         protected AttributeHandler[] handlers = new AttributeHandler[(int)EAttributeType.Max];
 
         public override EEntityComponentType type
         {
             get { return EEntityComponentType.Info; }
+        }
+
+        public int entityId
+        {
+            get { return m_entityId; }
         }
 
         public virtual int size
@@ -28,7 +34,8 @@ namespace MonMoose.Logic.Battle
         protected override void OnInit(EntityInitData entityInitData)
         {
             base.OnInit(entityInitData);
-            m_entityStaticInfo = StaticDataManager.instance.GetEntityStaticInfo(entityInitData.id);
+            m_entityId = entityInitData.id;
+            m_entityStaticInfo = StaticDataManager.instance.GetEntityStaticInfo(m_entityId);
             OnInitSpecific(entityInitData);
             //handlers[(int) EAttributeType.MaxHp] = new AttributeHandler(this.actor.actorInfo.maxHp, 0, int.MaxValue, 0, LevelDependentCalculator);
             //handlers[(int) EAttributeType.PhysicalAttack] = new AttributeHandler(this.actor.actorInfo.physicalAttack, 0, int.MaxValue, 0, LevelDependentCalculator);

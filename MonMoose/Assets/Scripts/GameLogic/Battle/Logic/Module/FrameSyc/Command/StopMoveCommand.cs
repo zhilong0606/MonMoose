@@ -7,7 +7,7 @@
             get { return EFrameCommandType.StopMove; }
         }
 
-        public override void Excute()
+        public override void Excute(int playerId)
         {
             //Actor actor = BattlePlayerManager.instance.GetPlayer(playerID).selectedActor;
             //actor.moveComponent.StopMove();

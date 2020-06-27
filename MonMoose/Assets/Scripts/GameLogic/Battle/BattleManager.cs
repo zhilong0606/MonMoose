@@ -7,6 +7,7 @@ namespace MonMoose.Logic.Battle
     {
         private BattleBase m_battleInstance;
         private GameObject m_actorRoot;
+        private int m_hostTeamId;
 
         public GameObject actorRoot
         {
@@ -16,6 +17,11 @@ namespace MonMoose.Logic.Battle
         public BattleBase battleInstance
         {
             get { return m_battleInstance; }
+        }
+
+        public int hostTeamId
+        {
+            get { return m_hostTeamId; }
         }
         //private SkillController skillController = new SkillController();
         //private MoveController moveController = new MoveController();

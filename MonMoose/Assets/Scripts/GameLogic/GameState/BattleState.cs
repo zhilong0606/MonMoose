@@ -47,7 +47,12 @@ namespace MonMoose.Logic
                 BattleManager.CreateInstance();
                 m_battleInstance = new BattleBase();
                 BattleManager.instance.SetBattleInstance(m_battleInstance);
-                m_sender = m_battleInstance.GetSender();
+                m_sender = new FrameSyncSender();
+                m_sender.Init(m_battleInstance);
+                m_battleInitData.sender = m_sender;
+                FrameSyncServerLocal server = new FrameSyncServerLocal();
+                m_battleInitData.server = server;
+                m_sender.RegisterHandler(server);
                 BattleInitializer initializer = new BattleInitializer();
                 initializer.StartAsync(OnLoadEnd);
             }
