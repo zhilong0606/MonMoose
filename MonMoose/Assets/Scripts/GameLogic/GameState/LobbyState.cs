@@ -1,4 +1,5 @@
 ﻿using MonMoose.Core;
+using MonMoose.Logic.Battle;
 using MonMoose.Logic.UI;
 using MonMoose.StaticData;
 
@@ -31,7 +32,28 @@ namespace MonMoose.Logic
         private void OnLoadingShowEnd()
         {
             BattleStateContext ctx = ClassPoolManager.instance.Fetch<BattleStateContext>();
+            ctx.battleInitData = GetTestBattleInitData();
             m_stateMachine.ChangeState((int)EGameState.Battle, ctx);
+        }
+
+
+        private BattleInitData GetTestBattleInitData()
+        {
+            BattleInitData battleInitData = new BattleInitData();
+            battleInitData.id = 1;
+            {
+                TeamInitData teamInitData = new TeamInitData();
+                teamInitData.isAI = false;
+                teamInitData.camp = ECampType.Camp1;
+                {
+                    EntityInitData entityInitData = new EntityInitData();
+                    entityInitData.id = 1;
+                    entityInitData.pos = new GridPosition(7, 2);
+                    teamInitData.actorList.Add(entityInitData);
+                }
+                battleInitData.teamList.Add(teamInitData);
+            }
+            return battleInitData;
         }
     }
 }
