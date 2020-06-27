@@ -20,9 +20,9 @@ namespace MonMoose.Logic.Battle
             get { return 1; }
         }
 
-        public virtual Fix32 moveSpeed
+        public virtual Dcm32 moveSpeed
         {
-            get { return Fix32.one; }
+            get { return Dcm32.one; }
         }
 
         protected override void OnInit(EntityInitData entityInitData)

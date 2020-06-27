@@ -28,7 +28,7 @@ namespace MonMoose.Logic.Battle
             return null;
         }
 
-        public Vector3 GetWorldPosition(GridPosition gridPos, FixVec2 offset)
+        public Vector3 GetWorldPosition(GridPosition gridPos, DcmVec2 offset)
         {
             BattleGridView gridView = GetGridView(gridPos);
             if (gridView != null)

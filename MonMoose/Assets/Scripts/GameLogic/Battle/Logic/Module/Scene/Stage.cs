@@ -10,7 +10,7 @@ namespace MonMoose.Logic.Battle
         private List<Grid> m_gridList = new List<Grid>();
         private int m_gridWidth;
         private int m_gridHeight;
-        private FixVec2 m_stageSize;
+        private DcmVec2 m_stageSize;
 
         private List<KeyValuePair<int, EntityInitData>> m_entityInitDataList = new List<KeyValuePair<int, EntityInitData>>();
 
@@ -22,12 +22,12 @@ namespace MonMoose.Logic.Battle
             for (int i = 0; i < m_staticInfo.GridIdList.Count; ++i)
             {
                 Grid grid = m_battleInstance.FetchPoolObj<Grid>();
-                Fix32 gridSize = new Fix32(1);
+                Dcm32 gridSize = new Dcm32(1);
                 int gridPosX = i / m_staticInfo.Height;
                 int gridPosY = i % m_staticInfo.Height;
-                Fix32 stagePosX = gridSize / 2 + gridSize * gridPosX;
-                Fix32 stagePosY = gridSize / 2 + gridSize * gridPosY;
-                grid.Init(m_staticInfo.GridIdList[i], new GridPosition(gridPosX, gridPosY), new FixVec2(stagePosX, stagePosY), gridSize);
+                Dcm32 stagePosX = gridSize / 2 + gridSize * gridPosX;
+                Dcm32 stagePosY = gridSize / 2 + gridSize * gridPosY;
+                grid.Init(m_staticInfo.GridIdList[i], new GridPosition(gridPosX, gridPosY), new DcmVec2(stagePosX, stagePosY), gridSize);
                 m_gridList.Add(grid);
             }
             for (int i = 0; i < m_staticInfo.EntityList.Count; ++i)

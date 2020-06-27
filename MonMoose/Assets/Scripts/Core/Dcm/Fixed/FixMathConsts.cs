@@ -21,7 +21,7 @@
  * THE SOFTWARE.
  */
 
-public static partial class MathFix
+internal static partial class MathFix
 {
     static FixConst _piConst = new FixConst(13493037705);
     static FixConst _eConst = new FixConst(11674931555);

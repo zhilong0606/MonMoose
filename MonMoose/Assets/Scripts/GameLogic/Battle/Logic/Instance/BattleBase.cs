@@ -146,7 +146,7 @@ namespace MonMoose.Logic.Battle
             return obj;
         }
 
-        public bool FindPath(Entity entity, Grid startGrid, FixVec2 offset, Grid targetGrid, List<Grid> gridList)
+        public bool FindPath(Entity entity, Grid startGrid, DcmVec2 offset, Grid targetGrid, List<Grid> gridList)
         {
             return m_pathFindModule.FindPath(entity, startGrid, offset, targetGrid, gridList);
         }

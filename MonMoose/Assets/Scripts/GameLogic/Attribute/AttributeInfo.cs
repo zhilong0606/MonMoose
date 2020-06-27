@@ -20,11 +20,11 @@ namespace MonMoose.Logic
             AddSubject(extraValue);
         }
 
-        public Fix32 totalValue
+        public Dcm32 totalValue
         {
             get
             {
-                Fix32 ret = baseValue.Value;
+                Dcm32 ret = baseValue.Value;
                 ret += extraValue.Value;
                 //for (int i = 0; i < rateValueList.Count; ++i)
                 //{

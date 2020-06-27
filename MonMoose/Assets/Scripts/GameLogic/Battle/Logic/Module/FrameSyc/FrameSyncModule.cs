@@ -6,8 +6,8 @@ namespace MonMoose.Logic.Battle
     public class FrameSyncModule : Module
     {
         private bool isStart = false;
-        private Fix32 m_time;
-        private Fix32 m_deltaTime;
+        private Dcm32 m_time;
+        private Dcm32 m_deltaTime;
         private EBattlePlayMode m_playMode;
         private Action<byte[]> m_actionOnSendMsg;
         

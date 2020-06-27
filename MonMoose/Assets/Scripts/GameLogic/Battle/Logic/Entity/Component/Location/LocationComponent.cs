@@ -8,8 +8,8 @@ namespace MonMoose.Logic.Battle
     {
         protected Grid m_locateGrid;
         protected List<Grid> m_occupyGridList = new List<Grid>();
-        protected FixVec2 m_offset;
-        protected FixVec2 m_forward;
+        protected DcmVec2 m_offset;
+        protected DcmVec2 m_forward;
 
         public override EEntityComponentType type
         {
@@ -21,7 +21,7 @@ namespace MonMoose.Logic.Battle
             get { return m_locateGrid; }
         }
 
-        public FixVec2 offset
+        public DcmVec2 offset
         {
             get { return m_offset; }
         }
@@ -29,22 +29,22 @@ namespace MonMoose.Logic.Battle
         protected override void OnInit(EntityInitData entityInitData)
         {
             base.OnInit(entityInitData);
-            SetPosition(entityInitData.pos, FixVec2.zero, true);
+            SetPosition(entityInitData.pos, DcmVec2.zero, true);
         }
 
-        public void SetForward(FixVec2 forward)
+        public void SetForward(DcmVec2 forward)
         {
             m_forward = forward;
             m_entity.view.SetForward(forward);
         }
 
-        public void SetPosition(GridPosition gridPosition, FixVec2 offset, bool isTeleport)
+        public void SetPosition(GridPosition gridPosition, DcmVec2 offset, bool isTeleport)
         {
             Grid grid = m_battleInstance.GetGrid(gridPosition);
             SetPosition(grid, offset, isTeleport);
         }
 
-        public void SetPosition(Grid grid, FixVec2 offset, bool isTeleport)
+        public void SetPosition(Grid grid, DcmVec2 offset, bool isTeleport)
         {
             if (grid == null)
             {

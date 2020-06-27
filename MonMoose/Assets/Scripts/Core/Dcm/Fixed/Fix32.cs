@@ -2,7 +2,7 @@ using System;
 using System.Text;
 
 [Serializable]
-public struct Fix32
+internal struct Fix32
 {
     public const int FractionalBits = 10;
     public const int IntegerBits = sizeof (int) * 8 - FractionalBits;

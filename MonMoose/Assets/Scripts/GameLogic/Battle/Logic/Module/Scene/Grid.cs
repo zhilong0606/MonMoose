@@ -6,8 +6,8 @@ namespace MonMoose.Logic.Battle
     public class Grid : BattleObj
     {
         private GridPosition m_gridPosition;
-        private Fix32 m_size;
-        private FixVec2 m_stagePosition;
+        private Dcm32 m_size;
+        private DcmVec2 m_stagePosition;
         private TerrainStaticInfo m_staticInfo;
 
         private List<Entity> m_occupiedEntityList = new List<Entity>();
@@ -17,17 +17,17 @@ namespace MonMoose.Logic.Battle
             get { return m_gridPosition; }
         }
 
-        public FixVec2 stagePosition
+        public DcmVec2 stagePosition
         {
             get { return m_stagePosition; }
         }
 
-        public Fix32 size
+        public Dcm32 size
         {
             get { return m_size; }
         }
 
-        public void Init(int id, GridPosition gridPosition, FixVec2 stagePosition, Fix32 size)
+        public void Init(int id, GridPosition gridPosition, DcmVec2 stagePosition, Dcm32 size)
         {
             m_staticInfo = StaticDataManager.instance.GetTerrainStaticInfo(id);
             m_gridPosition = gridPosition;
@@ -35,9 +35,9 @@ namespace MonMoose.Logic.Battle
             m_size = size;
         }
 
-        public Fix32 GetCost(Entity entity)
+        public Dcm32 GetCost(Entity entity)
         {
-            return Fix32.one;
+            return Dcm32.one;
         }
 
         public void AddOccupiedEntity(Entity entity)
@@ -62,7 +62,7 @@ namespace MonMoose.Logic.Battle
             return true;
         }
 
-        public bool TryGetOffset(Grid grid, FixVec2 offset, out FixVec2 targetOffset)
+        public bool TryGetOffset(Grid grid, DcmVec2 offset, out DcmVec2 targetOffset)
         {
             if (grid == this)
             {
@@ -72,7 +72,7 @@ namespace MonMoose.Logic.Battle
             {
                 targetOffset = (grid.gridPosition - gridPosition).ToFix() * size + offset;
             }
-            return MathFix.Abs(targetOffset.x) < size / 2 && MathFix.Abs(targetOffset.y) < size / 2;
+            return MathDcm.Abs(targetOffset.x) < size / 2 && MathDcm.Abs(targetOffset.y) < size / 2;
         }
     }
 }

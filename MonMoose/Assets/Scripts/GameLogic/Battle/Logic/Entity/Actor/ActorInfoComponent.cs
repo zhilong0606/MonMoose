@@ -16,9 +16,9 @@ namespace MonMoose.Logic.Battle
             get { return m_actorStaticInfo.Size; }
         }
 
-        public override Fix32 moveSpeed
+        public override Dcm32 moveSpeed
         {
-            get { return new Fix32(m_actorStaticInfo.MoveSpeed, 1000); }
+            get { return new Dcm32(m_actorStaticInfo.MoveSpeed, 1000); }
         }
 
         protected override void OnInitSpecific(EntityInitData entityInitData)

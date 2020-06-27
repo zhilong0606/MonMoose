@@ -2,7 +2,7 @@
 using System;
 using UnityEngine;
 
-public struct FixVec3 : IEquatable<FixVec3>
+internal struct FixVec3 : IEquatable<FixVec3>
 {
     public static readonly FixVec3 zeroVector = new FixVec3();
     public static readonly FixVec3 oneVector = new FixVec3(1, 1, 1);

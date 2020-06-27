@@ -10,12 +10,12 @@ namespace MonMoose.Logic.Battle
         private Grid m_toGrid;
         private Entity m_entity;
         
-        private FixVec2 m_offset;
+        private DcmVec2 m_offset;
         private bool m_isSameGrid;
 
-        private Action<Fix32> m_actionOnEnd;
+        private Action<Dcm32> m_actionOnEnd;
 
-        public void Init(Entity entity, Grid fromGrid, FixVec2 offset, Grid toGrid, Action<Fix32> actionOnEnd)
+        public void Init(Entity entity, Grid fromGrid, DcmVec2 offset, Grid toGrid, Action<Dcm32> actionOnEnd)
         {
             m_entity = entity;
             m_fromGrid = fromGrid;
@@ -26,14 +26,14 @@ namespace MonMoose.Logic.Battle
             m_isSameGrid = fromGrid == toGrid;
         }
 
-        public void Tick(Fix32 time)
+        public void Tick(Dcm32 time)
         {
-            FixVec2 toVec = m_isSameGrid ? -m_offset.normalized : (m_toGrid.gridPosition - m_fromGrid.gridPosition).ToFix();
+            DcmVec2 toVec = m_isSameGrid ? -m_offset.normalized : (m_toGrid.gridPosition - m_fromGrid.gridPosition).ToFix();
             LocationComponent locationComponent = m_entity.GetComponent<LocationComponent>();
             locationComponent.SetForward(toVec);
-            FixVec2 deltaPos = toVec * time * m_entity.GetComponent<EntityInfoComponent>().moveSpeed;
-            FixVec2 offset = m_offset + deltaPos;
-            FixVec2 calcOffset;
+            DcmVec2 deltaPos = toVec * time * m_entity.GetComponent<EntityInfoComponent>().moveSpeed;
+            DcmVec2 offset = m_offset + deltaPos;
+            DcmVec2 calcOffset;
             if(!m_isSameGrid && m_fromGrid.TryGetOffset(m_fromGrid, offset, out calcOffset))
             {
                 locationComponent.SetPosition(m_fromGrid, offset, false);
@@ -41,11 +41,11 @@ namespace MonMoose.Logic.Battle
             else
             {
                 bool isInToGrid = m_toGrid.TryGetOffset(m_fromGrid, offset, out calcOffset);
-                bool isArrived = FixVec2.Dot(toVec, calcOffset) >= 0 || !isInToGrid;
+                bool isArrived = DcmVec2.Dot(toVec, calcOffset) >= 0 || !isInToGrid;
                 if (isArrived)
                 {
-                    Fix32 leftTime = calcOffset.magnitude / m_entity.GetComponent<EntityInfoComponent>().moveSpeed;
-                    locationComponent.SetPosition(m_toGrid, FixVec2.zero, false);
+                    Dcm32 leftTime = calcOffset.magnitude / m_entity.GetComponent<EntityInfoComponent>().moveSpeed;
+                    locationComponent.SetPosition(m_toGrid, DcmVec2.zero, false);
                     m_actionOnEnd(leftTime);
                 }
                 else

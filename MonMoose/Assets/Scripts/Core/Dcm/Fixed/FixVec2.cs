@@ -1,6 +1,6 @@
 using System;
 
-public struct FixVec2 : IEquatable<FixVec2>
+internal struct FixVec2 : IEquatable<FixVec2>
 {
     public static readonly FixVec2 zeroVector = new FixVec2();
     public static readonly FixVec2 oneVector = new FixVec2(1, 1);

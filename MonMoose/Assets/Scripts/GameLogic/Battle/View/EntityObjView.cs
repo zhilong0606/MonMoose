@@ -16,7 +16,7 @@ namespace MonMoose.Logic.Battle
 
         protected abstract string prefabPath { get; }
 
-        public override void SetPosition(MonMoose.Logic.Battle.Grid grid, FixVec2 offset, bool isTeleport)
+        public override void SetPosition(MonMoose.Logic.Battle.Grid grid, DcmVec2 offset, bool isTeleport)
         {
             Vector3 worldPos = BattleGridManager.instance.GetWorldPosition(grid.gridPosition, offset);
             if (isTeleport)
@@ -31,7 +31,7 @@ namespace MonMoose.Logic.Battle
             }
         }
 
-        public override void SetForward(FixVec2 forward)
+        public override void SetForward(DcmVec2 forward)
         {
             base.SetForward(forward);
             rotateRoot.transform.forward = new Vector3((float)forward.x, 0f, (float)forward.y);

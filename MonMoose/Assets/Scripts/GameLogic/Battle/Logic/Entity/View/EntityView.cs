@@ -14,7 +14,7 @@
 
         }
 
-        public virtual void SetPosition(Grid grid, FixVec2 offset, bool isTeleport)
+        public virtual void SetPosition(Grid grid, DcmVec2 offset, bool isTeleport)
         {
 
         }
@@ -39,7 +39,7 @@
 
         }
 
-        public virtual void SetForward(FixVec2 forward)
+        public virtual void SetForward(DcmVec2 forward)
         {
 
         }

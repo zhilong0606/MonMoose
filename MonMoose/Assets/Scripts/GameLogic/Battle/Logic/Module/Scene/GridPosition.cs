@@ -46,9 +46,9 @@ namespace MonMoose.Logic.Battle
             return Math.Abs(pos.x - x) + Math.Abs(pos.y - y);
         }
 
-        public FixVec2 ToFix()
+        public DcmVec2 ToFix()
         {
-            return new FixVec2(x, y);
+            return new DcmVec2(x, y);
         }
 
         public override string ToString()

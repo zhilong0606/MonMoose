@@ -23,7 +23,7 @@
 
 using System;
 
-public static partial class MathFix
+internal static partial class MathFix
 {
     public static readonly Fix32 PI = new Fix32(3141593, 1000000);
     public static readonly Fix32 Deg2Rad = new Fix32(1745329, 100000000);

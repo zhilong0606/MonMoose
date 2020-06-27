@@ -24,7 +24,7 @@
 using System;
 using System.Text;
 
-public struct FixConst
+internal struct FixConst
 {
     public static explicit operator double(FixConst f)
     {

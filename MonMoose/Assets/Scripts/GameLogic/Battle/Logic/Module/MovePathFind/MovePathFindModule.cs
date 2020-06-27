@@ -11,12 +11,12 @@ namespace MonMoose.Logic.Battle
         private Grid m_startGrid;
         private Grid m_targetGrid;
         private Entity m_entity;
-        private FixVec2 m_offset;
+        private DcmVec2 m_offset;
 
-        public bool FindPath(Entity entity, Grid startGrid, FixVec2 offset, Grid targetGrid, List<Grid> gridList)
+        public bool FindPath(Entity entity, Grid startGrid, DcmVec2 offset, Grid targetGrid, List<Grid> gridList)
         {
             gridList.Clear();
-            if (startGrid == targetGrid && offset == FixVec2.zero)
+            if (startGrid == targetGrid && offset == DcmVec2.zero)
             {
                 return false;
             }
@@ -28,13 +28,13 @@ namespace MonMoose.Logic.Battle
             MovePath startPath = CreatePath();
             startPath.grid = m_startGrid;
             startPath.offset = m_offset;
-            if (m_offset != FixVec2.zero)
+            if (m_offset != DcmVec2.zero)
             {
                 AddToOpenList(startPath, m_startGrid, m_startGrid.GetCost(m_entity) * m_offset.magnitude / m_startGrid.size);
                 Grid grid = m_battleInstance.GetGrid(GetNearGridPosition(startGrid.gridPosition, m_offset));
                 if (grid != null)
                 {
-                    AddToOpenList(startPath, grid, m_startGrid.GetCost(m_entity) * (Fix32.half - m_offset.magnitude / m_startGrid.size) + grid.GetCost(m_entity) / 2);
+                    AddToOpenList(startPath, grid, m_startGrid.GetCost(m_entity) * (Dcm32.half - m_offset.magnitude / m_startGrid.size) + grid.GetCost(m_entity) / 2);
                 }
             }
             else
@@ -84,14 +84,14 @@ namespace MonMoose.Logic.Battle
                 return;
             }
 
-            Fix32 g = path.grid.GetCost(m_entity) * Fix32.half + grid.GetCost(m_entity) / 2 + path.g;
+            Dcm32 g = path.grid.GetCost(m_entity) * Dcm32.half + grid.GetCost(m_entity) / 2 + path.g;
             AddToOpenList(path, grid, g);
         }
 
-        private void AddToOpenList(MovePath fromPath, Grid toGrid, Fix32 g)
+        private void AddToOpenList(MovePath fromPath, Grid toGrid, Dcm32 g)
         {
-            Fix32 h = toGrid.gridPosition.DistanceTo(m_targetGrid.gridPosition);
-            Fix32 f = g + h;
+            Dcm32 h = toGrid.gridPosition.DistanceTo(m_targetGrid.gridPosition);
+            Dcm32 f = g + h;
             MovePath openedPath = null;
             foreach (var path in m_openList)
             {
@@ -173,17 +173,17 @@ namespace MonMoose.Logic.Battle
             return path;
         }
 
-        private GridPosition GetNearGridPosition(GridPosition gridPosition, FixVec2 offset)
+        private GridPosition GetNearGridPosition(GridPosition gridPosition, DcmVec2 offset)
         {
-            if (offset != FixVec2.zero)
+            if (offset != DcmVec2.zero)
             {
                 if (offset.x != 0)
                 {
-                    return gridPosition + new GridPosition(MathFix.Sign(offset.x), 0);
+                    return gridPosition + new GridPosition(MathDcm.Sign(offset.x), 0);
                 }
                 if (offset.y != 0)
                 {
-                    return gridPosition + new GridPosition(0, MathFix.Sign(offset.y));
+                    return gridPosition + new GridPosition(0, MathDcm.Sign(offset.y));
                 }
             }
             return gridPosition;

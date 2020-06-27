@@ -10,23 +10,23 @@ namespace MonMoose.Logic
             Rate,
         }
 
-        protected Fix32 m_value;
+        protected Dcm32 m_value;
         public abstract EType Type { get; }
         public ClassPool creater { get; set; }
 
         public bool IsZero
         {
-            get { return MathFix.Abs(m_value - Fix32.zero) < Fix32.Epsilon; }
+            get { return MathDcm.Abs(m_value - Dcm32.zero) < Dcm32.Epsilon; }
         }
 
-        public abstract Fix32 Calculate(Fix32 f);
+        public abstract Dcm32 Calculate(Dcm32 f);
 
-        public Fix32 Value
+        public Dcm32 Value
         {
             get { return m_value; }
             set
             {
-                if (MathFix.Abs(m_value - value) > Fix32.Epsilon)
+                if (MathDcm.Abs(m_value - value) > Dcm32.Epsilon)
                 {
                     m_value = value;
                     Notify((int)ENotifyId.ValueChanged);
@@ -36,7 +36,7 @@ namespace MonMoose.Logic
 
         public virtual void OnFetch()
         {
-            m_value = Fix32.zero;
+            m_value = Dcm32.zero;
         }
 
         public virtual void OnRelease()

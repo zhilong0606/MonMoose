@@ -7,9 +7,9 @@
             get { return EType.Rate; }
         }
 
-        public override Fix32 Calculate(Fix32 f)
+        public override Dcm32 Calculate(Dcm32 f)
         {
-            return f * (1 + m_value * new Fix32(1, 100));
+            return f * (1 + m_value * new Dcm32(1, 100));
         }
     }
 }

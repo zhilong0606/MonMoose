@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
 
-public struct Fix64
+internal struct Fix64
 {
     public const int FractionalBits = Fix32.FractionalBits * 2;
     public const int IntegerBits = sizeof(long) * 8 - FractionalBits;

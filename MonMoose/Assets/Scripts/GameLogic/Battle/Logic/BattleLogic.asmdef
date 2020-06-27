@@ -1,7 +1,8 @@
 {
     "name": "BattleLogic",
     "references": [
-        "StaticData"
+        "StaticData",
+        "Dcm"
     ],
     "optionalUnityReferences": [],
     "includePlatforms": [],

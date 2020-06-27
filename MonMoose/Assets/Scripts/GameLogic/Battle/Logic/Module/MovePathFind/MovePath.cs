@@ -7,21 +7,21 @@ namespace MonMoose.Logic.Battle
     {
         public MovePath fromPath;
         public Grid grid;
-        public FixVec2 offset;
+        public DcmVec2 offset;
 
-        public Fix32 g;
-        public Fix32 h;
-        public Fix32 f;
+        public Dcm32 g;
+        public Dcm32 h;
+        public Dcm32 f;
 
         public override void OnRelease()
         {
             base.OnRelease();
             fromPath = null;
             grid = null;
-            offset = FixVec2.zero;
-            g = Fix32.zero;
-            h = Fix32.zero;
-            f = Fix32.zero;
+            offset = DcmVec2.zero;
+            g = Dcm32.zero;
+            h = Dcm32.zero;
+            f = Dcm32.zero;
         }
     }
 }

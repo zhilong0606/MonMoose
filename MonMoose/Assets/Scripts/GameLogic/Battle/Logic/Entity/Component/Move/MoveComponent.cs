@@ -20,7 +20,7 @@ namespace MonMoose.Logic.Battle
             Clear();
             Grid targetGrid = m_battleInstance.GetGrid(gridPos);
             LocationComponent locationComponent = m_entity.GetComponent<LocationComponent>();
-            FixVec2 offset = locationComponent.offset;
+            DcmVec2 offset = locationComponent.offset;
             m_battleInstance.FindPath(m_entity, locationComponent.locateGrid, offset, targetGrid, m_pathGridList);
             if (m_pathGridList.Count <= m_startIndex)
             {
@@ -33,14 +33,14 @@ namespace MonMoose.Logic.Battle
             for (int i = m_startIndex; i < m_pathGridList.Count; ++i)
             {
                 MoveProcess process = m_battleInstance.FetchPoolObj<MoveProcess>();
-                process.Init(m_entity, m_pathGridList[i - 1], i == m_startIndex ? offset : FixVec2.zero, m_pathGridList[i], OnMoveProcessEnd);
+                process.Init(m_entity, m_pathGridList[i - 1], i == m_startIndex ? offset : DcmVec2.zero, m_pathGridList[i], OnMoveProcessEnd);
                 m_movePorcessList.Add(process);
             }
             m_curIndex = 0;
             StartMove();
         }
 
-        private void OnMoveProcessEnd(Fix32 leftTime)
+        private void OnMoveProcessEnd(Dcm32 leftTime)
         {
             m_curIndex++;
             if (m_curIndex >= m_movePorcessList.Count)
@@ -58,7 +58,7 @@ namespace MonMoose.Logic.Battle
             if (m_isStart)
             {
                 MoveProcess process = m_movePorcessList[m_curIndex];
-                process.Tick(new Fix32(50, 1000));
+                process.Tick(new Dcm32(50, 1000));
             }
             base.OnTick();
         }
