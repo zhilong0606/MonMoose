@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using MonMoose.Core;
-using MonMoose.Logic.Battle;
+using MonMoose.Logic;
 using MonMoose.StaticData;
 using UnityEngine.SceneManagement;
-using Grid = MonMoose.Logic.Battle.Grid;
 
-namespace MonMoose.Logic.Battle
+namespace MonMoose.GameLogic.Battle
 {
     public class BattleInitializer : Initializer
     {

@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 using System.Text;
-using MonMoose.Logic.Battle;
+using MonMoose.BattleLogic;
 using UnityEditor;
 
-namespace MonMoose.Logic.Battle
+namespace MonMoose.GameLogic.Battle
 {
     public static class ScheduleTool
     {

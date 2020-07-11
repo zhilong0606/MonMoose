@@ -1,7 +1,7 @@
-﻿using MonMoose.Logic.Battle;
+﻿using MonMoose.BattleLogic;
 using UnityEngine;
 
-namespace MonMoose.Logic.Battle
+namespace MonMoose.GameLogic.Battle
 {
     public class BattleGridCreater : MonoBehaviour
     {

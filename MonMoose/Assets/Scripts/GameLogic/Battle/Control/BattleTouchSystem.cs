@@ -1,9 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using MonMoose.Core;
+using MonMoose.Logic;
 using UnityEngine;
 
-namespace MonMoose.Logic.Battle
+namespace MonMoose.GameLogic.Battle
 {
     public class BattleTouchSystem : Singleton<BattleTouchSystem>
     {

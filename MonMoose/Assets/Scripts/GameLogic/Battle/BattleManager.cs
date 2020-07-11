@@ -1,7 +1,8 @@
-﻿using MonMoose.Core;
+﻿using MonMoose.BattleLogic;
+using MonMoose.Core;
 using UnityEngine;
 
-namespace MonMoose.Logic.Battle
+namespace MonMoose.GameLogic.Battle
 {
     public class BattleManager : Singleton<BattleManager>
     {
@@ -37,6 +38,11 @@ namespace MonMoose.Logic.Battle
         public void SetBattleInstance(BattleBase battleInstance)
         {
             m_battleInstance = battleInstance;
+        }
+
+        public void StagePrepare()
+        {
+
         }
 
         private void RegisterListener()

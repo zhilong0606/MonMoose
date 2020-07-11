@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using MonMoose.Core;
-using MonMoose.Logic.Battle;
 using MonMoose.StaticData;
 
 namespace MonMoose.Logic.UI

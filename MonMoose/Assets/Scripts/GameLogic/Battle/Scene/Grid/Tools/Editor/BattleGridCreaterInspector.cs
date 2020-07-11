@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-namespace MonMoose.Logic.Battle
+namespace MonMoose.GameLogic.Battle
 {
     [CustomEditor(typeof(BattleGridCreater))]
     public class BattleGridCreaterInspector : Editor

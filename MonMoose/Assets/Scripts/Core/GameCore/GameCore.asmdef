@@ -1,7 +1,8 @@
 {
     "name": "GameCore",
     "references": [
-        "BaseCore"
+        "BaseCore",
+        "BaseSystem"
     ],
     "optionalUnityReferences": [],
     "includePlatforms": [],

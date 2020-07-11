@@ -1,10 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using MonMoose.BattleLogic;
 using MonMoose.Core;
 using MonMoose.StaticData;
 using UnityEngine;
 
-namespace MonMoose.Logic.Battle
+namespace MonMoose.GameLogic.Battle
 {
     public abstract class EntityObjView : EntityView
     {
@@ -16,7 +17,7 @@ namespace MonMoose.Logic.Battle
 
         protected abstract string prefabPath { get; }
 
-        public override void SetPosition(MonMoose.Logic.Battle.Grid grid, DcmVec2 offset, bool isTeleport)
+        public override void SetPosition(BattleGrid grid, DcmVec2 offset, bool isTeleport)
         {
             Vector3 worldPos = BattleGridManager.instance.GetWorldPosition(grid.gridPosition, offset);
             if (isTeleport)

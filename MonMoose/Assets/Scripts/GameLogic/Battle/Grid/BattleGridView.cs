@@ -1,8 +1,9 @@
-﻿using MonMoose.Logic.Battle;
+﻿using MonMoose.BattleLogic;
+using MonMoose.Logic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace MonMoose.Logic.Battle
+namespace MonMoose.GameLogic.Battle
 {
     public class BattleGridView : MonoBehaviour, IPointerClickHandler, IPointerDownHandler, IPointerUpHandler, IPointerExitHandler
     {

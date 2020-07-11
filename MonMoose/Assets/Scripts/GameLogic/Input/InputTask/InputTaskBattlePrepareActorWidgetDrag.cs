@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using MonMoose.Core;
-using MonMoose.Logic.Battle;
+using MonMoose.GameLogic.Battle;
 using MonMoose.Logic.UI;
 using MonMoose.StaticData;
 using UnityEngine;

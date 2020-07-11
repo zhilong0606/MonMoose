@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using MonMoose.Core;
 using UnityEngine;
 
-namespace MonMoose.Logic.Battle
+namespace MonMoose.GameLogic.Battle
 {
     public class BattleMainState : State
     {

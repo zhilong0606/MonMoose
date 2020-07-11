@@ -1,8 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using MonMoose.Core;
-using MonMoose.Logic.Battle;
+using MonMoose.BattleLogic;
 using UnityEngine;
+using StateContext = MonMoose.Core.StateContext;
 
 namespace MonMoose.Logic
 {

@@ -1,0 +1,12 @@
+{
+    "name": "BattleLogic",
+    "references": [
+        "StaticData",
+        "Dcm",
+        "BaseCore"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false
+}

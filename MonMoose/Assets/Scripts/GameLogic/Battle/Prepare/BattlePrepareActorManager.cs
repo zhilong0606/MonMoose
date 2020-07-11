@@ -1,9 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using MonMoose.BattleLogic;
 using MonMoose.Core;
 using UnityEngine;
 
-namespace MonMoose.Logic.Battle
+namespace MonMoose.GameLogic.Battle
 {
     public class BattlePrepareActorManager : Singleton<BattlePrepareActorManager>
     {

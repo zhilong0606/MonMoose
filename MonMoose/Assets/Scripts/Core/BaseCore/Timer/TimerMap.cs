@@ -10,6 +10,7 @@ namespace MonMoose.Core
         public Action<int> onTimeUp;
         public Action<int> onAddTimer;
         public Action<int> onRemoveTimer;
+        public ClassPool<Timer> pool;
 
         ~TimerMap()
         {
@@ -45,6 +46,15 @@ namespace MonMoose.Core
             return timer;
         }
 
+        private Timer CreateTimer()
+        {
+            if (pool != null)
+            {
+                return pool.Fetch();
+            }
+            return new Timer();
+        }
+
         private Timer AddTimer(int id)
         {
             Timer timer = null;
@@ -52,13 +62,13 @@ namespace MonMoose.Core
             {
                 if (m_timerMap[id] == null)
                 {
-                    timer = ClassPoolManager.instance.Fetch<Timer>();
+                    timer = CreateTimer();
                     m_timerMap[id] = timer;
                 }
             }
             else
             {
-                timer = ClassPoolManager.instance.Fetch<Timer>();
+                timer = CreateTimer();
                 m_timerMap.Add(id, timer);
             }
             if (timer != null)

@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using MonMoose.BattleLogic;
 using MonMoose.Core;
-using MonMoose.Logic.Battle;
+using MonMoose.GameLogic.Battle;
 using MonMoose.Logic.UI;
 using MonMoose.StaticData;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using Grid = MonMoose.Logic.Battle.Grid;
+using State = MonMoose.Core.State;
+using StateContext = MonMoose.Core.StateContext;
+using StateMachine = MonMoose.Core.StateMachine;
 
 namespace MonMoose.Logic
 {
@@ -63,7 +65,6 @@ namespace MonMoose.Logic
             m_isLoadEnd = true;
             m_battleInstance.Init(m_battleInitData);
             m_battleInstance.Start();
-            m_battleStateMachine.ChangeState((int)EBattleState.Prepare);
             LoadingWindow.CloseLoading(ELoadingId.BattleScene);
         }
 
@@ -93,7 +94,7 @@ namespace MonMoose.Logic
             return null;
         }
 
-        private Grid m_downGrid;
+        private BattleGrid m_downGrid;
 
         //public override void OnTickFloat(float deltaTime)
         //{
