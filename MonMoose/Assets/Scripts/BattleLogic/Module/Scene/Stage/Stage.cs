@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using MonMoose.Core;
 using MonMoose.StaticData;
 
 namespace MonMoose.BattleLogic
@@ -11,6 +12,7 @@ namespace MonMoose.BattleLogic
         private int m_gridWidth;
         private int m_gridHeight;
         private DcmVec2 m_stageSize;
+        private StateMachine m_stateMachine = new StateMachine();
 
         private List<KeyValuePair<int, EntityInitData>> m_entityInitDataList = new List<KeyValuePair<int, EntityInitData>>();
 
@@ -39,6 +41,20 @@ namespace MonMoose.BattleLogic
                 initData.pos = new GridPosition(actorInfo.PosX, actorInfo.PosY);
                 m_entityInitDataList.Add(new KeyValuePair<int, EntityInitData>(actorInfo.Uid, initData));
             }
+
+            List<StageState> stateList = new List<StageState>();
+            stateList.Add(new StageStateNone());
+            stateList.Add(new StageStatePrepare());
+            stateList.Add(new StageStateRunning());
+            stateList.Add(new StageStateExiting());
+            stateList.Add(new StageStateExit());
+            for (int i = 0; i < stateList.Count; ++i)
+            {
+                StageState state = stateList[i];
+                state.Init(this, m_battleInstance);
+                m_stateMachine.Init(stateList);
+            }
+            m_stateMachine.ChangeState((int)EStageState.None);
         }
 
         public BattleGrid GetGrid(int x, int y)
@@ -64,6 +80,7 @@ namespace MonMoose.BattleLogic
             {
                 m_battleInstance.sender.SendStagePrepare();
             }
+            m_stateMachine.ChangeState((int)EStageState.Running);
         }
 
         public void Start()

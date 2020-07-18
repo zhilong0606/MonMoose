@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using MonMoose.Core;
 
 namespace MonMoose.BattleLogic
 {

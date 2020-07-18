@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using MonMoose.Core;
 
 namespace MonMoose.BattleLogic
 {
-    public class MoveProcess : PoolObj
+    public class MoveProcess : ClassPoolObj
     {
         private BattleGrid m_fromGrid;
         private BattleGrid m_toGrid;

@@ -1,16 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
+using MonMoose.Core;
 
-public class StageState : MonoBehaviour {
+namespace MonMoose.BattleLogic
+{
+    public abstract class StageState : State
+    {
+        protected Stage m_stage;
+        protected BattleBase m_battleInstance;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+        public void Init(Stage stage, BattleBase battleInstance)
+        {
+            m_stage = stage;
+            m_battleInstance = battleInstance;
+        }
+    }
 }

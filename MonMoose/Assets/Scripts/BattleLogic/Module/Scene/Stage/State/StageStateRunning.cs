@@ -1,16 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
-public class StageStateRunning : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+namespace MonMoose.BattleLogic
+{
+    public class StageStateRunning : StageState
+    {
+        public override int stateIndex
+        {
+            get { return (int)EStageState.Running; }
+        }
+    }
 }

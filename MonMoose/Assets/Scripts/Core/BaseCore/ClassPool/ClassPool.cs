@@ -32,7 +32,7 @@ namespace MonMoose.Core
         public event DelegateObject actionOnRelease;
         private List<object> m_spareList = new List<object>();
 
-        protected virtual Type classType
+        public virtual Type classType
         {
             get { return m_classType; }
         }

@@ -2,15 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StageStateExit : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+namespace MonMoose.BattleLogic
+{
+    public class StageStateExit : StageState
+    {
+        public override int stateIndex
+        {
+            get { return (int)EStageState.Exit; }
+        }
+    }
 }

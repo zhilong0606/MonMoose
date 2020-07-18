@@ -1,9 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using MonMoose.Core;
 
 namespace MonMoose.BattleLogic
 {
-    public class MovePath : PoolObj
+    public class MovePath : ClassPoolObj
     {
         public MovePath fromPath;
         public BattleGrid grid;

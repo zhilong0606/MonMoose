@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 
 namespace MonMoose.Core
@@ -20,9 +21,18 @@ namespace MonMoose.Core
 
         public void Init(params State[] states)
         {
-            for (int i = 0; i < states.Length; ++i)
+            Init((IList)states);
+        }
+
+        public void Init(IList states)
+        {
+            for (int i = 0; i < states.Count; ++i)
             {
-                State state = states[i];
+                State state = states[i] as State;
+                if (state == null)
+                {
+                    continue;
+                }
                 state.Init(this);
                 m_stateList.Add(state);
             }
