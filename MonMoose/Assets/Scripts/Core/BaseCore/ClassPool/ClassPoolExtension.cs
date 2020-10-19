@@ -1,4 +1,6 @@
-﻿namespace MonMoose.Core
+﻿using System;
+
+namespace MonMoose.Core
 {
     public static class ClassPoolExtension
     {
@@ -8,6 +10,19 @@
             {
                 obj.creater.Release(obj);
             }
+        }
+
+        public static T Fetch<T>(this object obj) where T : class
+        {
+            return ClassPoolManager.instance.Fetch<T>();
+        }
+    }
+
+    public static class ClassPoolCut<T> where T : class
+    {
+        public static T Fetch()
+        {
+            return ClassPoolManager.instance.Fetch<T>();
         }
     }
 }

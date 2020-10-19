@@ -5,7 +5,7 @@ namespace MonMoose.Core
 {
     public class ClassPoolManager : Singleton<ClassPoolManager>
     {
-        private Dictionary<Type, ClassPool> m_poolMap = new Dictionary<Type, ClassPool>();
+        private readonly Dictionary<Type, ClassPool> m_poolMap = new Dictionary<Type, ClassPool>();
 
         public ClassPool<T> GetPool<T>() where T : class
         {
@@ -63,10 +63,13 @@ namespace MonMoose.Core
         private ClassPool GetPool(Type type)
         {
             ClassPool pool = null;
-            if (!m_poolMap.TryGetValue(type, out pool))
+            lock (this)
             {
-                pool = new ClassPool(type);
-                m_poolMap.Add(type, pool);
+                if (!m_poolMap.TryGetValue(type, out pool))
+                {
+                    pool = new ClassPool(type);
+                    m_poolMap.Add(type, pool);
+                }
             }
             return pool;
         }
