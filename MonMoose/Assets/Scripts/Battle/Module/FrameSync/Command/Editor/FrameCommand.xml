@@ -1,0 +1,13 @@
+<Root>
+	<MoveToGrid>
+		<int>entityId</int>
+		<int>gridX</int>
+		<int>gridY</int>
+	</MoveToGrid>
+	<StagePrepare>
+	</StagePrepare>
+	<StageStart>
+	</StageStart>
+	<StopMove>
+	</StopMove>
+</Root>

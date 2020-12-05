@@ -11,6 +11,16 @@ namespace MonMoose.Battle
         [SerializeField]
         public int y;
 
+        public bool isValidX
+        {
+            get { return x >= 0; }
+        }
+
+        public bool isValidY
+        {
+            get { return y >= 0; }
+        }
+
         public GridPosition(int x, int y)
         {
             this.x = x;

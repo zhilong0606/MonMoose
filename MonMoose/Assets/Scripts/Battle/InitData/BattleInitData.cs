@@ -11,9 +11,7 @@ namespace MonMoose.Battle
         public Func<int, EntityView> funcOnGetView;
         //public Action<byte[]> actionOnSendMsg;
         public IBattleEventListener eventListener;
-        public FrameSyncServer server;
-        public FrameSyncSender sender;
-        public EBattlePlayMode playMode;
+        public FrameSyncRelay relay;
         public List<TeamInitData> teamList = new List<TeamInitData>();
     }
 }
