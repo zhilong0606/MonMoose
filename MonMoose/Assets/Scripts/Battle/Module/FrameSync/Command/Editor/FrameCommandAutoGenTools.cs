@@ -48,7 +48,7 @@ namespace MonMoose.Battle
             writer.AppendLine("namespace MonMoose.Battle");
             writer.StartBlock();
             {
-                writer.AppendLine("public partial class {0}Command : FrameCommand", className);
+                writer.AppendLine("public partial class {0}Command", className);
                 writer.StartBlock();
                 {
                     for (int i = 0; i < typeNameList.Count; ++i)

@@ -1,6 +1,6 @@
 namespace MonMoose.Battle
 {
-    public partial class StopMoveCommand : FrameCommand
+    public partial class StopMoveCommand
     {
 
         public override EFrameCommandType commandType

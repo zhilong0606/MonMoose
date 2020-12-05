@@ -1,6 +1,6 @@
 namespace MonMoose.Battle
 {
-    public partial class MoveToGridCommand : FrameCommand
+    public partial class MoveToGridCommand
     {
         public int entityId;
         public int gridX;

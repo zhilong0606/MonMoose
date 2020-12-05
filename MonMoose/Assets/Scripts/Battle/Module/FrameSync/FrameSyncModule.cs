@@ -32,14 +32,6 @@ namespace MonMoose.Battle
             isStart = true;
         }
 
-        public void WaitFrameCommand(EFrameCommandType cmdType)
-        {
-            //if (m_server != null)
-            //{
-            //    m_server.WaitFrameCommand(cmdType);
-            //}
-        }
-
         public void Tick(float deltaTime)
         {
             if (!isStart)

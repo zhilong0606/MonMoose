@@ -1,6 +1,6 @@
 namespace MonMoose.Battle
 {
-    public partial class StageStartCommand : FrameCommand
+    public partial class StageStartCommand
     {
 
         public override EFrameCommandType commandType
