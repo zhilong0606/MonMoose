@@ -8,16 +8,17 @@ namespace MonMoose.Core
     public class CodeWriter
     {
         private StringBuilder m_stringBuilder = new StringBuilder();
-        private int tabCount = 0;
+        private int m_tabCount = 0;
+        private string m_tabStr = "    ";
 
         public void StartTab()
         {
-            tabCount++;
+            m_tabCount++;
         }
 
         public void EndTab()
         {
-            tabCount--;
+            m_tabCount--;
         }
 
         public void StartBlock()
@@ -34,9 +35,9 @@ namespace MonMoose.Core
 
         public CodeWriter StartLine(string str = null)
         {
-            for (int i = 0; i < tabCount; ++i)
+            for (int i = 0; i < m_tabCount; ++i)
             {
-                m_stringBuilder.Append("\t");
+                m_stringBuilder.Append(m_tabStr);
             }
             if (!string.IsNullOrEmpty(str))
             {
@@ -72,9 +73,9 @@ namespace MonMoose.Core
         {
             if (!string.IsNullOrEmpty(str))
             {
-                for (int i = 0; i < tabCount; ++i)
+                for (int i = 0; i < m_tabCount; ++i)
                 {
-                    m_stringBuilder.Append("\t");
+                    m_stringBuilder.Append(m_tabStr);
                 }
                 m_stringBuilder.Append(str);
             }

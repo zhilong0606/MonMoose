@@ -14,6 +14,7 @@ namespace MonMoose.Battle
         private static string configPath = "Assets/Scripts/Battle/Module/FrameSync/Command/Editor/FrameCommand.xml";
         private static string codePathFormat = "Assets/Scripts/Battle/Module/FrameSync/Command/AutoGen/{0}Command_AutoGen.cs";
         private static string enumPath = "Assets/Scripts/Battle/Module/FrameSync/Command/AutoGen/EFrameCommandType_AutoGen.cs";
+        private static string factoryPath = "Assets/Scripts/Battle/Module/FrameSync/Command/AutoGen/FrameCommandFactory_AutoGen.cs";
 
         [MenuItem("Tools/FrameSync/Generate Command Code")]
         public static void GenerateCommandCode()
@@ -38,6 +39,7 @@ namespace MonMoose.Battle
                 WriteCode(className, typeNameList, fieldNameList);
             }
             WriteEnum(classNameList);
+            WriteFactory(classNameList);
         }
 
         private static void WriteCode(string className, List<string> typeNameList, List<string> fieldNameList)
@@ -190,7 +192,44 @@ namespace MonMoose.Battle
                 writer.EndBlock();
             }
             writer.EndBlock();
-            string path = Application.dataPath.Substring(0, Application.dataPath.Length - "Assets".Length) + string.Format(enumPath);
+            string path = Application.dataPath.Substring(0, Application.dataPath.Length - "Assets".Length) + enumPath;
+            writer.WriteFile(path);
+        }
+
+        private static void WriteFactory(List<string> classNameList)
+        {
+            CodeWriter writer = new CodeWriter();
+            writer.AppendLine("namespace MonMoose.Battle");
+            writer.StartBlock();
+            {
+                writer.AppendLine("public static class FrameCommandFactory");
+                writer.StartBlock();
+                {
+                    writer.AppendLine("public static FrameCommand CreateCommand(BattleBase battleInstance, EFrameCommandType cmdType)");
+                    writer.StartBlock();
+                    {
+                        writer.AppendLine("switch (cmdType)");
+                        writer.StartBlock();
+                        {
+                            for (int i = 0; i < classNameList.Count; ++i)
+                            {
+                                writer.AppendLine("case EFrameCommandType.{0}:", classNameList[i]);
+                                writer.StartTab();
+                                {
+                                    writer.AppendLine("return battleInstance.FetchPoolObj<{0}Command>(typeof(FrameCommandFactory));", classNameList[i]);
+                                }
+                                writer.EndTab();
+                            }
+                        }
+                        writer.EndBlock();
+                        writer.AppendLine("return null;");
+                    }
+                    writer.EndBlock();
+                }
+                writer.EndBlock();
+            }
+            writer.EndBlock();
+            string path = Application.dataPath.Substring(0, Application.dataPath.Length - "Assets".Length) + factoryPath;
             writer.WriteFile(path);
         }
 

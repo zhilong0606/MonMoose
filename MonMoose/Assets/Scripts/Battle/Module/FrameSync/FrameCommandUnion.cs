@@ -5,7 +5,7 @@ namespace MonMoose.Battle
 {
     public class FrameCommandUnion : FrameMsgObj
     {
-        private int playerId;
+        public int playerId;
         private FrameCommand[] m_commands = new FrameCommand[(int)EFrameCommandType.Max];
 
         public override bool isBitFlagConst
@@ -35,13 +35,13 @@ namespace MonMoose.Battle
             m_commands[index] = command;
         }
 
-        public void Excute()
+        public void Execute()
         {
-            for (int i = 0; i < m_commands.Length; ++i)
+            foreach (FrameCommand cmd in m_commands)
             {
-                if (m_commands[i] != null)
+                if (cmd != null)
                 {
-                    m_commands[i].Excute(playerId);
+                    cmd.Execute(playerId);
                 }
             }
         }
@@ -94,7 +94,10 @@ namespace MonMoose.Battle
                     playerId = ByteBufferUtility.ReadInt(buffer, ref offset);
                     break;
                 default:
-                    m_commands[index - (int)ESerializeIndex.CmdStart].Deserialize(buffer, ref offset);
+                    EFrameCommandType cmdType = (EFrameCommandType)(index - (int)ESerializeIndex.CmdStart);
+                    FrameCommand cmd = FrameCommandFactory.CreateCommand(m_battleInstance, cmdType);
+                    cmd.Deserialize(buffer, ref offset);
+                    m_commands[index - (int)ESerializeIndex.CmdStart] = cmd;
                     break;
             }
         }

@@ -5,7 +5,7 @@ namespace MonMoose.Battle
 {
     public partial class StagePrepareCommand : FrameCommand
     {
-        public override void Excute(int playerId)
+        public override void Execute(int playerId)
         {
             //m_battleInstance.WaitFrameCommand(EFrameCommandType.StageStart);
         }

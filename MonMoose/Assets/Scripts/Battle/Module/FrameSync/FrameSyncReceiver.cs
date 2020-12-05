@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using MonMoose.Core;
 using UnityEngine;
 
 namespace MonMoose.Battle
@@ -17,13 +18,13 @@ namespace MonMoose.Battle
 
         public void Receive(FrameCut cut)
         {
-            //m_handler.add
-            cut.Excute();
+            cut.Execute();
         }
 
-        public void Receive(FrameCommand cmd)
+        public void Receive(FrameCommandWrap cmdWrap)
         {
-            //m_handler.AddFrameCommand(cmd);
+            m_handler.AddCommand(cmdWrap.playerId, cmdWrap.cmd);
+            cmdWrap.Release();
         }
     }
 }

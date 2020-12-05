@@ -13,17 +13,41 @@ namespace MonMoose.Battle
             get { return false; }
         }
 
-        public void Excute()
+        public void Execute()
         {
-            for (int i = 0; i < m_unionList.Count; ++i)
+            foreach (FrameCommandUnion union in m_unionList)
             {
-                m_unionList[i].Excute();
+                union.Execute();
             }
         }
 
-        public void AddCmdGroup(FrameCommandUnion union)
+        public void AddCommand(int playerId, FrameCommand cmd)
         {
-            m_unionList.Add(union);
+            FrameCommandUnion union = GetUnion(playerId);
+            if (union == null)
+            {
+                union = m_battleInstance.FetchPoolObj<FrameCommandUnion>(this);
+                m_unionList.Add(union);
+                m_unionList.Sort(SortUnion);
+            }
+            union.AddCommand(cmd);
+        }
+
+        private FrameCommandUnion GetUnion(int playerId)
+        {
+            foreach (FrameCommandUnion union in m_unionList)
+            {
+                if (union.playerId == playerId)
+                {
+                    return union;
+                }
+            }
+            return null;
+        }
+
+        private int SortUnion(FrameCommandUnion u1, FrameCommandUnion u2)
+        {
+            return u1.playerId.CompareTo(u2.playerId);
         }
 
         protected override byte GetBitFlagCount()
@@ -74,7 +98,9 @@ namespace MonMoose.Battle
                     frameIndex = ByteBufferUtility.ReadInt(buffer, ref offset);
                     break;
                 default:
-                    m_unionList[index - (int)ESerializeIndex.UnionStart].Deserialize(buffer, ref offset);
+                    FrameCommandUnion union = m_battleInstance.FetchPoolObj<FrameCommandUnion>(this);
+                    union.Deserialize(buffer, ref offset);
+                    m_unionList[index - (int)ESerializeIndex.UnionStart] = union;
                     break;
             }
         }

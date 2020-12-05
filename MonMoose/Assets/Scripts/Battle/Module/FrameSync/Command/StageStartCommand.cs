@@ -5,7 +5,7 @@ namespace MonMoose.Battle
 {
     public partial class StageStartCommand : FrameCommand
     {
-        public override void Excute(int teamId)
+        public override void Execute(int teamId)
         {
             throw new System.NotImplementedException();
         }

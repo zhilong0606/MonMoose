@@ -19,7 +19,7 @@ namespace MonMoose.Battle
         {
         }
 
-        public virtual void Send(FrameCommand cmd)
+        public virtual void Send(FrameCommandWrap cmdWrap)
         {
         }
 
@@ -28,9 +28,9 @@ namespace MonMoose.Battle
             m_receiver.Receive(cut);
         }
 
-        public virtual void Receive(FrameCommand cmd)
+        public virtual void Receive(FrameCommandWrap cmdWrap)
         {
-            m_receiver.Receive(cmd);
+            m_receiver.Receive(cmdWrap);
         }
     }
 }

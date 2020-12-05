@@ -2,7 +2,7 @@
 {
     public partial class StopMoveCommand : FrameCommand
     {
-        public override void Excute(int playerId)
+        public override void Execute(int playerId)
         {
             //Actor actor = BattlePlayerManager.instance.GetPlayer(playerID).selectedActor;
             //actor.moveComponent.StopMove();

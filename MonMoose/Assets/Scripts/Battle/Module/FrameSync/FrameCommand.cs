@@ -11,6 +11,6 @@ namespace MonMoose.Battle
 
         public abstract EFrameCommandType commandType { get; }
 
-        public abstract void Excute(int teamId);
+        public abstract void Execute(int teamId);
     }
 }

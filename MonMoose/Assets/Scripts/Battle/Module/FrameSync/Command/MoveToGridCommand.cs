@@ -2,7 +2,7 @@
 {
     public partial class MoveToGridCommand : FrameCommand
     {
-        public override void Excute(int playerId)
+        public override void Execute(int playerId)
         {
             Entity entity = m_battleInstance.GetEntity(entityId);
             if (entity != null)

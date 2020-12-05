@@ -6,7 +6,7 @@ namespace MonMoose.Battle
 {
     public class FrameSyncRelayLocal : FrameSyncRelay
     {
-        public override void Send(FrameCommand cmd)
+        public override void Send(FrameCommandWrap cmd)
         {
             Receive(cmd);
         }

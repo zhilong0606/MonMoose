@@ -32,7 +32,10 @@ namespace MonMoose.Battle
 
         private void SendCommand(FrameCommand cmd)
         {
-            m_relay.Send(cmd);
+            FrameCommandWrap wrap = m_battleInstance.FetchPoolObj<FrameCommandWrap>(this);
+            wrap.cmd = cmd;
+            wrap.playerId = 1;
+            m_relay.Send(wrap);
         }
     }
 }

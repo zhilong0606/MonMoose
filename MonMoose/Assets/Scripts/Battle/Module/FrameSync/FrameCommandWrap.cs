@@ -4,13 +4,21 @@ using UnityEngine;
 
 namespace MonMoose.Battle
 {
-    public class FrameCommandWrap : FrameMsgObjWrap<FrameCommand>
+    public class FrameCommandWrap : FrameMsgObj
     {
-        public int teamId;
+        public int playerId;
+        public byte cmdType;
+        public FrameCommand cmd;
 
         public override bool isBitFlagConst
         {
             get { return true; }
+        }
+
+        public override void OnRelease()
+        {
+            base.OnRelease();
+            playerId = default(int);
         }
 
         protected override byte GetBitFlagCount()
@@ -22,33 +30,42 @@ namespace MonMoose.Battle
         {
             switch ((ESerializeIndex)index)
             {
-                case ESerializeIndex.TeamId:
-                    return teamId == default(int);
-                default:
-                    return base.CheckValid(index);
+                case ESerializeIndex.PlayerId:
+                    return playerId != default(int);
+                case ESerializeIndex.CmdType:
+                    return cmdType != default(byte);
+                case ESerializeIndex.Cmd:
+                    return cmd != null;
             }
+            return false;
         }
 
         protected override int GetSizeOf(int index)
         {
             switch ((ESerializeIndex)index)
             {
-                case ESerializeIndex.TeamId:
+                case ESerializeIndex.PlayerId:
                     return sizeof(int);
-                default:
-                    return base.GetSizeOf(index);
+                case ESerializeIndex.CmdType:
+                    return sizeof(byte);
+                case ESerializeIndex.Cmd:
+                    return cmd.GetByteBufferLength();
             }
+            return 0;
         }
 
         protected override void SerializeField(byte[] buffer, ref int offset, int index)
         {
             switch ((ESerializeIndex)index)
             {
-                case ESerializeIndex.TeamId:
-                    ByteBufferUtility.WriteInt(buffer, ref offset, teamId);
+                case ESerializeIndex.PlayerId:
+                    ByteBufferUtility.WriteInt(buffer, ref offset, playerId);
                     break;
-                default:
-                    base.GetSizeOf(index);
+                case ESerializeIndex.CmdType:
+                    ByteBufferUtility.WriteByte(buffer, ref offset, cmdType);
+                    break;
+                case ESerializeIndex.Cmd:
+                    cmd.Serialize(buffer, ref offset);
                     break;
             }
         }
@@ -57,19 +74,24 @@ namespace MonMoose.Battle
         {
             switch ((ESerializeIndex)index)
             {
-                case ESerializeIndex.TeamId:
-                    teamId = ByteBufferUtility.ReadInt(buffer, ref offset);
+                case ESerializeIndex.PlayerId:
+                    playerId = ByteBufferUtility.ReadInt(buffer, ref offset);
                     break;
-                default:
-                    base.GetSizeOf(index);
+                case ESerializeIndex.CmdType:
+                    cmdType = ByteBufferUtility.ReadByte(buffer, ref offset);
+                    break;
+                case ESerializeIndex.Cmd:
+                    cmd = FrameCommandFactory.CreateCommand(m_battleInstance, (EFrameCommandType)cmdType);
+                    cmd.Deserialize(buffer, ref offset);
                     break;
             }
         }
         
         private enum ESerializeIndex
         {
-            TeamId = usedBitFlagCount,
-
+            PlayerId,
+            CmdType,
+            Cmd,
             Max
         }
     }

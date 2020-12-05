@@ -8,6 +8,12 @@ namespace MonMoose.Battle
     {
         protected BattleBase m_battleInstance;
 
+        public override void OnRelease()
+        {
+            m_battleInstance = null;
+            base.OnRelease();
+        }
+
         public void SetBattleInstance(BattleBase battleInstance)
         {
             m_battleInstance = battleInstance;
