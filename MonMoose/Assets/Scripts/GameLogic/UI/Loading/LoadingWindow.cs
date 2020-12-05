@@ -10,9 +10,7 @@ namespace MonMoose.Logic.UI
     {
         public static void OpenLoading(ELoadingId id, ELoadingWindowType windowType, Action actionOnEnd = null)
         {
-            LoadingWindowContext ctx = ClassPoolManager.instance.Fetch<LoadingWindowContext>();
-            LoadingWindowContext ctx = ClassPoolCut<LoadingWindowContext>.Fetch();
-            LoadingWindowContext ctx = windowType.Fetch<LoadingWindowContext>();
+            LoadingWindowContext ctx = ClassPoolManager.instance.Fetch<LoadingWindowContext>(typeof(LoadingWindow));
             ctx.id = id;
             ctx.windowType = windowType;
             ctx.actionOnEnd = actionOnEnd;
@@ -24,7 +22,7 @@ namespace MonMoose.Logic.UI
             LoadingWindow loadingWindow = UIWindowManager.instance.GetWindow<LoadingWindow>((int)EWindowId.Loading);
             if (loadingWindow != null)
             {
-                LoadingWindowContext ctx = ClassPoolManager.instance.Fetch<LoadingWindowContext>();
+                LoadingWindowContext ctx = ClassPoolManager.instance.Fetch<LoadingWindowContext>(typeof(LoadingWindow));
                 ctx.id = id;
                 ctx.actionOnEnd = actionOnEnd;
                 loadingWindow.Hide(ctx);

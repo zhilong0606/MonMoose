@@ -13,6 +13,7 @@ namespace MonMoose.Logic
         protected Dcm32 m_value;
         public abstract EType Type { get; }
         public ClassPool creater { get; set; }
+        public object causer { get; set; }
 
         public bool IsZero
         {

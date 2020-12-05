@@ -1,4 +1,4 @@
-﻿using MonMoose.BattleLogic;
+﻿using MonMoose.Battle;
 using MonMoose.Core;
 using UnityEngine;
 

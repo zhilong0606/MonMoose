@@ -1,4 +1,4 @@
-﻿using MonMoose.BattleLogic;
+﻿using MonMoose.Battle;
 using MonMoose.Core;
 using MonMoose.Logic.UI;
 using MonMoose.StaticData;
@@ -33,7 +33,7 @@ namespace MonMoose.Logic
 
         private void OnLoadingShowEnd()
         {
-            BattleStateContext ctx = ClassPoolManager.instance.Fetch<BattleStateContext>();
+            BattleStateContext ctx = ClassPoolManager.instance.Fetch<BattleStateContext>(this);
             ctx.battleInitData = GetTestBattleInitData();
             m_stateMachine.ChangeState((int)EGameState.Battle, ctx);
         }

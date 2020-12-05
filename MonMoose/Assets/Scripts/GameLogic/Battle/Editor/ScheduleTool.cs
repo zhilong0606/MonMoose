@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 using System.Text;
-using MonMoose.BattleLogic;
+using MonMoose.Battle;
 using UnityEditor;
 
 namespace MonMoose.GameLogic.Battle

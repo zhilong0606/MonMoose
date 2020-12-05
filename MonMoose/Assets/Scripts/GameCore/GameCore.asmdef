@@ -1,0 +1,10 @@
+{
+    "name": "GameCore",
+    "references": [
+        "BaseCore"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false
+}

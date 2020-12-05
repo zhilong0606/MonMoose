@@ -14,8 +14,8 @@ namespace MonMoose.Logic
 
         public AttributeInfo()
         {
-            baseValue = ClassPoolManager.instance.Fetch<ConstAttributeValue>();
-            extraValue = ClassPoolManager.instance.Fetch<ConstAttributeValue>();
+            baseValue = ClassPoolManager.instance.Fetch<ConstAttributeValue>(this);
+            extraValue = ClassPoolManager.instance.Fetch<ConstAttributeValue>(this);
             AddSubject(baseValue);
             AddSubject(extraValue);
         }

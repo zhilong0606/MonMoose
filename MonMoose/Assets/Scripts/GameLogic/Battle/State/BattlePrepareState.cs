@@ -31,7 +31,6 @@ namespace MonMoose.GameLogic.Battle
 
         private void OnPrepareFinished()
         {
-            int.fet
             //for(int i=0;i<BattlePrepareActorManager.instance.)
             m_stateMachine.ChangeState((int)EBattleState.Main);
         }

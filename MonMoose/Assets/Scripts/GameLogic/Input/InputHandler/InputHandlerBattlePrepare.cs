@@ -16,7 +16,7 @@ namespace MonMoose.Logic
             BattlePrepareActorItemWidget actorItemWidget = go.GetComponentInParent<BattlePrepareActorItemWidget>();
             if (actorItemWidget != null)
             {
-                InputTaskBattlePrepareActorWidgetDrag task = ClassPoolManager.instance.Fetch<InputTaskBattlePrepareActorWidgetDrag>();
+                InputTaskBattlePrepareActorWidgetDrag task = ClassPoolManager.instance.Fetch<InputTaskBattlePrepareActorWidgetDrag>(this);
                 task.actorItemWidget = actorItemWidget;
                 StartTask(task);
             }
@@ -28,7 +28,7 @@ namespace MonMoose.Logic
                 GameObject actorObj;
                 if (BattlePrepareActorManager.instance.TryGetActor(gridView.gridPosition, out actorId, out actorObj))
                 {
-                    InputTaskBattlePrepareEntityViewDrag task = ClassPoolManager.instance.Fetch<InputTaskBattlePrepareEntityViewDrag>();
+                    InputTaskBattlePrepareEntityViewDrag task = ClassPoolManager.instance.Fetch<InputTaskBattlePrepareEntityViewDrag>(this);
                     task.actorId = actorId;
                     task.actorObj = actorObj;
                     StartTask(task);
