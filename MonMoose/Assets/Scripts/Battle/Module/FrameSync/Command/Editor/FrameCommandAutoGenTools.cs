@@ -104,11 +104,14 @@ namespace MonMoose.Battle
                 writer.AppendLine("public partial class {0}Command", className);
                 writer.StartBlock();
                 {
-                    for (int i = 0; i < memberList.Count; ++i)
+                    if (memberList.Count > 0)
                     {
-                        writer.AppendLine("public {0} {1};", memberList[i].typeName, ChangeToFieldName(memberList[i].fieldName));
+                        for (int i = 0; i < memberList.Count; ++i)
+                        {
+                            writer.AppendLine("public {0} {1};", memberList[i].typeName, ChangeToFieldName(memberList[i].fieldName));
+                        }
+                        writer.AppendEmptyLine();
                     }
-                    writer.AppendEmptyLine();
                     writer.AppendLine("public override EFrameCommandType commandType");
                     writer.StartBlock();
                     {
@@ -119,27 +122,37 @@ namespace MonMoose.Battle
                     writer.AppendLine("protected override byte GetBitFlagCount()");
                     writer.StartBlock();
                     {
-                        writer.AppendLine("return (int)ESerializeIndex.Max;");
+                        if (memberList.Count > 0)
+                        {
+                            writer.AppendLine("return (int)ESerializeIndex.Max;");
+                        }
+                        else
+                        {
+                            writer.AppendLine("return 0;");
+                        }
                     }
                     writer.EndBlock();
                     writer.AppendEmptyLine();
                     writer.AppendLine("protected override bool CheckValid(int index)");
                     writer.StartBlock();
                     {
-                        writer.AppendLine("switch ((ESerializeIndex)index)");
-                        writer.StartBlock();
+                        if (memberList.Count > 0)
                         {
-                            for (int i = 0; i < memberList.Count; ++i)
+                            writer.AppendLine("switch ((ESerializeIndex)index)");
+                            writer.StartBlock();
                             {
-                                writer.AppendLine("case ESerializeIndex.{0}:", ChangeFirstToUpper(memberList[i].fieldName));
-                                writer.StartTab();
+                                for (int i = 0; i < memberList.Count; ++i)
                                 {
-                                    writer.AppendLine("return {0} != default({1});", ChangeToFieldName(memberList[i].fieldName), memberList[i].typeName);
+                                    writer.AppendLine("case ESerializeIndex.{0}:", ChangeFirstToUpper(memberList[i].fieldName));
+                                    writer.StartTab();
+                                    {
+                                        writer.AppendLine("return {0} != default({1});", ChangeToFieldName(memberList[i].fieldName), memberList[i].typeName);
+                                    }
+                                    writer.EndTab();
                                 }
-                                writer.EndTab();
                             }
+                            writer.EndBlock();
                         }
-                        writer.EndBlock();
                         writer.AppendLine("return false;");
                     }
                     writer.EndBlock();
@@ -147,20 +160,23 @@ namespace MonMoose.Battle
                     writer.AppendLine("protected override int GetSizeOf(int index)");
                     writer.StartBlock();
                     {
-                        writer.AppendLine("switch ((ESerializeIndex)index)");
-                        writer.StartBlock();
+                        if (memberList.Count > 0)
                         {
-                            for (int i = 0; i < memberList.Count; ++i)
+                            writer.AppendLine("switch ((ESerializeIndex)index)");
+                            writer.StartBlock();
                             {
-                                writer.AppendLine("case ESerializeIndex.{0}:", ChangeFirstToUpper(memberList[i].fieldName));
-                                writer.StartTab();
+                                for (int i = 0; i < memberList.Count; ++i)
                                 {
-                                    writer.AppendLine("return sizeof({0});", memberList[i].typeName);
+                                    writer.AppendLine("case ESerializeIndex.{0}:", ChangeFirstToUpper(memberList[i].fieldName));
+                                    writer.StartTab();
+                                    {
+                                        writer.AppendLine("return sizeof({0});", memberList[i].typeName);
+                                    }
+                                    writer.EndTab();
                                 }
-                                writer.EndTab();
                             }
+                            writer.EndBlock();
                         }
-                        writer.EndBlock();
                         writer.AppendLine("return 0;");
                     }
                     writer.EndBlock();
@@ -168,56 +184,66 @@ namespace MonMoose.Battle
                     writer.AppendLine("protected override void SerializeField(byte[] buffer, ref int offset, int index)");
                     writer.StartBlock();
                     {
-                        writer.AppendLine("switch ((ESerializeIndex)index)");
-                        writer.StartBlock();
+                        if (memberList.Count > 0)
                         {
-                            for (int i = 0; i < memberList.Count; ++i)
+                            writer.AppendLine("switch ((ESerializeIndex)index)");
+                            writer.StartBlock();
                             {
-                                writer.AppendLine("case ESerializeIndex.{0}:", ChangeFirstToUpper(memberList[i].fieldName));
-                                writer.StartTab();
+                                for (int i = 0; i < memberList.Count; ++i)
                                 {
-                                    writer.AppendLine("ByteBufferUtility.Write{0}(buffer, ref offset, {1});", ChangeFirstToUpper(memberList[i].typeName), ChangeToFieldName(memberList[i].fieldName));
-                                    writer.AppendLine("break;");
+                                    writer.AppendLine("case ESerializeIndex.{0}:", ChangeFirstToUpper(memberList[i].fieldName));
+                                    writer.StartTab();
+                                    {
+                                        writer.AppendLine("ByteBufferUtility.Write{0}(buffer, ref offset, {1});", ChangeFirstToUpper(memberList[i].typeName), ChangeToFieldName(memberList[i].fieldName));
+                                        writer.AppendLine("break;");
+                                    }
+                                    writer.EndTab();
                                 }
-                                writer.EndTab();
                             }
+                            writer.EndBlock();
                         }
-                        writer.EndBlock();
                     }
                     writer.EndBlock();
                     writer.AppendEmptyLine();
                     writer.AppendLine("protected override void DeserializeField(byte[] buffer, ref int offset, int index)");
                     writer.StartBlock();
                     {
-                        writer.AppendLine("switch ((ESerializeIndex)index)");
+                        if (memberList.Count > 0)
+                        {
+                            writer.AppendLine("switch ((ESerializeIndex)index)");
+                            writer.StartBlock();
+                            {
+                                for (int i = 0; i < memberList.Count; ++i)
+                                {
+                                    writer.AppendLine("case ESerializeIndex.{0}:", ChangeFirstToUpper(memberList[i].fieldName));
+                                    writer.StartTab();
+                                    {
+                                        writer.AppendLine("{1} = ByteBufferUtility.Read{0}(buffer, ref offset);", ChangeFirstToUpper(memberList[i].typeName), ChangeToFieldName(memberList[i].fieldName));
+                                        writer.AppendLine("break;");
+                                    }
+                                    writer.EndTab();
+                                }
+                            }
+                            writer.EndBlock();
+                        }
+                    }
+                    writer.EndBlock();
+                    writer.AppendEmptyLine();
+                    if (memberList.Count > 0)
+                    {
+                        writer.AppendLine("private enum ESerializeIndex");
                         writer.StartBlock();
                         {
                             for (int i = 0; i < memberList.Count; ++i)
                             {
-                                writer.AppendLine("case ESerializeIndex.{0}:", ChangeFirstToUpper(memberList[i].fieldName));
-                                writer.StartTab();
-                                {
-                                    writer.AppendLine("{1} = ByteBufferUtility.Read{0}(buffer, ref offset);", ChangeFirstToUpper(memberList[i].typeName), ChangeToFieldName(memberList[i].fieldName));
-                                    writer.AppendLine("break;");
-                                }
-                                writer.EndTab();
+                                writer.AppendLine("{0},", ChangeFirstToUpper(memberList[i].fieldName));
                             }
+
+                            writer.AppendEmptyLine();
+                            writer.AppendLine("Max");
                         }
                         writer.EndBlock();
                     }
-                    writer.EndBlock();
-                    writer.AppendEmptyLine();
-                    writer.AppendLine("private enum ESerializeIndex");
-                    writer.StartBlock();
-                    {
-                        for (int i = 0; i < memberList.Count; ++i)
-                        {
-                            writer.AppendLine("{0},", ChangeFirstToUpper(memberList[i].fieldName));
-                        }
-                        writer.AppendEmptyLine();
-                        writer.AppendLine("Max");
-                    }
-                    writer.EndBlock();
                 }
                 writer.EndBlock();
             }

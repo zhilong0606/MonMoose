@@ -6,9 +6,6 @@ using MonMoose.GameLogic.Battle;
 using MonMoose.Logic.UI;
 using MonMoose.StaticData;
 using UnityEngine;
-using State = MonMoose.Core.State;
-using StateContext = MonMoose.Core.StateContext;
-using StateMachine = MonMoose.Core.StateMachine;
 
 namespace MonMoose.Logic
 {

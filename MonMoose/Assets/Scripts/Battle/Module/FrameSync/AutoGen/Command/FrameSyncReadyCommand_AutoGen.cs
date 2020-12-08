@@ -2,7 +2,6 @@ namespace MonMoose.Battle
 {
     public partial class FrameSyncReadyCommand
     {
-
         public override EFrameCommandType commandType
         {
             get { return EFrameCommandType.FrameSyncReady; }
@@ -10,43 +9,26 @@ namespace MonMoose.Battle
 
         protected override byte GetBitFlagCount()
         {
-            return (int)ESerializeIndex.Max;
+            return 0;
         }
 
         protected override bool CheckValid(int index)
         {
-            switch ((ESerializeIndex)index)
-            {
-            }
             return false;
         }
 
         protected override int GetSizeOf(int index)
         {
-            switch ((ESerializeIndex)index)
-            {
-            }
             return 0;
         }
 
         protected override void SerializeField(byte[] buffer, ref int offset, int index)
         {
-            switch ((ESerializeIndex)index)
-            {
-            }
         }
 
         protected override void DeserializeField(byte[] buffer, ref int offset, int index)
         {
-            switch ((ESerializeIndex)index)
-            {
-            }
         }
 
-        private enum ESerializeIndex
-        {
-
-            Max
-        }
     }
 }
