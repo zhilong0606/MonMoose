@@ -46,6 +46,11 @@ namespace MonMoose.Core
             return this;
         }
 
+        public void StartLine(string str, params string[] objs)
+        {
+            StartLine(string.Format(str, objs));
+        }
+
         public CodeWriter Append(string str)
         {
             m_stringBuilder.Append(str);

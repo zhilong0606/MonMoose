@@ -51,7 +51,8 @@ namespace MonMoose.Core
             {
                 DebugUtility.LogError("Error: Trying Create TickProcess has same Id");
             }
-            process = new TickProcess(interval);
+            process = new TickProcess();
+            process.Init(interval);
             m_tickProcessMap.Add(id, process);
         }
 

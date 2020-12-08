@@ -19,26 +19,25 @@ namespace MonMoose.Battle
 
         private SceneModule m_sceneModule = new SceneModule();
 
-        //private FrameSyncModule m_frameSyncModule = new FrameSyncModule();
+        private FrameSyncModule m_frameSyncModule = new FrameSyncModule();
         private MovePathFindModule m_pathFindModule = new MovePathFindModule();
 
         private List<Module> m_moduleList = new List<Module>();
+        private TickProcess m_tickProcess = new TickProcess();
 
         public List<Entity> entityList
         {
             get { return m_entityList; }
         }
 
-        public IBattleEventListener eventlister
+        public IBattleEventListener eventListener
         {
             get { return m_eventListener; }
         }
 
         public FrameSyncSender sender
         {
-            get
-            {
-                return null;/*m_frameSyncModule.sender*/; }
+            get { return m_frameSyncModule.sender; }
         }
 
         public void Init(BattleInitData battleInitData)
@@ -47,6 +46,8 @@ namespace MonMoose.Battle
             m_funcOnGetView = battleInitData.funcOnGetView;
             InitModuleList(battleInitData);
             InitTeamList(battleInitData);
+            m_tickProcess.Init(FrameSyncDefine.TimeInterval);
+            m_tickProcess.RegisterListener(OnFrameTick);
         }
 
         private void InitModuleList(BattleInitData battleInitData)
@@ -54,7 +55,7 @@ namespace MonMoose.Battle
             m_moduleList.Add(m_debugModule);
             m_moduleList.Add(m_objIdModule);
             m_moduleList.Add(m_sceneModule);
-            //m_moduleList.Add(m_frameSyncModule);
+            m_moduleList.Add(m_frameSyncModule);
             m_moduleList.Add(m_pathFindModule);
 
             for (int i = 0; i < m_moduleList.Count; ++i)
@@ -74,15 +75,6 @@ namespace MonMoose.Battle
             return obj;
         }
 
-        public void Tick(float deltaTime)
-        {
-            //m_frameSyncModule.Tick(deltaTime);
-            for (int i = 0; i < m_entityList.Count; ++i)
-            {
-                m_entityList[i].view.Tick(deltaTime);
-            }
-        }
-
         private void InitTeamList(BattleInitData battleInitData)
         {
             battleInitData.teamList.Sort(TeamInitData.Sort);
@@ -98,13 +90,8 @@ namespace MonMoose.Battle
 
         public void Start()
         {
-            //m_frameSyncModule.WaitFrameCommand(EFrameCommandType.FrameStart);
-            //if (m_frameSyncModule.sender != null)
-            //{
-            //    m_frameSyncModule.sender.SendFrameSyncStart();
-            //}
-
             m_sceneModule.Start();
+            m_tickProcess.Start();
         }
 
         public void AddEntity(Entity entity)
@@ -194,15 +181,10 @@ namespace MonMoose.Battle
             return m_sceneModule.GetGrid(gridPos);
         }
 
-        //public void StartFrameSync()
-        //{
-        //    m_frameSyncModule.Start();
-        //}
-
-        //public void WaitFrameCommand(EFrameCommandType cmdType)
-        //{
-        //    m_frameSyncModule.WaitFrameCommand(cmdType);
-        //}
+        public void StartFrameSync()
+        {
+            m_frameSyncModule.Start();
+        }
 
         public int CreateObjId(EBattleObjType type)
         {
@@ -219,16 +201,16 @@ namespace MonMoose.Battle
             m_debugModule.Log(level, str);
         }
 
-        //public void Tick(float deltaTime)
-        //{
-        //    m_frameSyncModule.Tick(deltaTime);
-        //    for (int i = 0; i < m_entityList.Count; ++i)
-        //    {
-        //        m_entityList[i].view.Tick(deltaTime);
-        //    }
-        //}
+        public void Tick(float deltaTime)
+        {
+            m_tickProcess.Tick(deltaTime);
+            for (int i = 0; i < m_entityList.Count; ++i)
+            {
+                m_entityList[i].view.Tick(deltaTime);
+            }
+        }
 
-        internal void FrameTick()
+        private void OnFrameTick(TickProcess process)
         {
             for (int i = 0; i < m_moduleList.Count; ++i)
             {

@@ -1,4 +1,6 @@
 <Root>
+	<FrameSyncReady>
+	</FrameSyncReady>
 	<MoveToGrid>
 		<int>entityId</int>
 		<int>gridX</int>

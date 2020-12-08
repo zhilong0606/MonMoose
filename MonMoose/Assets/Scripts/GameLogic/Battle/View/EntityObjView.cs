@@ -41,7 +41,8 @@ namespace MonMoose.GameLogic.Battle
         public override void CreateView()
         {
             GameObject prefab = ResourceManager.instance.GetPrefab(prefabPath);
-            m_obj = GameObject.Instantiate(prefab, BattleManager.instance.actorRoot.transform);
+            GameObject actorRoot = BattleManager.instance.actorRoot;
+            m_obj = GameObject.Instantiate(prefab, actorRoot.transform);
         }
 
         public override void DestroyView()

@@ -9,8 +9,9 @@ namespace MonMoose.StaticData
 		{
 			m_loaderMap.Add("Actor", new ProtoDataLoader<ActorStaticInfo, ActorStaticInfoList>(m_ActorList, ActorStaticInfoList.Parser.ParseFrom, (fromList, toList) => { toList.Clear(); toList.AddRange(fromList.List); }));
 			m_loaderMap.Add("Attribute", new ProtoDataLoader<AttributeStaticInfo, AttributeStaticInfoList>(m_AttributeList, AttributeStaticInfoList.Parser.ParseFrom, (fromList, toList) => { toList.Clear(); toList.AddRange(fromList.List); }));
-			m_loaderMap.Add("BattleScene", new ProtoDataLoader<BattleSceneStaticInfo, BattleSceneStaticInfoList>(m_BattleSceneList, BattleSceneStaticInfoList.Parser.ParseFrom, (fromList, toList) => { toList.Clear(); toList.AddRange(fromList.List); }));
+			m_loaderMap.Add("Battle", new ProtoDataLoader<BattleStaticInfo, BattleStaticInfoList>(m_BattleList, BattleStaticInfoList.Parser.ParseFrom, (fromList, toList) => { toList.Clear(); toList.AddRange(fromList.List); }));
 			m_loaderMap.Add("BattleStage", new ProtoDataLoader<BattleStageStaticInfo, BattleStageStaticInfoList>(m_BattleStageList, BattleStageStaticInfoList.Parser.ParseFrom, (fromList, toList) => { toList.Clear(); toList.AddRange(fromList.List); }));
+			m_loaderMap.Add("Ground", new ProtoDataLoader<GroundStaticInfo, GroundStaticInfoList>(m_GroundList, GroundStaticInfoList.Parser.ParseFrom, (fromList, toList) => { toList.Clear(); toList.AddRange(fromList.List); }));
 			m_loaderMap.Add("Terrain", new ProtoDataLoader<TerrainStaticInfo, TerrainStaticInfoList>(m_TerrainList, TerrainStaticInfoList.Parser.ParseFrom, (fromList, toList) => { toList.Clear(); toList.AddRange(fromList.List); }));
 			m_loaderMap.Add("Entity", new ProtoDataLoader<EntityStaticInfo, EntityStaticInfoList>(m_EntityList, EntityStaticInfoList.Parser.ParseFrom, (fromList, toList) => { toList.Clear(); toList.AddRange(fromList.List); }));
 			m_loaderMap.Add("PrefabPath", new ProtoDataLoader<PrefabPathStaticInfo, PrefabPathStaticInfoList>(m_PrefabPathList, PrefabPathStaticInfoList.Parser.ParseFrom, (fromList, toList) => { toList.Clear(); toList.AddRange(fromList.List); }));
@@ -26,15 +27,20 @@ namespace MonMoose.StaticData
 		public AttributeStaticInfo GetAttributeStaticInfo(int id) { foreach (var info in m_AttributeList) if (info.Id == id) return info; return null; }
 		public IEnumerator<AttributeStaticInfo> GetAttributeStaticInfoEnumerator() { return m_AttributeList.GetEnumerator(); }
 
-		//BattleScene
-		private List<BattleSceneStaticInfo> m_BattleSceneList = new List<BattleSceneStaticInfo>();
-		public BattleSceneStaticInfo GetBattleSceneStaticInfo(int id) { foreach (var info in m_BattleSceneList) if (info.Id == id) return info; return null; }
-		public IEnumerator<BattleSceneStaticInfo> GetBattleSceneStaticInfoEnumerator() { return m_BattleSceneList.GetEnumerator(); }
+		//Battle
+		private List<BattleStaticInfo> m_BattleList = new List<BattleStaticInfo>();
+		public BattleStaticInfo GetBattleStaticInfo(int id) { foreach (var info in m_BattleList) if (info.Id == id) return info; return null; }
+		public IEnumerator<BattleStaticInfo> GetBattleStaticInfoEnumerator() { return m_BattleList.GetEnumerator(); }
 
 		//BattleStage
 		private List<BattleStageStaticInfo> m_BattleStageList = new List<BattleStageStaticInfo>();
 		public BattleStageStaticInfo GetBattleStageStaticInfo(int id) { foreach (var info in m_BattleStageList) if (info.Id == id) return info; return null; }
 		public IEnumerator<BattleStageStaticInfo> GetBattleStageStaticInfoEnumerator() { return m_BattleStageList.GetEnumerator(); }
+
+		//Ground
+		private List<GroundStaticInfo> m_GroundList = new List<GroundStaticInfo>();
+		public GroundStaticInfo GetGroundStaticInfo(int id) { foreach (var info in m_GroundList) if (info.Id == id) return info; return null; }
+		public IEnumerator<GroundStaticInfo> GetGroundStaticInfoEnumerator() { return m_GroundList.GetEnumerator(); }
 
 		//Terrain
 		private List<TerrainStaticInfo> m_TerrainList = new List<TerrainStaticInfo>();

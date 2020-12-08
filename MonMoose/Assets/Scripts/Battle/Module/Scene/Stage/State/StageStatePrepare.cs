@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using MonMoose.Core;
 
 namespace MonMoose.Battle
 {
@@ -8,6 +9,11 @@ namespace MonMoose.Battle
         public override int stateIndex
         {
             get { return (int)EStageState.Prepare; }
+        }
+
+        protected override void OnEnter(StateContext context)
+        {
+            base.OnEnter(context);
         }
     }
 }

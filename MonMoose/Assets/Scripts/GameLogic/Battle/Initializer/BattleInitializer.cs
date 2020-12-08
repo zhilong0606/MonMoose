@@ -10,14 +10,15 @@ namespace MonMoose.GameLogic.Battle
 {
     public class BattleInitializer : Initializer
     {
+        string battleSceneName = "BattleScene";
         protected override IEnumerator OnProcess()
         {
-            string battleSceneName = "BattleScene";
             SceneManager.LoadSceneAsync(battleSceneName);
-            if (!SceneManager.GetSceneByName(battleSceneName).isLoaded)
+            while (!SceneManager.GetSceneByName(battleSceneName).isLoaded)
             {
                 yield return null;
             }
+            
             BattleTouchSystem.CreateInstance();
             yield return null;
             InitScene();
@@ -31,11 +32,13 @@ namespace MonMoose.GameLogic.Battle
             GameObject sceneConfigRoot = GameObject.Find("SceneConfigRoot");
             if (sceneConfigRoot == null)
             {
+                Debug.LogError("sceneConfigRoot");
                 return;
             }
             BattleSceneConfig sceneConfig = sceneConfigRoot.GetComponent<BattleSceneConfig>();
             if (sceneConfig == null)
             {
+                Debug.LogError("sceneConfig");
                 return;
             }
             BattleManager.instance.SetSceneConfig(sceneConfig);

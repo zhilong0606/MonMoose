@@ -25,7 +25,7 @@ namespace MonMoose.Core
             get { return m_tickCount; }
         }
 
-        public TickProcess(float interval)
+        public void Init(float interval)
         {
             m_interval = interval;
         }

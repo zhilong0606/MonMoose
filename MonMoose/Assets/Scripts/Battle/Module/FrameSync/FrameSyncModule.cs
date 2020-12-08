@@ -31,17 +31,5 @@ namespace MonMoose.Battle
         {
             isStart = true;
         }
-
-        public void Tick(float deltaTime)
-        {
-            if (!isStart)
-            {
-                return;
-            }
-            //if (m_server != null)
-            //{
-            //    m_server.Tick(deltaTime);
-            //}
-        }
     }
 }

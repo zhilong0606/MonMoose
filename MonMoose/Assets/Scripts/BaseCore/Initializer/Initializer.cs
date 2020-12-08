@@ -7,23 +7,25 @@ namespace MonMoose.Core
     public abstract class Initializer
     {
         private List<Initializer> m_subList = new List<Initializer>();
-        private IEnumerator process;
+        private IEnumerator m_process;
         private Action m_actionOnFinish;
         private EInitialType m_initialType = EInitialType.Async;
         private EState m_state = EState.None;
         private int m_curStep;
         private int m_curSubIndex;
-        private bool m_isRoot = false;
+        private bool m_isRoot;
+
+        protected virtual int maxStep { get { return 2; } }
 
         public float processRate
         {
             get
             {
-                float rate = Math.Max(0, (float)m_curSubIndex / (m_subList.Count + 1));
+                float rate = Clamp01((float)m_curSubIndex / (m_subList.Count + 1));
                 float subRate = 0f;
                 if (m_curSubIndex <= 0)
                 {
-                    subRate = Math.Max(0, (float)m_curStep / maxStep);
+                    subRate = Clamp01((float)m_curStep / maxStep);
                 }
                 else if (m_curSubIndex <= m_subList.Count)
                 {
@@ -81,8 +83,8 @@ namespace MonMoose.Core
             m_initialType = initialType;
             m_state = EState.Process;
             m_actionOnFinish = actionOnFinish;
-            process = OnProcess();
-            if (process == null)
+            m_process = OnProcess();
+            if (m_process == null)
             {
                 return false;
             }
@@ -131,7 +133,7 @@ namespace MonMoose.Core
         {
             if (m_initialType == EInitialType.Sync)
             {
-                while (process.MoveNext())
+                while (m_process.MoveNext())
                 {
                     m_curStep++;
                 }
@@ -145,10 +147,15 @@ namespace MonMoose.Core
             {
                 if (m_curSubIndex <= 0)
                 {
-                    bool isContinued = process.MoveNext();
-                    m_curStep++;
+                    bool isMainProcessResult;
+                    bool isContinued = MoveNext(m_process, out isMainProcessResult);
+                    if (isMainProcessResult)
+                    {
+                        m_curStep++;
+                    }
                     if (!isContinued)
                     {
+                        m_process = null;
                         m_curSubIndex++;
                     }
                 }
@@ -167,7 +174,35 @@ namespace MonMoose.Core
             }
         }
 
-        protected virtual int maxStep { get { return 2; } }
+        private bool MoveNext(IEnumerator iter, out bool isMainProcessResult)
+        {
+            isMainProcessResult = true;
+            if (iter == null)
+            {
+                return false;
+            }
+            if (iter.Current != null)
+            {
+                IEnumerator subIter = iter.Current as IEnumerator;
+                bool b;
+                if (MoveNext(subIter, out b))
+                {
+                    isMainProcessResult = false;
+                    return true;
+                }
+            }
+            return iter.MoveNext();
+        }
+
+        private float Clamp01(float f)
+        {
+            if (f < 0f)
+                return 0f;
+            if (f > 1f)
+                return 0f;
+            return f;
+        }
+
         protected virtual void OnFinish() { }
         protected abstract IEnumerator OnProcess();
 

@@ -6,6 +6,8 @@ namespace MonMoose.Battle
         {
             switch (cmdType)
             {
+                case EFrameCommandType.FrameSyncReady:
+                    return battleInstance.FetchPoolObj<FrameSyncReadyCommand>(typeof(FrameCommandFactory));
                 case EFrameCommandType.MoveToGrid:
                     return battleInstance.FetchPoolObj<MoveToGridCommand>(typeof(FrameCommandFactory));
                 case EFrameCommandType.StagePrepare:

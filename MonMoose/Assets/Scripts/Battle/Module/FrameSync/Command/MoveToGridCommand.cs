@@ -10,7 +10,7 @@
                 MoveComponent moveComponent = entity.GetComponent<MoveComponent>();
                 if (moveComponent != null)
                 {
-                    //moveComponent.MoveToGrid(gridPos);
+                    moveComponent.MoveToGrid(new GridPosition(gridX, gridY));
                 }
             }
         }

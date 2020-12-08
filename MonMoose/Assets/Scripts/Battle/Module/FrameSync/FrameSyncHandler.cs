@@ -18,36 +18,17 @@ namespace MonMoose.Battle
             m_relay = relay;
         }
 
-        public void Tick(float deltaTime)
-        {
-            m_curTime += deltaTime;
-            while (m_curTime > FrameSyncDefine.TimeInterval)
-            {
-                m_curTime -= FrameSyncDefine.TimeInterval;
-                SendFrameCut();
-            }
-        }
-
-        public void SendFrameCut()
-        {
-            FrameCut cut = m_battleInstance.FetchPoolObj<FrameCut>(this);
-            //if (m_curGroup != null)
-            //{
-            //    cut.AddCmdGroup(m_curGroup);
-            //    m_curGroup = null;
-            //}
-            cut.frameIndex = m_frameIndex;
-            m_relay.Send(cut);
-            m_frameIndex++;
-        }
-
-        public void AddCommand(int playerId, FrameCommand cmd)
+        public void ReceiveCommand(int playerId, FrameCommand cmd)
         {
             if (m_curFrameCut == null)
             {
                 m_curFrameCut = m_battleInstance.FetchPoolObj<FrameCut>(this);
+                m_curFrameCut.frameIndex = m_frameIndex;
             }
             m_curFrameCut.AddCommand(playerId, cmd);
+            m_relay.Send(m_curFrameCut);
+            m_curFrameCut = null;
+            m_frameIndex++;
         }
     }
 }

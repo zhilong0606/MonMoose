@@ -29,6 +29,7 @@ namespace MonMoose.GameLogic.Battle
 
         public void SetSceneConfig(BattleSceneConfig sceneConfig)
         {
+            Debug.LogError(sceneConfig.actorRoot);
             m_actorRoot = sceneConfig.actorRoot;
             //skillController.Init();
             //moveController.Init();

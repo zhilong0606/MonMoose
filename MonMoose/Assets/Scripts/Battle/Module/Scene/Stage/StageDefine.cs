@@ -15,17 +15,6 @@ namespace MonMoose.Battle
 
     public class StageDefine
     {
-
-        // Use this for initialization
-        void Start()
-        {
-
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
+        
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Xml;
@@ -11,39 +12,91 @@ namespace MonMoose.Battle
 {
     public class FrameCommandAutoGenTools : Editor
     {
-        private static string configPath = "Assets/Scripts/Battle/Module/FrameSync/Command/Editor/FrameCommand.xml";
-        private static string codePathFormat = "Assets/Scripts/Battle/Module/FrameSync/Command/AutoGen/{0}Command_AutoGen.cs";
-        private static string enumPath = "Assets/Scripts/Battle/Module/FrameSync/Command/AutoGen/EFrameCommandType_AutoGen.cs";
-        private static string factoryPath = "Assets/Scripts/Battle/Module/FrameSync/Command/AutoGen/FrameCommandFactory_AutoGen.cs";
+        private static string m_configPath = "Assets/Scripts/Battle/Module/FrameSync/Command/Editor/FrameCommand.xml";
+        private static string m_autoGenFolder = "Assets/Scripts/Battle/Module/FrameSync/AutoGen";
+        private static string m_codePathFormat = m_autoGenFolder + "/Command/{0}Command_AutoGen.cs";
+        private static string m_codePathFormat2 = "Assets/Scripts/Battle/Module/FrameSync/Command/{0}Command.cs";
+        private static string m_enumPath = m_autoGenFolder + "/EFrameCommandType_AutoGen.cs";
+        private static string m_factoryPath = m_autoGenFolder + "/FrameCommandFactory_AutoGen.cs";
+        private static string m_senderPath = m_autoGenFolder + "/FrameSyncSender_AutoGen.cs";
 
         [MenuItem("Tools/FrameSync/Generate Command Code")]
         public static void GenerateCommandCode()
         {
+            ClearAutoGenFolder();
             XmlDocument doc = new XmlDocument();
-            doc.Load(configPath);
+            doc.Load(m_configPath);
             XmlNode rootNode = doc.SelectSingleNode("Root");
-            List<string> classNameList = new List<string>();
+            List<ClassInfo> classList = new List<ClassInfo>();
             foreach (XmlNode classNode in rootNode.ChildNodes)
             {
                 string className = classNode.Name;
-                classNameList.Add(className);
-                List<string> typeNameList = new List<string>();
-                List<string> fieldNameList = new List<string>();
+                ClassInfo classInfo = new ClassInfo();
+                classInfo.name = className;
+                classInfo.memberList = new List<MemberInfo>();
+                classList.Add(classInfo);
                 foreach (XmlNode fieldNode in classNode.ChildNodes)
                 {
                     string typeName = fieldNode.Name;
                     string fieldName = fieldNode.InnerText;
-                    typeNameList.Add(typeName);
-                    fieldNameList.Add(fieldName);
+                    MemberInfo memberInfo = new MemberInfo();
+                    memberInfo.typeName = typeName;
+                    memberInfo.fieldName = fieldName;
+                    classInfo.memberList.Add(memberInfo);
                 }
-                WriteCode(className, typeNameList, fieldNameList);
+                WriteCode(classInfo);
+                WriteCode2(classInfo);
             }
-            WriteEnum(classNameList);
-            WriteFactory(classNameList);
+            WriteEnum(classList);
+            WriteFactory(classList);
+            WriteSender(classList);
         }
 
-        private static void WriteCode(string className, List<string> typeNameList, List<string> fieldNameList)
+        private static void ClearAutoGenFolder()
         {
+            DirectoryInfo dirInfo = new DirectoryInfo(m_autoGenFolder);
+            if (!dirInfo.Exists)
+            {
+                return;
+            }
+            List<DirectoryInfo> dirList = new List<DirectoryInfo>() {dirInfo};
+            while (dirList.Count > 0)
+            {
+                dirInfo = dirList[0];
+                dirList.RemoveAt(0);
+                List<string> folderMetaFileList = new List<string>();
+                foreach (DirectoryInfo subDirInfo in dirInfo.GetDirectories())
+                {
+                    string metaName = subDirInfo.FullName + ".meta";
+                    folderMetaFileList.Add(metaName);
+                    dirList.Add(subDirInfo);
+                }
+                List<string> deleteFileList = new List<string>();
+                foreach (FileInfo fileInfo in dirInfo.GetFiles())
+                {
+                    if (folderMetaFileList.Find(s => s == fileInfo.FullName) == null)
+                    {
+                        deleteFileList.Add(fileInfo.FullName);
+                    }
+                }
+                foreach (string filePath in deleteFileList)
+                {
+                    try
+                    {
+                        File.Delete(filePath);
+                    }
+                    catch (Exception e)
+                    {
+                        UnityEngine.Debug.LogError(e.Message);
+                    }
+                }
+            }
+        }
+
+        private static void WriteCode(ClassInfo classInfo)
+        {
+            string className = classInfo.name;
+            List<MemberInfo> memberList = classInfo.memberList;
             CodeWriter writer = new CodeWriter();
             writer.AppendLine("namespace MonMoose.Battle");
             writer.StartBlock();
@@ -51,9 +104,9 @@ namespace MonMoose.Battle
                 writer.AppendLine("public partial class {0}Command", className);
                 writer.StartBlock();
                 {
-                    for (int i = 0; i < typeNameList.Count; ++i)
+                    for (int i = 0; i < memberList.Count; ++i)
                     {
-                        writer.AppendLine("public {0} {1};", typeNameList[i], ChangeToFieldName(fieldNameList[i]));
+                        writer.AppendLine("public {0} {1};", memberList[i].typeName, ChangeToFieldName(memberList[i].fieldName));
                     }
                     writer.AppendEmptyLine();
                     writer.AppendLine("public override EFrameCommandType commandType");
@@ -76,12 +129,12 @@ namespace MonMoose.Battle
                         writer.AppendLine("switch ((ESerializeIndex)index)");
                         writer.StartBlock();
                         {
-                            for (int i = 0; i < typeNameList.Count; ++i)
+                            for (int i = 0; i < memberList.Count; ++i)
                             {
-                                writer.AppendLine("case ESerializeIndex.{0}:", ChangeFirstToUpper(fieldNameList[i]));
+                                writer.AppendLine("case ESerializeIndex.{0}:", ChangeFirstToUpper(memberList[i].fieldName));
                                 writer.StartTab();
                                 {
-                                    writer.AppendLine("return {0} != default({1});", ChangeToFieldName(fieldNameList[i]), typeNameList[i]);
+                                    writer.AppendLine("return {0} != default({1});", ChangeToFieldName(memberList[i].fieldName), memberList[i].typeName);
                                 }
                                 writer.EndTab();
                             }
@@ -97,12 +150,12 @@ namespace MonMoose.Battle
                         writer.AppendLine("switch ((ESerializeIndex)index)");
                         writer.StartBlock();
                         {
-                            for (int i = 0; i < typeNameList.Count; ++i)
+                            for (int i = 0; i < memberList.Count; ++i)
                             {
-                                writer.AppendLine("case ESerializeIndex.{0}:", ChangeFirstToUpper(fieldNameList[i]));
+                                writer.AppendLine("case ESerializeIndex.{0}:", ChangeFirstToUpper(memberList[i].fieldName));
                                 writer.StartTab();
                                 {
-                                    writer.AppendLine("return sizeof({0});", typeNameList[i]);
+                                    writer.AppendLine("return sizeof({0});", memberList[i].typeName);
                                 }
                                 writer.EndTab();
                             }
@@ -118,12 +171,12 @@ namespace MonMoose.Battle
                         writer.AppendLine("switch ((ESerializeIndex)index)");
                         writer.StartBlock();
                         {
-                            for (int i = 0; i < typeNameList.Count; ++i)
+                            for (int i = 0; i < memberList.Count; ++i)
                             {
-                                writer.AppendLine("case ESerializeIndex.{0}:", ChangeFirstToUpper(fieldNameList[i]));
+                                writer.AppendLine("case ESerializeIndex.{0}:", ChangeFirstToUpper(memberList[i].fieldName));
                                 writer.StartTab();
                                 {
-                                    writer.AppendLine("ByteBufferUtility.Write{0}(buffer, ref offset, {1});", ChangeFirstToUpper(typeNameList[i]), ChangeToFieldName(fieldNameList[i]));
+                                    writer.AppendLine("ByteBufferUtility.Write{0}(buffer, ref offset, {1});", ChangeFirstToUpper(memberList[i].typeName), ChangeToFieldName(memberList[i].fieldName));
                                     writer.AppendLine("break;");
                                 }
                                 writer.EndTab();
@@ -139,12 +192,12 @@ namespace MonMoose.Battle
                         writer.AppendLine("switch ((ESerializeIndex)index)");
                         writer.StartBlock();
                         {
-                            for (int i = 0; i < typeNameList.Count; ++i)
+                            for (int i = 0; i < memberList.Count; ++i)
                             {
-                                writer.AppendLine("case ESerializeIndex.{0}:", ChangeFirstToUpper(fieldNameList[i]));
+                                writer.AppendLine("case ESerializeIndex.{0}:", ChangeFirstToUpper(memberList[i].fieldName));
                                 writer.StartTab();
                                 {
-                                    writer.AppendLine("{1} = ByteBufferUtility.Read{0}(buffer, ref offset);", ChangeFirstToUpper(typeNameList[i]), ChangeToFieldName(fieldNameList[i]));
+                                    writer.AppendLine("{1} = ByteBufferUtility.Read{0}(buffer, ref offset);", ChangeFirstToUpper(memberList[i].typeName), ChangeToFieldName(memberList[i].fieldName));
                                     writer.AppendLine("break;");
                                 }
                                 writer.EndTab();
@@ -157,9 +210,9 @@ namespace MonMoose.Battle
                     writer.AppendLine("private enum ESerializeIndex");
                     writer.StartBlock();
                     {
-                        for (int i = 0; i < fieldNameList.Count; ++i)
+                        for (int i = 0; i < memberList.Count; ++i)
                         {
-                            writer.AppendLine("{0},", ChangeFirstToUpper(fieldNameList[i]));
+                            writer.AppendLine("{0},", ChangeFirstToUpper(memberList[i].fieldName));
                         }
                         writer.AppendEmptyLine();
                         writer.AppendLine("Max");
@@ -169,11 +222,39 @@ namespace MonMoose.Battle
                 writer.EndBlock();
             }
             writer.EndBlock();
-            string path = Application.dataPath.Substring(0, Application.dataPath.Length - "Assets".Length) + string.Format(codePathFormat, className);
+            string path = Application.dataPath.Substring(0, Application.dataPath.Length - "Assets".Length) + string.Format(m_codePathFormat, className);
             writer.WriteFile(path);
         }
 
-        private static void WriteEnum(List<string> classNameList)
+        private static void WriteCode2(ClassInfo classInfo)
+        {
+            string className = classInfo.name;
+            string path = Application.dataPath.Substring(0, Application.dataPath.Length - "Assets".Length) + string.Format(m_codePathFormat2, className);
+            if (File.Exists(path))
+            {
+                return;
+            }
+            CodeWriter writer = new CodeWriter();
+            writer.AppendLine("namespace MonMoose.Battle");
+            writer.StartBlock();
+            {
+                writer.AppendLine("public partial class {0}Command : FrameCommand", className);
+                writer.StartBlock();
+                {
+                    writer.AppendLine("public override void Execute(int playerId)");
+                    writer.StartBlock();
+                    {
+                        writer.AppendLine("throw new System.NotImplementedException();");
+                    }
+                    writer.EndBlock();
+                }
+                writer.EndBlock();
+            }
+            writer.EndBlock();
+            writer.WriteFile(path);
+        }
+
+        private static void WriteEnum(List<ClassInfo> classList)
         {
             CodeWriter writer = new CodeWriter();
             writer.AppendLine("namespace MonMoose.Battle");
@@ -182,9 +263,9 @@ namespace MonMoose.Battle
                 writer.AppendLine("public enum EFrameCommandType");
                 writer.StartBlock();
                 {
-                    for (int i = 0; i < classNameList.Count; ++i)
+                    for (int i = 0; i < classList.Count; ++i)
                     {
-                        writer.AppendLine("{0},", classNameList[i]);
+                        writer.AppendLine("{0},", classList[i].name);
                     }
                     writer.AppendEmptyLine();
                     writer.AppendLine("Max");
@@ -192,11 +273,11 @@ namespace MonMoose.Battle
                 writer.EndBlock();
             }
             writer.EndBlock();
-            string path = Application.dataPath.Substring(0, Application.dataPath.Length - "Assets".Length) + enumPath;
+            string path = Application.dataPath.Substring(0, Application.dataPath.Length - "Assets".Length) + m_enumPath;
             writer.WriteFile(path);
         }
 
-        private static void WriteFactory(List<string> classNameList)
+        private static void WriteFactory(List<ClassInfo> classList)
         {
             CodeWriter writer = new CodeWriter();
             writer.AppendLine("namespace MonMoose.Battle");
@@ -211,12 +292,13 @@ namespace MonMoose.Battle
                         writer.AppendLine("switch (cmdType)");
                         writer.StartBlock();
                         {
-                            for (int i = 0; i < classNameList.Count; ++i)
+                            for (int i = 0; i < classList.Count; ++i)
                             {
-                                writer.AppendLine("case EFrameCommandType.{0}:", classNameList[i]);
+                                string className = classList[i].name;
+                                writer.AppendLine("case EFrameCommandType.{0}:", className);
                                 writer.StartTab();
                                 {
-                                    writer.AppendLine("return battleInstance.FetchPoolObj<{0}Command>(typeof(FrameCommandFactory));", classNameList[i]);
+                                    writer.AppendLine("return battleInstance.FetchPoolObj<{0}Command>(typeof(FrameCommandFactory));", className);
                                 }
                                 writer.EndTab();
                             }
@@ -229,7 +311,52 @@ namespace MonMoose.Battle
                 writer.EndBlock();
             }
             writer.EndBlock();
-            string path = Application.dataPath.Substring(0, Application.dataPath.Length - "Assets".Length) + factoryPath;
+            string path = Application.dataPath.Substring(0, Application.dataPath.Length - "Assets".Length) + m_factoryPath;
+            writer.WriteFile(path);
+        }
+
+        private static void WriteSender(List<ClassInfo> classList)
+        {
+            CodeWriter writer = new CodeWriter();
+            writer.AppendLine("namespace MonMoose.Battle");
+            writer.StartBlock();
+            {
+                writer.AppendLine("public partial class FrameSyncSender");
+                writer.StartBlock();
+                {
+                    foreach (ClassInfo classInfo in classList)
+                    {
+                        string className = classInfo.name;
+                        List<MemberInfo> memberList = classInfo.memberList;
+
+                        writer.StartLine("public void Send{0}(", className);
+                        for (int i = 0; i < memberList.Count; ++i)
+                        {
+                            if (i != 0)
+                            {
+                                writer.Append(", ");
+                            }
+                            writer.Append("{0} {1}", ChangeFirstToLower(memberList[i].typeName), ChangeFirstToLower(memberList[i].fieldName));
+                        }
+                        writer.Append(")");
+                        writer.EndLine();
+                        
+                        writer.StartBlock();
+                        {
+                            writer.AppendLine("{0}Command cmd = m_battleInstance.FetchPoolObj<{0}Command>(this);", className);
+                            foreach (MemberInfo memberInfo in memberList)
+                            {
+                                writer.AppendLine("cmd.{0} = {1};", ChangeToFieldName(memberInfo.fieldName), ChangeFirstToLower(memberInfo.fieldName));
+                            }
+                            writer.AppendLine("SendCommand(cmd);");
+                        }
+                        writer.EndBlock();
+                    }
+                }
+                writer.EndBlock();
+            }
+            writer.EndBlock();
+            string path = Application.dataPath.Substring(0, Application.dataPath.Length - "Assets".Length) + m_senderPath;
             writer.WriteFile(path);
         }
 
@@ -246,6 +373,18 @@ namespace MonMoose.Battle
         private static string ChangeToFieldName(string str)
         {
             return ChangeFirstToLower(str);
+        }
+
+        private struct ClassInfo
+        {
+            public string name;
+            public List<MemberInfo> memberList;
+        }
+
+        private struct MemberInfo
+        {
+            public string typeName;
+            public string fieldName;
         }
     }
 }

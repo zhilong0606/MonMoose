@@ -23,7 +23,7 @@ namespace MonMoose.Battle
 
         public void Receive(FrameCommandWrap cmdWrap)
         {
-            m_handler.AddCommand(cmdWrap.playerId, cmdWrap.cmd);
+            m_handler.ReceiveCommand(cmdWrap.playerId, cmdWrap.cmd);
             cmdWrap.Release();
         }
     }

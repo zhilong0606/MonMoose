@@ -49,12 +49,7 @@ namespace MonMoose.Logic
                 BattleManager.CreateInstance();
                 m_battleInstance = new BattleBase();
                 BattleManager.instance.SetBattleInstance(m_battleInstance);
-                m_sender = new FrameSyncSender();
-                //m_sender.Init(m_battleInstance);
-                //m_battleInitData.sender = m_sender;
-                //FrameSyncServerLocal server = new FrameSyncServerLocal();
-                //m_battleInitData.server = server;
-                //m_sender.RegisterHandler(server);
+                m_battleInitData.relay = new FrameSyncRelayLocal();
                 BattleInitializer initializer = new BattleInitializer();
                 initializer.StartAsync(OnLoadEnd);
             }
@@ -65,6 +60,7 @@ namespace MonMoose.Logic
             m_isLoadEnd = true;
             m_battleInstance.Init(m_battleInitData);
             m_battleInstance.Start();
+            m_sender = m_battleInstance.sender;
             LoadingWindow.CloseLoading(ELoadingId.BattleScene);
         }
 
@@ -96,9 +92,8 @@ namespace MonMoose.Logic
 
         private BattleGrid m_downGrid;
 
-        //public override void OnTickFloat(float deltaTime)
+        //protected override void OnTick()
         //{
-        //    base.OnTickFloat(deltaTime);
         //    if (Input.GetMouseButtonDown(0))
         //    {
         //        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -132,21 +127,21 @@ namespace MonMoose.Logic
         {
             switch (code)
             {
-                //case KeyCode.W:
-                //    m_sender.SendMoveToGrid(10001, new GridPosition(1, 4));
-                //    break;
-                //case KeyCode.S:
-                //    m_sender.SendMoveToGrid(10001, new GridPosition(1, 3));
-                //    break;
-                //case KeyCode.A:
-                //    m_sender.SendMoveToGrid(10001, new GridPosition(0, 3));
-                //    break;
-                //case KeyCode.D:
-                //    m_sender.SendMoveToGrid(10001, new GridPosition(7, 2));
-                //    break;
-                //case KeyCode.X:
-                //    m_sender.SendMoveToGrid(10001, new GridPosition(1, 1));
-                //    break;
+                case KeyCode.W:
+                    m_sender.SendMoveToGrid(10001, 1, 4);
+                    break;
+                case KeyCode.S:
+                    m_sender.SendMoveToGrid(10001, 1, 3);
+                    break;
+                case KeyCode.A:
+                    m_sender.SendMoveToGrid(10001, 0, 3);
+                    break;
+                case KeyCode.D:
+                    m_sender.SendMoveToGrid(10001, 7, 2);
+                    break;
+                case KeyCode.X:
+                    m_sender.SendMoveToGrid(10001, 1, 1);
+                    break;
             }
         }
 

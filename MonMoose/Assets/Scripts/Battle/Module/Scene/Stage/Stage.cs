@@ -8,6 +8,7 @@ namespace MonMoose.Battle
     public class Stage : BattleObj
     {
         private BattleStageStaticInfo m_staticInfo;
+        private GroundStaticInfo m_groundStaticInfo;
         private List<BattleGrid> m_gridList = new List<BattleGrid>();
         private int m_gridWidth;
         private int m_gridHeight;
@@ -19,17 +20,18 @@ namespace MonMoose.Battle
         public void Init(int id)
         {
             m_staticInfo = StaticDataManager.instance.GetBattleStageStaticInfo(id);
-            m_gridWidth = m_staticInfo.LeftWidth + m_staticInfo.RightWidth;
-            m_gridHeight = m_staticInfo.Height;
-            for (int i = 0; i < m_staticInfo.GridIdList.Count; ++i)
+            m_groundStaticInfo = StaticDataManager.instance.GetGroundStaticInfo(m_staticInfo.GroundId);
+            m_gridWidth = m_groundStaticInfo.LeftWidth + m_groundStaticInfo.RightWidth;
+            m_gridHeight = m_groundStaticInfo.Height;
+            for (int i = 0; i < m_groundStaticInfo.GridIdList.Count; ++i)
             {
                 BattleGrid grid = m_battleInstance.FetchPoolObj<BattleGrid>(this);
                 Dcm32 gridSize = new Dcm32(1);
-                int gridPosX = i / m_staticInfo.Height;
-                int gridPosY = i % m_staticInfo.Height;
+                int gridPosX = i / m_groundStaticInfo.Height;
+                int gridPosY = i % m_groundStaticInfo.Height;
                 Dcm32 stagePosX = gridSize / 2 + gridSize * gridPosX;
                 Dcm32 stagePosY = gridSize / 2 + gridSize * gridPosY;
-                grid.Init(m_staticInfo.GridIdList[i], new GridPosition(gridPosX, gridPosY), new DcmVec2(stagePosX, stagePosY), gridSize);
+                grid.Init(m_groundStaticInfo.GridIdList[i], new GridPosition(gridPosX, gridPosY), new DcmVec2(stagePosX, stagePosY), gridSize);
                 m_gridList.Add(grid);
             }
             for (int i = 0; i < m_staticInfo.EntityList.Count; ++i)
@@ -75,11 +77,7 @@ namespace MonMoose.Battle
             {
                 BattleFactory.CreateEntity(m_battleInstance, m_entityInitDataList[i].Value, m_entityInitDataList[i].Key);
             }
-            //m_battleInstance.WaitFrameCommand(EFrameCommandType.StagePrepare);
-            //if (m_battleInstance.sender != null)
-            //{
-            //    m_battleInstance.sender.SendStagePrepare();
-            //}
+            //m_battleInstance.sender.SendFrameSyncReady();
             m_stateMachine.ChangeState((int)EStageState.Running);
         }
 

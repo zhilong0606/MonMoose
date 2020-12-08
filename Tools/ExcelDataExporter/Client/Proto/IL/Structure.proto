@@ -23,6 +23,13 @@ enum EAttributeType
 	EAttributeType_Max = 7;
 }
 
+enum EBattleStageType
+{
+	EBattleStageType_None = 0;
+	EBattleStageType_Battle = 1;
+	EBattleStageType_Scenario = 2;
+}
+
 enum ETerrainType
 {
 	ETerrainType_None = 0;
@@ -61,7 +68,7 @@ message AttributeStaticInfo
 	string IconPath = 4;
 }
 
-message BattleSceneStaticInfo
+message BattleStaticInfo
 {
 	int32 Id = 1;
 	string Name = 2;
@@ -72,11 +79,19 @@ message BattleStageStaticInfo
 {
 	int32 Id = 1;
 	string Name = 2;
+	repeated StageActorStaticInfo EntityList = 3;
+	bool NeedPrepare = 4;
+	int32 GroundId = 5;
+}
+
+message GroundStaticInfo
+{
+	int32 Id = 1;
+	string ScenePath = 2;
 	int32 LeftWidth = 3;
 	int32 RightWidth = 4;
 	int32 Height = 5;
 	repeated int32 GridIdList = 6;
-	repeated StageActorStaticInfo EntityList = 7;
 }
 
 message TerrainStaticInfo
@@ -118,14 +133,19 @@ message AttributeStaticInfoList
 	repeated AttributeStaticInfo list = 1;
 }
 
-message BattleSceneStaticInfoList
+message BattleStaticInfoList
 {
-	repeated BattleSceneStaticInfo list = 1;
+	repeated BattleStaticInfo list = 1;
 }
 
 message BattleStageStaticInfoList
 {
 	repeated BattleStageStaticInfo list = 1;
+}
+
+message GroundStaticInfoList
+{
+	repeated GroundStaticInfo list = 1;
 }
 
 message TerrainStaticInfoList
