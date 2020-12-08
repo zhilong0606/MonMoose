@@ -1,10 +1,10 @@
 namespace MonMoose.Battle
 {
-    public partial class StageStartCommand
+    public partial class FrameCommandStopMove
     {
         public override EFrameCommandType commandType
         {
-            get { return EFrameCommandType.StageStart; }
+            get { return EFrameCommandType.StopMove; }
         }
 
         protected override byte GetBitFlagCount()

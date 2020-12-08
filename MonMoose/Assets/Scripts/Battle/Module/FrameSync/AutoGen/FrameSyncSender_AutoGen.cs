@@ -4,12 +4,12 @@ namespace MonMoose.Battle
     {
         public void SendFrameSyncReady()
         {
-            FrameSyncReadyCommand cmd = m_battleInstance.FetchPoolObj<FrameSyncReadyCommand>(this);
+            FrameCommandFrameSyncReady cmd = m_battleInstance.FetchPoolObj<FrameCommandFrameSyncReady>(this);
             SendCommand(cmd);
         }
         public void SendMoveToGrid(int entityId, int gridX, int gridY)
         {
-            MoveToGridCommand cmd = m_battleInstance.FetchPoolObj<MoveToGridCommand>(this);
+            FrameCommandMoveToGrid cmd = m_battleInstance.FetchPoolObj<FrameCommandMoveToGrid>(this);
             cmd.entityId = entityId;
             cmd.gridX = gridX;
             cmd.gridY = gridY;
@@ -17,17 +17,22 @@ namespace MonMoose.Battle
         }
         public void SendStagePrepare()
         {
-            StagePrepareCommand cmd = m_battleInstance.FetchPoolObj<StagePrepareCommand>(this);
+            FrameCommandStagePrepare cmd = m_battleInstance.FetchPoolObj<FrameCommandStagePrepare>(this);
             SendCommand(cmd);
         }
         public void SendStageStart()
         {
-            StageStartCommand cmd = m_battleInstance.FetchPoolObj<StageStartCommand>(this);
+            FrameCommandStageStart cmd = m_battleInstance.FetchPoolObj<FrameCommandStageStart>(this);
             SendCommand(cmd);
         }
         public void SendStopMove()
         {
-            StopMoveCommand cmd = m_battleInstance.FetchPoolObj<StopMoveCommand>(this);
+            FrameCommandStopMove cmd = m_battleInstance.FetchPoolObj<FrameCommandStopMove>(this);
+            SendCommand(cmd);
+        }
+        public void SendStepEnd()
+        {
+            FrameCommandStepEnd cmd = m_battleInstance.FetchPoolObj<FrameCommandStepEnd>(this);
             SendCommand(cmd);
         }
     }

@@ -14,8 +14,8 @@ namespace MonMoose.Battle
     {
         private static string m_configPath = "Assets/Scripts/Battle/Module/FrameSync/Command/Editor/FrameCommand.xml";
         private static string m_autoGenFolder = "Assets/Scripts/Battle/Module/FrameSync/AutoGen";
-        private static string m_codePathFormat = m_autoGenFolder + "/Command/{0}Command_AutoGen.cs";
-        private static string m_codePathFormat2 = "Assets/Scripts/Battle/Module/FrameSync/Command/{0}Command.cs";
+        private static string m_codePathFormat = m_autoGenFolder + "/Command/FrameCommand{0}_AutoGen.cs";
+        private static string m_codePathFormat2 = "Assets/Scripts/Battle/Module/FrameSync/Command/FrameCommand{0}.cs";
         private static string m_enumPath = m_autoGenFolder + "/EFrameCommandType_AutoGen.cs";
         private static string m_factoryPath = m_autoGenFolder + "/FrameCommandFactory_AutoGen.cs";
         private static string m_senderPath = m_autoGenFolder + "/FrameSyncSender_AutoGen.cs";
@@ -101,7 +101,7 @@ namespace MonMoose.Battle
             writer.AppendLine("namespace MonMoose.Battle");
             writer.StartBlock();
             {
-                writer.AppendLine("public partial class {0}Command", className);
+                writer.AppendLine("public partial class FrameCommand{0}", className);
                 writer.StartBlock();
                 {
                     if (memberList.Count > 0)
@@ -264,7 +264,7 @@ namespace MonMoose.Battle
             writer.AppendLine("namespace MonMoose.Battle");
             writer.StartBlock();
             {
-                writer.AppendLine("public partial class {0}Command : FrameCommand", className);
+                writer.AppendLine("public partial class FrameCommand{0} : FrameCommand", className);
                 writer.StartBlock();
                 {
                     writer.AppendLine("public override void Execute(int playerId)");
@@ -324,7 +324,7 @@ namespace MonMoose.Battle
                                 writer.AppendLine("case EFrameCommandType.{0}:", className);
                                 writer.StartTab();
                                 {
-                                    writer.AppendLine("return battleInstance.FetchPoolObj<{0}Command>(typeof(FrameCommandFactory));", className);
+                                    writer.AppendLine("return battleInstance.FetchPoolObj<FrameCommand{0}>(typeof(FrameCommandFactory));", className);
                                 }
                                 writer.EndTab();
                             }
@@ -369,7 +369,7 @@ namespace MonMoose.Battle
                         
                         writer.StartBlock();
                         {
-                            writer.AppendLine("{0}Command cmd = m_battleInstance.FetchPoolObj<{0}Command>(this);", className);
+                            writer.AppendLine("FrameCommand{0} cmd = m_battleInstance.FetchPoolObj<FrameCommand{0}>(this);", className);
                             foreach (MemberInfo memberInfo in memberList)
                             {
                                 writer.AppendLine("cmd.{0} = {1};", ChangeToFieldName(memberInfo.fieldName), ChangeFirstToLower(memberInfo.fieldName));

@@ -7,15 +7,17 @@ namespace MonMoose.Battle
             switch (cmdType)
             {
                 case EFrameCommandType.FrameSyncReady:
-                    return battleInstance.FetchPoolObj<FrameSyncReadyCommand>(typeof(FrameCommandFactory));
+                    return battleInstance.FetchPoolObj<FrameCommandFrameSyncReady>(typeof(FrameCommandFactory));
                 case EFrameCommandType.MoveToGrid:
-                    return battleInstance.FetchPoolObj<MoveToGridCommand>(typeof(FrameCommandFactory));
+                    return battleInstance.FetchPoolObj<FrameCommandMoveToGrid>(typeof(FrameCommandFactory));
                 case EFrameCommandType.StagePrepare:
-                    return battleInstance.FetchPoolObj<StagePrepareCommand>(typeof(FrameCommandFactory));
+                    return battleInstance.FetchPoolObj<FrameCommandStagePrepare>(typeof(FrameCommandFactory));
                 case EFrameCommandType.StageStart:
-                    return battleInstance.FetchPoolObj<StageStartCommand>(typeof(FrameCommandFactory));
+                    return battleInstance.FetchPoolObj<FrameCommandStageStart>(typeof(FrameCommandFactory));
                 case EFrameCommandType.StopMove:
-                    return battleInstance.FetchPoolObj<StopMoveCommand>(typeof(FrameCommandFactory));
+                    return battleInstance.FetchPoolObj<FrameCommandStopMove>(typeof(FrameCommandFactory));
+                case EFrameCommandType.StepEnd:
+                    return battleInstance.FetchPoolObj<FrameCommandStepEnd>(typeof(FrameCommandFactory));
             }
             return null;
         }

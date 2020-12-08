@@ -1,6 +1,6 @@
 namespace MonMoose.Battle
 {
-    public partial class FrameSyncReadyCommand : FrameCommand
+    public partial class FrameCommandStopMove : FrameCommand
     {
         public override void Execute(int playerId)
         {

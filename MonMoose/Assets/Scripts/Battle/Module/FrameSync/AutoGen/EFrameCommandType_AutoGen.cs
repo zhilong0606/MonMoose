@@ -7,6 +7,7 @@ namespace MonMoose.Battle
         StagePrepare,
         StageStart,
         StopMove,
+        StepEnd,
 
         Max
     }

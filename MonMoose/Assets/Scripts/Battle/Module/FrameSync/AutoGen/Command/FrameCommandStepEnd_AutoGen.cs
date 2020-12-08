@@ -1,10 +1,10 @@
 namespace MonMoose.Battle
 {
-    public partial class FrameSyncReadyCommand
+    public partial class FrameCommandStepEnd
     {
         public override EFrameCommandType commandType
         {
-            get { return EFrameCommandType.FrameSyncReady; }
+            get { return EFrameCommandType.StepEnd; }
         }
 
         protected override byte GetBitFlagCount()
