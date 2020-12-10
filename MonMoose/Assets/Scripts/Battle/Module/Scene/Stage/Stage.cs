@@ -19,8 +19,8 @@ namespace MonMoose.Battle
 
         public void Init(int id)
         {
-            m_staticInfo = StaticDataManager.instance.GetBattleStageStaticInfo(id);
-            m_groundStaticInfo = StaticDataManager.instance.GetGroundStaticInfo(m_staticInfo.GroundId);
+            m_staticInfo = StaticDataManager.instance.GetBattleStage(id);
+            m_groundStaticInfo = StaticDataManager.instance.GetGround(m_staticInfo.GroundId);
             m_gridWidth = m_groundStaticInfo.LeftWidth + m_groundStaticInfo.RightWidth;
             m_gridHeight = m_groundStaticInfo.Height;
             for (int i = 0; i < m_groundStaticInfo.GridIdList.Count; ++i)

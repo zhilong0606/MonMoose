@@ -14,7 +14,7 @@ namespace MonMoose.Battle
         protected override void OnInit(BattleInitData battleInitData)
         {
             base.OnInit(battleInitData);
-            m_staticInfo = StaticDataManager.instance.GetBattleStaticInfo(battleInitData.id);
+            m_staticInfo = StaticDataManager.instance.GetBattle(battleInitData.id);
             for (int i = 0; i < m_staticInfo.StageIdList.Count; ++i)
             {
                 int stageRid = m_staticInfo.StageIdList[i];

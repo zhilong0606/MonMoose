@@ -78,7 +78,7 @@ namespace MonMoose.Logic
 
         private EntityView OnGetView(int id)
         {
-            EntityStaticInfo entityStaticInfo = StaticDataManager.instance.GetEntityStaticInfo(id);
+            EntityStaticInfo entityStaticInfo = StaticDataManager.instance.GetEntity(id);
             switch (entityStaticInfo.EntityType)
             {
                 case EEntityType.Actor:

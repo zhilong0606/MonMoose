@@ -20,6 +20,11 @@ namespace MonMoose.Battle
             get { return m_view; }
         }
 
+        public Team team
+        {
+            get { return m_team; }
+        }
+
         public void Init(int uid, EntityInitData initData)
         {
             m_uid = uid;

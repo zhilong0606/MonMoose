@@ -9,7 +9,7 @@ namespace MonMoose.Battle
         public static Entity CreateEntity(BattleBase battleInstance, EntityInitData initData, int uid)
         {
             Entity entity = null;
-            EntityStaticInfo info = StaticDataManager.instance.GetEntityStaticInfo(initData.id);
+            EntityStaticInfo info = StaticDataManager.instance.GetEntity(initData.id);
             switch (info.EntityType)
             {
                 case EEntityType.Actor:

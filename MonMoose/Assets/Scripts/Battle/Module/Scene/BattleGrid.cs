@@ -29,7 +29,7 @@ namespace MonMoose.Battle
 
         public void Init(int id, GridPosition gridPosition, DcmVec2 stagePosition, Dcm32 size)
         {
-            m_staticInfo = StaticDataManager.instance.GetTerrainStaticInfo(id);
+            m_staticInfo = StaticDataManager.instance.GetTerrain(id);
             m_gridPosition = gridPosition;
             m_stagePosition = stagePosition;
             m_size = size;

@@ -14,13 +14,13 @@ namespace MonMoose.StaticData
 
         private void AnalyzeEntityStaticInfo()
         {
-            for (int i = 0; i < m_EntityList.Count; ++i)
+            for (int i = 0; i < m_entityList.Count; ++i)
             {
-                m_actorToEntityMap.Add(m_EntityList[i].SpecificId, m_EntityList[i]);
+                m_actorToEntityMap.Add(m_entityList[i].SpecificId, m_entityList[i]);
             }
         }
 
-        public EntityStaticInfo GetEntityStaticInfo(EEntityType type, int specificId)
+        public EntityStaticInfo GetEntity(EEntityType type, int specificId)
         {
             EntityStaticInfo staticInfo = null;
             Dictionary<int, EntityStaticInfo> specificMap = null;

@@ -18,7 +18,7 @@ namespace MonMoose.Logic.UI
         protected override void OnInit(object param)
         {
             base.OnInit(param);
-            PrefabPathStaticInfo info = StaticDataManager.instance.GetPrefabPathStaticInfo(EPrefabPathId.BattlePrefabActorItem);
+            PrefabPathStaticInfo info = StaticDataManager.instance.GetPrefabPath(EPrefabPathId.BattlePrefabActorItem);
             GameObject prefab = ResourceManager.instance.GetPrefab(info.Path);
             GameObject go = GameObject.Instantiate(prefab, transform);
             m_actorItemWidget = go.AddComponent<BattlePrepareCoverActorItemWidget>();

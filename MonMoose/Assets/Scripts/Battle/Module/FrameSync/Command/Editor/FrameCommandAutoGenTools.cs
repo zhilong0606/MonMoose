@@ -267,7 +267,7 @@ namespace MonMoose.Battle
                 writer.AppendLine("public partial class FrameCommand{0} : FrameCommand", className);
                 writer.StartBlock();
                 {
-                    writer.AppendLine("public override void Execute(int playerId)");
+                    writer.AppendLine("public override bool Execute(int playerId)");
                     writer.StartBlock();
                     {
                         writer.AppendLine("throw new System.NotImplementedException();");

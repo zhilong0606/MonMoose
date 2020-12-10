@@ -11,6 +11,7 @@ namespace MonMoose.Battle
 
         private List<Team> m_teamList = new List<Team>();
         private List<Entity> m_entityList = new List<Entity>();
+        private List<Player> m_playerList = new List<Player>();
         private Func<int, EntityView> m_funcOnGetView;
         private IBattleEventListener m_eventListener;
 
@@ -109,6 +110,18 @@ namespace MonMoose.Battle
             return FetchPoolObj<EmptyView>(this);
         }
 
+        public Player GetPlayer(int playerId)
+        {
+            for (int i = 0; i < m_playerList.Count; ++i)
+            {
+                if (m_playerList[i].id == playerId)
+                {
+                    return m_playerList[i];
+                }
+            }
+            return null;
+        }
+
         public Entity GetEntity(int uid)
         {
             for (int i = 0; i < m_entityList.Count; ++i)
@@ -120,6 +133,11 @@ namespace MonMoose.Battle
             }
 
             return null;
+        }
+
+        public bool CheckActiveController(Controller controller)
+        {
+            return true;
         }
 
         public void GetEntityListByTeamId(int teamId, List<Entity> entityList)

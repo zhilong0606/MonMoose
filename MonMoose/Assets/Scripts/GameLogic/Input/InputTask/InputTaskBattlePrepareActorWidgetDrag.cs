@@ -47,7 +47,7 @@ namespace MonMoose.Logic
             else
             {
                 actorItemWidget.SetActiveSafely(false);
-                ActorStaticInfo entityInfo = StaticDataManager.instance.GetActorStaticInfo(actorItemWidget.actorId);
+                ActorStaticInfo entityInfo = StaticDataManager.instance.GetActor(actorItemWidget.actorId);
                 GameObject go = GameObjectPoolManager.instance.Fetch(entityInfo.PrefabPath);
                 go.transform.position = view.transform.position;
                 BattlePrepareActorManager.instance.AddActor(actorItemWidget.actorId, go, view.gridPosition);

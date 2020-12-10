@@ -35,7 +35,7 @@ namespace MonMoose.Battle
         {
             base.OnInit(entityInitData);
             m_entityId = entityInitData.id;
-            m_entityStaticInfo = StaticDataManager.instance.GetEntityStaticInfo(m_entityId);
+            m_entityStaticInfo = StaticDataManager.instance.GetEntity(m_entityId);
             OnInitSpecific(entityInitData);
             //handlers[(int) EAttributeType.MaxHp] = new AttributeHandler(this.actor.actorInfo.maxHp, 0, int.MaxValue, 0, LevelDependentCalculator);
             //handlers[(int) EAttributeType.PhysicalAttack] = new AttributeHandler(this.actor.actorInfo.physicalAttack, 0, int.MaxValue, 0, LevelDependentCalculator);

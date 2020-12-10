@@ -9,7 +9,7 @@ namespace MonMoose.Logic
         Frame_Tick,
         
 
-        BattleStart_StartRequest_BtnClick,
+        BattleStart_StartRequest,
 
         BattlePrepare_ActorItemShow,
         BattlePrepare_ActorItemHide,
