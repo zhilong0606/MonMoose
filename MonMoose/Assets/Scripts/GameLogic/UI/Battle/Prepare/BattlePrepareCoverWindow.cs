@@ -4,7 +4,7 @@ using UnityEngine;
 using MonMoose.Core;
 using MonMoose.StaticData;
 
-namespace MonMoose.Logic.UI
+namespace MonMoose.GameLogic.UI
 {
     public class BattlePrepareCoverWindow : UIWindow
     {

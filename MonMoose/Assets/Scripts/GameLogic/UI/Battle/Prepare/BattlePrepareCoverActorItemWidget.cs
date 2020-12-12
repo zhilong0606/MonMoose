@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace MonMoose.Logic.UI
+namespace MonMoose.GameLogic.UI
 {
     public class BattlePrepareCoverActorItemWidget : BattlePrepareActorItemBaseWidget
     {

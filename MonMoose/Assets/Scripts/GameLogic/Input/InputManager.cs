@@ -4,7 +4,7 @@ using MonMoose.Core;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace MonMoose.Logic
+namespace MonMoose.GameLogic
 {
     public class InputManager : Singleton<InputManager>
     {

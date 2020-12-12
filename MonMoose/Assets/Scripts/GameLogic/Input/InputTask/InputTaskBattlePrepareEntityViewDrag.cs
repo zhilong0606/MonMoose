@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using MonMoose.Core;
 using MonMoose.GameLogic.Battle;
-using MonMoose.Logic.UI;
+using MonMoose.GameLogic.UI;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace MonMoose.Logic
+namespace MonMoose.GameLogic
 {
     public class InputTaskBattlePrepareEntityViewDrag : InputTask
     {

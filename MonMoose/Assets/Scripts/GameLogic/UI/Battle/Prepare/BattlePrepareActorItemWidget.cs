@@ -3,7 +3,7 @@ using MonMoose.Core;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace MonMoose.Logic.UI
+namespace MonMoose.GameLogic.UI
 {
     public class BattlePrepareActorItemWidget : BattlePrepareActorItemBaseWidget, IPointerDownHandler, IPointerUpHandler, IDragHandler, IPointerExitHandler
     {

@@ -1,5 +1,5 @@
 ﻿using MonMoose.Battle;
-using MonMoose.Logic;
+using MonMoose.GameLogic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 

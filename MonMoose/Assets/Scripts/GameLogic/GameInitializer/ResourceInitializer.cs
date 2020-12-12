@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using MonMoose.Core;
 using UnityEngine;
 
-namespace MonMoose.Logic
+namespace MonMoose.GameLogic
 {
     public class ResourceInitializer : Initializer
     {

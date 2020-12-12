@@ -14,6 +14,7 @@ namespace MonMoose.StaticData
 			m_loaderMap.Add("Team", new ProtoDataLoader<TeamStaticInfo, TeamStaticInfoList>(m_teamList, TeamStaticInfoList.Parser.ParseFrom, (fromList, toList) => { toList.Clear(); toList.AddRange(fromList.List); }));
 			m_loaderMap.Add("Ground", new ProtoDataLoader<GroundStaticInfo, GroundStaticInfoList>(m_groundList, GroundStaticInfoList.Parser.ParseFrom, (fromList, toList) => { toList.Clear(); toList.AddRange(fromList.List); }));
 			m_loaderMap.Add("Terrain", new ProtoDataLoader<TerrainStaticInfo, TerrainStaticInfoList>(m_terrainList, TerrainStaticInfoList.Parser.ParseFrom, (fromList, toList) => { toList.Clear(); toList.AddRange(fromList.List); }));
+			m_loaderMap.Add("CollectableActor", new ProtoDataLoader<CollectableActorStaticInfo, CollectableActorStaticInfoList>(m_collectableActorList, CollectableActorStaticInfoList.Parser.ParseFrom, (fromList, toList) => { toList.Clear(); toList.AddRange(fromList.List); }));
 			m_loaderMap.Add("Entity", new ProtoDataLoader<EntityStaticInfo, EntityStaticInfoList>(m_entityList, EntityStaticInfoList.Parser.ParseFrom, (fromList, toList) => { toList.Clear(); toList.AddRange(fromList.List); }));
 			m_loaderMap.Add("PrefabPath", new ProtoDataLoader<PrefabPathStaticInfo, PrefabPathStaticInfoList>(m_prefabPathList, PrefabPathStaticInfoList.Parser.ParseFrom, (fromList, toList) => { toList.Clear(); toList.AddRange(fromList.List); }));
 		}
@@ -52,6 +53,11 @@ namespace MonMoose.StaticData
 		private List<TerrainStaticInfo> m_terrainList = new List<TerrainStaticInfo>();
 		public TerrainStaticInfo GetTerrain(int id) { foreach (var info in m_terrainList) if (info.Id == id) return info; return null; }
 		public IEnumerable<TerrainStaticInfo> terrainList { get { return m_terrainList; } }
+
+		//CollectableActor
+		private List<CollectableActorStaticInfo> m_collectableActorList = new List<CollectableActorStaticInfo>();
+		public CollectableActorStaticInfo GetCollectableActor(int id) { foreach (var info in m_collectableActorList) if (info.Id == id) return info; return null; }
+		public IEnumerable<CollectableActorStaticInfo> collectableActorList { get { return m_collectableActorList; } }
 
 		//Entity
 		private List<EntityStaticInfo> m_entityList = new List<EntityStaticInfo>();

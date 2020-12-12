@@ -4,7 +4,7 @@ using MonMoose.StaticData;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace MonMoose.Logic.UI
+namespace MonMoose.GameLogic.UI
 {
 
     public class LobbyWindow : UIWindow

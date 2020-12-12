@@ -1,4 +1,4 @@
-﻿namespace MonMoose.Logic
+﻿namespace MonMoose.GameLogic
 {
     public class ConstAttributeValue : AttributeValue
     {

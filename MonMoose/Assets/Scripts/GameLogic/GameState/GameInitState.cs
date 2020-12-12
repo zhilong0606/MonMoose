@@ -1,8 +1,8 @@
 ﻿using System;
 using MonMoose.Core;
-using MonMoose.Logic.UI;
+using MonMoose.GameLogic.UI;
 
-namespace MonMoose.Logic
+namespace MonMoose.GameLogic
 {
     public class GameInitState : State
     {
@@ -26,6 +26,7 @@ namespace MonMoose.Logic
 
         private void OnGameInitEnd()
         {
+            UIWindowDefine.DefineAfterGameInit();
             m_stateMachine.ChangeState((int)EGameState.Lobby);
         }
     }

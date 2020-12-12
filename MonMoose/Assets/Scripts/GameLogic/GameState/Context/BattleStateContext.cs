@@ -4,7 +4,7 @@ using MonMoose.Battle;
 using UnityEngine;
 using StateContext = MonMoose.Core.StateContext;
 
-namespace MonMoose.Logic
+namespace MonMoose.GameLogic
 {
     public class BattleStateContext : StateContext
     {

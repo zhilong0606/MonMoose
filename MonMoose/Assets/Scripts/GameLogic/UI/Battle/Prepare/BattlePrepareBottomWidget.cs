@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using MonMoose.Battle;
 using MonMoose.Core;
 using MonMoose.GameLogic.Battle;
+using MonMoose.StaticData;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace MonMoose.Logic.UI
+namespace MonMoose.GameLogic.UI
 {
     public class BattlePrepareBottomWidget : UIComponent
     {
@@ -23,13 +24,19 @@ namespace MonMoose.Logic.UI
             startBtn.onClick.AddListener(OnStartBtnClicked);
 
             int hostTeamId = BattleManager.instance.hostTeamId;
-            BattleManager.instance.battleInstance.GetEntityListByTeamId(hostTeamId, m_entityList);
-            for (int i = 0; i < m_entityList.Count; ++i)
+            foreach (CollectableActorStaticInfo actorInfo in StaticDataManager.instance.collectableActorList)
             {
                 BattlePrepareActorItemWidget widget = m_pool.FetchComponent<BattlePrepareActorItemWidget>();
-                widget.SetActor(m_entityList[i].GetComponent<ActorInfoComponent>().actorStaticInfo.Id);
+                widget.SetActor(actorInfo.Id);
                 m_actorItemMap.Add(widget.actorId, widget);
             }
+            //    BattleManager.instance.battleInstance.GetEntityListByTeamId(hostTeamId, m_entityList);
+            //for (int i = 0; i < m_entityList.Count; ++i)
+            //{
+            //    BattlePrepareActorItemWidget widget = m_pool.FetchComponent<BattlePrepareActorItemWidget>();
+            //    widget.SetActor(m_entityList[i].GetComponent<ActorInfoComponent>().actorStaticInfo.Id);
+            //    m_actorItemMap.Add(widget.actorId, widget);
+            //}
         }
 
         protected override void RegisterListener()

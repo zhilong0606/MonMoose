@@ -4,7 +4,7 @@ using MonMoose.Core;
 using MonMoose.StaticData;
 using UnityEngine;
 
-namespace MonMoose.Logic
+namespace MonMoose.GameLogic
 {
     public class StaticDataInitializer : Initializer
     {

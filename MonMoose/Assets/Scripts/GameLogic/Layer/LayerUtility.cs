@@ -1,5 +1,5 @@
 ﻿
-namespace MonMoose.Logic
+namespace MonMoose.GameLogic
 {
     public static partial class LayerUtility
     {

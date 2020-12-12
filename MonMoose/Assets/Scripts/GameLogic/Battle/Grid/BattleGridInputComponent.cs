@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using MonMoose.Logic;
+using MonMoose.GameLogic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 

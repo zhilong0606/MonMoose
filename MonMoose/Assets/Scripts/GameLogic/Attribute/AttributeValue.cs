@@ -1,6 +1,6 @@
 ﻿using MonMoose.Core;
 
-namespace MonMoose.Logic
+namespace MonMoose.GameLogic
 {
     public abstract class AttributeValue : AbstractObserveSubject, IClassPoolObj
     {

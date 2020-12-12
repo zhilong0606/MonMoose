@@ -1,7 +1,7 @@
 ﻿using MonMoose.Core;
 using UnityEngine;
 
-namespace MonMoose.Logic
+namespace MonMoose.GameLogic
 {
     public enum EGameState
     {
@@ -52,7 +52,7 @@ namespace MonMoose.Logic
             ResourceManager.CreateInstance();
             TimerManager.CreateInstance();
             InputManager.CreateInstance();
-            UIWindowDefine.Define();
+            UIWindowDefine.DefineBeforeGameInit();
         }
 
         private void Update()

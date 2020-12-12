@@ -2,7 +2,7 @@
 using MonMoose.Core;
 using MonMoose.StaticData;
 
-namespace MonMoose.Logic
+namespace MonMoose.GameLogic
 {
     public class AttributeInfo : AbstractObserver
     {

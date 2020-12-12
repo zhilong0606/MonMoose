@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using MonMoose.Core;
-using MonMoose.Logic;
+using MonMoose.GameLogic;
 using MonMoose.StaticData;
 using UnityEngine.SceneManagement;
 

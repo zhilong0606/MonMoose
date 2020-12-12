@@ -30,67 +30,76 @@ namespace MonMoose.StaticData {
             "EgwKBFNpemUYCCABKAUiWQoTQXR0cmlidXRlU3RhdGljSW5mbxIKCgJJZBgB",
             "IAEoBRIMCgROYW1lGAIgASgJEhYKDklzU2lnbkludmVyc2VkGAMgASgIEhAK",
             "CEljb25QYXRoGAQgASgJIkEKEEJhdHRsZVN0YXRpY0luZm8SCgoCSWQYASAB",
-            "KAUSDAoETmFtZRgCIAEoCRITCgtTdGFnZUlkTGlzdBgDIAMoBSLcAQoVQmF0",
+            "KAUSDAoETmFtZRgCIAEoCRITCgtTdGFnZUlkTGlzdBgDIAMoBSLvAQoVQmF0",
             "dGxlU3RhZ2VTdGF0aWNJbmZvEgoKAklkGAEgASgFEgwKBE5hbWUYAiABKAkS",
             "QwoPU3RhZ2VFbnRpdHlMaXN0GAMgAygLMiouTW9uTW9vc2UuU3RhdGljRGF0",
             "YS5TdGFnZUVudGl0eVN0YXRpY0luZm8SPQoMRW1iYXR0bGVMaXN0GAQgAygL",
             "MicuTW9uTW9vc2UuU3RhdGljRGF0YS5FbWJhdHRsZVN0YXRpY0luZm8SEwoL",
-            "TmVlZFByZXBhcmUYBSABKAgSEAoIR3JvdW5kSWQYBiABKAUiKgoOVGVhbVN0",
-            "YXRpY0luZm8SCgoCSWQYASABKAUSDAoETmFtZRgCIAEoCSJ8ChBHcm91bmRT",
-            "dGF0aWNJbmZvEgoKAklkGAEgASgFEhEKCVNjZW5lUGF0aBgCIAEoCRIRCglM",
-            "ZWZ0V2lkdGgYAyABKAUSEgoKUmlnaHRXaWR0aBgEIAEoBRIOCgZIZWlnaHQY",
-            "BSABKAUSEgoKR3JpZElkTGlzdBgGIAMoBSJAChFUZXJyYWluU3RhdGljSW5m",
-            "bxIKCgJJZBgBIAEoBRIMCgROYW1lGAIgASgJEhEKCVdhbGtTcGVlZBgDIAEo",
-            "BSJoChBFbnRpdHlTdGF0aWNJbmZvEgoKAklkGAEgASgFEjQKCkVudGl0eVR5",
-            "cGUYAiABKA4yIC5Nb25Nb29zZS5TdGF0aWNEYXRhLkVFbnRpdHlUeXBlEhIK",
-            "ClNwZWNpZmljSWQYAyABKAUiMAoUUHJlZmFiUGF0aFN0YXRpY0luZm8SCgoC",
-            "SWQYASABKAUSDAoEUGF0aBgCIAEoCSJcChVTdGFnZUVudGl0eVN0YXRpY0lu",
-            "Zm8SCwoDVWlkGAEgASgFEgsKA1JpZBgCIAEoBRINCgVMZXZlbBgDIAEoBRIM",
-            "CgRQb3NYGAQgASgFEgwKBFBvc1kYBSABKAUiQAoSRW1iYXR0bGVTdGF0aWNJ",
-            "bmZvEg4KBlRlYW1JZBgBIAEoBRIMCgRQb3NYGAIgASgFEgwKBFBvc1kYAyAB",
-            "KAUiSQoTQWN0b3JTdGF0aWNJbmZvTGlzdBIyCgRsaXN0GAEgAygLMiQuTW9u",
-            "TW9vc2UuU3RhdGljRGF0YS5BY3RvclN0YXRpY0luZm8iUQoXQXR0cmlidXRl",
-            "U3RhdGljSW5mb0xpc3QSNgoEbGlzdBgBIAMoCzIoLk1vbk1vb3NlLlN0YXRp",
-            "Y0RhdGEuQXR0cmlidXRlU3RhdGljSW5mbyJLChRCYXR0bGVTdGF0aWNJbmZv",
-            "TGlzdBIzCgRsaXN0GAEgAygLMiUuTW9uTW9vc2UuU3RhdGljRGF0YS5CYXR0",
-            "bGVTdGF0aWNJbmZvIlUKGUJhdHRsZVN0YWdlU3RhdGljSW5mb0xpc3QSOAoE",
-            "bGlzdBgBIAMoCzIqLk1vbk1vb3NlLlN0YXRpY0RhdGEuQmF0dGxlU3RhZ2VT",
-            "dGF0aWNJbmZvIkcKElRlYW1TdGF0aWNJbmZvTGlzdBIxCgRsaXN0GAEgAygL",
-            "MiMuTW9uTW9vc2UuU3RhdGljRGF0YS5UZWFtU3RhdGljSW5mbyJLChRHcm91",
-            "bmRTdGF0aWNJbmZvTGlzdBIzCgRsaXN0GAEgAygLMiUuTW9uTW9vc2UuU3Rh",
-            "dGljRGF0YS5Hcm91bmRTdGF0aWNJbmZvIk0KFVRlcnJhaW5TdGF0aWNJbmZv",
-            "TGlzdBI0CgRsaXN0GAEgAygLMiYuTW9uTW9vc2UuU3RhdGljRGF0YS5UZXJy",
-            "YWluU3RhdGljSW5mbyJLChRFbnRpdHlTdGF0aWNJbmZvTGlzdBIzCgRsaXN0",
-            "GAEgAygLMiUuTW9uTW9vc2UuU3RhdGljRGF0YS5FbnRpdHlTdGF0aWNJbmZv",
-            "IlMKGFByZWZhYlBhdGhTdGF0aWNJbmZvTGlzdBI3CgRsaXN0GAEgAygLMiku",
-            "TW9uTW9vc2UuU3RhdGljRGF0YS5QcmVmYWJQYXRoU3RhdGljSW5mbyq1AQoP",
-            "RUFjdG9yQ2xhc3NUeXBlEhgKFEVBY3RvckNsYXNzVHlwZV9Ob25lEAASGwoX",
-            "RUFjdG9yQ2xhc3NUeXBlX1dhcnJpb3IQARIZChVFQWN0b3JDbGFzc1R5cGVf",
-            "UHJpc3QQAhIaChZFQWN0b3JDbGFzc1R5cGVfQXJjaGVyEAMSGAoURUFjdG9y",
-            "Q2xhc3NUeXBlX01hZ2UQBBIaChZFQWN0b3JDbGFzc1R5cGVfU2hhbWFuEAUq",
-            "+AEKDkVBdHRyaWJ1dGVUeXBlEhcKE0VBdHRyaWJ1dGVUeXBlX05vbmUQABIV",
-            "ChFFQXR0cmlidXRlVHlwZV9IcBABEhkKFUVBdHRyaWJ1dGVUeXBlX0F0dGFj",
-            "axACEh4KGkVBdHRyaWJ1dGVUeXBlX0F0dGFja1NwZWVkEAMSIgoeRUF0dHJp",
-            "YnV0ZVR5cGVfUGh5c2ljYWxEZWZlbmNlEAQSIQodRUF0dHJpYnV0ZVR5cGVf",
-            "TWFnaWNhbERlZmVuY2UQBRIcChhFQXR0cmlidXRlVHlwZV9Nb3ZlU3BlZWQQ",
-            "BhIWChJFQXR0cmlidXRlVHlwZV9NYXgQByppChBFQmF0dGxlU3RhZ2VUeXBl",
-            "EhkKFUVCYXR0bGVTdGFnZVR5cGVfTm9uZRAAEhsKF0VCYXR0bGVTdGFnZVR5",
-            "cGVfQmF0dGxlEAESHQoZRUJhdHRsZVN0YWdlVHlwZV9TY2VuYXJpbxACKj4K",
-            "DEVUZXJyYWluVHlwZRIVChFFVGVycmFpblR5cGVfTm9uZRAAEhcKE0VUZXJy",
-            "YWluVHlwZV9Ob3JtYWwQASo6CgtFRW50aXR5VHlwZRIUChBFRW50aXR5VHlw",
-            "ZV9Ob25lEAASFQoRRUVudGl0eVR5cGVfQWN0b3IQASpQCg1FUHJlZmFiUGF0",
-            "aElkEhYKEkVQcmVmYWJQYXRoSWRfTm9uZRAAEicKI0VQcmVmYWJQYXRoSWRf",
-            "QmF0dGxlUHJlZmFiQWN0b3JJdGVtEAFiBnByb3RvMw=="));
+            "TmVlZFByZXBhcmUYBSABKAgSEAoIR3JvdW5kSWQYBiABKAUSEQoJU2NlbmVQ",
+            "YXRoGAcgASgJIioKDlRlYW1TdGF0aWNJbmZvEgoKAklkGAEgASgFEgwKBE5h",
+            "bWUYAiABKAkifAoQR3JvdW5kU3RhdGljSW5mbxIKCgJJZBgBIAEoBRIRCglT",
+            "Y2VuZVBhdGgYAiABKAkSEQoJTGVmdFdpZHRoGAMgASgFEhIKClJpZ2h0V2lk",
+            "dGgYBCABKAUSDgoGSGVpZ2h0GAUgASgFEhIKCkdyaWRJZExpc3QYBiADKAUi",
+            "QAoRVGVycmFpblN0YXRpY0luZm8SCgoCSWQYASABKAUSDAoETmFtZRgCIAEo",
+            "CRIRCglXYWxrU3BlZWQYAyABKAUiSAoaQ29sbGVjdGFibGVBY3RvclN0YXRp",
+            "Y0luZm8SCgoCSWQYASABKAUSDAoETmFtZRgCIAEoCRIQCghIZWFkSWNvbhgD",
+            "IAEoCSJoChBFbnRpdHlTdGF0aWNJbmZvEgoKAklkGAEgASgFEjQKCkVudGl0",
+            "eVR5cGUYAiABKA4yIC5Nb25Nb29zZS5TdGF0aWNEYXRhLkVFbnRpdHlUeXBl",
+            "EhIKClNwZWNpZmljSWQYAyABKAUiMAoUUHJlZmFiUGF0aFN0YXRpY0luZm8S",
+            "CgoCSWQYASABKAUSDAoEUGF0aBgCIAEoCSJcChVTdGFnZUVudGl0eVN0YXRp",
+            "Y0luZm8SCwoDVWlkGAEgASgFEgsKA1JpZBgCIAEoBRINCgVMZXZlbBgDIAEo",
+            "BRIMCgRQb3NYGAQgASgFEgwKBFBvc1kYBSABKAUiQAoSRW1iYXR0bGVTdGF0",
+            "aWNJbmZvEg4KBlRlYW1JZBgBIAEoBRIMCgRQb3NYGAIgASgFEgwKBFBvc1kY",
+            "AyABKAUiSQoTQWN0b3JTdGF0aWNJbmZvTGlzdBIyCgRsaXN0GAEgAygLMiQu",
+            "TW9uTW9vc2UuU3RhdGljRGF0YS5BY3RvclN0YXRpY0luZm8iUQoXQXR0cmli",
+            "dXRlU3RhdGljSW5mb0xpc3QSNgoEbGlzdBgBIAMoCzIoLk1vbk1vb3NlLlN0",
+            "YXRpY0RhdGEuQXR0cmlidXRlU3RhdGljSW5mbyJLChRCYXR0bGVTdGF0aWNJ",
+            "bmZvTGlzdBIzCgRsaXN0GAEgAygLMiUuTW9uTW9vc2UuU3RhdGljRGF0YS5C",
+            "YXR0bGVTdGF0aWNJbmZvIlUKGUJhdHRsZVN0YWdlU3RhdGljSW5mb0xpc3QS",
+            "OAoEbGlzdBgBIAMoCzIqLk1vbk1vb3NlLlN0YXRpY0RhdGEuQmF0dGxlU3Rh",
+            "Z2VTdGF0aWNJbmZvIkcKElRlYW1TdGF0aWNJbmZvTGlzdBIxCgRsaXN0GAEg",
+            "AygLMiMuTW9uTW9vc2UuU3RhdGljRGF0YS5UZWFtU3RhdGljSW5mbyJLChRH",
+            "cm91bmRTdGF0aWNJbmZvTGlzdBIzCgRsaXN0GAEgAygLMiUuTW9uTW9vc2Uu",
+            "U3RhdGljRGF0YS5Hcm91bmRTdGF0aWNJbmZvIk0KFVRlcnJhaW5TdGF0aWNJ",
+            "bmZvTGlzdBI0CgRsaXN0GAEgAygLMiYuTW9uTW9vc2UuU3RhdGljRGF0YS5U",
+            "ZXJyYWluU3RhdGljSW5mbyJfCh5Db2xsZWN0YWJsZUFjdG9yU3RhdGljSW5m",
+            "b0xpc3QSPQoEbGlzdBgBIAMoCzIvLk1vbk1vb3NlLlN0YXRpY0RhdGEuQ29s",
+            "bGVjdGFibGVBY3RvclN0YXRpY0luZm8iSwoURW50aXR5U3RhdGljSW5mb0xp",
+            "c3QSMwoEbGlzdBgBIAMoCzIlLk1vbk1vb3NlLlN0YXRpY0RhdGEuRW50aXR5",
+            "U3RhdGljSW5mbyJTChhQcmVmYWJQYXRoU3RhdGljSW5mb0xpc3QSNwoEbGlz",
+            "dBgBIAMoCzIpLk1vbk1vb3NlLlN0YXRpY0RhdGEuUHJlZmFiUGF0aFN0YXRp",
+            "Y0luZm8qtQEKD0VBY3RvckNsYXNzVHlwZRIYChRFQWN0b3JDbGFzc1R5cGVf",
+            "Tm9uZRAAEhsKF0VBY3RvckNsYXNzVHlwZV9XYXJyaW9yEAESGQoVRUFjdG9y",
+            "Q2xhc3NUeXBlX1ByaXN0EAISGgoWRUFjdG9yQ2xhc3NUeXBlX0FyY2hlchAD",
+            "EhgKFEVBY3RvckNsYXNzVHlwZV9NYWdlEAQSGgoWRUFjdG9yQ2xhc3NUeXBl",
+            "X1NoYW1hbhAFKvgBCg5FQXR0cmlidXRlVHlwZRIXChNFQXR0cmlidXRlVHlw",
+            "ZV9Ob25lEAASFQoRRUF0dHJpYnV0ZVR5cGVfSHAQARIZChVFQXR0cmlidXRl",
+            "VHlwZV9BdHRhY2sQAhIeChpFQXR0cmlidXRlVHlwZV9BdHRhY2tTcGVlZBAD",
+            "EiIKHkVBdHRyaWJ1dGVUeXBlX1BoeXNpY2FsRGVmZW5jZRAEEiEKHUVBdHRy",
+            "aWJ1dGVUeXBlX01hZ2ljYWxEZWZlbmNlEAUSHAoYRUF0dHJpYnV0ZVR5cGVf",
+            "TW92ZVNwZWVkEAYSFgoSRUF0dHJpYnV0ZVR5cGVfTWF4EAcqaQoQRUJhdHRs",
+            "ZVN0YWdlVHlwZRIZChVFQmF0dGxlU3RhZ2VUeXBlX05vbmUQABIbChdFQmF0",
+            "dGxlU3RhZ2VUeXBlX0JhdHRsZRABEh0KGUVCYXR0bGVTdGFnZVR5cGVfU2Nl",
+            "bmFyaW8QAio+CgxFVGVycmFpblR5cGUSFQoRRVRlcnJhaW5UeXBlX05vbmUQ",
+            "ABIXChNFVGVycmFpblR5cGVfTm9ybWFsEAEqOgoLRUVudGl0eVR5cGUSFAoQ",
+            "RUVudGl0eVR5cGVfTm9uZRAAEhUKEUVFbnRpdHlUeXBlX0FjdG9yEAEqhwIK",
+            "DUVQcmVmYWJQYXRoSWQSFgoSRVByZWZhYlBhdGhJZF9Ob25lEAASHQoZRVBy",
+            "ZWZhYlBhdGhJZF9Mb2JieVdpbmRvdxABEh8KG0VQcmVmYWJQYXRoSWRfTG9h",
+            "ZGluZ1dpbmRvdxACEiIKHkVQcmVmYWJQYXRoSWRfQmF0dGxlTWFpbldpbmRv",
+            "dxADEiUKIUVQcmVmYWJQYXRoSWRfQmF0dGxlUHJlcGFyZVdpbmRvdxAEEioK",
+            "JkVQcmVmYWJQYXRoSWRfQmF0dGxlUHJlcGFyZUNvdmVyV2luZG93EAUSJwoj",
+            "RVByZWZhYlBhdGhJZF9CYXR0bGVQcmVmYWJBY3Rvckl0ZW0QBmIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::MonMoose.StaticData.EActorClassType), typeof(global::MonMoose.StaticData.EAttributeType), typeof(global::MonMoose.StaticData.EBattleStageType), typeof(global::MonMoose.StaticData.ETerrainType), typeof(global::MonMoose.StaticData.EEntityType), typeof(global::MonMoose.StaticData.EPrefabPathId), }, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::MonMoose.StaticData.ActorStaticInfo), global::MonMoose.StaticData.ActorStaticInfo.Parser, new[]{ "Id", "Name", "Type", "MoveSpeed", "Attack", "Deffence", "PrefabPath", "Size" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::MonMoose.StaticData.AttributeStaticInfo), global::MonMoose.StaticData.AttributeStaticInfo.Parser, new[]{ "Id", "Name", "IsSignInversed", "IconPath" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::MonMoose.StaticData.BattleStaticInfo), global::MonMoose.StaticData.BattleStaticInfo.Parser, new[]{ "Id", "Name", "StageIdList" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::MonMoose.StaticData.BattleStageStaticInfo), global::MonMoose.StaticData.BattleStageStaticInfo.Parser, new[]{ "Id", "Name", "StageEntityList", "EmbattleList", "NeedPrepare", "GroundId" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::MonMoose.StaticData.BattleStageStaticInfo), global::MonMoose.StaticData.BattleStageStaticInfo.Parser, new[]{ "Id", "Name", "StageEntityList", "EmbattleList", "NeedPrepare", "GroundId", "ScenePath" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::MonMoose.StaticData.TeamStaticInfo), global::MonMoose.StaticData.TeamStaticInfo.Parser, new[]{ "Id", "Name" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::MonMoose.StaticData.GroundStaticInfo), global::MonMoose.StaticData.GroundStaticInfo.Parser, new[]{ "Id", "ScenePath", "LeftWidth", "RightWidth", "Height", "GridIdList" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::MonMoose.StaticData.TerrainStaticInfo), global::MonMoose.StaticData.TerrainStaticInfo.Parser, new[]{ "Id", "Name", "WalkSpeed" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::MonMoose.StaticData.CollectableActorStaticInfo), global::MonMoose.StaticData.CollectableActorStaticInfo.Parser, new[]{ "Id", "Name", "HeadIcon" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::MonMoose.StaticData.EntityStaticInfo), global::MonMoose.StaticData.EntityStaticInfo.Parser, new[]{ "Id", "EntityType", "SpecificId" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::MonMoose.StaticData.PrefabPathStaticInfo), global::MonMoose.StaticData.PrefabPathStaticInfo.Parser, new[]{ "Id", "Path" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::MonMoose.StaticData.StageEntityStaticInfo), global::MonMoose.StaticData.StageEntityStaticInfo.Parser, new[]{ "Uid", "Rid", "Level", "PosX", "PosY" }, null, null, null),
@@ -102,6 +111,7 @@ namespace MonMoose.StaticData {
             new pbr::GeneratedClrTypeInfo(typeof(global::MonMoose.StaticData.TeamStaticInfoList), global::MonMoose.StaticData.TeamStaticInfoList.Parser, new[]{ "List" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::MonMoose.StaticData.GroundStaticInfoList), global::MonMoose.StaticData.GroundStaticInfoList.Parser, new[]{ "List" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::MonMoose.StaticData.TerrainStaticInfoList), global::MonMoose.StaticData.TerrainStaticInfoList.Parser, new[]{ "List" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::MonMoose.StaticData.CollectableActorStaticInfoList), global::MonMoose.StaticData.CollectableActorStaticInfoList.Parser, new[]{ "List" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::MonMoose.StaticData.EntityStaticInfoList), global::MonMoose.StaticData.EntityStaticInfoList.Parser, new[]{ "List" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::MonMoose.StaticData.PrefabPathStaticInfoList), global::MonMoose.StaticData.PrefabPathStaticInfoList.Parser, new[]{ "List" }, null, null, null)
           }));
@@ -148,7 +158,12 @@ namespace MonMoose.StaticData {
 
   public enum EPrefabPathId {
     [pbr::OriginalName("EPrefabPathId_None")] None = 0,
-    [pbr::OriginalName("EPrefabPathId_BattlePrefabActorItem")] BattlePrefabActorItem = 1,
+    [pbr::OriginalName("EPrefabPathId_LobbyWindow")] LobbyWindow = 1,
+    [pbr::OriginalName("EPrefabPathId_LoadingWindow")] LoadingWindow = 2,
+    [pbr::OriginalName("EPrefabPathId_BattleMainWindow")] BattleMainWindow = 3,
+    [pbr::OriginalName("EPrefabPathId_BattlePrepareWindow")] BattlePrepareWindow = 4,
+    [pbr::OriginalName("EPrefabPathId_BattlePrepareCoverWindow")] BattlePrepareCoverWindow = 5,
+    [pbr::OriginalName("EPrefabPathId_BattlePrefabActorItem")] BattlePrefabActorItem = 6,
   }
 
   #endregion
@@ -864,6 +879,7 @@ namespace MonMoose.StaticData {
       embattleList_ = other.embattleList_.Clone();
       needPrepare_ = other.needPrepare_;
       groundId_ = other.groundId_;
+      scenePath_ = other.scenePath_;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -935,6 +951,17 @@ namespace MonMoose.StaticData {
       }
     }
 
+    /// <summary>Field number for the "ScenePath" field.</summary>
+    public const int ScenePathFieldNumber = 7;
+    private string scenePath_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string ScenePath {
+      get { return scenePath_; }
+      set {
+        scenePath_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as BattleStageStaticInfo);
@@ -954,6 +981,7 @@ namespace MonMoose.StaticData {
       if(!embattleList_.Equals(other.embattleList_)) return false;
       if (NeedPrepare != other.NeedPrepare) return false;
       if (GroundId != other.GroundId) return false;
+      if (ScenePath != other.ScenePath) return false;
       return true;
     }
 
@@ -966,6 +994,7 @@ namespace MonMoose.StaticData {
       hash ^= embattleList_.GetHashCode();
       if (NeedPrepare != false) hash ^= NeedPrepare.GetHashCode();
       if (GroundId != 0) hash ^= GroundId.GetHashCode();
+      if (ScenePath.Length != 0) hash ^= ScenePath.GetHashCode();
       return hash;
     }
 
@@ -994,6 +1023,10 @@ namespace MonMoose.StaticData {
         output.WriteRawTag(48);
         output.WriteInt32(GroundId);
       }
+      if (ScenePath.Length != 0) {
+        output.WriteRawTag(58);
+        output.WriteString(ScenePath);
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1012,6 +1045,9 @@ namespace MonMoose.StaticData {
       }
       if (GroundId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(GroundId);
+      }
+      if (ScenePath.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ScenePath);
       }
       return size;
     }
@@ -1034,6 +1070,9 @@ namespace MonMoose.StaticData {
       }
       if (other.GroundId != 0) {
         GroundId = other.GroundId;
+      }
+      if (other.ScenePath.Length != 0) {
+        ScenePath = other.ScenePath;
       }
     }
 
@@ -1067,6 +1106,10 @@ namespace MonMoose.StaticData {
           }
           case 48: {
             GroundId = input.ReadInt32();
+            break;
+          }
+          case 58: {
+            ScenePath = input.ReadString();
             break;
           }
         }
@@ -1643,6 +1686,179 @@ namespace MonMoose.StaticData {
 
   }
 
+  public sealed partial class CollectableActorStaticInfo : pb::IMessage<CollectableActorStaticInfo> {
+    private static readonly pb::MessageParser<CollectableActorStaticInfo> _parser = new pb::MessageParser<CollectableActorStaticInfo>(() => new CollectableActorStaticInfo());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<CollectableActorStaticInfo> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::MonMoose.StaticData.StructureReflection.Descriptor.MessageTypes[7]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public CollectableActorStaticInfo() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public CollectableActorStaticInfo(CollectableActorStaticInfo other) : this() {
+      id_ = other.id_;
+      name_ = other.name_;
+      headIcon_ = other.headIcon_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public CollectableActorStaticInfo Clone() {
+      return new CollectableActorStaticInfo(this);
+    }
+
+    /// <summary>Field number for the "Id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private int id_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Id {
+      get { return id_; }
+      set {
+        id_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Name" field.</summary>
+    public const int NameFieldNumber = 2;
+    private string name_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Name {
+      get { return name_; }
+      set {
+        name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "HeadIcon" field.</summary>
+    public const int HeadIconFieldNumber = 3;
+    private string headIcon_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string HeadIcon {
+      get { return headIcon_; }
+      set {
+        headIcon_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as CollectableActorStaticInfo);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(CollectableActorStaticInfo other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Id != other.Id) return false;
+      if (Name != other.Name) return false;
+      if (HeadIcon != other.HeadIcon) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Id != 0) hash ^= Id.GetHashCode();
+      if (Name.Length != 0) hash ^= Name.GetHashCode();
+      if (HeadIcon.Length != 0) hash ^= HeadIcon.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Id != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Id);
+      }
+      if (Name.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Name);
+      }
+      if (HeadIcon.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(HeadIcon);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Id != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Id);
+      }
+      if (Name.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
+      }
+      if (HeadIcon.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(HeadIcon);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(CollectableActorStaticInfo other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Id != 0) {
+        Id = other.Id;
+      }
+      if (other.Name.Length != 0) {
+        Name = other.Name;
+      }
+      if (other.HeadIcon.Length != 0) {
+        HeadIcon = other.HeadIcon;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            Id = input.ReadInt32();
+            break;
+          }
+          case 18: {
+            Name = input.ReadString();
+            break;
+          }
+          case 26: {
+            HeadIcon = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
   public sealed partial class EntityStaticInfo : pb::IMessage<EntityStaticInfo> {
     private static readonly pb::MessageParser<EntityStaticInfo> _parser = new pb::MessageParser<EntityStaticInfo>(() => new EntityStaticInfo());
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1650,7 +1866,7 @@ namespace MonMoose.StaticData {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::MonMoose.StaticData.StructureReflection.Descriptor.MessageTypes[7]; }
+      get { return global::MonMoose.StaticData.StructureReflection.Descriptor.MessageTypes[8]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1823,7 +2039,7 @@ namespace MonMoose.StaticData {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::MonMoose.StaticData.StructureReflection.Descriptor.MessageTypes[8]; }
+      get { return global::MonMoose.StaticData.StructureReflection.Descriptor.MessageTypes[9]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1968,7 +2184,7 @@ namespace MonMoose.StaticData {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::MonMoose.StaticData.StructureReflection.Descriptor.MessageTypes[9]; }
+      get { return global::MonMoose.StaticData.StructureReflection.Descriptor.MessageTypes[10]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2197,7 +2413,7 @@ namespace MonMoose.StaticData {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::MonMoose.StaticData.StructureReflection.Descriptor.MessageTypes[10]; }
+      get { return global::MonMoose.StaticData.StructureReflection.Descriptor.MessageTypes[11]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2370,7 +2586,7 @@ namespace MonMoose.StaticData {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::MonMoose.StaticData.StructureReflection.Descriptor.MessageTypes[11]; }
+      get { return global::MonMoose.StaticData.StructureReflection.Descriptor.MessageTypes[12]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2479,7 +2695,7 @@ namespace MonMoose.StaticData {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::MonMoose.StaticData.StructureReflection.Descriptor.MessageTypes[12]; }
+      get { return global::MonMoose.StaticData.StructureReflection.Descriptor.MessageTypes[13]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2588,7 +2804,7 @@ namespace MonMoose.StaticData {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::MonMoose.StaticData.StructureReflection.Descriptor.MessageTypes[13]; }
+      get { return global::MonMoose.StaticData.StructureReflection.Descriptor.MessageTypes[14]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2697,7 +2913,7 @@ namespace MonMoose.StaticData {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::MonMoose.StaticData.StructureReflection.Descriptor.MessageTypes[14]; }
+      get { return global::MonMoose.StaticData.StructureReflection.Descriptor.MessageTypes[15]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2806,7 +3022,7 @@ namespace MonMoose.StaticData {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::MonMoose.StaticData.StructureReflection.Descriptor.MessageTypes[15]; }
+      get { return global::MonMoose.StaticData.StructureReflection.Descriptor.MessageTypes[16]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2915,7 +3131,7 @@ namespace MonMoose.StaticData {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::MonMoose.StaticData.StructureReflection.Descriptor.MessageTypes[16]; }
+      get { return global::MonMoose.StaticData.StructureReflection.Descriptor.MessageTypes[17]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3024,7 +3240,7 @@ namespace MonMoose.StaticData {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::MonMoose.StaticData.StructureReflection.Descriptor.MessageTypes[17]; }
+      get { return global::MonMoose.StaticData.StructureReflection.Descriptor.MessageTypes[18]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3126,6 +3342,115 @@ namespace MonMoose.StaticData {
 
   }
 
+  public sealed partial class CollectableActorStaticInfoList : pb::IMessage<CollectableActorStaticInfoList> {
+    private static readonly pb::MessageParser<CollectableActorStaticInfoList> _parser = new pb::MessageParser<CollectableActorStaticInfoList>(() => new CollectableActorStaticInfoList());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<CollectableActorStaticInfoList> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::MonMoose.StaticData.StructureReflection.Descriptor.MessageTypes[19]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public CollectableActorStaticInfoList() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public CollectableActorStaticInfoList(CollectableActorStaticInfoList other) : this() {
+      list_ = other.list_.Clone();
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public CollectableActorStaticInfoList Clone() {
+      return new CollectableActorStaticInfoList(this);
+    }
+
+    /// <summary>Field number for the "list" field.</summary>
+    public const int ListFieldNumber = 1;
+    private static readonly pb::FieldCodec<global::MonMoose.StaticData.CollectableActorStaticInfo> _repeated_list_codec
+        = pb::FieldCodec.ForMessage(10, global::MonMoose.StaticData.CollectableActorStaticInfo.Parser);
+    private readonly pbc::RepeatedField<global::MonMoose.StaticData.CollectableActorStaticInfo> list_ = new pbc::RepeatedField<global::MonMoose.StaticData.CollectableActorStaticInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<global::MonMoose.StaticData.CollectableActorStaticInfo> List {
+      get { return list_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as CollectableActorStaticInfoList);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(CollectableActorStaticInfoList other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!list_.Equals(other.list_)) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= list_.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      list_.WriteTo(output, _repeated_list_codec);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      size += list_.CalculateSize(_repeated_list_codec);
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(CollectableActorStaticInfoList other) {
+      if (other == null) {
+        return;
+      }
+      list_.Add(other.list_);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 10: {
+            list_.AddEntriesFrom(input, _repeated_list_codec);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
   public sealed partial class EntityStaticInfoList : pb::IMessage<EntityStaticInfoList> {
     private static readonly pb::MessageParser<EntityStaticInfoList> _parser = new pb::MessageParser<EntityStaticInfoList>(() => new EntityStaticInfoList());
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3133,7 +3458,7 @@ namespace MonMoose.StaticData {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::MonMoose.StaticData.StructureReflection.Descriptor.MessageTypes[18]; }
+      get { return global::MonMoose.StaticData.StructureReflection.Descriptor.MessageTypes[20]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3242,7 +3567,7 @@ namespace MonMoose.StaticData {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::MonMoose.StaticData.StructureReflection.Descriptor.MessageTypes[19]; }
+      get { return global::MonMoose.StaticData.StructureReflection.Descriptor.MessageTypes[21]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

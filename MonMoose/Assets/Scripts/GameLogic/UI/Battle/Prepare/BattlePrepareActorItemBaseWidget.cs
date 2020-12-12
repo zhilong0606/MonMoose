@@ -1,14 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using MonMoose.Core;
+using MonMoose.StaticData;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace MonMoose.Logic.UI
+namespace MonMoose.GameLogic.UI
 {
     public class BattlePrepareActorItemBaseWidget : UIComponent
     {
-        private Text m_text;
+        private Image m_iconImage;
+        private Text m_nameText;
 
         protected int m_actorId;
 
@@ -20,18 +22,22 @@ namespace MonMoose.Logic.UI
         protected override void OnInit(object param)
         {
             base.OnInit(param);
-            m_text = GetInventory().GetComponent<Text>((int)EWidget.Text);
+            m_nameText = GetInventory().GetComponent<Text>((int)EWidget.NameText);
+            m_iconImage = GetInventory().GetComponent<Image>((int)EWidget.IconImage);
         }
 
         public void SetActor(int actorId)
         {
             m_actorId = actorId;
-            m_text.text = actorId.ToString();
+            CollectableActorStaticInfo staticInfo = StaticDataManager.instance.GetCollectableActor(actorId);
+            m_nameText.text = staticInfo.Name;
+            m_iconImage.sprite = ResourceManager.instance.GetSprite(staticInfo.HeadIcon);
         }
 
         private enum EWidget
         {
-            Text,
+            NameText,
+            IconImage,
         }
     }
 }

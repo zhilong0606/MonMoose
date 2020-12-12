@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using MonMoose.Core;
-using MonMoose.Logic;
+using MonMoose.GameLogic;
 using UnityEngine;
 
 namespace MonMoose.GameLogic.Battle

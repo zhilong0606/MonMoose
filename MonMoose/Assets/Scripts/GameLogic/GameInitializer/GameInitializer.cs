@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using MonMoose.Core;
 
-namespace MonMoose.Logic
+namespace MonMoose.GameLogic
 {
     public class GameInitializer : Initializer
     {

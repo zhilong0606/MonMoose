@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace MonMoose.Logic
+namespace MonMoose.GameLogic
 {
     public class InputHandlerBattleMain : InputHandler
     {

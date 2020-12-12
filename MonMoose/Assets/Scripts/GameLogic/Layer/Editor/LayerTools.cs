@@ -203,7 +203,7 @@ namespace MonMoose.Core
             stringBuilder.Remove(0, stringBuilder.Length);
             tabIndex = 0;
             Tab().Append("using System.Collections.Generic;\r\n\r\n");
-            Tab().Append("namespace MonMoose.Logic\r\n");
+            Tab().Append("namespace MonMoose.GameLogic\r\n");
             Tab().Append("{\r\n");
             tabIndex++;
             Tab().Append("public enum ELayerMaskType \r\n");

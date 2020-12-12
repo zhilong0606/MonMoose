@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using MonMoose.Core;
 using UnityEngine;
 
-namespace MonMoose.Logic.UI
+namespace MonMoose.GameLogic.UI
 {
     public class LoadingWindowContext : ClassPoolObj
     {

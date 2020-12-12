@@ -1,11 +1,11 @@
 ﻿using MonMoose.Battle;
 using MonMoose.Core;
-using MonMoose.Logic.UI;
+using MonMoose.GameLogic.UI;
 using MonMoose.StaticData;
 using State = MonMoose.Core.State;
 using StateContext = MonMoose.Core.StateContext;
 
-namespace MonMoose.Logic
+namespace MonMoose.GameLogic
 {
     public class LobbyState : State
     {

@@ -45,7 +45,12 @@ enum EEntityType
 enum EPrefabPathId
 {
 	EPrefabPathId_None = 0;
-	EPrefabPathId_BattlePrefabActorItem = 1;
+	EPrefabPathId_LobbyWindow = 1;
+	EPrefabPathId_LoadingWindow = 2;
+	EPrefabPathId_BattleMainWindow = 3;
+	EPrefabPathId_BattlePrepareWindow = 4;
+	EPrefabPathId_BattlePrepareCoverWindow = 5;
+	EPrefabPathId_BattlePrefabActorItem = 6;
 }
 
 message ActorStaticInfo
@@ -83,6 +88,7 @@ message BattleStageStaticInfo
 	repeated EmbattleStaticInfo EmbattleList = 4;
 	bool NeedPrepare = 5;
 	int32 GroundId = 6;
+	string ScenePath = 7;
 }
 
 message TeamStaticInfo
@@ -106,6 +112,13 @@ message TerrainStaticInfo
 	int32 Id = 1;
 	string Name = 2;
 	int32 WalkSpeed = 3;
+}
+
+message CollectableActorStaticInfo
+{
+	int32 Id = 1;
+	string Name = 2;
+	string HeadIcon = 3;
 }
 
 message EntityStaticInfo
@@ -170,6 +183,11 @@ message GroundStaticInfoList
 message TerrainStaticInfoList
 {
 	repeated TerrainStaticInfo list = 1;
+}
+
+message CollectableActorStaticInfoList
+{
+	repeated CollectableActorStaticInfo list = 1;
 }
 
 message EntityStaticInfoList

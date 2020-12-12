@@ -1,2 +1,7 @@
 
-51Exported/UI/Battle/Prefabs/BattlePrepareActorItem
+'#UI/Lobby/Prefabs/LobbyWindow.prefab
++'UI/Loading/Prefabs/LoadingWindow.prefab
+-)UI/Battle/Prefabs/BattleMainWindow.prefab
+0,UI/Battle/Prefabs/BattlePrepareWindow.prefab
+51UI/Battle/Prefabs/BattlePrepareCoverWindow.prefab
+3/UI/Battle/Prefabs/BattlePrepareActorItem.prefab

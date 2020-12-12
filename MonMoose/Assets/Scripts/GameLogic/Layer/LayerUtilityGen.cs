@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace MonMoose.Logic
+namespace MonMoose.GameLogic
 {
 	public enum ELayerMaskType 
 	{

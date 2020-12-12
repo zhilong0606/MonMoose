@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using MonMoose.Battle;
 using MonMoose.Core;
 using MonMoose.GameLogic.Battle;
-using MonMoose.Logic.UI;
+using MonMoose.GameLogic.UI;
 using MonMoose.StaticData;
 using UnityEngine;
 
-namespace MonMoose.Logic
+namespace MonMoose.GameLogic
 {
     public class BattleState : State
     {

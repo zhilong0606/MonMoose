@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace MonMoose.Logic
+namespace MonMoose.GameLogic
 {
     public class InputHandlerDefault : InputHandler
     {

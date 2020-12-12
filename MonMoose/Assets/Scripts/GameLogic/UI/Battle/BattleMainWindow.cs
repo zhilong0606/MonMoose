@@ -1,7 +1,7 @@
 ﻿using MonMoose.Core;
 using UnityEngine;
 
-namespace MonMoose.Logic.UI
+namespace MonMoose.GameLogic.UI
 {
     public class BattleMainWindow : UIWindow
     {
