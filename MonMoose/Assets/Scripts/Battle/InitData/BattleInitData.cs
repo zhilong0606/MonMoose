@@ -8,7 +8,7 @@ namespace MonMoose.Battle
     {
         public int id;
         public Action<int, string> actionOnDebug;
-        public Func<int, EntityView> funcOnGetView;
+        public Func<EBattleViewControllerType, BattleViewController> funcOnCreateCtrl;
         //public Action<byte[]> actionOnSendMsg;
         public IBattleEventListener eventListener;
         public FrameSyncRelay relay;

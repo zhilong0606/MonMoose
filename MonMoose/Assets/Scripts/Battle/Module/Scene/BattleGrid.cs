@@ -9,6 +9,7 @@ namespace MonMoose.Battle
         private Dcm32 m_size;
         private DcmVec2 m_stagePosition;
         private TerrainStaticInfo m_staticInfo;
+        private BattleGridControllerAbstract m_ctrl;
 
         private List<Entity> m_occupiedEntityList = new List<Entity>();
         
@@ -27,12 +28,20 @@ namespace MonMoose.Battle
             get { return m_size; }
         }
 
+        public BattleGridControllerAbstract ctrl
+        {
+            get { return m_ctrl; }
+        }
+
         public void Init(int id, GridPosition gridPosition, DcmVec2 stagePosition, Dcm32 size)
         {
             m_staticInfo = StaticDataManager.instance.GetTerrain(id);
             m_gridPosition = gridPosition;
             m_stagePosition = stagePosition;
             m_size = size;
+            m_ctrl = m_battleInstance.GetViewController(EBattleViewControllerType.Grid) as BattleGridControllerAbstract;
+            m_ctrl.Init(this);
+            m_ctrl.InitView();
         }
 
         public Dcm32 GetCost(Entity entity)

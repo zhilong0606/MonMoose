@@ -38,7 +38,7 @@
         {
             if (m_instance != null)
             {
-                m_instance.OnUninit();
+                m_instance.OnUnInit();
                 m_instance = null;
             }
         }
@@ -48,7 +48,7 @@
 
         }
 
-        protected virtual void OnUninit()
+        protected virtual void OnUnInit()
         {
 
         }

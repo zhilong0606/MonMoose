@@ -20,7 +20,7 @@ namespace MonMoose.Logic
                 task.actorItemWidget = actorItemWidget;
                 StartTask(task);
             }
-            
+
             BattleGridView gridView = go.GetComponent<BattleGridView>();
             if (gridView != null)
             {

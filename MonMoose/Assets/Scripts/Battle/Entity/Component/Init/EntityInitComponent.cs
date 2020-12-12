@@ -13,7 +13,7 @@ namespace MonMoose.Battle
         protected override void OnInit(EntityInitData entityInitData)
         {
             base.OnInit(entityInitData);
-            m_entity.view.CreateView();
+            m_entity.ctrl.InitView();
         }
     }
 }

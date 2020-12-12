@@ -35,7 +35,7 @@ namespace MonMoose.Battle
         public void SetForward(DcmVec2 forward)
         {
             m_forward = forward;
-            m_entity.view.SetForward(forward);
+            m_entity.ctrl.SetForward(forward);
         }
 
         public void SetPosition(GridPosition gridPosition, DcmVec2 offset, bool isTeleport)
@@ -58,7 +58,7 @@ namespace MonMoose.Battle
             }
             m_locateGrid = grid;
             m_offset = offset;
-            m_entity.view.SetPosition(m_locateGrid, m_offset, isTeleport);
+            m_entity.ctrl.SetPosition(m_locateGrid, m_offset, isTeleport);
         }
 
         public bool IsOccupyGridPosition(GridPosition gridPos)

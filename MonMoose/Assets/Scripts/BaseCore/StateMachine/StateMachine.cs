@@ -38,11 +38,11 @@ namespace MonMoose.Core
             }
         }
 
-        public void Uninit()
+        public void UnInit()
         {
             for (int i = 0; i < m_stateList.Count; ++i)
             {
-                m_stateList[i].Uninit();
+                m_stateList[i].UnInit();
             }
             m_stateList.Clear();
             m_curState = null;

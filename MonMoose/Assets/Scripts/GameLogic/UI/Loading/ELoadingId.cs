@@ -7,5 +7,6 @@ namespace MonMoose.Logic.UI
     public enum ELoadingId
     {
         BattleScene,
+        Stage,
     }
 }

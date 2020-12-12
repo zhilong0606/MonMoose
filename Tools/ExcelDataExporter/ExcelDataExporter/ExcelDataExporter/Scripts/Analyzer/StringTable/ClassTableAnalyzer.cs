@@ -85,7 +85,12 @@ namespace Analyzer
         {
             for (int i = m_dataStartRowIndex; i < m_table.rowCount; ++i)
             {
-                string idStr = m_table[i, m_idColmIndex].Trim();
+                string idStr = m_table[i, m_idColmIndex];
+                if (string.IsNullOrEmpty(idStr))
+                {
+                    continue;
+                }
+                idStr = idStr.Trim();
                 if (string.IsNullOrEmpty(idStr))
                 {
                     continue;

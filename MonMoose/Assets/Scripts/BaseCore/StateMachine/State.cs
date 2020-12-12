@@ -16,9 +16,9 @@
             OnInit();
         }
 
-        public void Uninit()
+        public void UnInit()
         {
-            OnUninit();
+            OnUnInit();
             m_isInited = false;
         }
 
@@ -44,7 +44,7 @@
         }
 
         protected virtual void OnInit() { }
-        protected virtual void OnUninit() { }
+        protected virtual void OnUnInit() { }
         protected virtual void OnEnter(StateContext context) { }
         protected virtual void OnExit() { }
         protected virtual void OnTick() { }

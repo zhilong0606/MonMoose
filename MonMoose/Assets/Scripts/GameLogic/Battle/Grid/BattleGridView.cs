@@ -1,38 +1,29 @@
 ﻿using MonMoose.Battle;
-using MonMoose.Logic;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 namespace MonMoose.GameLogic.Battle
 {
-    public class BattleGridView : MonoBehaviour, IPointerClickHandler, IPointerDownHandler, IPointerUpHandler, IPointerExitHandler
+    public class BattleGridView : MonoBehaviour
     {
-        [SerializeField] private GridPosition m_gridPosition;
+        private BattleGridConfig m_config;
+        private Material m_mat;
 
         public GridPosition gridPosition
         {
-            get { return m_gridPosition; }
-            set { m_gridPosition = value; }
+            get { return m_config.gridPosition; }
         }
 
-        public void OnPointerClick(PointerEventData eventData)
+        public void Init()
         {
-            InputManager.instance.HandleClick(eventData);
+            m_config = GetComponent<BattleGridConfig>();
+            m_mat = GetComponent<MeshRenderer>().sharedMaterial;
+            m_mat = new Material(m_mat);
+            GetComponent<MeshRenderer>().sharedMaterial = m_mat;
         }
 
-        public void OnPointerDown(PointerEventData eventData)
+        public void SetColor(Color c)
         {
-            InputManager.instance.HandleDown(eventData);
-        }
-
-        public void OnPointerUp(PointerEventData eventData)
-        {
-            InputManager.instance.HandleUp(eventData);
-        }
-
-        public void OnPointerExit(PointerEventData eventData)
-        {
-            InputManager.instance.HandleExit(eventData);
+            m_mat.color = c;
         }
     }
 }

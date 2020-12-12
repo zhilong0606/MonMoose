@@ -31,7 +31,7 @@ namespace MonMoose.Logic
             RegisterListener();
         }
 
-        protected override void OnUninit()
+        protected override void OnUnInit()
         {
             RemoveListener();
         }
@@ -42,7 +42,7 @@ namespace MonMoose.Logic
             if (battleStateContext != null)
             {
                 m_battleInitData = battleStateContext.battleInitData;
-                m_battleInitData.funcOnGetView = OnGetView;
+                m_battleInitData.funcOnCreateCtrl = OnCreateCtrl;
                 BattleManager.CreateInstance();
                 m_battleInstance = new BattleBase();
                 BattleManager.instance.SetBattleInstance(m_battleInstance);
@@ -76,13 +76,15 @@ namespace MonMoose.Logic
             EventManager.instance.UnregisterListener((int)EventID.Frame_Tick, OnFrameTick);
         }
 
-        private EntityView OnGetView(int id)
+        private BattleViewController OnCreateCtrl(EBattleViewControllerType type)
         {
-            EntityStaticInfo entityStaticInfo = StaticDataManager.instance.GetEntity(id);
-            switch (entityStaticInfo.EntityType)
+            string causer = "BattleState.OnCreateCtrl";
+            switch (type)
             {
-                case EEntityType.Actor:
-                    return m_battleInstance.FetchPoolObj<ActorView>(this);
+                case EBattleViewControllerType.Entity:
+                    return m_battleInstance.FetchPoolObj<EntityViewController>(causer);
+                case EBattleViewControllerType.Grid:
+                    return m_battleInstance.FetchPoolObj<BattleGridController>(causer);
             }
             return null;
         }

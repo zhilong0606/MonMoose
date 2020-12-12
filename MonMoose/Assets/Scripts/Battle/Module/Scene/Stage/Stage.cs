@@ -34,14 +34,24 @@ namespace MonMoose.Battle
                 grid.Init(m_groundStaticInfo.GridIdList[i], new GridPosition(gridPosX, gridPosY), new DcmVec2(stagePosX, stagePosY), gridSize);
                 m_gridList.Add(grid);
             }
-            for (int i = 0; i < m_staticInfo.EntityList.Count; ++i)
+            for (int i = 0; i < m_staticInfo.StageEntityList.Count; ++i)
             {
-                StageActorStaticInfo actorInfo = m_staticInfo.EntityList[i];
+                StageEntityStaticInfo actorInfo = m_staticInfo.StageEntityList[i];
                 EntityInitData initData = new EntityInitData();
                 initData.id = actorInfo.Rid;
                 initData.level = actorInfo.Level;
                 initData.pos = new GridPosition(actorInfo.PosX, actorInfo.PosY);
                 m_entityInitDataList.Add(new KeyValuePair<int, EntityInitData>(actorInfo.Uid, initData));
+            }
+
+            for (int i = 0; i < m_staticInfo.EmbattleList.Count; ++i)
+            {
+                EmbattleStaticInfo embattleInfo = m_staticInfo.EmbattleList[i];
+                BattleGrid grid = GetGrid(embattleInfo.PosX, embattleInfo.PosY);
+                if (grid != null)
+                {
+                    grid.ctrl.SetColor(1f, 0f, 0f);
+                }
             }
 
             List<StageState> stateList = new List<StageState>();

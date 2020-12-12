@@ -42,10 +42,13 @@ namespace MonMoose.GameLogic.Battle
                 return;
             }
             BattleManager.instance.SetSceneConfig(sceneConfig);
-            BattleGridView[] gridViews = sceneConfig.gridRoot.GetComponentsInChildren<BattleGridView>();
-            for (int i = 0; i < gridViews.Length; ++i)
+            BattleGridConfig[] configs = sceneConfig.gridRoot.GetComponentsInChildren<BattleGridConfig>();
+            for (int i = 0; i < configs.Length; ++i)
             {
-                BattleGridManager.instance.AddGridView(gridViews[i]);
+                GameObject go = configs[i].gameObject;
+                BattleGridView view = go.AddComponent<BattleGridView>();
+                view.Init();
+                BattleGridManager.instance.AddGridView(view);
             }
         }
 

@@ -14,6 +14,10 @@ public class Config
     [XmlElement]
     public User server = new User();
     [XmlElement]
+    public bool isDebugMode = false;
+    [XmlElement]
+    public bool needLogOut = true;
+    [XmlElement]
     public bool needGenerateStructure = true;
     [XmlElement]
     public bool needGenerateData = true;

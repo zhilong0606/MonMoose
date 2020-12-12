@@ -6,7 +6,7 @@ namespace MonMoose.Battle
     public abstract class Entity : BattleObj
     {
         protected int m_uid;
-        protected EntityView m_view;
+        protected EntityViewControllerAbstract m_ctrl;
         protected Team m_team;
         protected List<EntityComponent> m_componentList = new List<EntityComponent>();
 
@@ -15,9 +15,9 @@ namespace MonMoose.Battle
             get { return m_uid; }
         }
 
-        public EntityView view
+        public EntityViewControllerAbstract ctrl
         {
-            get { return m_view; }
+            get { return m_ctrl; }
         }
 
         public Team team
@@ -29,9 +29,14 @@ namespace MonMoose.Battle
         {
             m_uid = uid;
 
-            m_view = m_battleInstance.GetEntityView(initData.id);
-            m_view.SetEntity(this);
+            m_ctrl = m_battleInstance.GetViewController(EBattleViewControllerType.Entity) as EntityViewControllerAbstract;
+            m_ctrl.Init(this);
 
+            m_componentList.Add(m_battleInstance.FetchPoolObj<EntityInitComponent>(this));
+            m_componentList.Add(m_battleInstance.FetchPoolObj<ActorInfoComponent>(this));
+            m_componentList.Add(m_battleInstance.FetchPoolObj<MoveComponent>(this));
+            m_componentList.Add(m_battleInstance.FetchPoolObj<AnimationComponent>(this));
+            m_componentList.Add(m_battleInstance.FetchPoolObj<SkillComponent>(this));
             m_componentList.Add(m_battleInstance.FetchPoolObj<LocationComponent>(this));
             m_componentList.Add(m_battleInstance.FetchPoolObj<EntityPrepareComponent>(this));
             OnInitComponent();

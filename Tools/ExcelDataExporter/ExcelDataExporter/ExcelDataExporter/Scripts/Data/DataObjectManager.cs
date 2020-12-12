@@ -33,7 +33,7 @@ namespace Data
             }
             if (map.ContainsKey(id))
             {
-                Debug.LogError(StaticString.SameDataIdFormat, structureInfo.name, obj);
+                Debug.LogError(StaticString.SameDataIdFormat, structureInfo.name, id);
                 return;
             }
             map.Add(id, obj);

@@ -20,17 +20,17 @@ namespace MonMoose.GameLogic.Battle
                     DestroyImmediate(trans.gameObject);
                 }
             }
-            BattleGridView[,] views = new BattleGridView[m_width, m_height];
+            BattleGridConfig[,] configs = new BattleGridConfig[m_width, m_height];
             m_prefab.SetActive(true);
             for (int i = 0; i < m_width; ++i)
             {
                 for (int j = 0; j < m_height; ++j)
                 {
                     GameObject go = GameObject.Instantiate(m_prefab, transform);
-                    BattleGridView view = go.AddComponent<BattleGridView>();
-                    view.gridPosition = new GridPosition(i, j);
-                    view.transform.position = CalcPosition(i, j);
-                    views[i, j] = view;
+                    BattleGridConfig config = go.AddComponent<BattleGridConfig>();
+                    config.gridPosition = new GridPosition(i, j);
+                    config.transform.position = CalcPosition(i, j);
+                    configs[i, j] = config;
                 }
             }
             m_prefab.SetActive(false);

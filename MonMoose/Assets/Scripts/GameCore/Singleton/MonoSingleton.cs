@@ -71,7 +71,7 @@ namespace MonMoose.Core
         {
             if (m_instance != null)
             {
-                OnUninit();
+                OnUnInit();
                 m_instance = null;
             }
         }
@@ -81,7 +81,7 @@ namespace MonMoose.Core
 
         }
 
-        protected virtual void OnUninit()
+        protected virtual void OnUnInit()
         {
 
         }

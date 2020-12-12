@@ -133,7 +133,7 @@ public class LoadExcelProcessStep : ExportContextProcessStep
         if (cell != null)
         {
             string format = cell.CellStyle.GetDataFormatString();
-            if (format == "General")
+            if (format == "General" || format == "@")
             {
                 format = string.Empty;
             }

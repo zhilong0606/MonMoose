@@ -79,9 +79,16 @@ message BattleStageStaticInfo
 {
 	int32 Id = 1;
 	string Name = 2;
-	repeated StageActorStaticInfo EntityList = 3;
-	bool NeedPrepare = 4;
-	int32 GroundId = 5;
+	repeated StageEntityStaticInfo StageEntityList = 3;
+	repeated EmbattleStaticInfo EmbattleList = 4;
+	bool NeedPrepare = 5;
+	int32 GroundId = 6;
+}
+
+message TeamStaticInfo
+{
+	int32 Id = 1;
+	string Name = 2;
 }
 
 message GroundStaticInfo
@@ -114,13 +121,20 @@ message PrefabPathStaticInfo
 	string Path = 2;
 }
 
-message StageActorStaticInfo
+message StageEntityStaticInfo
 {
 	int32 Uid = 1;
 	int32 Rid = 2;
 	int32 Level = 3;
 	int32 PosX = 4;
 	int32 PosY = 5;
+}
+
+message EmbattleStaticInfo
+{
+	int32 TeamId = 1;
+	int32 PosX = 2;
+	int32 PosY = 3;
 }
 
 message ActorStaticInfoList
@@ -141,6 +155,11 @@ message BattleStaticInfoList
 message BattleStageStaticInfoList
 {
 	repeated BattleStageStaticInfo list = 1;
+}
+
+message TeamStaticInfoList
+{
+	repeated TeamStaticInfo list = 1;
 }
 
 message GroundStaticInfoList

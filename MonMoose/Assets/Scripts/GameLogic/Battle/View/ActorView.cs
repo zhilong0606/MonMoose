@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace MonMoose.GameLogic.Battle
 {
-    public class ActorView : EntityObjView
+    public class ActorView : EntityView
     {
         private GameObject m_rotateRoot;
 
@@ -14,19 +14,18 @@ namespace MonMoose.GameLogic.Battle
             get { return m_rotateRoot; }
         }
 
-        protected override string prefabPath
+        protected override void OnInit()
         {
-            get
-            {
-                ActorInfoComponent infoComponent = m_entity.GetComponent<ActorInfoComponent>();
-                return infoComponent.actorStaticInfo.PrefabPath;
-            }
+            m_rotateRoot = transform.Find("Rotate").gameObject;
         }
 
-        public override void CreateView()
+        protected override void OnTick(float deltaTime)
         {
-            base.CreateView();
-            m_rotateRoot = m_obj.transform.Find("Rotate").gameObject;
+            if (posLerp.isStart)
+            {
+                posLerp.Tick(deltaTime);
+                transform.position = posLerp.curValue;
+            }
         }
     }
 }

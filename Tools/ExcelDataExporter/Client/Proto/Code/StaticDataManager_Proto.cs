@@ -11,6 +11,7 @@ namespace MonMoose.StaticData
 			m_loaderMap.Add("Attribute", new ProtoDataLoader<AttributeStaticInfo, AttributeStaticInfoList>(m_attributeList, AttributeStaticInfoList.Parser.ParseFrom, (fromList, toList) => { toList.Clear(); toList.AddRange(fromList.List); }));
 			m_loaderMap.Add("Battle", new ProtoDataLoader<BattleStaticInfo, BattleStaticInfoList>(m_battleList, BattleStaticInfoList.Parser.ParseFrom, (fromList, toList) => { toList.Clear(); toList.AddRange(fromList.List); }));
 			m_loaderMap.Add("BattleStage", new ProtoDataLoader<BattleStageStaticInfo, BattleStageStaticInfoList>(m_battleStageList, BattleStageStaticInfoList.Parser.ParseFrom, (fromList, toList) => { toList.Clear(); toList.AddRange(fromList.List); }));
+			m_loaderMap.Add("Team", new ProtoDataLoader<TeamStaticInfo, TeamStaticInfoList>(m_teamList, TeamStaticInfoList.Parser.ParseFrom, (fromList, toList) => { toList.Clear(); toList.AddRange(fromList.List); }));
 			m_loaderMap.Add("Ground", new ProtoDataLoader<GroundStaticInfo, GroundStaticInfoList>(m_groundList, GroundStaticInfoList.Parser.ParseFrom, (fromList, toList) => { toList.Clear(); toList.AddRange(fromList.List); }));
 			m_loaderMap.Add("Terrain", new ProtoDataLoader<TerrainStaticInfo, TerrainStaticInfoList>(m_terrainList, TerrainStaticInfoList.Parser.ParseFrom, (fromList, toList) => { toList.Clear(); toList.AddRange(fromList.List); }));
 			m_loaderMap.Add("Entity", new ProtoDataLoader<EntityStaticInfo, EntityStaticInfoList>(m_entityList, EntityStaticInfoList.Parser.ParseFrom, (fromList, toList) => { toList.Clear(); toList.AddRange(fromList.List); }));
@@ -36,6 +37,11 @@ namespace MonMoose.StaticData
 		private List<BattleStageStaticInfo> m_battleStageList = new List<BattleStageStaticInfo>();
 		public BattleStageStaticInfo GetBattleStage(int id) { foreach (var info in m_battleStageList) if (info.Id == id) return info; return null; }
 		public IEnumerable<BattleStageStaticInfo> battleStageList { get { return m_battleStageList; } }
+
+		//Team
+		private List<TeamStaticInfo> m_teamList = new List<TeamStaticInfo>();
+		public TeamStaticInfo GetTeam(int id) { foreach (var info in m_teamList) if (info.Id == id) return info; return null; }
+		public IEnumerable<TeamStaticInfo> teamList { get { return m_teamList; } }
 
 		//Ground
 		private List<GroundStaticInfo> m_groundList = new List<GroundStaticInfo>();

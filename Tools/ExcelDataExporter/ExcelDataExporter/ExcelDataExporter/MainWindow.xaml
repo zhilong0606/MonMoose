@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ExcelDataExporter"
         mc:Ignorable="d"
-        Title="导表工具" Width="960" Height="540" MinWidth="960" MinHeight="540">
+        Title="导表工具" Width="960" Height="540" MinWidth="960" MinHeight="580">
     <Grid Margin="10,10,10,10" >
         <Grid.RowDefinitions>
             <RowDefinition Height="22"/>
@@ -13,6 +13,7 @@
             <RowDefinition Height="1"/>
             <RowDefinition Height="280"/>
             <RowDefinition Height="1"/>
+            <RowDefinition Height="40"/>
             <RowDefinition Height="40"/>
             <RowDefinition Height="1"/>
             <RowDefinition Height="1*"/>
@@ -146,14 +147,29 @@
                 <ColumnDefinition Width="1*"/>
                 <ColumnDefinition Width="80"/>
             </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" Content="导出设置：" Height="28" Padding="0" Margin="0,0,0,0" VerticalContentAlignment="Center" VerticalAlignment="Center"/>
+            <CheckBox Grid.Column="1" x:Name="debugCheckBox" Content="调试" Height="28"  Padding="0" Margin="0,0,0,0" VerticalContentAlignment="Center" VerticalAlignment="Center" Checked="debugCheckBox_Checked" Unchecked="debugCheckBox_Unchecked"/>
+            <CheckBox Grid.Column="2" x:Name="logoutCheckBox" Content="详细日志" Height="28"  Padding="0" Margin="0,0,0,0" VerticalContentAlignment="Center" VerticalAlignment="Center" Checked="logoutCheckBox_Checked" Unchecked="logoutCheckBox_Unchecked"/>
+        </Grid>
+        <Grid Grid.Row="6">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="80"/>
+            </Grid.ColumnDefinitions>
             <Label Grid.Column="0" Content="导出过程选择：" Height="28" Padding="0" Margin="0,0,0,0" VerticalContentAlignment="Center" VerticalAlignment="Center"/>
             <CheckBox Grid.Column="1" x:Name="generateStructureCheckBox" Content="导出结构" Height="28"  Padding="0" Margin="0,0,0,0" VerticalContentAlignment="Center" VerticalAlignment="Center"/>
             <CheckBox Grid.Column="2" x:Name="generateDataCheckBox" Content="导出数据" Height="28"  Padding="0" Margin="0,0,0,0" VerticalContentAlignment="Center" VerticalAlignment="Center"/>
             <CheckBox Grid.Column="3" x:Name="generateLoaderCheckBox" Content="导出代码" Height="28"  Padding="0" Margin="0,0,0,0" VerticalContentAlignment="Center" VerticalAlignment="Center"/>
             <Button Grid.Column="7" x:Name="exportBySelectProcessButton" Content="导出" Height="28" Padding="0" Margin="0,0,0,0" VerticalAlignment="Center" Click="exportBySelectProcessButton_Click"/>
         </Grid>
-        <GridSplitter Grid.Row="6" Margin="0,0,0,0" HorizontalAlignment="Stretch"/>
-        <Grid Grid.Row="7">
+        <GridSplitter Grid.Row="7" Margin="0,0,0,0" HorizontalAlignment="Stretch"/>
+        <Grid Grid.Row="8">
             <Grid.RowDefinitions>
                 <RowDefinition Height="30"/>
                 <RowDefinition Height="1*"/>

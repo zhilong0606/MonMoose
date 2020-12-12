@@ -76,13 +76,13 @@ namespace MonMoose.Battle
         private void StartMove()
         {
             m_isStart = true;
-            m_entity.view.StartMove();
+            m_entity.ctrl.StartMove();
         }
 
         private void StopMove()
         {
             m_isStart = false;
-            m_entity.view.StopMove();
+            m_entity.ctrl.StopMove();
         }
     }
 }

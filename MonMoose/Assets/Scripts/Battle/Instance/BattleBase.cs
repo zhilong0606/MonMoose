@@ -12,7 +12,7 @@ namespace MonMoose.Battle
         private List<Team> m_teamList = new List<Team>();
         private List<Entity> m_entityList = new List<Entity>();
         private List<Player> m_playerList = new List<Player>();
-        private Func<int, EntityView> m_funcOnGetView;
+        private Func<EBattleViewControllerType, BattleViewController> m_funcOnCreateCtrl;
         private IBattleEventListener m_eventListener;
 
         private DebugModule m_debugModule = new DebugModule();
@@ -44,7 +44,7 @@ namespace MonMoose.Battle
         public void Init(BattleInitData battleInitData)
         {
             m_eventListener = battleInitData.eventListener;
-            m_funcOnGetView = battleInitData.funcOnGetView;
+            m_funcOnCreateCtrl = battleInitData.funcOnCreateCtrl;
             InitModuleList(battleInitData);
             InitTeamList(battleInitData);
             m_tickProcess.Init(FrameSyncDefine.TimeInterval);
@@ -100,14 +100,13 @@ namespace MonMoose.Battle
             m_entityList.Add(entity);
         }
 
-        public EntityView GetEntityView(int entityId)
+        public BattleViewController GetViewController(EBattleViewControllerType type)
         {
-            if (m_funcOnGetView != null)
+            if (m_funcOnCreateCtrl != null)
             {
-                return m_funcOnGetView(entityId);
+                return m_funcOnCreateCtrl(type);
             }
-
-            return FetchPoolObj<EmptyView>(this);
+            return null;
         }
 
         public Player GetPlayer(int playerId)
@@ -222,10 +221,6 @@ namespace MonMoose.Battle
         public void Tick(float deltaTime)
         {
             m_tickProcess.Tick(deltaTime);
-            for (int i = 0; i < m_entityList.Count; ++i)
-            {
-                m_entityList[i].view.Tick(deltaTime);
-            }
         }
 
         private void OnFrameTick(TickProcess process)

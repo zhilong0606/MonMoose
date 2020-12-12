@@ -86,7 +86,7 @@ namespace MonMoose.Core
         {
             if (m_isInitialized)
             {
-                OnUninit();
+                OnUnInit();
                 UnregisterListener();
                 for (int i = m_componentList.Count - 1; i >= 0; --i)
                 {
@@ -280,7 +280,7 @@ namespace MonMoose.Core
         {
         }
 
-        protected virtual void OnUninit()
+        protected virtual void OnUnInit()
         {
         }
 

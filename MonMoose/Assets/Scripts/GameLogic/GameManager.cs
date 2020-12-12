@@ -31,10 +31,10 @@ namespace MonMoose.Logic
             m_stateMachine.ChangeState((int)EGameState.GameInit);
         }
 
-        protected override void OnUninit()
+        protected override void OnUnInit()
         {
             RemoveListener();
-            base.OnUninit();
+            base.OnUnInit();
         }
 
         private void RegisterListener()

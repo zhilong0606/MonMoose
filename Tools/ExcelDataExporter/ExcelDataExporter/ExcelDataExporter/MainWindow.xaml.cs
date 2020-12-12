@@ -118,6 +118,9 @@ namespace ExcelDataExporter
             serverExportTeetCheckBox.IsChecked = Config.instance.server.exportMode == EExportModeType.Teet;
             serverExportJsonCheckBox.IsChecked = Config.instance.server.exportMode == EExportModeType.Json;
             
+            debugCheckBox.IsChecked = Config.instance.isDebugMode;
+            logoutCheckBox.IsChecked = Config.instance.needLogOut;
+
             generateStructureCheckBox.IsChecked = Config.instance.needGenerateStructure;
             generateDataCheckBox.IsChecked = Config.instance.needGenerateData;
             generateLoaderCheckBox.IsChecked = Config.instance.needGenerateLoader;
@@ -224,7 +227,28 @@ namespace ExcelDataExporter
 
             ProgramProcessStep m_program = new ProgramProcessStep(context);
             m_program.actionOnProcessMsgSend = OnProcessMsgSend;
-            m_program.Execute();
+            if (Config.instance.isDebugMode)
+            {
+                m_program.Execute();
+            }
+            else
+            {
+                try
+                {
+                    m_program.Execute();
+                }
+                catch (Exception ex)
+                {
+                    if (Config.instance.needLogOut)
+                    {
+                        MessageBox.Show(ex.Message + "\n" + ex.StackTrace);
+                    }
+                    else
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+            }
         }
 
         private void UpdateContext(UserContext ctx, string name, Config.User user)
@@ -266,6 +290,34 @@ namespace ExcelDataExporter
         private void serverExportCheckBox_Unchecked(object sender, RoutedEventArgs e)
         {
             Config.instance.server.needExport = false;
+
+            Config.SaveConfig();
+        }
+
+        private void debugCheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            Config.instance.isDebugMode = true;
+
+            Config.SaveConfig();
+        }
+
+        private void debugCheckBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            Config.instance.isDebugMode = false;
+
+            Config.SaveConfig();
+        }
+
+        private void logoutCheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            Config.instance.needLogOut = true;
+
+            Config.SaveConfig();
+        }
+
+        private void logoutCheckBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            Config.instance.needLogOut = false;
 
             Config.SaveConfig();
         }
