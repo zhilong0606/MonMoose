@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 namespace MonMoose.GameLogic.Battle
 {
@@ -9,13 +11,6 @@ namespace MonMoose.GameLogic.Battle
         public GameObject gridRoot
         {
             get { return m_gridRoot; }
-        }
-
-        [SerializeField] private GameObject m_actorRoot;
-
-        public GameObject actorRoot
-        {
-            get { return m_actorRoot; }
         }
     }
 }

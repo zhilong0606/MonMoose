@@ -82,13 +82,14 @@ namespace MonMoose.StaticData {
             "dGxlU3RhZ2VUeXBlX0JhdHRsZRABEh0KGUVCYXR0bGVTdGFnZVR5cGVfU2Nl",
             "bmFyaW8QAio+CgxFVGVycmFpblR5cGUSFQoRRVRlcnJhaW5UeXBlX05vbmUQ",
             "ABIXChNFVGVycmFpblR5cGVfTm9ybWFsEAEqOgoLRUVudGl0eVR5cGUSFAoQ",
-            "RUVudGl0eVR5cGVfTm9uZRAAEhUKEUVFbnRpdHlUeXBlX0FjdG9yEAEqhwIK",
+            "RUVudGl0eVR5cGVfTm9uZRAAEhUKEUVFbnRpdHlUeXBlX0FjdG9yEAEqpwIK",
             "DUVQcmVmYWJQYXRoSWQSFgoSRVByZWZhYlBhdGhJZF9Ob25lEAASHQoZRVBy",
             "ZWZhYlBhdGhJZF9Mb2JieVdpbmRvdxABEh8KG0VQcmVmYWJQYXRoSWRfTG9h",
             "ZGluZ1dpbmRvdxACEiIKHkVQcmVmYWJQYXRoSWRfQmF0dGxlTWFpbldpbmRv",
             "dxADEiUKIUVQcmVmYWJQYXRoSWRfQmF0dGxlUHJlcGFyZVdpbmRvdxAEEioK",
             "JkVQcmVmYWJQYXRoSWRfQmF0dGxlUHJlcGFyZUNvdmVyV2luZG93EAUSJwoj",
-            "RVByZWZhYlBhdGhJZF9CYXR0bGVQcmVmYWJBY3Rvckl0ZW0QBmIGcHJvdG8z"));
+            "RVByZWZhYlBhdGhJZF9CYXR0bGVQcmVmYWJBY3Rvckl0ZW0QBhIeChpFUHJl",
+            "ZmFiUGF0aElkX0JhdHRsZUNhbWVyYRAHYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::MonMoose.StaticData.EActorClassType), typeof(global::MonMoose.StaticData.EAttributeType), typeof(global::MonMoose.StaticData.EBattleStageType), typeof(global::MonMoose.StaticData.ETerrainType), typeof(global::MonMoose.StaticData.EEntityType), typeof(global::MonMoose.StaticData.EPrefabPathId), }, new pbr::GeneratedClrTypeInfo[] {
@@ -164,6 +165,7 @@ namespace MonMoose.StaticData {
     [pbr::OriginalName("EPrefabPathId_BattlePrepareWindow")] BattlePrepareWindow = 4,
     [pbr::OriginalName("EPrefabPathId_BattlePrepareCoverWindow")] BattlePrepareCoverWindow = 5,
     [pbr::OriginalName("EPrefabPathId_BattlePrefabActorItem")] BattlePrefabActorItem = 6,
+    [pbr::OriginalName("EPrefabPathId_BattleCamera")] BattleCamera = 7,
   }
 
   #endregion

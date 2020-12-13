@@ -13,6 +13,7 @@ namespace MonMoose.Battle
 
         protected override void OnEnter(StateContext context)
         {
+            m_battleInstance.eventListener.StagePrepare();
             base.OnEnter(context);
         }
     }

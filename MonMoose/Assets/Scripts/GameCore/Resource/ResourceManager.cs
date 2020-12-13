@@ -42,7 +42,7 @@ namespace MonMoose.Core
             return null;
         }
 
-        private Object Load(string path)
+        public Object Load(string path)
         {
             Object res = LoadFormAssetBundle(path);
             if (res == null)

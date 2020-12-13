@@ -41,6 +41,7 @@ namespace MonMoose.GameLogic
             if (view == null)
             {
                 GameObjectPoolManager.instance.Release(actorObj);
+                BattlePrepareActorManager.instance.RemoveActor(actorId);
                 EventManager.instance.Broadcast((int)EventID.BattlePrepare_ActorItemShow, actorId);
             }
             else

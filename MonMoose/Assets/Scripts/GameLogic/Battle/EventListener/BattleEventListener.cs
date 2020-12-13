@@ -9,7 +9,7 @@ namespace MonMoose.GameLogic.Battle
     {
         public void StagePrepare()
         {
-            BattleManager.instance.StagePrepare();
+            BattleShortCut.ChangeBattleSubState(EBattleState.Prepare);
         }
     }
 }

@@ -8,8 +8,6 @@ namespace MonMoose.GameLogic.Battle
 {
     public class BattleTouchSystem : Singleton<BattleTouchSystem>
     {
-
-
         public BattleGridView GetGridView(Vector2 screenPos)
         {
             Ray ray = Camera.main.ScreenPointToRay(screenPos);

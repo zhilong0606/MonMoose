@@ -22,8 +22,7 @@ namespace MonMoose.GameLogic.UI
             m_pool.Init(OnActorItemInit);
             Button startBtn = GetInventory().GetComponent<Button>((int)EWidget.StartBtn);
             startBtn.onClick.AddListener(OnStartBtnClicked);
-
-            int hostTeamId = BattleManager.instance.hostTeamId;
+            
             foreach (CollectableActorStaticInfo actorInfo in StaticDataManager.instance.collectableActorList)
             {
                 BattlePrepareActorItemWidget widget = m_pool.FetchComponent<BattlePrepareActorItemWidget>();

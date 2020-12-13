@@ -12,7 +12,7 @@ namespace MonMoose.GameLogic.Battle
 
         public void SetPosition(BattleGrid grid, DcmVec2 offset, bool isTeleport)
         {
-            Vector3 worldPos = BattleGridManager.instance.GetWorldPosition(grid.gridPosition, offset);
+            Vector3 worldPos = BattleShortCut.GetGridWorldPosition(grid.gridPosition, offset);
             if (isTeleport)
             {
                 transform.position = worldPos;

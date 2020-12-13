@@ -8,5 +8,6 @@ namespace MonMoose.Battle
         None,
         Entity,
         Grid,
+        Stage,
     }
 }

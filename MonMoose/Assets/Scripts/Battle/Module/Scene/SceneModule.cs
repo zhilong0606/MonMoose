@@ -37,6 +37,7 @@ namespace MonMoose.Battle
         {
             m_curStageIndex = 0;
             GetCurStage().Enter();
+            GetCurStage().Start();
         }
 
         public Stage GetCurStage()

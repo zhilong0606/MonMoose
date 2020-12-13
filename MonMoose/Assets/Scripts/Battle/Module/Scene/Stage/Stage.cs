@@ -13,7 +13,13 @@ namespace MonMoose.Battle
         private int m_gridWidth;
         private int m_gridHeight;
         private DcmVec2 m_stageSize;
+        private StageControllerAbstract m_ctrl;
         private StateMachine m_stateMachine = new StateMachine();
+
+        public BattleStageStaticInfo staticInfo
+        {
+            get { return m_staticInfo; }
+        }
 
         private List<KeyValuePair<int, EntityInitData>> m_entityInitDataList = new List<KeyValuePair<int, EntityInitData>>();
 
@@ -23,6 +29,27 @@ namespace MonMoose.Battle
             m_groundStaticInfo = StaticDataManager.instance.GetGround(m_staticInfo.GroundId);
             m_gridWidth = m_groundStaticInfo.LeftWidth + m_groundStaticInfo.RightWidth;
             m_gridHeight = m_groundStaticInfo.Height;
+            m_ctrl = m_battleInstance.GetViewController(EBattleViewControllerType.Stage) as StageControllerAbstract;
+            m_ctrl.Init(this);
+            m_ctrl.StartLoadScene(OnLoadEnd);
+
+            List<StageState> stateList = new List<StageState>();
+            stateList.Add(new StageStateNone());
+            stateList.Add(new StageStatePrepare());
+            stateList.Add(new StageStateRunning());
+            stateList.Add(new StageStateExiting());
+            stateList.Add(new StageStateExit());
+            for (int i = 0; i < stateList.Count; ++i)
+            {
+                StageState state = stateList[i];
+                state.Init(this, m_battleInstance);
+                m_stateMachine.Init(stateList);
+            }
+            m_stateMachine.ChangeState((int)EStageState.None);
+        }
+
+        private void OnLoadEnd()
+        {
             for (int i = 0; i < m_groundStaticInfo.GridIdList.Count; ++i)
             {
                 BattleGrid grid = m_battleInstance.FetchPoolObj<BattleGrid>(this);
@@ -53,20 +80,6 @@ namespace MonMoose.Battle
                     grid.ctrl.SetColor(1f, 0f, 0f);
                 }
             }
-
-            List<StageState> stateList = new List<StageState>();
-            stateList.Add(new StageStateNone());
-            stateList.Add(new StageStatePrepare());
-            stateList.Add(new StageStateRunning());
-            stateList.Add(new StageStateExiting());
-            stateList.Add(new StageStateExit());
-            for (int i = 0; i < stateList.Count; ++i)
-            {
-                StageState state = stateList[i];
-                state.Init(this, m_battleInstance);
-                m_stateMachine.Init(stateList);
-            }
-            m_stateMachine.ChangeState((int)EStageState.None);
         }
 
         public BattleGrid GetGrid(int x, int y)
@@ -87,13 +100,11 @@ namespace MonMoose.Battle
             {
                 BattleFactory.CreateEntity(m_battleInstance, m_entityInitDataList[i].Value, m_entityInitDataList[i].Key);
             }
-            //m_battleInstance.sender.SendFrameSyncReady();
-            m_stateMachine.ChangeState((int)EStageState.Running);
         }
 
         public void Start()
         {
-
+            m_stateMachine.ChangeState((int)EStageState.Prepare);
         }
 
         public void Tick()

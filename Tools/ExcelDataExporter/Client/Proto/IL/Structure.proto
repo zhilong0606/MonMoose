@@ -51,6 +51,7 @@ enum EPrefabPathId
 	EPrefabPathId_BattlePrepareWindow = 4;
 	EPrefabPathId_BattlePrepareCoverWindow = 5;
 	EPrefabPathId_BattlePrefabActorItem = 6;
+	EPrefabPathId_BattleCamera = 7;
 }
 
 message ActorStaticInfo

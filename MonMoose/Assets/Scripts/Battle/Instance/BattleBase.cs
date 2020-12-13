@@ -8,7 +8,6 @@ namespace MonMoose.Battle
 {
     public class BattleBase
     {
-
         private List<Team> m_teamList = new List<Team>();
         private List<Entity> m_entityList = new List<Entity>();
         private List<Player> m_playerList = new List<Player>();

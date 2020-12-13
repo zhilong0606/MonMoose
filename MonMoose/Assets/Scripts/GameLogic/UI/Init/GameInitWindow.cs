@@ -30,7 +30,7 @@ namespace MonMoose.GameLogic.UI
             m_initializer.StartAsync(OnInitCompleted);
         }
 
-        private void OnInitCompleted()
+        private void OnInitCompleted(Initializer initializer)
         {
             m_continueBtn.interactable = true;
             m_continueText.SetActiveSafely(true);

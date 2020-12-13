@@ -11,7 +11,7 @@ namespace MonMoose.GameLogic.Battle
 
         public override void InitView()
         {
-            m_view = BattleGridManager.instance.GetGridView(m_owner.gridPosition);
+            m_view = BattleShortCut.GetGridView(m_owner.gridPosition);
         }
 
         public override void UnInitView()

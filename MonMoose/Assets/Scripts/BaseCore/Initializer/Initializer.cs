@@ -8,7 +8,7 @@ namespace MonMoose.Core
     {
         private List<Initializer> m_subList = new List<Initializer>();
         private IEnumerator m_process;
-        private Action m_actionOnFinish;
+        private Action<Initializer> m_actionOnFinish;
         private EInitialType m_initialType = EInitialType.Async;
         private EState m_state = EState.None;
         private int m_curStep;
@@ -64,13 +64,13 @@ namespace MonMoose.Core
             StartInternal(EInitialType.Sync, null);
         }
 
-        public void StartAsync(Action actionOnFinish)
+        public void StartAsync(Action<Initializer> actionOnFinish)
         {
             m_isRoot = true;
             StartInternal(EInitialType.Async, actionOnFinish);
         }
 
-        private bool StartInternal(EInitialType initialType, Action actionOnFinish)
+        private bool StartInternal(EInitialType initialType, Action<Initializer> actionOnFinish)
         {
             if (m_state == EState.Process)
             {
@@ -124,7 +124,7 @@ namespace MonMoose.Core
             }
             if (m_actionOnFinish != null)
             {
-                m_actionOnFinish();
+                m_actionOnFinish(this);
             }
             m_state = EState.Finish;
         }

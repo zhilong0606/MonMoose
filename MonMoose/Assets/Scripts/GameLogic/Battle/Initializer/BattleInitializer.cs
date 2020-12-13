@@ -10,46 +10,21 @@ namespace MonMoose.GameLogic.Battle
 {
     public class BattleInitializer : Initializer
     {
-        string battleSceneName = "BattleScene";
+        private BattleScene m_battleScene = new BattleScene();
+
+        public BattleScene battleScene
+        {
+            get { return m_battleScene; }
+        }
+
         protected override IEnumerator OnProcess()
         {
-            SceneManager.LoadSceneAsync(battleSceneName);
-            while (!SceneManager.GetSceneByName(battleSceneName).isLoaded)
-            {
-                yield return null;
-            }
-            
-            BattleTouchSystem.CreateInstance();
             yield return null;
-            InitScene();
+            BattleTouchSystem.CreateInstance();
+            battleScene.Init();
             yield return null;
             InitUI();
             yield return null;
-        }
-
-        private void InitScene()
-        {
-            GameObject sceneConfigRoot = GameObject.Find("SceneConfigRoot");
-            if (sceneConfigRoot == null)
-            {
-                Debug.LogError("sceneConfigRoot");
-                return;
-            }
-            BattleSceneConfig sceneConfig = sceneConfigRoot.GetComponent<BattleSceneConfig>();
-            if (sceneConfig == null)
-            {
-                Debug.LogError("sceneConfig");
-                return;
-            }
-            BattleManager.instance.SetSceneConfig(sceneConfig);
-            BattleGridConfig[] configs = sceneConfig.gridRoot.GetComponentsInChildren<BattleGridConfig>();
-            for (int i = 0; i < configs.Length; ++i)
-            {
-                GameObject go = configs[i].gameObject;
-                BattleGridView view = go.AddComponent<BattleGridView>();
-                view.Init();
-                BattleGridManager.instance.AddGridView(view);
-            }
         }
 
         private void InitUI()

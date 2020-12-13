@@ -12,7 +12,9 @@ namespace MonMoose.GameLogic
     public class BattleState : State
     {
         private BattleBase m_battleInstance;
-        private StateMachine m_battleStateMachine = new StateMachine();
+        private Stage m_curStage;
+        private BattleScene m_battleScene;
+        private StateMachine m_stateMachine = new StateMachine();
         private BattleInitData m_battleInitData;
         private FrameSyncSender m_sender;
         private bool m_isLoadEnd;
@@ -22,9 +24,24 @@ namespace MonMoose.GameLogic
             get { return (int)EGameState.Battle; }
         }
 
+        public BattleScene battleScene
+        {
+            get { return m_battleScene; }
+        }
+
+        public Stage curStage
+        {
+            get { return m_curStage; }
+        }
+
+        public StateMachine stateMachine
+        {
+            get { return m_stateMachine; }
+        }
+
         protected override void OnInit()
         {
-            m_battleStateMachine.Init(
+            m_stateMachine.Init(
                 new BattlePrepareState(),
                 new BattleMainState()
             );
@@ -43,17 +60,18 @@ namespace MonMoose.GameLogic
             {
                 m_battleInitData = battleStateContext.battleInitData;
                 m_battleInitData.funcOnCreateCtrl = OnCreateCtrl;
-                BattleManager.CreateInstance();
                 m_battleInstance = new BattleBase();
-                BattleManager.instance.SetBattleInstance(m_battleInstance);
                 m_battleInitData.relay = new FrameSyncRelayLocal();
+                m_battleInitData.eventListener = new BattleEventListener();
                 BattleInitializer initializer = new BattleInitializer();
                 initializer.StartAsync(OnLoadEnd);
             }
         }
 
-        private void OnLoadEnd()
+        private void OnLoadEnd(Initializer initializer)
         {
+            BattleInitializer battleInitializer = initializer as BattleInitializer;
+            m_battleScene = battleInitializer.battleScene;
             m_isLoadEnd = true;
             m_battleInstance.Init(m_battleInitData);
             m_battleInstance.Start();
@@ -63,17 +81,27 @@ namespace MonMoose.GameLogic
 
         protected override void OnExit()
         {
-            BattleManager.DestroyInstance();
         }
 
         private void RegisterListener()
         {
             EventManager.instance.RegisterListener((int)EventID.Frame_Tick, OnFrameTick);
+            EventManager.instance.RegisterListener<Stage>((int)EventID.BattleStage_SetActive, OnStageActive);
         }
 
         private void RemoveListener()
         {
             EventManager.instance.UnregisterListener((int)EventID.Frame_Tick, OnFrameTick);
+            EventManager.instance.UnregisterListener<Stage>((int)EventID.BattleStage_SetActive, OnStageActive);
+        }
+
+        private void OnStageActive(Stage stage)
+        {
+            if (m_curStage != null)
+            {
+                Debug.LogError("Error: Cur Stage is Already Exist.");
+            }
+            m_curStage = stage;
         }
 
         private BattleViewController OnCreateCtrl(EBattleViewControllerType type)
@@ -85,6 +113,8 @@ namespace MonMoose.GameLogic
                     return m_battleInstance.FetchPoolObj<EntityViewController>(causer);
                 case EBattleViewControllerType.Grid:
                     return m_battleInstance.FetchPoolObj<BattleGridController>(causer);
+                case EBattleViewControllerType.Stage:
+                    return m_battleInstance.FetchPoolObj<BattleStageController>(causer);
             }
             return null;
         }
