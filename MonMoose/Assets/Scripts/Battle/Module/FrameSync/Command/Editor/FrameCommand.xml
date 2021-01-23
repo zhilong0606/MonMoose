@@ -1,17 +1,29 @@
 <Root>
-	<FrameSyncReady>
-	</FrameSyncReady>
+	<FrameSyncReady></FrameSyncReady>
 	<MoveToGrid>
 		<int>entityId</int>
 		<int>gridX</int>
 		<int>gridY</int>
 	</MoveToGrid>
-	<StagePrepare>
-	</StagePrepare>
-	<StageStart>
-	</StageStart>
-	<StopMove>
-	</StopMove>
-	<StepEnd>
-	</StepEnd>
+	<FormationExchange>
+		<int>posX1</int>
+		<int>posY1</int>
+		<int>posX2</int>
+		<int>posY2</int>
+	</FormationExchange>
+	<FormationRetreat>
+		<int>posX</int>
+		<int>posY</int>
+	</FormationRetreat>
+	<FormationtEmbattle>
+		<int>actorId</int>
+		<int>posX</int>
+		<int>posY</int>
+	</FormationtEmbattle>
+	<FormationEnd></FormationEnd>
+	<StageStart></StageStart>
+	<StagePrepare></StagePrepare>
+	<StageEnd></StageEnd>
+	<StopMove></StopMove>
+	<StepEnd></StepEnd>
 </Root>

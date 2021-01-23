@@ -10,6 +10,7 @@ namespace MonMoose.GameLogic.Battle
     {
         private GameObject m_actorRoot;
         private GameObject m_cameraRoot;
+        private Camera m_camera;
         private List<BattleGridView> m_gridList = new List<BattleGridView>();
 
         public GameObject actorRoot
@@ -23,6 +24,7 @@ namespace MonMoose.GameLogic.Battle
             Object.DontDestroyOnLoad(m_actorRoot);
             GameObject prefab = ResourceManager.instance.GetPrefab(StaticDataShortCut.GetPrefabPath(StaticData.EPrefabPathId.BattleCamera));
             m_cameraRoot = GameObject.Instantiate(prefab);
+            m_camera = m_cameraRoot.GetComponentInChildren<Camera>();
             Object.DontDestroyOnLoad(m_cameraRoot);
         }
 
@@ -52,6 +54,18 @@ namespace MonMoose.GameLogic.Battle
                 return gridView.transform.position + new Vector3((float)offset.x, 0f, (float)offset.y);
             }
             return Vector3.zero;
+        }
+
+        public BattleGridView GetGridViewByScreenPosition(Vector2 screenPos)
+        {
+            Ray ray = m_camera.ScreenPointToRay(screenPos);
+            BattleGridView gridView = null;
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit, LayerUtility.GetLayerMask(ELayerMaskType.Grid)))
+            {
+                gridView = hit.transform.GetComponent<BattleGridView>();
+            }
+            return gridView;
         }
     }
 }

@@ -20,7 +20,6 @@ namespace MonMoose.GameLogic.Battle
         protected override IEnumerator OnProcess()
         {
             yield return null;
-            BattleTouchSystem.CreateInstance();
             battleScene.Init();
             yield return null;
             InitUI();

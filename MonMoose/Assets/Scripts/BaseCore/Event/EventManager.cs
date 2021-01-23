@@ -71,48 +71,48 @@ namespace MonMoose.Core
             }
         }
 
-        public void UnregisterListener(int eventId, Action action)
+        public void UnRegisterListener(int eventId, Action action)
         {
             var eventGroup = GetEventGroup<EventGroup>(eventId);
             if (eventGroup != null)
             {
-                eventGroup.Unregister(action);
+                eventGroup.UnRegister(action);
             }
         }
 
-        public void UnregisterListener<T0>(int eventId, Action<T0> action)
+        public void UnRegisterListener<T0>(int eventId, Action<T0> action)
         {
             var eventGroup = GetEventGroup<EventGroup<T0>>(eventId);
             if (eventGroup != null)
             {
-                eventGroup.Unregister(action);
+                eventGroup.UnRegister(action);
             }
         }
 
-        public void UnregisterListener<T0, T1>(int eventId, Action<T0, T1> action)
+        public void UnRegisterListener<T0, T1>(int eventId, Action<T0, T1> action)
         {
             var eventGroup = GetEventGroup<EventGroup<T0, T1>>(eventId);
             if (eventGroup != null)
             {
-                eventGroup.Unregister(action);
+                eventGroup.UnRegister(action);
             }
         }
 
-        public void UnregisterListener<T0, T1, T2>(int eventId, Action<T0, T1, T2> action)
+        public void UnRegisterListener<T0, T1, T2>(int eventId, Action<T0, T1, T2> action)
         {
             var eventGroup = GetEventGroup<EventGroup<T0, T1, T2>>(eventId);
             if (eventGroup != null)
             {
-                eventGroup.Unregister(action);
+                eventGroup.UnRegister(action);
             }
         }
 
-        public void UnregisterListener<T0, T1, T2, T3>(int eventId, Action<T0, T1, T2, T3> action)
+        public void UnRegisterListener<T0, T1, T2, T3>(int eventId, Action<T0, T1, T2, T3> action)
         {
             var eventGroup = GetEventGroup<EventGroup<T0, T1, T2, T3>>(eventId);
             if (eventGroup != null)
             {
-                eventGroup.Unregister(action);
+                eventGroup.UnRegister(action);
             }
         }
 

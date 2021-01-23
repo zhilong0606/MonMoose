@@ -39,19 +39,15 @@ namespace MonMoose.GameLogic
         {
             m_isDraging = false;
             m_dragActorItemWidget.SetActiveSafely(false);
-            BattleGridView view = BattleTouchSystem.instance.GetGridView(eventData.position);
-            if (view == null)
+            BattleGridView view = BattleShortCut.GetGridViewByScreenPosition(eventData.position);
+            if(view != null && view.canEmbattle)
             {
-                actorItemWidget.SetActiveSafely(true);
+                actorItemWidget.SetActiveSafely(false);
+                BattleShortCut.frameSyncSender.SendFormationtEmbattle(actorItemWidget.actorId, view.gridPosition.x, view.gridPosition.y);
             }
             else
             {
-                actorItemWidget.SetActiveSafely(false);
-                ActorStaticInfo entityInfo = StaticDataManager.instance.GetActor(actorItemWidget.actorId);
-                GameObject go = GameObjectPoolManager.instance.Fetch(entityInfo.PrefabPath);
-                go.transform.position = view.transform.position;
-                BattlePrepareActorManager.instance.AddActor(actorItemWidget.actorId, go, view.gridPosition);
-                EventManager.instance.Broadcast((int)EventID.BattlePrepare_ActorItemHide, actorItemWidget.actorId);
+                actorItemWidget.SetActiveSafely(true);
             }
             End();
         }

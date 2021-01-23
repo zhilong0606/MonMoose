@@ -13,6 +13,23 @@ namespace MonMoose.GameLogic.UI
             GetInventory().AddComponent<BattlePrepareBottomWidget>((int)EWidget.Bottom, true);
         }
 
+        protected override void RegisterListener()
+        {
+            base.RegisterListener();
+            EventManager.instance.RegisterListener((int)EventID.BattlePrepare_Finish, OnPreareFinished);
+        }
+
+        protected override void UnRegisterListener()
+        {
+            base.UnRegisterListener();
+            EventManager.instance.UnRegisterListener((int)EventID.BattlePrepare_Finish, OnPreareFinished);
+        }
+
+        private void OnPreareFinished()
+        {
+            SetActive(false);
+        }
+
         private enum EWidget
         {
             Bottom,

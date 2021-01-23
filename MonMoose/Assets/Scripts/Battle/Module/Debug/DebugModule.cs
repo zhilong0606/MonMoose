@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using MonMoose.Core;
 
 namespace MonMoose.Battle
 {
@@ -14,6 +15,7 @@ namespace MonMoose.Battle
             m_actionOnDebug = initData.actionOnDebug;
         }
 
+        [ShortCutMethod(false)]
         public void Log(int level, string str)
         {
             if (m_actionOnDebug != null)

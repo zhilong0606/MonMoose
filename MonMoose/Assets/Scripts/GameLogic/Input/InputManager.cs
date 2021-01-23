@@ -22,7 +22,7 @@ namespace MonMoose.GameLogic
             m_curHandler = handler;
         }
 
-        public void UnregisterHandler(InputHandler handler)
+        public void UnRegisterHandler(InputHandler handler)
         {
             if (m_curHandler == handler)
             {

@@ -35,9 +35,9 @@ namespace MonMoose.Core
             m_eventOnTick.Register(action);
         }
 
-        public void UnregisterListener(Action<TickProcess> action)
+        public void UnRegisterListener(Action<TickProcess> action)
         {
-            m_eventOnTick.Unregister(action);
+            m_eventOnTick.UnRegister(action);
         }
 
         public bool ContainsAction(Action<TickProcess> action)

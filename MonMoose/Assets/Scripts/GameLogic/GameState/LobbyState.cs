@@ -22,7 +22,7 @@ namespace MonMoose.GameLogic
 
         protected override void OnExit()
         {
-            EventManager.instance.UnregisterListener<int>((int)EventID.BattleStart_StartRequest, OnStartRequestByBtnClick);
+            EventManager.instance.UnRegisterListener<int>((int)EventID.BattleStart_StartRequest, OnStartRequestByBtnClick);
             UIWindowManager.instance.DestroyAllWindow();
         }
 

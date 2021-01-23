@@ -77,7 +77,7 @@ namespace MonMoose.Battle
                 BattleGrid grid = GetGrid(embattleInfo.PosX, embattleInfo.PosY);
                 if (grid != null)
                 {
-                    grid.ctrl.SetColor(1f, 0f, 0f);
+                    grid.ctrl.SetCanEmbattle(true);
                 }
             }
         }

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using MonMoose.Core;
 using MonMoose.StaticData;
 
 namespace MonMoose.Battle
@@ -69,6 +70,11 @@ namespace MonMoose.Battle
                 }
             }
             return true;
+        }
+
+        public Entity GetExchangeEntity()
+        {
+            return m_occupiedEntityList.GetValueSafely(0);
         }
 
         public bool TryGetOffset(BattleGrid grid, DcmVec2 offset, out DcmVec2 targetOffset)

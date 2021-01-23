@@ -6,7 +6,8 @@ using UnityEngine;
 
 namespace MonMoose.Battle
 {
-    public class BattleBase
+    [ShortCutClass]
+    public partial class BattleBase
     {
         private List<Team> m_teamList = new List<Team>();
         private List<Entity> m_entityList = new List<Entity>();
@@ -14,7 +15,9 @@ namespace MonMoose.Battle
         private Func<EBattleViewControllerType, BattleViewController> m_funcOnCreateCtrl;
         private IBattleEventListener m_eventListener;
 
+        [ShortCutField(false)]
         private DebugModule m_debugModule = new DebugModule();
+        [ShortCutField(false)]
         private ObjIdModule m_objIdModule = new ObjIdModule();
 
         private SceneModule m_sceneModule = new SceneModule();

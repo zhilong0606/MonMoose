@@ -24,6 +24,7 @@ namespace MonMoose.Battle
             {
                 m_curFrameCut = m_battleInstance.FetchPoolObj<FrameCut>(this);
                 m_curFrameCut.frameIndex = m_frameIndex;
+                m_frameCutList.Add(m_curFrameCut);
             }
             m_curFrameCut.AddCommand(playerId, cmd);
             m_relay.Send(m_curFrameCut);

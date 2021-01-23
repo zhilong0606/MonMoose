@@ -87,7 +87,7 @@ namespace MonMoose.Core
             if (m_isInitialized)
             {
                 OnUnInit();
-                UnregisterListener();
+                UnRegisterListener();
                 for (int i = m_componentList.Count - 1; i >= 0; --i)
                 {
                     m_componentList[i].UnInit();
@@ -288,7 +288,7 @@ namespace MonMoose.Core
         {
         }
 
-        protected virtual void UnregisterListener()
+        protected virtual void UnRegisterListener()
         {
         }
 

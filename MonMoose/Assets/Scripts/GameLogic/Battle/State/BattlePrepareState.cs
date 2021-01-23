@@ -24,15 +24,14 @@ namespace MonMoose.GameLogic.Battle
 
         protected override void OnExit()
         {
-            EventManager.instance.UnregisterListener((int)EventID.BattlePrepare_Finish, OnPrepareFinished);
-            InputManager.instance.UnregisterHandler(m_inputHandler);
+            EventManager.instance.UnRegisterListener((int)EventID.BattlePrepare_Finish, OnPrepareFinished);
+            InputManager.instance.UnRegisterHandler(m_inputHandler);
             BattlePrepareActorManager.DestroyInstance();
         }
 
         private void OnPrepareFinished()
         {
             //for(int i=0;i<BattlePrepareActorManager.instance.)
-            m_stateMachine.ChangeState((int)EBattleState.Main);
         }
     }
 }

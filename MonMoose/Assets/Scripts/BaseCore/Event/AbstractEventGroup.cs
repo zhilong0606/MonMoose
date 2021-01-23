@@ -39,7 +39,7 @@ namespace MonMoose.Core
             }
         }
 
-        protected void Unregister(Delegate d)
+        protected void UnRegister(Delegate d)
         {
             if (d == null)
             {

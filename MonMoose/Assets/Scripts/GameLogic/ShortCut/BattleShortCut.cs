@@ -23,6 +23,16 @@ namespace MonMoose.GameLogic
             get { BattleState state = battleState; if (state != null) return state.battleScene; return null; }
         }
 
+        public static BattleBase battleInstance
+        {
+            get { BattleState state = battleState; if (state != null) return state.battleInstance; return null; }
+        }
+
+        public static FrameSyncSender frameSyncSender
+        {
+            get { BattleBase battle = battleInstance; if (battle != null) return battle.sender; return null; }
+        }
+
         public static GameObject actorRoot
         {
             get { BattleScene scene = battleScene; if (scene != null) return scene.actorRoot; return null; }
@@ -36,6 +46,11 @@ namespace MonMoose.GameLogic
         public static BattleGridView GetGridView(GridPosition gridPos)
         {
             BattleScene scene = battleScene; if (scene != null) return scene.GetGridView(gridPos); return null;
+        }
+
+        public static BattleGridView GetGridViewByScreenPosition(Vector2 screenPos)
+        {
+            BattleScene scene = battleScene; if (scene != null) return scene.GetGridViewByScreenPosition(screenPos); return null;
         }
 
         public static Vector3 GetGridWorldPosition(GridPosition gridPos, DcmVec2 offset)

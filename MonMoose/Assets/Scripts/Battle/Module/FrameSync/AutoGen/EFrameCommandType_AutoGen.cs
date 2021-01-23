@@ -4,8 +4,13 @@ namespace MonMoose.Battle
     {
         FrameSyncReady,
         MoveToGrid,
-        StagePrepare,
+        FormationExchange,
+        FormationRetreat,
+        FormationtEmbattle,
+        FormationEnd,
         StageStart,
+        StagePrepare,
+        StageEnd,
         StopMove,
         StepEnd,
 

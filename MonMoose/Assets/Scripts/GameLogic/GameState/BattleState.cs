@@ -29,6 +29,11 @@ namespace MonMoose.GameLogic
             get { return m_battleScene; }
         }
 
+        public BattleBase battleInstance
+        {
+            get { return m_battleInstance; }
+        }
+
         public Stage curStage
         {
             get { return m_curStage; }
@@ -91,8 +96,8 @@ namespace MonMoose.GameLogic
 
         private void RemoveListener()
         {
-            EventManager.instance.UnregisterListener((int)EventID.Frame_Tick, OnFrameTick);
-            EventManager.instance.UnregisterListener<Stage>((int)EventID.BattleStage_SetActive, OnStageActive);
+            EventManager.instance.UnRegisterListener((int)EventID.Frame_Tick, OnFrameTick);
+            EventManager.instance.UnRegisterListener<Stage>((int)EventID.BattleStage_SetActive, OnStageActive);
         }
 
         private void OnStageActive(Stage stage)

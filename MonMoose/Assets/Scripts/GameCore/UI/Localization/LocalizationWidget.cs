@@ -39,7 +39,7 @@ namespace MonMoose.Core
 
         protected virtual void OnDestroy()
         {
-            //SettingManager.instance.UnregisterListener(ESettingKey.Language, OnSettingLanguageChanged);
+            //SettingManager.instance.UnRegisterListener(ESettingKey.Language, OnSettingLanguageChanged);
         }
 
         private void OnSettingLanguageChanged()

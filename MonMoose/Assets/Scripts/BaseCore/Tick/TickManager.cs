@@ -14,9 +14,9 @@ namespace MonMoose.Core
             RegisterGlobalTick(0, action);
         }
 
-        public void UnregisterGlobalTick(Action<float> action)
+        public void UnRegisterGlobalTick(Action<float> action)
         {
-            UnregisterGlobalTick(0, action);
+            UnRegisterGlobalTick(0, action);
         }
 
         public void RegisterGlobalTick(int id, Action<float> action)
@@ -35,7 +35,7 @@ namespace MonMoose.Core
             }
         }
 
-        public void UnregisterGlobalTick(int id, Action<float> action)
+        public void UnRegisterGlobalTick(int id, Action<float> action)
         {
             List<Action<float>> list;
             if (m_globalTickListMap.TryGetValue(id, out list))
@@ -65,12 +65,12 @@ namespace MonMoose.Core
             }
         }
 
-        public void UnregisterTickProcess(int id, Action<TickProcess> action)
+        public void UnRegisterTickProcess(int id, Action<TickProcess> action)
         {
             TickProcess process = GetTickProcess(id);
             if (process != null)
             {
-                process.UnregisterListener(action);
+                process.UnRegisterListener(action);
             }
         }
 

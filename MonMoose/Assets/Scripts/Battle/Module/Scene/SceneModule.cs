@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using MonMoose.Core;
 using MonMoose.StaticData;
 using UnityEngine;
 
@@ -40,6 +41,7 @@ namespace MonMoose.Battle
             GetCurStage().Start();
         }
 
+        [ShortCutMethod(true)]
         public Stage GetCurStage()
         {
             if (m_curStageIndex >= 0 && m_curStageIndex < m_stageList.Count)
@@ -49,6 +51,7 @@ namespace MonMoose.Battle
             return null;
         }
 
+        [ShortCutMethod(true)]
         public BattleGrid GetGrid(int x, int y)
         {
             Stage curStage = GetCurStage();
@@ -59,6 +62,7 @@ namespace MonMoose.Battle
             return null;
         }
 
+        [ShortCutMethod(true)]
         public BattleGrid GetGrid(GridPosition gridPos)
         {
             return GetGrid(gridPos.x, gridPos.y);

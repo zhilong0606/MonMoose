@@ -27,5 +27,15 @@ namespace MonMoose.GameLogic.Battle
             }
             m_view.SetColor(new Color(r, g, b));
         }
+
+        public override void SetCanEmbattle(bool flag)
+        {
+            if (m_view == null)
+            {
+
+                return;
+            }
+            m_view.SetCanEmbattle(flag);
+        }
     }
 }

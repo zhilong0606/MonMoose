@@ -8,10 +8,16 @@ namespace MonMoose.GameLogic.Battle
     {
         private BattleGridConfig m_config;
         private Material m_mat;
+        private bool m_canEmbattle;
 
         public GridPosition gridPosition
         {
             get { return m_config.gridPosition; }
+        }
+
+        public bool canEmbattle
+        {
+            get { return m_canEmbattle; }
         }
 
         public void Init()
@@ -26,6 +32,13 @@ namespace MonMoose.GameLogic.Battle
         {
             m_mat.color = c;
         }
+
+        public void SetCanEmbattle(bool flag)
+        {
+            m_canEmbattle = flag;
+            m_mat.color = Color.red;
+        }
+
         public void OnPointerClick(PointerEventData eventData)
         {
             InputManager.instance.HandleClick(eventData);

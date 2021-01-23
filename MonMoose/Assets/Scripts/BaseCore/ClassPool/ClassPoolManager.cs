@@ -39,7 +39,7 @@ namespace MonMoose.Core
             pool.actionOnFetch += action;
         }
 
-        public void UnregisterOnFetch(Type type, ClassPool.DelegateObject action)
+        public void UnRegisterOnFetch(Type type, ClassPool.DelegateObject action)
         {
             ClassPool pool = GetPool(type);
             pool.actionOnFetch -= action;
@@ -51,7 +51,7 @@ namespace MonMoose.Core
             pool.actionOnRelease += action;
         }
 
-        public void UnregisterOnRelease(Type type, ClassPool.DelegateObject action)
+        public void UnRegisterOnRelease(Type type, ClassPool.DelegateObject action)
         {
             ClassPool pool = GetPool(type);
             pool.actionOnRelease -= action;

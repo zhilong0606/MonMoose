@@ -14,9 +14,9 @@ namespace MonMoose.Core
             Register(d as Delegate);
         }
 
-        public void Unregister(Action<T0, T1, T2> d)
+        public void UnRegister(Action<T0, T1, T2> d)
         {
-            Unregister(d as Delegate);
+            UnRegister(d as Delegate);
         }
 
         public void Broadcast(T0 arg0, T1 arg1, T2 arg2)

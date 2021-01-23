@@ -120,7 +120,7 @@ namespace MonMoose.Core
             OnFinish();
             if (NeedRegisterTick)
             {
-                TickManager.instance.UnregisterGlobalTick(Tick);
+                TickManager.instance.UnRegisterGlobalTick(Tick);
             }
             if (m_actionOnFinish != null)
             {

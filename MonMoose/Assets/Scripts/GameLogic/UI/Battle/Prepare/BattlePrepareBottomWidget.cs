@@ -45,11 +45,11 @@ namespace MonMoose.GameLogic.UI
             EventManager.instance.RegisterListener<int>((int)EventID.BattlePrepare_ActorItemHide, OnActorItemHide);
         }
 
-        protected override void UnregisterListener()
+        protected override void UnRegisterListener()
         {
-            base.UnregisterListener();
-            EventManager.instance.UnregisterListener<int>((int)EventID.BattlePrepare_ActorItemShow, OnActorItemShow);
-            EventManager.instance.UnregisterListener<int>((int)EventID.BattlePrepare_ActorItemHide, OnActorItemHide);
+            base.UnRegisterListener();
+            EventManager.instance.UnRegisterListener<int>((int)EventID.BattlePrepare_ActorItemShow, OnActorItemShow);
+            EventManager.instance.UnRegisterListener<int>((int)EventID.BattlePrepare_ActorItemHide, OnActorItemHide);
         }
 
         private void OnActorItemShow(int actorId)
@@ -79,7 +79,7 @@ namespace MonMoose.GameLogic.UI
 
         private void OnStartBtnClicked()
         {
-            EventManager.instance.Broadcast((int)EventID.BattlePrepare_Finish);
+            BattleShortCut.frameSyncSender.SendFormationEnd();
         }
 
         private enum EWidget

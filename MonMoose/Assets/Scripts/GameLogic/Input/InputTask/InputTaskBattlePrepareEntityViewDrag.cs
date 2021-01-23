@@ -37,19 +37,20 @@ namespace MonMoose.GameLogic
         {
             m_isDraging = false;
             m_dragActorItemWidget.SetActiveSafely(false);
-            BattleGridView view = BattleTouchSystem.instance.GetGridView(eventData.position);
-            if (view == null)
+            BattleGridView view = BattleShortCut.GetGridViewByScreenPosition(eventData.position);
+            if (view != null && view.canEmbattle)
             {
-                GameObjectPoolManager.instance.Release(actorObj);
-                BattlePrepareActorManager.instance.RemoveActor(actorId);
-                EventManager.instance.Broadcast((int)EventID.BattlePrepare_ActorItemShow, actorId);
-            }
-            else
-            {
+                //BattleShortCut.frameSyncSender.SendFormationExchange(view.gridPosition.x, view.gridPosition.y);
                 actorObj.SetActive(true);
                 actorObj.transform.position = view.transform.position;
                 BattlePrepareActorManager.instance.RemoveActor(actorId);
                 BattlePrepareActorManager.instance.AddActor(actorId, actorObj, view.gridPosition);
+            }
+            else
+            {
+                GameObjectPoolManager.instance.Release(actorObj);
+                BattlePrepareActorManager.instance.RemoveActor(actorId);
+                EventManager.instance.Broadcast((int)EventID.BattlePrepare_ActorItemShow, actorId);
             }
             End();
         }
