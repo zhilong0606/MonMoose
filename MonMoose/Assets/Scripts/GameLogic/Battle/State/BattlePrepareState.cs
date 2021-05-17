@@ -12,7 +12,7 @@ namespace MonMoose.GameLogic.Battle
 
         public override int stateIndex
         {
-            get { return (int)EBattleState.Prepare; }
+            get { return (int)EBattleStageState.Prepare; }
         }
 
         protected override void OnEnter(StateContext context)
@@ -31,7 +31,7 @@ namespace MonMoose.GameLogic.Battle
 
         private void OnPrepareFinished()
         {
-            //for(int i=0;i<BattlePrepareActorManager.instance.)
+            ownerMachine.ChangeState((int)EBattleStageState.Main);
         }
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace MonMoose.Battle
 {
-    public enum EStageState
+    public enum EBattleStageState
     {
         None,
         Prepare,
@@ -13,7 +13,7 @@ namespace MonMoose.Battle
         Exit,
     }
 
-    public class StageDefine
+    public class BattleStageDefine
     {
         
     }

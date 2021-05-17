@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 
 namespace MonMoose.GameLogic.Battle
 {
-    public class BattleStageController : StageControllerAbstract
+    public class BattleStageController : BattleStageControllerAbstract
     {
         private BattleStageInitializer m_initializer = new BattleStageInitializer();
 

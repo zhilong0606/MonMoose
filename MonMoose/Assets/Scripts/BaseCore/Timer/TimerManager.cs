@@ -63,6 +63,12 @@ namespace MonMoose.Core
             m_timerMap.Stop(id);
         }
 
+        public void Stop(ref int id)
+        {
+            m_timerMap.Stop(id);
+            id = 0;
+        }
+
         public void Pause(int id)
         {
             m_timerMap.Pause(id);

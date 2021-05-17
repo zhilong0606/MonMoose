@@ -9,10 +9,10 @@ using UnityEngine;
 
 namespace MonMoose.GameLogic
 {
-    public class BattleState : State
+    public class GameStateBattle : State
     {
         private BattleBase m_battleInstance;
-        private Stage m_curStage;
+        private BattleStage m_curStage;
         private BattleScene m_battleScene;
         private StateMachine m_stateMachine = new StateMachine();
         private BattleInitData m_battleInitData;
@@ -34,7 +34,7 @@ namespace MonMoose.GameLogic
             get { return m_battleInstance; }
         }
 
-        public Stage curStage
+        public BattleStage curStage
         {
             get { return m_curStage; }
         }
@@ -60,7 +60,7 @@ namespace MonMoose.GameLogic
 
         protected override void OnEnter(StateContext context)
         {
-            BattleStateContext battleStateContext = context as BattleStateContext;
+            GameStateContextBattle battleStateContext = context as GameStateContextBattle;
             if (battleStateContext != null)
             {
                 m_battleInitData = battleStateContext.battleInitData;
@@ -91,16 +91,16 @@ namespace MonMoose.GameLogic
         private void RegisterListener()
         {
             EventManager.instance.RegisterListener((int)EventID.Frame_Tick, OnFrameTick);
-            EventManager.instance.RegisterListener<Stage>((int)EventID.BattleStage_SetActive, OnStageActive);
+            EventManager.instance.RegisterListener<BattleStage>((int)EventID.BattleStage_SetActive, OnStageActive);
         }
 
         private void RemoveListener()
         {
             EventManager.instance.UnRegisterListener((int)EventID.Frame_Tick, OnFrameTick);
-            EventManager.instance.UnRegisterListener<Stage>((int)EventID.BattleStage_SetActive, OnStageActive);
+            EventManager.instance.UnRegisterListener<BattleStage>((int)EventID.BattleStage_SetActive, OnStageActive);
         }
 
-        private void OnStageActive(Stage stage)
+        private void OnStageActive(BattleStage stage)
         {
             if (m_curStage != null)
             {
@@ -111,7 +111,7 @@ namespace MonMoose.GameLogic
 
         private BattleViewController OnCreateCtrl(EBattleViewControllerType type)
         {
-            string causer = "BattleState.OnCreateCtrl";
+            string causer = "GameStateBattle.OnCreateCtrl";
             switch (type)
             {
                 case EBattleViewControllerType.Entity:

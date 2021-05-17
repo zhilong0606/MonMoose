@@ -11,7 +11,7 @@ namespace MonMoose.GameLogic.Battle
     {
         public void StagePrepare()
         {
-            BattleShortCut.ChangeBattleSubState(EBattleState.Prepare);
+            BattleShortCut.ChangeBattleStageState(EBattleStageState.Prepare);
         }
 
         public void FormationEmbattle(int actorId, int x, int y)
@@ -42,7 +42,7 @@ namespace MonMoose.GameLogic.Battle
 
         public void BattleStart()
         {
-            BattleShortCut.ChangeBattleSubState(EBattleState.Main);
+            BattleShortCut.ChangeBattleStageState(EBattleStageState.Main);
         }
     }
 }

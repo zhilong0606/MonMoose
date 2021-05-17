@@ -11,7 +11,14 @@ namespace MonMoose.GameLogic.Battle
 
         public override int stateIndex
         {
-            get { return (int)EBattleState.Main; }
+            get { return (int)EBattleStageState.Main; }
+        }
+
+        protected override void OnEnter(StateContext context)
+        {
+            base.OnEnter(context);
+            EventManager.instance.Broadcast((int)EventID.BattleStart);
+            Debug.LogError("战斗开始");
         }
     }
 }

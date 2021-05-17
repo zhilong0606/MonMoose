@@ -4,11 +4,11 @@ using MonMoose.GameLogic.UI;
 
 namespace MonMoose.GameLogic
 {
-    public class GameInitState : State
+    public class GameStateInit : State
     {
         public override int stateIndex
         {
-            get { return (int)EGameState.GameInit; }
+            get { return (int)EGameState.Init; }
         }
 
         protected override void OnEnter(StateContext context)
@@ -27,7 +27,7 @@ namespace MonMoose.GameLogic
         private void OnGameInitEnd()
         {
             UIWindowDefine.DefineAfterGameInit();
-            m_stateMachine.ChangeState((int)EGameState.Lobby);
+            m_ownerMachine.ChangeState((int)EGameState.Lobby);
         }
     }
 }

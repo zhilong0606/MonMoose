@@ -5,7 +5,7 @@ using MonMoose.StaticData;
 
 namespace MonMoose.Battle
 {
-    public class Stage : BattleObj
+    public class BattleStage : BattleObj
     {
         private BattleStageStaticInfo m_staticInfo;
         private GroundStaticInfo m_groundStaticInfo;
@@ -13,7 +13,7 @@ namespace MonMoose.Battle
         private int m_gridWidth;
         private int m_gridHeight;
         private DcmVec2 m_stageSize;
-        private StageControllerAbstract m_ctrl;
+        private BattleStageControllerAbstract m_ctrl;
         private StateMachine m_stateMachine = new StateMachine();
 
         public BattleStageStaticInfo staticInfo
@@ -29,23 +29,23 @@ namespace MonMoose.Battle
             m_groundStaticInfo = StaticDataManager.instance.GetGround(m_staticInfo.GroundId);
             m_gridWidth = m_groundStaticInfo.LeftWidth + m_groundStaticInfo.RightWidth;
             m_gridHeight = m_groundStaticInfo.Height;
-            m_ctrl = m_battleInstance.GetViewController(EBattleViewControllerType.Stage) as StageControllerAbstract;
+            m_ctrl = m_battleInstance.GetViewController(EBattleViewControllerType.Stage) as BattleStageControllerAbstract;
             m_ctrl.Init(this);
             m_ctrl.StartLoadScene(OnLoadEnd);
 
-            List<StageState> stateList = new List<StageState>();
-            stateList.Add(new StageStateNone());
-            stateList.Add(new StageStatePrepare());
-            stateList.Add(new StageStateRunning());
-            stateList.Add(new StageStateExiting());
-            stateList.Add(new StageStateExit());
+            List<BattleStageState> stateList = new List<BattleStageState>();
+            stateList.Add(new BattleStageStateNone());
+            stateList.Add(new BattleStageStatePrepare());
+            stateList.Add(new BattleStageStateRunning());
+            stateList.Add(new BattleStageStateExiting());
+            stateList.Add(new BattleStageStateExit());
             for (int i = 0; i < stateList.Count; ++i)
             {
-                StageState state = stateList[i];
-                state.Init(this, m_battleInstance);
+                BattleStageState state = stateList[i];
+                state.Init(this);
                 m_stateMachine.Init(stateList);
             }
-            m_stateMachine.ChangeState((int)EStageState.None);
+            m_stateMachine.ChangeState((int)EBattleStageState.None);
         }
 
         private void OnLoadEnd()
@@ -104,7 +104,7 @@ namespace MonMoose.Battle
 
         public void Start()
         {
-            m_stateMachine.ChangeState((int)EStageState.Prepare);
+            m_stateMachine.ChangeState((int)EBattleStageState.Prepare);
         }
 
         public void Tick()

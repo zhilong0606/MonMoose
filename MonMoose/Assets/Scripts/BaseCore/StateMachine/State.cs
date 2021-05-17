@@ -2,16 +2,16 @@
 {
     public abstract class State
     {
-        protected StateMachine m_stateMachine;
+        protected StateMachine m_ownerMachine;
         protected bool m_isInited;
         protected bool m_isRunning;
 
         public abstract int stateIndex { get; }
-        public StateMachine stateMachine { get { return m_stateMachine; } }
+        public StateMachine ownerMachine { get { return m_ownerMachine; } }
 
-        public void Init(StateMachine stateMachine)
+        public void Init(StateMachine ownerMachine)
         {
-            m_stateMachine = stateMachine;
+            m_ownerMachine = ownerMachine;
             m_isInited = true;
             OnInit();
         }

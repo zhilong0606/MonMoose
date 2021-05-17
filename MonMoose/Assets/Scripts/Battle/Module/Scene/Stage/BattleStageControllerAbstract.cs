@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace MonMoose.Battle
 {
-    public abstract class StageControllerAbstract : BattleViewController<Stage>
+    public abstract class BattleStageControllerAbstract : BattleViewController<BattleStage>
     {
         public abstract void StartLoadScene(Action actionOnEnd);
     }

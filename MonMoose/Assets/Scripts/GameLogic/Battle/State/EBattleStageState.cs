@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace MonMoose.GameLogic.Battle
 {
-    public enum EBattleState
+    public enum EBattleStageState
     {
         Prepare,
         Main,

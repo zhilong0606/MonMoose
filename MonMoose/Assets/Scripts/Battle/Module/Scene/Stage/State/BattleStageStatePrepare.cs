@@ -4,16 +4,16 @@ using MonMoose.Core;
 
 namespace MonMoose.Battle
 {
-    public class StageStatePrepare : StageState
+    public class BattleStageStatePrepare : BattleStageState
     {
         public override int stateIndex
         {
-            get { return (int)EStageState.Prepare; }
+            get { return (int)EBattleStageState.Prepare; }
         }
 
         protected override void OnEnter(StateContext context)
         {
-            m_battleInstance.eventListener.StagePrepare();
+            m_stage.battleInstance.eventListener.StagePrepare();
             base.OnEnter(context);
         }
     }

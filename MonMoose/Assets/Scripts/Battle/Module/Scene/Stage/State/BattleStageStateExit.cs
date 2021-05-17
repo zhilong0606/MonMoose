@@ -1,13 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace MonMoose.Battle
 {
-    public class StageStateRunning : StageState
+    public class BattleStageStateExit : BattleStageState
     {
         public override int stateIndex
         {
-            get { return (int)EStageState.Running; }
+            get { return (int)EBattleStageState.Exit; }
         }
     }
 }

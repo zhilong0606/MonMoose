@@ -6,7 +6,7 @@ using StateContext = MonMoose.Core.StateContext;
 
 namespace MonMoose.GameLogic
 {
-    public class BattleStateContext : StateContext
+    public class GameStateContextBattle : StateContext
     {
         public BattleInitData battleInitData;
 

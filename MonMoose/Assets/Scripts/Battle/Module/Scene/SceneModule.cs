@@ -9,7 +9,7 @@ namespace MonMoose.Battle
     public class SceneModule : Module
     {
         private BattleStaticInfo m_staticInfo;
-        private List<Stage> m_stageList = new List<Stage>();
+        private List<BattleStage> m_stageList = new List<BattleStage>();
         private int m_curStageIndex = 0;
 
         protected override void OnInit(BattleInitData battleInitData)
@@ -19,7 +19,7 @@ namespace MonMoose.Battle
             for (int i = 0; i < m_staticInfo.StageIdList.Count; ++i)
             {
                 int stageRid = m_staticInfo.StageIdList[i];
-                Stage stage = m_battleInstance.FetchPoolObj<Stage>(this);
+                BattleStage stage = m_battleInstance.FetchPoolObj<BattleStage>(this);
                 stage.Init(stageRid);
                 m_stageList.Add(stage);
             }
@@ -27,7 +27,7 @@ namespace MonMoose.Battle
 
         protected override void OnTick()
         {
-            Stage curStage = GetCurStage();
+            BattleStage curStage = GetCurStage();
             if (curStage != null)
             {
                 curStage.Tick();
@@ -42,7 +42,7 @@ namespace MonMoose.Battle
         }
 
         [ShortCutMethod(true)]
-        public Stage GetCurStage()
+        public BattleStage GetCurStage()
         {
             if (m_curStageIndex >= 0 && m_curStageIndex < m_stageList.Count)
             {
@@ -54,7 +54,7 @@ namespace MonMoose.Battle
         [ShortCutMethod(true)]
         public BattleGrid GetGrid(int x, int y)
         {
-            Stage curStage = GetCurStage();
+            BattleStage curStage = GetCurStage();
             if (curStage != null)
             {
                 return curStage.GetGrid(x, y);

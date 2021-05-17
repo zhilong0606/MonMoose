@@ -5,7 +5,7 @@ namespace MonMoose.GameLogic
 {
     public enum EGameState
     {
-        GameInit,
+        Init,
         Lobby,
         Battle,
     }
@@ -22,13 +22,13 @@ namespace MonMoose.GameLogic
         protected override void OnInit()
         {
             m_stateMachine.Init(
-                new GameInitState(),
-                new LobbyState(),
-                new BattleState()
+                new GameStateInit(),
+                new GameStateLobby(),
+                new GameStateBattle()
                 );
             RegisterListener();
             InitGlobalDefine();
-            m_stateMachine.ChangeState((int)EGameState.GameInit);
+            m_stateMachine.ChangeState((int)EGameState.Init);
         }
 
         protected override void OnUnInit()

@@ -7,7 +7,7 @@ using StateContext = MonMoose.Core.StateContext;
 
 namespace MonMoose.GameLogic
 {
-    public class LobbyState : State
+    public class GameStateLobby : State
     {
         public override int stateIndex
         {
@@ -30,9 +30,9 @@ namespace MonMoose.GameLogic
         {
             LoadingWindow.OpenLoading(ELoadingId.BattleScene, ELoadingWindowType.FadeBlack, () =>
             {
-                BattleStateContext ctx = ClassPoolManager.instance.Fetch<BattleStateContext>(this);
+                GameStateContextBattle ctx = ClassPoolManager.instance.Fetch<GameStateContextBattle>(this);
                 ctx.battleInitData = GetTestBattleInitData(id);
-                m_stateMachine.ChangeState((int)EGameState.Battle, ctx);
+                m_ownerMachine.ChangeState((int)EGameState.Battle, ctx);
             });
         }
 

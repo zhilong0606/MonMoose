@@ -3,29 +3,30 @@ using System.Collections.Generic;
 using MonMoose.Battle;
 using MonMoose.GameLogic.Battle;
 using UnityEngine;
+using EBattleStageState = MonMoose.GameLogic.Battle.EBattleStageState;
 
 namespace MonMoose.GameLogic
 {
     public static class BattleShortCut
     {
-        public static BattleState battleState
+        public static GameStateBattle battleState
         {
-            get { return GameManager.instance.stateMachine.GetState((int)EGameState.Battle) as BattleState; }
+            get { return GameManager.instance.stateMachine.GetState((int)EGameState.Battle) as GameStateBattle; }
         }
 
-        public static Stage curBattleStage
+        public static BattleStage curBattleStage
         {
-            get { BattleState state = battleState; if (state != null) return state.curStage; return null; }
+            get { GameStateBattle state = battleState; if (state != null) return state.curStage; return null; }
         }
 
         public static BattleScene battleScene
         {
-            get { BattleState state = battleState; if (state != null) return state.battleScene; return null; }
+            get { GameStateBattle state = battleState; if (state != null) return state.battleScene; return null; }
         }
 
         public static BattleBase battleInstance
         {
-            get { BattleState state = battleState; if (state != null) return state.battleInstance; return null; }
+            get { GameStateBattle state = battleState; if (state != null) return state.battleInstance; return null; }
         }
 
         public static FrameSyncSender frameSyncSender
@@ -58,9 +59,9 @@ namespace MonMoose.GameLogic
             BattleScene scene = battleScene; if (scene != null) return scene.GetGridWorldPosition(gridPos, offset); return Vector3.zero;
         }
 
-        public static void ChangeBattleSubState(EBattleState subState)
+        public static void ChangeBattleStageState(EBattleStageState stageState)
         {
-            BattleState state = battleState; if (state != null) state.stateMachine.ChangeState((int)subState);
+            GameStateBattle state = battleState; if (state != null) state.stateMachine.ChangeState((int)stageState);
         }
     }
 }

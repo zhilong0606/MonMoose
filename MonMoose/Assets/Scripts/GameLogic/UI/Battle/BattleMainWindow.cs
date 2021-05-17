@@ -8,7 +8,7 @@ namespace MonMoose.GameLogic.UI
         protected override void OnInit(object param)
         {
             base.OnInit(param);
-
+            GetInventory().AddComponent<BattleMainNotifyWidget>((int)EWidget.MainNotify, true);
         }
 
         private KeyCode[] codes = new KeyCode[] {KeyCode.A, KeyCode.S, KeyCode.D, KeyCode.W, KeyCode.X};
@@ -20,10 +20,15 @@ namespace MonMoose.GameLogic.UI
             {
                 if (Input.GetKeyDown(codes[i]))
                 {
-                    BattleState battleState = GameManager.instance.stateMachine.GetState((int)EGameState.Battle) as BattleState;
+                    GameStateBattle battleState = GameManager.instance.stateMachine.GetState((int)EGameState.Battle) as GameStateBattle;
                     battleState.Send(codes[i]);
                 }
             }
+        }
+
+        private enum EWidget
+        {
+            MainNotify,
         }
     }
 }

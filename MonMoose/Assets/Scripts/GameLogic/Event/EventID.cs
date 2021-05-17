@@ -15,6 +15,8 @@ namespace MonMoose.GameLogic
         BattlePrepare_ActorItemHide,
         BattlePrepare_Finish,
 
+        BattleStart,
+
         BattleStage_SetActive,
     }
 }
