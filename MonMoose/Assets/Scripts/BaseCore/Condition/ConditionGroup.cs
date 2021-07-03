@@ -3,104 +3,93 @@ using System.Collections.Generic;
 
 namespace MonMoose.Core
 {
-    public class ConditionGroup : BaseCondition
+    public class ConditionGroup : ConditionBase
     {
-        private ConditionValue[] values;
-        public Action<bool> OnValueChanged;
-        private BaseCondition rootCondition;
-        private List<BaseCondition> cachedList = new List<BaseCondition>();
-        private List<BaseCondition> checkDupList = new List<BaseCondition>();
+        public Action<bool> actionOnValueChanged;
 
-        public ConditionValue this[int idx]
+        private ConditionBool[] m_values;
+        private ConditionBase m_rootCondition;
+        private List<ConditionBase> m_cachedList = new List<ConditionBase>();
+        private List<ConditionBase> m_checkDupList = new List<ConditionBase>();
+
+        public ConditionBool this[int idx]
         {
             get
             {
-                if (idx >= 0 && idx < values.Length)
+                if (idx >= 0 && idx < m_values.Length)
                 {
-                    return values[idx];
+                    return m_values[idx];
                 }
                 return null;
-            }
-        }
-
-        public override bool IsDirty
-        {
-            get
-            {
-                if (rootCondition != null)
-                {
-                    return rootCondition.IsDirty;
-                }
-                return false;
             }
         }
 
         public void Resize(int count)
         {
             Clear();
-            values = new ConditionValue[count];
-            for (int i = 0; i < values.Length; ++i)
+            m_values = new ConditionBool[count];
+            for (int i = 0; i < m_values.Length; ++i)
             {
-                values[i] = NewValue();
+                m_values[i] = NewValue();
             }
         }
 
         public void ClearCache()
         {
-            for (int i = 0; i < cachedList.Count; ++i)
+            for (int i = 0; i < m_cachedList.Count; ++i)
             {
-                cachedList[i].Release();
+                m_cachedList[i].Release();
             }
-            cachedList.Clear();
-            rootCondition = null;
+            m_cachedList.Clear();
+            m_rootCondition = null;
         }
 
-        public void SetRoot(BaseCondition root)
+        public void SetRoot(ConditionBase root)
         {
-            if (root == rootCondition)
+            if (root == m_rootCondition)
             {
                 return;
             }
             ClearCache();
             if (root != null)
             {
-                rootCondition = root;
-                for (int i = 0; i < values.Length; ++i)
+                m_rootCondition = root;
+                for (int i = 0; i < m_values.Length; ++i)
                 {
-                    BaseCondition c = values[i].Parent;
-                    checkDupList.Clear();
+                    ConditionBase c = m_values[i].parent;
+                    m_checkDupList.Clear();
                     while (c != null)
                     {
-                        if (checkDupList.Contains(c))
+                        if (m_checkDupList.Contains(c))
                         {
                             DebugUtility.LogError("Error : Condition is Duplicated!!!!");
                             break;
                         }
-                        if (cachedList.Contains(c))
+                        if (m_cachedList.Contains(c))
                         {
                             break;
                         }
-                        cachedList.Add(c);
-                        checkDupList.Add(c);
-                        c = c.Parent;
+                        m_cachedList.Add(c);
+                        m_checkDupList.Add(c);
+                        c = c.parent;
                     }
                 }
             }
-
+            m_checkDupList.Clear();
         }
 
         public void Clear()
         {
-            if (values != null)
+            if (m_values != null)
             {
-                for (int i = 0; i < values.Length; ++i)
+                for (int i = 0; i < m_values.Length; ++i)
                 {
-                    values[i].Release();
-                    values[i] = null;
+                    m_values[i].Release();
+                    m_values[i] = null;
                 }
             }
-            values = null;
-            OnValueChanged = null;
+            m_values = null;
+            actionOnValueChanged = null;
             ClearCache();
         }
 
@@ -112,42 +101,27 @@ namespace MonMoose.Core
 
         private void OnConditionValueChanged()
         {
-            Check();
-        }
-
-        public void Check()
-        {
-            CalcResult();
-        }
-
-        protected override void CalcResult()
-        {
-            bool needCb = false;
-            if (IsDirty)
+            if (actionOnValueChanged != null)
             {
-                bool r = rootCondition.GetResult();
-                if (r != result)
-                {
-                    needCb = true;
-                    result = r;
-                }
-            }
-            if (needCb && OnValueChanged != null)
-            {
-                OnValueChanged(result);
+                actionOnValueChanged(Check());
             }
         }
 
-        private ConditionValue NewValue()
+        public override bool Check()
         {
-            ConditionValue value = ClassPoolManager.instance.Fetch<ConditionValue>(this);
-            InitValue(value);
-            return value;
+            return m_rootCondition.Check();
         }
 
-        private void InitValue(ConditionValue value)
+        private ConditionBool NewValue()
         {
-            value.OnValueChanged = OnConditionValueChanged;
+            ConditionBool condition = ClassPoolManager.instance.Fetch<ConditionBool>(this);
+            InitValue(condition);
+            return condition;
+        }
+
+        private void InitValue(ConditionBool value)
+        {
+            value.actionOnValueChanged = OnConditionValueChanged;
         }
     }
 }

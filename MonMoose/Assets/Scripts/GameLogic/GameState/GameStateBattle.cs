@@ -47,8 +47,8 @@ namespace MonMoose.GameLogic
         protected override void OnInit()
         {
             m_stateMachine.Init(
-                new BattlePrepareState(),
-                new BattleMainState()
+                new BattleStatePrepare(),
+                new BattleStateMain()
             );
             RegisterListener();
         }

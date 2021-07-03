@@ -8,7 +8,7 @@ namespace MonMoose.Battle
     public class BattleStage : BattleObj
     {
         private BattleStageStaticInfo m_staticInfo;
-        private GroundStaticInfo m_groundStaticInfo;
+        private BattleGroundStaticInfo m_groundStaticInfo;
         private List<BattleGrid> m_gridList = new List<BattleGrid>();
         private int m_gridWidth;
         private int m_gridHeight;
@@ -26,7 +26,7 @@ namespace MonMoose.Battle
         public void Init(int id)
         {
             m_staticInfo = StaticDataManager.instance.GetBattleStage(id);
-            m_groundStaticInfo = StaticDataManager.instance.GetGround(m_staticInfo.GroundId);
+            m_groundStaticInfo = StaticDataManager.instance.GetBattleGround(m_staticInfo.GroundId);
             m_gridWidth = m_groundStaticInfo.LeftWidth + m_groundStaticInfo.RightWidth;
             m_gridHeight = m_groundStaticInfo.Height;
             m_ctrl = m_battleInstance.GetViewController(EBattleViewControllerType.Stage) as BattleStageControllerAbstract;
@@ -104,7 +104,12 @@ namespace MonMoose.Battle
 
         public void Start()
         {
-            m_stateMachine.ChangeState((int)EBattleStageState.Prepare);
+            ChangeState(EBattleStageState.Prepare);
+        }
+
+        public void ChangeState(EBattleStageState state)
+        {
+            m_stateMachine.ChangeState((int)state);
         }
 
         public void Tick()

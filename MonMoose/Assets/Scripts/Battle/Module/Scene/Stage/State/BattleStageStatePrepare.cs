@@ -16,5 +16,11 @@ namespace MonMoose.Battle
             m_stage.battleInstance.eventListener.StagePrepare();
             base.OnEnter(context);
         }
+
+        protected override void OnExit()
+        {
+            base.OnExit();
+            m_stage.battleInstance.eventListener.FormationEnd();
+        }
     }
 }

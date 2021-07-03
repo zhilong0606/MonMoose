@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using MonMoose.Battle;
 using MonMoose.GameLogic.Battle;
 using UnityEngine;
-using EBattleStageState = MonMoose.GameLogic.Battle.EBattleStageState;
 
 namespace MonMoose.GameLogic
 {
@@ -59,9 +58,9 @@ namespace MonMoose.GameLogic
             BattleScene scene = battleScene; if (scene != null) return scene.GetGridWorldPosition(gridPos, offset); return Vector3.zero;
         }
 
-        public static void ChangeBattleStageState(EBattleStageState stageState)
+        public static void ChangeBattleState(EBattleState state)
         {
-            GameStateBattle state = battleState; if (state != null) state.stateMachine.ChangeState((int)stageState);
+            if (battleState != null) battleState.stateMachine.ChangeState((int)state);
         }
     }
 }

@@ -21,8 +21,8 @@
     <dataExportPath />
     <exportMode>Flat</exportMode>
   </server>
-  <isDebugMode>false</isDebugMode>
-  <needLogOut>false</needLogOut>
+  <isDebugMode>true</isDebugMode>
+  <needLogOut>true</needLogOut>
   <needGenerateStructure>true</needGenerateStructure>
   <needGenerateData>true</needGenerateData>
   <needGenerateLoader>true</needGenerateLoader>

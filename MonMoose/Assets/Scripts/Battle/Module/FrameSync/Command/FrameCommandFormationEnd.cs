@@ -4,7 +4,8 @@ namespace MonMoose.Battle
     {
         public override bool Execute(int playerId)
         {
-            m_battleInstance.eventListener.FormationEnd();
+            BattleStage stage = m_battleInstance.GetCurStage();
+            stage.ChangeState(EBattleStageState.Running);
             return true;
         }
     }

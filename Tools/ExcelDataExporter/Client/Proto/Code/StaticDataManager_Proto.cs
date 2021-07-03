@@ -9,11 +9,12 @@ namespace MonMoose.StaticData
 		{
 			m_loaderMap.Add("Actor", new ProtoDataLoader<ActorStaticInfo, ActorStaticInfoList>(m_actorList, ActorStaticInfoList.Parser.ParseFrom, (fromList, toList) => { toList.Clear(); toList.AddRange(fromList.List); }));
 			m_loaderMap.Add("Attribute", new ProtoDataLoader<AttributeStaticInfo, AttributeStaticInfoList>(m_attributeList, AttributeStaticInfoList.Parser.ParseFrom, (fromList, toList) => { toList.Clear(); toList.AddRange(fromList.List); }));
-			m_loaderMap.Add("Battle", new ProtoDataLoader<BattleStaticInfo, BattleStaticInfoList>(m_battleList, BattleStaticInfoList.Parser.ParseFrom, (fromList, toList) => { toList.Clear(); toList.AddRange(fromList.List); }));
+			m_loaderMap.Add("BattleGround", new ProtoDataLoader<BattleGroundStaticInfo, BattleGroundStaticInfoList>(m_battleGroundList, BattleGroundStaticInfoList.Parser.ParseFrom, (fromList, toList) => { toList.Clear(); toList.AddRange(fromList.List); }));
+			m_loaderMap.Add("BattleScene", new ProtoDataLoader<BattleSceneStaticInfo, BattleSceneStaticInfoList>(m_battleSceneList, BattleSceneStaticInfoList.Parser.ParseFrom, (fromList, toList) => { toList.Clear(); toList.AddRange(fromList.List); }));
 			m_loaderMap.Add("BattleStage", new ProtoDataLoader<BattleStageStaticInfo, BattleStageStaticInfoList>(m_battleStageList, BattleStageStaticInfoList.Parser.ParseFrom, (fromList, toList) => { toList.Clear(); toList.AddRange(fromList.List); }));
-			m_loaderMap.Add("Team", new ProtoDataLoader<TeamStaticInfo, TeamStaticInfoList>(m_teamList, TeamStaticInfoList.Parser.ParseFrom, (fromList, toList) => { toList.Clear(); toList.AddRange(fromList.List); }));
-			m_loaderMap.Add("Ground", new ProtoDataLoader<GroundStaticInfo, GroundStaticInfoList>(m_groundList, GroundStaticInfoList.Parser.ParseFrom, (fromList, toList) => { toList.Clear(); toList.AddRange(fromList.List); }));
-			m_loaderMap.Add("Terrain", new ProtoDataLoader<TerrainStaticInfo, TerrainStaticInfoList>(m_terrainList, TerrainStaticInfoList.Parser.ParseFrom, (fromList, toList) => { toList.Clear(); toList.AddRange(fromList.List); }));
+			m_loaderMap.Add("BattleTeam", new ProtoDataLoader<BattleTeamStaticInfo, BattleTeamStaticInfoList>(m_battleTeamList, BattleTeamStaticInfoList.Parser.ParseFrom, (fromList, toList) => { toList.Clear(); toList.AddRange(fromList.List); }));
+			m_loaderMap.Add("BattleTerrain", new ProtoDataLoader<BattleTerrainStaticInfo, BattleTerrainStaticInfoList>(m_battleTerrainList, BattleTerrainStaticInfoList.Parser.ParseFrom, (fromList, toList) => { toList.Clear(); toList.AddRange(fromList.List); }));
+			m_loaderMap.Add("BattleWinCondition", new ProtoDataLoader<BattleWinConditionStaticInfo, BattleWinConditionStaticInfoList>(m_battleWinConditionList, BattleWinConditionStaticInfoList.Parser.ParseFrom, (fromList, toList) => { toList.Clear(); toList.AddRange(fromList.List); }));
 			m_loaderMap.Add("CollectableActor", new ProtoDataLoader<CollectableActorStaticInfo, CollectableActorStaticInfoList>(m_collectableActorList, CollectableActorStaticInfoList.Parser.ParseFrom, (fromList, toList) => { toList.Clear(); toList.AddRange(fromList.List); }));
 			m_loaderMap.Add("Entity", new ProtoDataLoader<EntityStaticInfo, EntityStaticInfoList>(m_entityList, EntityStaticInfoList.Parser.ParseFrom, (fromList, toList) => { toList.Clear(); toList.AddRange(fromList.List); }));
 			m_loaderMap.Add("PrefabPath", new ProtoDataLoader<PrefabPathStaticInfo, PrefabPathStaticInfoList>(m_prefabPathList, PrefabPathStaticInfoList.Parser.ParseFrom, (fromList, toList) => { toList.Clear(); toList.AddRange(fromList.List); }));
@@ -29,30 +30,35 @@ namespace MonMoose.StaticData
 		public AttributeStaticInfo GetAttribute(int id) { foreach (var info in m_attributeList) if (info.Id == id) return info; return null; }
 		public IEnumerable<AttributeStaticInfo> attributeList { get { return m_attributeList; } }
 
-		//Battle
-		private List<BattleStaticInfo> m_battleList = new List<BattleStaticInfo>();
-		public BattleStaticInfo GetBattle(int id) { foreach (var info in m_battleList) if (info.Id == id) return info; return null; }
-		public IEnumerable<BattleStaticInfo> battleList { get { return m_battleList; } }
+		//BattleGround
+		private List<BattleGroundStaticInfo> m_battleGroundList = new List<BattleGroundStaticInfo>();
+		public BattleGroundStaticInfo GetBattleGround(int id) { foreach (var info in m_battleGroundList) if (info.Id == id) return info; return null; }
+		public IEnumerable<BattleGroundStaticInfo> battleGroundList { get { return m_battleGroundList; } }
+
+		//BattleScene
+		private List<BattleSceneStaticInfo> m_battleSceneList = new List<BattleSceneStaticInfo>();
+		public BattleSceneStaticInfo GetBattleScene(int id) { foreach (var info in m_battleSceneList) if (info.Id == id) return info; return null; }
+		public IEnumerable<BattleSceneStaticInfo> battleSceneList { get { return m_battleSceneList; } }
 
 		//BattleStage
 		private List<BattleStageStaticInfo> m_battleStageList = new List<BattleStageStaticInfo>();
 		public BattleStageStaticInfo GetBattleStage(int id) { foreach (var info in m_battleStageList) if (info.Id == id) return info; return null; }
 		public IEnumerable<BattleStageStaticInfo> battleStageList { get { return m_battleStageList; } }
 
-		//Team
-		private List<TeamStaticInfo> m_teamList = new List<TeamStaticInfo>();
-		public TeamStaticInfo GetTeam(int id) { foreach (var info in m_teamList) if (info.Id == id) return info; return null; }
-		public IEnumerable<TeamStaticInfo> teamList { get { return m_teamList; } }
+		//BattleTeam
+		private List<BattleTeamStaticInfo> m_battleTeamList = new List<BattleTeamStaticInfo>();
+		public BattleTeamStaticInfo GetBattleTeam(int id) { foreach (var info in m_battleTeamList) if (info.Id == id) return info; return null; }
+		public IEnumerable<BattleTeamStaticInfo> battleTeamList { get { return m_battleTeamList; } }
 
-		//Ground
-		private List<GroundStaticInfo> m_groundList = new List<GroundStaticInfo>();
-		public GroundStaticInfo GetGround(int id) { foreach (var info in m_groundList) if (info.Id == id) return info; return null; }
-		public IEnumerable<GroundStaticInfo> groundList { get { return m_groundList; } }
+		//BattleTerrain
+		private List<BattleTerrainStaticInfo> m_battleTerrainList = new List<BattleTerrainStaticInfo>();
+		public BattleTerrainStaticInfo GetBattleTerrain(int id) { foreach (var info in m_battleTerrainList) if (info.Id == id) return info; return null; }
+		public IEnumerable<BattleTerrainStaticInfo> battleTerrainList { get { return m_battleTerrainList; } }
 
-		//Terrain
-		private List<TerrainStaticInfo> m_terrainList = new List<TerrainStaticInfo>();
-		public TerrainStaticInfo GetTerrain(int id) { foreach (var info in m_terrainList) if (info.Id == id) return info; return null; }
-		public IEnumerable<TerrainStaticInfo> terrainList { get { return m_terrainList; } }
+		//BattleWinCondition
+		private List<BattleWinConditionStaticInfo> m_battleWinConditionList = new List<BattleWinConditionStaticInfo>();
+		public BattleWinConditionStaticInfo GetBattleWinCondition(int id) { foreach (var info in m_battleWinConditionList) if (info.Id == id) return info; return null; }
+		public IEnumerable<BattleWinConditionStaticInfo> battleWinConditionList { get { return m_battleWinConditionList; } }
 
 		//CollectableActor
 		private List<CollectableActorStaticInfo> m_collectableActorList = new List<CollectableActorStaticInfo>();

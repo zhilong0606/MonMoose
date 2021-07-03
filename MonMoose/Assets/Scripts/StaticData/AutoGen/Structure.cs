@@ -29,77 +29,87 @@ namespace MonMoose.StaticData {
             "axgFIAEoBRIQCghEZWZmZW5jZRgGIAEoBRISCgpQcmVmYWJQYXRoGAcgASgJ",
             "EgwKBFNpemUYCCABKAUiWQoTQXR0cmlidXRlU3RhdGljSW5mbxIKCgJJZBgB",
             "IAEoBRIMCgROYW1lGAIgASgJEhYKDklzU2lnbkludmVyc2VkGAMgASgIEhAK",
-            "CEljb25QYXRoGAQgASgJIkEKEEJhdHRsZVN0YXRpY0luZm8SCgoCSWQYASAB",
-            "KAUSDAoETmFtZRgCIAEoCRITCgtTdGFnZUlkTGlzdBgDIAMoBSLvAQoVQmF0",
-            "dGxlU3RhZ2VTdGF0aWNJbmZvEgoKAklkGAEgASgFEgwKBE5hbWUYAiABKAkS",
-            "QwoPU3RhZ2VFbnRpdHlMaXN0GAMgAygLMiouTW9uTW9vc2UuU3RhdGljRGF0",
-            "YS5TdGFnZUVudGl0eVN0YXRpY0luZm8SPQoMRW1iYXR0bGVMaXN0GAQgAygL",
-            "MicuTW9uTW9vc2UuU3RhdGljRGF0YS5FbWJhdHRsZVN0YXRpY0luZm8SEwoL",
-            "TmVlZFByZXBhcmUYBSABKAgSEAoIR3JvdW5kSWQYBiABKAUSEQoJU2NlbmVQ",
-            "YXRoGAcgASgJIioKDlRlYW1TdGF0aWNJbmZvEgoKAklkGAEgASgFEgwKBE5h",
-            "bWUYAiABKAkifAoQR3JvdW5kU3RhdGljSW5mbxIKCgJJZBgBIAEoBRIRCglT",
-            "Y2VuZVBhdGgYAiABKAkSEQoJTGVmdFdpZHRoGAMgASgFEhIKClJpZ2h0V2lk",
-            "dGgYBCABKAUSDgoGSGVpZ2h0GAUgASgFEhIKCkdyaWRJZExpc3QYBiADKAUi",
-            "QAoRVGVycmFpblN0YXRpY0luZm8SCgoCSWQYASABKAUSDAoETmFtZRgCIAEo",
-            "CRIRCglXYWxrU3BlZWQYAyABKAUiSAoaQ29sbGVjdGFibGVBY3RvclN0YXRp",
-            "Y0luZm8SCgoCSWQYASABKAUSDAoETmFtZRgCIAEoCRIQCghIZWFkSWNvbhgD",
-            "IAEoCSJoChBFbnRpdHlTdGF0aWNJbmZvEgoKAklkGAEgASgFEjQKCkVudGl0",
-            "eVR5cGUYAiABKA4yIC5Nb25Nb29zZS5TdGF0aWNEYXRhLkVFbnRpdHlUeXBl",
-            "EhIKClNwZWNpZmljSWQYAyABKAUiMAoUUHJlZmFiUGF0aFN0YXRpY0luZm8S",
-            "CgoCSWQYASABKAUSDAoEUGF0aBgCIAEoCSJcChVTdGFnZUVudGl0eVN0YXRp",
-            "Y0luZm8SCwoDVWlkGAEgASgFEgsKA1JpZBgCIAEoBRINCgVMZXZlbBgDIAEo",
-            "BRIMCgRQb3NYGAQgASgFEgwKBFBvc1kYBSABKAUiQAoSRW1iYXR0bGVTdGF0",
-            "aWNJbmZvEg4KBlRlYW1JZBgBIAEoBRIMCgRQb3NYGAIgASgFEgwKBFBvc1kY",
-            "AyABKAUiSQoTQWN0b3JTdGF0aWNJbmZvTGlzdBIyCgRsaXN0GAEgAygLMiQu",
-            "TW9uTW9vc2UuU3RhdGljRGF0YS5BY3RvclN0YXRpY0luZm8iUQoXQXR0cmli",
-            "dXRlU3RhdGljSW5mb0xpc3QSNgoEbGlzdBgBIAMoCzIoLk1vbk1vb3NlLlN0",
-            "YXRpY0RhdGEuQXR0cmlidXRlU3RhdGljSW5mbyJLChRCYXR0bGVTdGF0aWNJ",
-            "bmZvTGlzdBIzCgRsaXN0GAEgAygLMiUuTW9uTW9vc2UuU3RhdGljRGF0YS5C",
-            "YXR0bGVTdGF0aWNJbmZvIlUKGUJhdHRsZVN0YWdlU3RhdGljSW5mb0xpc3QS",
-            "OAoEbGlzdBgBIAMoCzIqLk1vbk1vb3NlLlN0YXRpY0RhdGEuQmF0dGxlU3Rh",
-            "Z2VTdGF0aWNJbmZvIkcKElRlYW1TdGF0aWNJbmZvTGlzdBIxCgRsaXN0GAEg",
-            "AygLMiMuTW9uTW9vc2UuU3RhdGljRGF0YS5UZWFtU3RhdGljSW5mbyJLChRH",
-            "cm91bmRTdGF0aWNJbmZvTGlzdBIzCgRsaXN0GAEgAygLMiUuTW9uTW9vc2Uu",
-            "U3RhdGljRGF0YS5Hcm91bmRTdGF0aWNJbmZvIk0KFVRlcnJhaW5TdGF0aWNJ",
-            "bmZvTGlzdBI0CgRsaXN0GAEgAygLMiYuTW9uTW9vc2UuU3RhdGljRGF0YS5U",
-            "ZXJyYWluU3RhdGljSW5mbyJfCh5Db2xsZWN0YWJsZUFjdG9yU3RhdGljSW5m",
-            "b0xpc3QSPQoEbGlzdBgBIAMoCzIvLk1vbk1vb3NlLlN0YXRpY0RhdGEuQ29s",
-            "bGVjdGFibGVBY3RvclN0YXRpY0luZm8iSwoURW50aXR5U3RhdGljSW5mb0xp",
-            "c3QSMwoEbGlzdBgBIAMoCzIlLk1vbk1vb3NlLlN0YXRpY0RhdGEuRW50aXR5",
-            "U3RhdGljSW5mbyJTChhQcmVmYWJQYXRoU3RhdGljSW5mb0xpc3QSNwoEbGlz",
-            "dBgBIAMoCzIpLk1vbk1vb3NlLlN0YXRpY0RhdGEuUHJlZmFiUGF0aFN0YXRp",
-            "Y0luZm8qtQEKD0VBY3RvckNsYXNzVHlwZRIYChRFQWN0b3JDbGFzc1R5cGVf",
-            "Tm9uZRAAEhsKF0VBY3RvckNsYXNzVHlwZV9XYXJyaW9yEAESGQoVRUFjdG9y",
-            "Q2xhc3NUeXBlX1ByaXN0EAISGgoWRUFjdG9yQ2xhc3NUeXBlX0FyY2hlchAD",
-            "EhgKFEVBY3RvckNsYXNzVHlwZV9NYWdlEAQSGgoWRUFjdG9yQ2xhc3NUeXBl",
-            "X1NoYW1hbhAFKvgBCg5FQXR0cmlidXRlVHlwZRIXChNFQXR0cmlidXRlVHlw",
-            "ZV9Ob25lEAASFQoRRUF0dHJpYnV0ZVR5cGVfSHAQARIZChVFQXR0cmlidXRl",
-            "VHlwZV9BdHRhY2sQAhIeChpFQXR0cmlidXRlVHlwZV9BdHRhY2tTcGVlZBAD",
-            "EiIKHkVBdHRyaWJ1dGVUeXBlX1BoeXNpY2FsRGVmZW5jZRAEEiEKHUVBdHRy",
-            "aWJ1dGVUeXBlX01hZ2ljYWxEZWZlbmNlEAUSHAoYRUF0dHJpYnV0ZVR5cGVf",
-            "TW92ZVNwZWVkEAYSFgoSRUF0dHJpYnV0ZVR5cGVfTWF4EAcqaQoQRUJhdHRs",
-            "ZVN0YWdlVHlwZRIZChVFQmF0dGxlU3RhZ2VUeXBlX05vbmUQABIbChdFQmF0",
-            "dGxlU3RhZ2VUeXBlX0JhdHRsZRABEh0KGUVCYXR0bGVTdGFnZVR5cGVfU2Nl",
-            "bmFyaW8QAio+CgxFVGVycmFpblR5cGUSFQoRRVRlcnJhaW5UeXBlX05vbmUQ",
-            "ABIXChNFVGVycmFpblR5cGVfTm9ybWFsEAEqOgoLRUVudGl0eVR5cGUSFAoQ",
-            "RUVudGl0eVR5cGVfTm9uZRAAEhUKEUVFbnRpdHlUeXBlX0FjdG9yEAEqpwIK",
-            "DUVQcmVmYWJQYXRoSWQSFgoSRVByZWZhYlBhdGhJZF9Ob25lEAASHQoZRVBy",
-            "ZWZhYlBhdGhJZF9Mb2JieVdpbmRvdxABEh8KG0VQcmVmYWJQYXRoSWRfTG9h",
-            "ZGluZ1dpbmRvdxACEiIKHkVQcmVmYWJQYXRoSWRfQmF0dGxlTWFpbldpbmRv",
-            "dxADEiUKIUVQcmVmYWJQYXRoSWRfQmF0dGxlUHJlcGFyZVdpbmRvdxAEEioK",
-            "JkVQcmVmYWJQYXRoSWRfQmF0dGxlUHJlcGFyZUNvdmVyV2luZG93EAUSJwoj",
-            "RVByZWZhYlBhdGhJZF9CYXR0bGVQcmVmYWJBY3Rvckl0ZW0QBhIeChpFUHJl",
-            "ZmFiUGF0aElkX0JhdHRsZUNhbWVyYRAHYgZwcm90bzM="));
+            "CEljb25QYXRoGAQgASgJIoIBChZCYXR0bGVHcm91bmRTdGF0aWNJbmZvEgoK",
+            "AklkGAEgASgFEhEKCVNjZW5lUGF0aBgCIAEoCRIRCglMZWZ0V2lkdGgYAyAB",
+            "KAUSEgoKUmlnaHRXaWR0aBgEIAEoBRIOCgZIZWlnaHQYBSABKAUSEgoKR3Jp",
+            "ZElkTGlzdBgGIAMoBSJGChVCYXR0bGVTY2VuZVN0YXRpY0luZm8SCgoCSWQY",
+            "ASABKAUSDAoETmFtZRgCIAEoCRITCgtTdGFnZUlkTGlzdBgDIAMoBSLvAQoV",
+            "QmF0dGxlU3RhZ2VTdGF0aWNJbmZvEgoKAklkGAEgASgFEgwKBE5hbWUYAiAB",
+            "KAkSQwoPU3RhZ2VFbnRpdHlMaXN0GAMgAygLMiouTW9uTW9vc2UuU3RhdGlj",
+            "RGF0YS5TdGFnZUVudGl0eVN0YXRpY0luZm8SPQoMRW1iYXR0bGVMaXN0GAQg",
+            "AygLMicuTW9uTW9vc2UuU3RhdGljRGF0YS5FbWJhdHRsZVN0YXRpY0luZm8S",
+            "EwoLTmVlZFByZXBhcmUYBSABKAgSEAoIR3JvdW5kSWQYBiABKAUSEQoJU2Nl",
+            "bmVQYXRoGAcgASgJIjAKFEJhdHRsZVRlYW1TdGF0aWNJbmZvEgoKAklkGAEg",
+            "ASgFEgwKBE5hbWUYAiABKAkiRgoXQmF0dGxlVGVycmFpblN0YXRpY0luZm8S",
+            "CgoCSWQYASABKAUSDAoETmFtZRgCIAEoCRIRCglXYWxrU3BlZWQYAyABKAUi",
+            "SwocQmF0dGxlV2luQ29uZGl0aW9uU3RhdGljSW5mbxIKCgJJZBgBIAEoBRIM",
+            "CgROYW1lGAIgASgJEhEKCVBhcmFtSW50MRgDIAEoBSJIChpDb2xsZWN0YWJs",
+            "ZUFjdG9yU3RhdGljSW5mbxIKCgJJZBgBIAEoBRIMCgROYW1lGAIgASgJEhAK",
+            "CEhlYWRJY29uGAMgASgJImgKEEVudGl0eVN0YXRpY0luZm8SCgoCSWQYASAB",
+            "KAUSNAoKRW50aXR5VHlwZRgCIAEoDjIgLk1vbk1vb3NlLlN0YXRpY0RhdGEu",
+            "RUVudGl0eVR5cGUSEgoKU3BlY2lmaWNJZBgDIAEoBSIwChRQcmVmYWJQYXRo",
+            "U3RhdGljSW5mbxIKCgJJZBgBIAEoBRIMCgRQYXRoGAIgASgJIlwKFVN0YWdl",
+            "RW50aXR5U3RhdGljSW5mbxILCgNVaWQYASABKAUSCwoDUmlkGAIgASgFEg0K",
+            "BUxldmVsGAMgASgFEgwKBFBvc1gYBCABKAUSDAoEUG9zWRgFIAEoBSJAChJF",
+            "bWJhdHRsZVN0YXRpY0luZm8SDgoGVGVhbUlkGAEgASgFEgwKBFBvc1gYAiAB",
+            "KAUSDAoEUG9zWRgDIAEoBSJJChNBY3RvclN0YXRpY0luZm9MaXN0EjIKBGxp",
+            "c3QYASADKAsyJC5Nb25Nb29zZS5TdGF0aWNEYXRhLkFjdG9yU3RhdGljSW5m",
+            "byJRChdBdHRyaWJ1dGVTdGF0aWNJbmZvTGlzdBI2CgRsaXN0GAEgAygLMigu",
+            "TW9uTW9vc2UuU3RhdGljRGF0YS5BdHRyaWJ1dGVTdGF0aWNJbmZvIlcKGkJh",
+            "dHRsZUdyb3VuZFN0YXRpY0luZm9MaXN0EjkKBGxpc3QYASADKAsyKy5Nb25N",
+            "b29zZS5TdGF0aWNEYXRhLkJhdHRsZUdyb3VuZFN0YXRpY0luZm8iVQoZQmF0",
+            "dGxlU2NlbmVTdGF0aWNJbmZvTGlzdBI4CgRsaXN0GAEgAygLMiouTW9uTW9v",
+            "c2UuU3RhdGljRGF0YS5CYXR0bGVTY2VuZVN0YXRpY0luZm8iVQoZQmF0dGxl",
+            "U3RhZ2VTdGF0aWNJbmZvTGlzdBI4CgRsaXN0GAEgAygLMiouTW9uTW9vc2Uu",
+            "U3RhdGljRGF0YS5CYXR0bGVTdGFnZVN0YXRpY0luZm8iUwoYQmF0dGxlVGVh",
+            "bVN0YXRpY0luZm9MaXN0EjcKBGxpc3QYASADKAsyKS5Nb25Nb29zZS5TdGF0",
+            "aWNEYXRhLkJhdHRsZVRlYW1TdGF0aWNJbmZvIlkKG0JhdHRsZVRlcnJhaW5T",
+            "dGF0aWNJbmZvTGlzdBI6CgRsaXN0GAEgAygLMiwuTW9uTW9vc2UuU3RhdGlj",
+            "RGF0YS5CYXR0bGVUZXJyYWluU3RhdGljSW5mbyJjCiBCYXR0bGVXaW5Db25k",
+            "aXRpb25TdGF0aWNJbmZvTGlzdBI/CgRsaXN0GAEgAygLMjEuTW9uTW9vc2Uu",
+            "U3RhdGljRGF0YS5CYXR0bGVXaW5Db25kaXRpb25TdGF0aWNJbmZvIl8KHkNv",
+            "bGxlY3RhYmxlQWN0b3JTdGF0aWNJbmZvTGlzdBI9CgRsaXN0GAEgAygLMi8u",
+            "TW9uTW9vc2UuU3RhdGljRGF0YS5Db2xsZWN0YWJsZUFjdG9yU3RhdGljSW5m",
+            "byJLChRFbnRpdHlTdGF0aWNJbmZvTGlzdBIzCgRsaXN0GAEgAygLMiUuTW9u",
+            "TW9vc2UuU3RhdGljRGF0YS5FbnRpdHlTdGF0aWNJbmZvIlMKGFByZWZhYlBh",
+            "dGhTdGF0aWNJbmZvTGlzdBI3CgRsaXN0GAEgAygLMikuTW9uTW9vc2UuU3Rh",
+            "dGljRGF0YS5QcmVmYWJQYXRoU3RhdGljSW5mbyq1AQoPRUFjdG9yQ2xhc3NU",
+            "eXBlEhgKFEVBY3RvckNsYXNzVHlwZV9Ob25lEAASGwoXRUFjdG9yQ2xhc3NU",
+            "eXBlX1dhcnJpb3IQARIZChVFQWN0b3JDbGFzc1R5cGVfUHJpc3QQAhIaChZF",
+            "QWN0b3JDbGFzc1R5cGVfQXJjaGVyEAMSGAoURUFjdG9yQ2xhc3NUeXBlX01h",
+            "Z2UQBBIaChZFQWN0b3JDbGFzc1R5cGVfU2hhbWFuEAUq+AEKDkVBdHRyaWJ1",
+            "dGVUeXBlEhcKE0VBdHRyaWJ1dGVUeXBlX05vbmUQABIVChFFQXR0cmlidXRl",
+            "VHlwZV9IcBABEhkKFUVBdHRyaWJ1dGVUeXBlX0F0dGFjaxACEh4KGkVBdHRy",
+            "aWJ1dGVUeXBlX0F0dGFja1NwZWVkEAMSIgoeRUF0dHJpYnV0ZVR5cGVfUGh5",
+            "c2ljYWxEZWZlbmNlEAQSIQodRUF0dHJpYnV0ZVR5cGVfTWFnaWNhbERlZmVu",
+            "Y2UQBRIcChhFQXR0cmlidXRlVHlwZV9Nb3ZlU3BlZWQQBhIWChJFQXR0cmli",
+            "dXRlVHlwZV9NYXgQByppChBFQmF0dGxlU3RhZ2VUeXBlEhkKFUVCYXR0bGVT",
+            "dGFnZVR5cGVfTm9uZRAAEhsKF0VCYXR0bGVTdGFnZVR5cGVfQmF0dGxlEAES",
+            "HQoZRUJhdHRsZVN0YWdlVHlwZV9TY2VuYXJpbxACKlAKEkVCYXR0bGVUZXJy",
+            "YWluVHlwZRIbChdFQmF0dGxlVGVycmFpblR5cGVfTm9uZRAAEh0KGUVCYXR0",
+            "bGVUZXJyYWluVHlwZV9Ob3JtYWwQASqFAQoXRUJhdHRsZVdpbkNvbmRpdGlv",
+            "blR5cGUSIAocRUJhdHRsZVdpbkNvbmRpdGlvblR5cGVfTm9uZRAAEiIKHkVC",
+            "YXR0bGVXaW5Db25kaXRpb25UeXBlX0JhdHRsZRABEiQKIEVCYXR0bGVXaW5D",
+            "b25kaXRpb25UeXBlX1NjZW5hcmlvEAIqOgoLRUVudGl0eVR5cGUSFAoQRUVu",
+            "dGl0eVR5cGVfTm9uZRAAEhUKEUVFbnRpdHlUeXBlX0FjdG9yEAEqpwIKDUVQ",
+            "cmVmYWJQYXRoSWQSFgoSRVByZWZhYlBhdGhJZF9Ob25lEAASHQoZRVByZWZh",
+            "YlBhdGhJZF9Mb2JieVdpbmRvdxABEh8KG0VQcmVmYWJQYXRoSWRfTG9hZGlu",
+            "Z1dpbmRvdxACEiIKHkVQcmVmYWJQYXRoSWRfQmF0dGxlTWFpbldpbmRvdxAD",
+            "EiUKIUVQcmVmYWJQYXRoSWRfQmF0dGxlUHJlcGFyZVdpbmRvdxAEEioKJkVQ",
+            "cmVmYWJQYXRoSWRfQmF0dGxlUHJlcGFyZUNvdmVyV2luZG93EAUSJwojRVBy",
+            "ZWZhYlBhdGhJZF9CYXR0bGVQcmVmYWJBY3Rvckl0ZW0QBhIeChpFUHJlZmFi",
+            "UGF0aElkX0JhdHRsZUNhbWVyYRAHYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
-          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::MonMoose.StaticData.EActorClassType), typeof(global::MonMoose.StaticData.EAttributeType), typeof(global::MonMoose.StaticData.EBattleStageType), typeof(global::MonMoose.StaticData.ETerrainType), typeof(global::MonMoose.StaticData.EEntityType), typeof(global::MonMoose.StaticData.EPrefabPathId), }, new pbr::GeneratedClrTypeInfo[] {
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::MonMoose.StaticData.EActorClassType), typeof(global::MonMoose.StaticData.EAttributeType), typeof(global::MonMoose.StaticData.EBattleStageType), typeof(global::MonMoose.StaticData.EBattleTerrainType), typeof(global::MonMoose.StaticData.EBattleWinConditionType), typeof(global::MonMoose.StaticData.EEntityType), typeof(global::MonMoose.StaticData.EPrefabPathId), }, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::MonMoose.StaticData.ActorStaticInfo), global::MonMoose.StaticData.ActorStaticInfo.Parser, new[]{ "Id", "Name", "Type", "MoveSpeed", "Attack", "Deffence", "PrefabPath", "Size" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::MonMoose.StaticData.AttributeStaticInfo), global::MonMoose.StaticData.AttributeStaticInfo.Parser, new[]{ "Id", "Name", "IsSignInversed", "IconPath" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::MonMoose.StaticData.BattleStaticInfo), global::MonMoose.StaticData.BattleStaticInfo.Parser, new[]{ "Id", "Name", "StageIdList" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::MonMoose.StaticData.BattleGroundStaticInfo), global::MonMoose.StaticData.BattleGroundStaticInfo.Parser, new[]{ "Id", "ScenePath", "LeftWidth", "RightWidth", "Height", "GridIdList" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::MonMoose.StaticData.BattleSceneStaticInfo), global::MonMoose.StaticData.BattleSceneStaticInfo.Parser, new[]{ "Id", "Name", "StageIdList" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::MonMoose.StaticData.BattleStageStaticInfo), global::MonMoose.StaticData.BattleStageStaticInfo.Parser, new[]{ "Id", "Name", "StageEntityList", "EmbattleList", "NeedPrepare", "GroundId", "ScenePath" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::MonMoose.StaticData.TeamStaticInfo), global::MonMoose.StaticData.TeamStaticInfo.Parser, new[]{ "Id", "Name" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::MonMoose.StaticData.GroundStaticInfo), global::MonMoose.StaticData.GroundStaticInfo.Parser, new[]{ "Id", "ScenePath", "LeftWidth", "RightWidth", "Height", "GridIdList" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::MonMoose.StaticData.TerrainStaticInfo), global::MonMoose.StaticData.TerrainStaticInfo.Parser, new[]{ "Id", "Name", "WalkSpeed" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::MonMoose.StaticData.BattleTeamStaticInfo), global::MonMoose.StaticData.BattleTeamStaticInfo.Parser, new[]{ "Id", "Name" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::MonMoose.StaticData.BattleTerrainStaticInfo), global::MonMoose.StaticData.BattleTerrainStaticInfo.Parser, new[]{ "Id", "Name", "WalkSpeed" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::MonMoose.StaticData.BattleWinConditionStaticInfo), global::MonMoose.StaticData.BattleWinConditionStaticInfo.Parser, new[]{ "Id", "Name", "ParamInt1" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::MonMoose.StaticData.CollectableActorStaticInfo), global::MonMoose.StaticData.CollectableActorStaticInfo.Parser, new[]{ "Id", "Name", "HeadIcon" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::MonMoose.StaticData.EntityStaticInfo), global::MonMoose.StaticData.EntityStaticInfo.Parser, new[]{ "Id", "EntityType", "SpecificId" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::MonMoose.StaticData.PrefabPathStaticInfo), global::MonMoose.StaticData.PrefabPathStaticInfo.Parser, new[]{ "Id", "Path" }, null, null, null),
@@ -107,11 +117,12 @@ namespace MonMoose.StaticData {
             new pbr::GeneratedClrTypeInfo(typeof(global::MonMoose.StaticData.EmbattleStaticInfo), global::MonMoose.StaticData.EmbattleStaticInfo.Parser, new[]{ "TeamId", "PosX", "PosY" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::MonMoose.StaticData.ActorStaticInfoList), global::MonMoose.StaticData.ActorStaticInfoList.Parser, new[]{ "List" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::MonMoose.StaticData.AttributeStaticInfoList), global::MonMoose.StaticData.AttributeStaticInfoList.Parser, new[]{ "List" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::MonMoose.StaticData.BattleStaticInfoList), global::MonMoose.StaticData.BattleStaticInfoList.Parser, new[]{ "List" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::MonMoose.StaticData.BattleGroundStaticInfoList), global::MonMoose.StaticData.BattleGroundStaticInfoList.Parser, new[]{ "List" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::MonMoose.StaticData.BattleSceneStaticInfoList), global::MonMoose.StaticData.BattleSceneStaticInfoList.Parser, new[]{ "List" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::MonMoose.StaticData.BattleStageStaticInfoList), global::MonMoose.StaticData.BattleStageStaticInfoList.Parser, new[]{ "List" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::MonMoose.StaticData.TeamStaticInfoList), global::MonMoose.StaticData.TeamStaticInfoList.Parser, new[]{ "List" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::MonMoose.StaticData.GroundStaticInfoList), global::MonMoose.StaticData.GroundStaticInfoList.Parser, new[]{ "List" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::MonMoose.StaticData.TerrainStaticInfoList), global::MonMoose.StaticData.TerrainStaticInfoList.Parser, new[]{ "List" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::MonMoose.StaticData.BattleTeamStaticInfoList), global::MonMoose.StaticData.BattleTeamStaticInfoList.Parser, new[]{ "List" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::MonMoose.StaticData.BattleTerrainStaticInfoList), global::MonMoose.StaticData.BattleTerrainStaticInfoList.Parser, new[]{ "List" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::MonMoose.StaticData.BattleWinConditionStaticInfoList), global::MonMoose.StaticData.BattleWinConditionStaticInfoList.Parser, new[]{ "List" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::MonMoose.StaticData.CollectableActorStaticInfoList), global::MonMoose.StaticData.CollectableActorStaticInfoList.Parser, new[]{ "List" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::MonMoose.StaticData.EntityStaticInfoList), global::MonMoose.StaticData.EntityStaticInfoList.Parser, new[]{ "List" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::MonMoose.StaticData.PrefabPathStaticInfoList), global::MonMoose.StaticData.PrefabPathStaticInfoList.Parser, new[]{ "List" }, null, null, null)
@@ -147,9 +158,15 @@ namespace MonMoose.StaticData {
     [pbr::OriginalName("EBattleStageType_Scenario")] Scenario = 2,
   }
 
-  public enum ETerrainType {
-    [pbr::OriginalName("ETerrainType_None")] None = 0,
-    [pbr::OriginalName("ETerrainType_Normal")] Normal = 1,
+  public enum EBattleTerrainType {
+    [pbr::OriginalName("EBattleTerrainType_None")] None = 0,
+    [pbr::OriginalName("EBattleTerrainType_Normal")] Normal = 1,
+  }
+
+  public enum EBattleWinConditionType {
+    [pbr::OriginalName("EBattleWinConditionType_None")] None = 0,
+    [pbr::OriginalName("EBattleWinConditionType_Battle")] Battle = 1,
+    [pbr::OriginalName("EBattleWinConditionType_Scenario")] Scenario = 2,
   }
 
   public enum EEntityType {
@@ -685,10 +702,10 @@ namespace MonMoose.StaticData {
 
   }
 
-  public sealed partial class BattleStaticInfo : pb::IMessage<BattleStaticInfo> {
-    private static readonly pb::MessageParser<BattleStaticInfo> _parser = new pb::MessageParser<BattleStaticInfo>(() => new BattleStaticInfo());
+  public sealed partial class BattleGroundStaticInfo : pb::IMessage<BattleGroundStaticInfo> {
+    private static readonly pb::MessageParser<BattleGroundStaticInfo> _parser = new pb::MessageParser<BattleGroundStaticInfo>(() => new BattleGroundStaticInfo());
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<BattleStaticInfo> Parser { get { return _parser; } }
+    public static pb::MessageParser<BattleGroundStaticInfo> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -701,22 +718,272 @@ namespace MonMoose.StaticData {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public BattleStaticInfo() {
+    public BattleGroundStaticInfo() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public BattleStaticInfo(BattleStaticInfo other) : this() {
+    public BattleGroundStaticInfo(BattleGroundStaticInfo other) : this() {
+      id_ = other.id_;
+      scenePath_ = other.scenePath_;
+      leftWidth_ = other.leftWidth_;
+      rightWidth_ = other.rightWidth_;
+      height_ = other.height_;
+      gridIdList_ = other.gridIdList_.Clone();
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public BattleGroundStaticInfo Clone() {
+      return new BattleGroundStaticInfo(this);
+    }
+
+    /// <summary>Field number for the "Id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private int id_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Id {
+      get { return id_; }
+      set {
+        id_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "ScenePath" field.</summary>
+    public const int ScenePathFieldNumber = 2;
+    private string scenePath_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string ScenePath {
+      get { return scenePath_; }
+      set {
+        scenePath_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "LeftWidth" field.</summary>
+    public const int LeftWidthFieldNumber = 3;
+    private int leftWidth_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int LeftWidth {
+      get { return leftWidth_; }
+      set {
+        leftWidth_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "RightWidth" field.</summary>
+    public const int RightWidthFieldNumber = 4;
+    private int rightWidth_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int RightWidth {
+      get { return rightWidth_; }
+      set {
+        rightWidth_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Height" field.</summary>
+    public const int HeightFieldNumber = 5;
+    private int height_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Height {
+      get { return height_; }
+      set {
+        height_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "GridIdList" field.</summary>
+    public const int GridIdListFieldNumber = 6;
+    private static readonly pb::FieldCodec<int> _repeated_gridIdList_codec
+        = pb::FieldCodec.ForInt32(50);
+    private readonly pbc::RepeatedField<int> gridIdList_ = new pbc::RepeatedField<int>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<int> GridIdList {
+      get { return gridIdList_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as BattleGroundStaticInfo);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(BattleGroundStaticInfo other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Id != other.Id) return false;
+      if (ScenePath != other.ScenePath) return false;
+      if (LeftWidth != other.LeftWidth) return false;
+      if (RightWidth != other.RightWidth) return false;
+      if (Height != other.Height) return false;
+      if(!gridIdList_.Equals(other.gridIdList_)) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Id != 0) hash ^= Id.GetHashCode();
+      if (ScenePath.Length != 0) hash ^= ScenePath.GetHashCode();
+      if (LeftWidth != 0) hash ^= LeftWidth.GetHashCode();
+      if (RightWidth != 0) hash ^= RightWidth.GetHashCode();
+      if (Height != 0) hash ^= Height.GetHashCode();
+      hash ^= gridIdList_.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Id != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Id);
+      }
+      if (ScenePath.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(ScenePath);
+      }
+      if (LeftWidth != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(LeftWidth);
+      }
+      if (RightWidth != 0) {
+        output.WriteRawTag(32);
+        output.WriteInt32(RightWidth);
+      }
+      if (Height != 0) {
+        output.WriteRawTag(40);
+        output.WriteInt32(Height);
+      }
+      gridIdList_.WriteTo(output, _repeated_gridIdList_codec);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Id != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Id);
+      }
+      if (ScenePath.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ScenePath);
+      }
+      if (LeftWidth != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(LeftWidth);
+      }
+      if (RightWidth != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(RightWidth);
+      }
+      if (Height != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Height);
+      }
+      size += gridIdList_.CalculateSize(_repeated_gridIdList_codec);
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(BattleGroundStaticInfo other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Id != 0) {
+        Id = other.Id;
+      }
+      if (other.ScenePath.Length != 0) {
+        ScenePath = other.ScenePath;
+      }
+      if (other.LeftWidth != 0) {
+        LeftWidth = other.LeftWidth;
+      }
+      if (other.RightWidth != 0) {
+        RightWidth = other.RightWidth;
+      }
+      if (other.Height != 0) {
+        Height = other.Height;
+      }
+      gridIdList_.Add(other.gridIdList_);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            Id = input.ReadInt32();
+            break;
+          }
+          case 18: {
+            ScenePath = input.ReadString();
+            break;
+          }
+          case 24: {
+            LeftWidth = input.ReadInt32();
+            break;
+          }
+          case 32: {
+            RightWidth = input.ReadInt32();
+            break;
+          }
+          case 40: {
+            Height = input.ReadInt32();
+            break;
+          }
+          case 50:
+          case 48: {
+            gridIdList_.AddEntriesFrom(input, _repeated_gridIdList_codec);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class BattleSceneStaticInfo : pb::IMessage<BattleSceneStaticInfo> {
+    private static readonly pb::MessageParser<BattleSceneStaticInfo> _parser = new pb::MessageParser<BattleSceneStaticInfo>(() => new BattleSceneStaticInfo());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<BattleSceneStaticInfo> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::MonMoose.StaticData.StructureReflection.Descriptor.MessageTypes[3]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public BattleSceneStaticInfo() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public BattleSceneStaticInfo(BattleSceneStaticInfo other) : this() {
       id_ = other.id_;
       name_ = other.name_;
       stageIdList_ = other.stageIdList_.Clone();
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public BattleStaticInfo Clone() {
-      return new BattleStaticInfo(this);
+    public BattleSceneStaticInfo Clone() {
+      return new BattleSceneStaticInfo(this);
     }
 
     /// <summary>Field number for the "Id" field.</summary>
@@ -753,11 +1020,11 @@ namespace MonMoose.StaticData {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as BattleStaticInfo);
+      return Equals(other as BattleSceneStaticInfo);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(BattleStaticInfo other) {
+    public bool Equals(BattleSceneStaticInfo other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -811,7 +1078,7 @@ namespace MonMoose.StaticData {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(BattleStaticInfo other) {
+    public void MergeFrom(BattleSceneStaticInfo other) {
       if (other == null) {
         return;
       }
@@ -858,7 +1125,7 @@ namespace MonMoose.StaticData {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::MonMoose.StaticData.StructureReflection.Descriptor.MessageTypes[3]; }
+      get { return global::MonMoose.StaticData.StructureReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1120,14 +1387,14 @@ namespace MonMoose.StaticData {
 
   }
 
-  public sealed partial class TeamStaticInfo : pb::IMessage<TeamStaticInfo> {
-    private static readonly pb::MessageParser<TeamStaticInfo> _parser = new pb::MessageParser<TeamStaticInfo>(() => new TeamStaticInfo());
+  public sealed partial class BattleTeamStaticInfo : pb::IMessage<BattleTeamStaticInfo> {
+    private static readonly pb::MessageParser<BattleTeamStaticInfo> _parser = new pb::MessageParser<BattleTeamStaticInfo>(() => new BattleTeamStaticInfo());
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<TeamStaticInfo> Parser { get { return _parser; } }
+    public static pb::MessageParser<BattleTeamStaticInfo> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::MonMoose.StaticData.StructureReflection.Descriptor.MessageTypes[4]; }
+      get { return global::MonMoose.StaticData.StructureReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1136,21 +1403,21 @@ namespace MonMoose.StaticData {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public TeamStaticInfo() {
+    public BattleTeamStaticInfo() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public TeamStaticInfo(TeamStaticInfo other) : this() {
+    public BattleTeamStaticInfo(BattleTeamStaticInfo other) : this() {
       id_ = other.id_;
       name_ = other.name_;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public TeamStaticInfo Clone() {
-      return new TeamStaticInfo(this);
+    public BattleTeamStaticInfo Clone() {
+      return new BattleTeamStaticInfo(this);
     }
 
     /// <summary>Field number for the "Id" field.</summary>
@@ -1177,11 +1444,11 @@ namespace MonMoose.StaticData {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as TeamStaticInfo);
+      return Equals(other as BattleTeamStaticInfo);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(TeamStaticInfo other) {
+    public bool Equals(BattleTeamStaticInfo other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -1231,7 +1498,7 @@ namespace MonMoose.StaticData {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(TeamStaticInfo other) {
+    public void MergeFrom(BattleTeamStaticInfo other) {
       if (other == null) {
         return;
       }
@@ -1265,260 +1532,10 @@ namespace MonMoose.StaticData {
 
   }
 
-  public sealed partial class GroundStaticInfo : pb::IMessage<GroundStaticInfo> {
-    private static readonly pb::MessageParser<GroundStaticInfo> _parser = new pb::MessageParser<GroundStaticInfo>(() => new GroundStaticInfo());
+  public sealed partial class BattleTerrainStaticInfo : pb::IMessage<BattleTerrainStaticInfo> {
+    private static readonly pb::MessageParser<BattleTerrainStaticInfo> _parser = new pb::MessageParser<BattleTerrainStaticInfo>(() => new BattleTerrainStaticInfo());
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<GroundStaticInfo> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::MonMoose.StaticData.StructureReflection.Descriptor.MessageTypes[5]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public GroundStaticInfo() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public GroundStaticInfo(GroundStaticInfo other) : this() {
-      id_ = other.id_;
-      scenePath_ = other.scenePath_;
-      leftWidth_ = other.leftWidth_;
-      rightWidth_ = other.rightWidth_;
-      height_ = other.height_;
-      gridIdList_ = other.gridIdList_.Clone();
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public GroundStaticInfo Clone() {
-      return new GroundStaticInfo(this);
-    }
-
-    /// <summary>Field number for the "Id" field.</summary>
-    public const int IdFieldNumber = 1;
-    private int id_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int Id {
-      get { return id_; }
-      set {
-        id_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "ScenePath" field.</summary>
-    public const int ScenePathFieldNumber = 2;
-    private string scenePath_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string ScenePath {
-      get { return scenePath_; }
-      set {
-        scenePath_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "LeftWidth" field.</summary>
-    public const int LeftWidthFieldNumber = 3;
-    private int leftWidth_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int LeftWidth {
-      get { return leftWidth_; }
-      set {
-        leftWidth_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "RightWidth" field.</summary>
-    public const int RightWidthFieldNumber = 4;
-    private int rightWidth_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int RightWidth {
-      get { return rightWidth_; }
-      set {
-        rightWidth_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "Height" field.</summary>
-    public const int HeightFieldNumber = 5;
-    private int height_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int Height {
-      get { return height_; }
-      set {
-        height_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "GridIdList" field.</summary>
-    public const int GridIdListFieldNumber = 6;
-    private static readonly pb::FieldCodec<int> _repeated_gridIdList_codec
-        = pb::FieldCodec.ForInt32(50);
-    private readonly pbc::RepeatedField<int> gridIdList_ = new pbc::RepeatedField<int>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<int> GridIdList {
-      get { return gridIdList_; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
-      return Equals(other as GroundStaticInfo);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(GroundStaticInfo other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if (Id != other.Id) return false;
-      if (ScenePath != other.ScenePath) return false;
-      if (LeftWidth != other.LeftWidth) return false;
-      if (RightWidth != other.RightWidth) return false;
-      if (Height != other.Height) return false;
-      if(!gridIdList_.Equals(other.gridIdList_)) return false;
-      return true;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (Id != 0) hash ^= Id.GetHashCode();
-      if (ScenePath.Length != 0) hash ^= ScenePath.GetHashCode();
-      if (LeftWidth != 0) hash ^= LeftWidth.GetHashCode();
-      if (RightWidth != 0) hash ^= RightWidth.GetHashCode();
-      if (Height != 0) hash ^= Height.GetHashCode();
-      hash ^= gridIdList_.GetHashCode();
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
-      if (Id != 0) {
-        output.WriteRawTag(8);
-        output.WriteInt32(Id);
-      }
-      if (ScenePath.Length != 0) {
-        output.WriteRawTag(18);
-        output.WriteString(ScenePath);
-      }
-      if (LeftWidth != 0) {
-        output.WriteRawTag(24);
-        output.WriteInt32(LeftWidth);
-      }
-      if (RightWidth != 0) {
-        output.WriteRawTag(32);
-        output.WriteInt32(RightWidth);
-      }
-      if (Height != 0) {
-        output.WriteRawTag(40);
-        output.WriteInt32(Height);
-      }
-      gridIdList_.WriteTo(output, _repeated_gridIdList_codec);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int CalculateSize() {
-      int size = 0;
-      if (Id != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Id);
-      }
-      if (ScenePath.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(ScenePath);
-      }
-      if (LeftWidth != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(LeftWidth);
-      }
-      if (RightWidth != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(RightWidth);
-      }
-      if (Height != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Height);
-      }
-      size += gridIdList_.CalculateSize(_repeated_gridIdList_codec);
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(GroundStaticInfo other) {
-      if (other == null) {
-        return;
-      }
-      if (other.Id != 0) {
-        Id = other.Id;
-      }
-      if (other.ScenePath.Length != 0) {
-        ScenePath = other.ScenePath;
-      }
-      if (other.LeftWidth != 0) {
-        LeftWidth = other.LeftWidth;
-      }
-      if (other.RightWidth != 0) {
-        RightWidth = other.RightWidth;
-      }
-      if (other.Height != 0) {
-        Height = other.Height;
-      }
-      gridIdList_.Add(other.gridIdList_);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            input.SkipLastField();
-            break;
-          case 8: {
-            Id = input.ReadInt32();
-            break;
-          }
-          case 18: {
-            ScenePath = input.ReadString();
-            break;
-          }
-          case 24: {
-            LeftWidth = input.ReadInt32();
-            break;
-          }
-          case 32: {
-            RightWidth = input.ReadInt32();
-            break;
-          }
-          case 40: {
-            Height = input.ReadInt32();
-            break;
-          }
-          case 50:
-          case 48: {
-            gridIdList_.AddEntriesFrom(input, _repeated_gridIdList_codec);
-            break;
-          }
-        }
-      }
-    }
-
-  }
-
-  public sealed partial class TerrainStaticInfo : pb::IMessage<TerrainStaticInfo> {
-    private static readonly pb::MessageParser<TerrainStaticInfo> _parser = new pb::MessageParser<TerrainStaticInfo>(() => new TerrainStaticInfo());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<TerrainStaticInfo> Parser { get { return _parser; } }
+    public static pb::MessageParser<BattleTerrainStaticInfo> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -1531,22 +1548,22 @@ namespace MonMoose.StaticData {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public TerrainStaticInfo() {
+    public BattleTerrainStaticInfo() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public TerrainStaticInfo(TerrainStaticInfo other) : this() {
+    public BattleTerrainStaticInfo(BattleTerrainStaticInfo other) : this() {
       id_ = other.id_;
       name_ = other.name_;
       walkSpeed_ = other.walkSpeed_;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public TerrainStaticInfo Clone() {
-      return new TerrainStaticInfo(this);
+    public BattleTerrainStaticInfo Clone() {
+      return new BattleTerrainStaticInfo(this);
     }
 
     /// <summary>Field number for the "Id" field.</summary>
@@ -1584,11 +1601,11 @@ namespace MonMoose.StaticData {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as TerrainStaticInfo);
+      return Equals(other as BattleTerrainStaticInfo);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(TerrainStaticInfo other) {
+    public bool Equals(BattleTerrainStaticInfo other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -1647,7 +1664,7 @@ namespace MonMoose.StaticData {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(TerrainStaticInfo other) {
+    public void MergeFrom(BattleTerrainStaticInfo other) {
       if (other == null) {
         return;
       }
@@ -1688,6 +1705,179 @@ namespace MonMoose.StaticData {
 
   }
 
+  public sealed partial class BattleWinConditionStaticInfo : pb::IMessage<BattleWinConditionStaticInfo> {
+    private static readonly pb::MessageParser<BattleWinConditionStaticInfo> _parser = new pb::MessageParser<BattleWinConditionStaticInfo>(() => new BattleWinConditionStaticInfo());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<BattleWinConditionStaticInfo> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::MonMoose.StaticData.StructureReflection.Descriptor.MessageTypes[7]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public BattleWinConditionStaticInfo() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public BattleWinConditionStaticInfo(BattleWinConditionStaticInfo other) : this() {
+      id_ = other.id_;
+      name_ = other.name_;
+      paramInt1_ = other.paramInt1_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public BattleWinConditionStaticInfo Clone() {
+      return new BattleWinConditionStaticInfo(this);
+    }
+
+    /// <summary>Field number for the "Id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private int id_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Id {
+      get { return id_; }
+      set {
+        id_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Name" field.</summary>
+    public const int NameFieldNumber = 2;
+    private string name_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Name {
+      get { return name_; }
+      set {
+        name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "ParamInt1" field.</summary>
+    public const int ParamInt1FieldNumber = 3;
+    private int paramInt1_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int ParamInt1 {
+      get { return paramInt1_; }
+      set {
+        paramInt1_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as BattleWinConditionStaticInfo);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(BattleWinConditionStaticInfo other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Id != other.Id) return false;
+      if (Name != other.Name) return false;
+      if (ParamInt1 != other.ParamInt1) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Id != 0) hash ^= Id.GetHashCode();
+      if (Name.Length != 0) hash ^= Name.GetHashCode();
+      if (ParamInt1 != 0) hash ^= ParamInt1.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Id != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Id);
+      }
+      if (Name.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Name);
+      }
+      if (ParamInt1 != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(ParamInt1);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Id != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Id);
+      }
+      if (Name.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
+      }
+      if (ParamInt1 != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ParamInt1);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(BattleWinConditionStaticInfo other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Id != 0) {
+        Id = other.Id;
+      }
+      if (other.Name.Length != 0) {
+        Name = other.Name;
+      }
+      if (other.ParamInt1 != 0) {
+        ParamInt1 = other.ParamInt1;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            Id = input.ReadInt32();
+            break;
+          }
+          case 18: {
+            Name = input.ReadString();
+            break;
+          }
+          case 24: {
+            ParamInt1 = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
   public sealed partial class CollectableActorStaticInfo : pb::IMessage<CollectableActorStaticInfo> {
     private static readonly pb::MessageParser<CollectableActorStaticInfo> _parser = new pb::MessageParser<CollectableActorStaticInfo>(() => new CollectableActorStaticInfo());
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1695,7 +1885,7 @@ namespace MonMoose.StaticData {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::MonMoose.StaticData.StructureReflection.Descriptor.MessageTypes[7]; }
+      get { return global::MonMoose.StaticData.StructureReflection.Descriptor.MessageTypes[8]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1868,7 +2058,7 @@ namespace MonMoose.StaticData {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::MonMoose.StaticData.StructureReflection.Descriptor.MessageTypes[8]; }
+      get { return global::MonMoose.StaticData.StructureReflection.Descriptor.MessageTypes[9]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2041,7 +2231,7 @@ namespace MonMoose.StaticData {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::MonMoose.StaticData.StructureReflection.Descriptor.MessageTypes[9]; }
+      get { return global::MonMoose.StaticData.StructureReflection.Descriptor.MessageTypes[10]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2186,7 +2376,7 @@ namespace MonMoose.StaticData {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::MonMoose.StaticData.StructureReflection.Descriptor.MessageTypes[10]; }
+      get { return global::MonMoose.StaticData.StructureReflection.Descriptor.MessageTypes[11]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2415,7 +2605,7 @@ namespace MonMoose.StaticData {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::MonMoose.StaticData.StructureReflection.Descriptor.MessageTypes[11]; }
+      get { return global::MonMoose.StaticData.StructureReflection.Descriptor.MessageTypes[12]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2588,7 +2778,7 @@ namespace MonMoose.StaticData {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::MonMoose.StaticData.StructureReflection.Descriptor.MessageTypes[12]; }
+      get { return global::MonMoose.StaticData.StructureReflection.Descriptor.MessageTypes[13]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2697,7 +2887,7 @@ namespace MonMoose.StaticData {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::MonMoose.StaticData.StructureReflection.Descriptor.MessageTypes[13]; }
+      get { return global::MonMoose.StaticData.StructureReflection.Descriptor.MessageTypes[14]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2799,14 +2989,14 @@ namespace MonMoose.StaticData {
 
   }
 
-  public sealed partial class BattleStaticInfoList : pb::IMessage<BattleStaticInfoList> {
-    private static readonly pb::MessageParser<BattleStaticInfoList> _parser = new pb::MessageParser<BattleStaticInfoList>(() => new BattleStaticInfoList());
+  public sealed partial class BattleGroundStaticInfoList : pb::IMessage<BattleGroundStaticInfoList> {
+    private static readonly pb::MessageParser<BattleGroundStaticInfoList> _parser = new pb::MessageParser<BattleGroundStaticInfoList>(() => new BattleGroundStaticInfoList());
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<BattleStaticInfoList> Parser { get { return _parser; } }
+    public static pb::MessageParser<BattleGroundStaticInfoList> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::MonMoose.StaticData.StructureReflection.Descriptor.MessageTypes[14]; }
+      get { return global::MonMoose.StaticData.StructureReflection.Descriptor.MessageTypes[15]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2815,39 +3005,39 @@ namespace MonMoose.StaticData {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public BattleStaticInfoList() {
+    public BattleGroundStaticInfoList() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public BattleStaticInfoList(BattleStaticInfoList other) : this() {
+    public BattleGroundStaticInfoList(BattleGroundStaticInfoList other) : this() {
       list_ = other.list_.Clone();
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public BattleStaticInfoList Clone() {
-      return new BattleStaticInfoList(this);
+    public BattleGroundStaticInfoList Clone() {
+      return new BattleGroundStaticInfoList(this);
     }
 
     /// <summary>Field number for the "list" field.</summary>
     public const int ListFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::MonMoose.StaticData.BattleStaticInfo> _repeated_list_codec
-        = pb::FieldCodec.ForMessage(10, global::MonMoose.StaticData.BattleStaticInfo.Parser);
-    private readonly pbc::RepeatedField<global::MonMoose.StaticData.BattleStaticInfo> list_ = new pbc::RepeatedField<global::MonMoose.StaticData.BattleStaticInfo>();
+    private static readonly pb::FieldCodec<global::MonMoose.StaticData.BattleGroundStaticInfo> _repeated_list_codec
+        = pb::FieldCodec.ForMessage(10, global::MonMoose.StaticData.BattleGroundStaticInfo.Parser);
+    private readonly pbc::RepeatedField<global::MonMoose.StaticData.BattleGroundStaticInfo> list_ = new pbc::RepeatedField<global::MonMoose.StaticData.BattleGroundStaticInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::MonMoose.StaticData.BattleStaticInfo> List {
+    public pbc::RepeatedField<global::MonMoose.StaticData.BattleGroundStaticInfo> List {
       get { return list_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as BattleStaticInfoList);
+      return Equals(other as BattleGroundStaticInfoList);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(BattleStaticInfoList other) {
+    public bool Equals(BattleGroundStaticInfoList other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -2883,7 +3073,116 @@ namespace MonMoose.StaticData {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(BattleStaticInfoList other) {
+    public void MergeFrom(BattleGroundStaticInfoList other) {
+      if (other == null) {
+        return;
+      }
+      list_.Add(other.list_);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 10: {
+            list_.AddEntriesFrom(input, _repeated_list_codec);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class BattleSceneStaticInfoList : pb::IMessage<BattleSceneStaticInfoList> {
+    private static readonly pb::MessageParser<BattleSceneStaticInfoList> _parser = new pb::MessageParser<BattleSceneStaticInfoList>(() => new BattleSceneStaticInfoList());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<BattleSceneStaticInfoList> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::MonMoose.StaticData.StructureReflection.Descriptor.MessageTypes[16]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public BattleSceneStaticInfoList() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public BattleSceneStaticInfoList(BattleSceneStaticInfoList other) : this() {
+      list_ = other.list_.Clone();
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public BattleSceneStaticInfoList Clone() {
+      return new BattleSceneStaticInfoList(this);
+    }
+
+    /// <summary>Field number for the "list" field.</summary>
+    public const int ListFieldNumber = 1;
+    private static readonly pb::FieldCodec<global::MonMoose.StaticData.BattleSceneStaticInfo> _repeated_list_codec
+        = pb::FieldCodec.ForMessage(10, global::MonMoose.StaticData.BattleSceneStaticInfo.Parser);
+    private readonly pbc::RepeatedField<global::MonMoose.StaticData.BattleSceneStaticInfo> list_ = new pbc::RepeatedField<global::MonMoose.StaticData.BattleSceneStaticInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<global::MonMoose.StaticData.BattleSceneStaticInfo> List {
+      get { return list_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as BattleSceneStaticInfoList);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(BattleSceneStaticInfoList other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!list_.Equals(other.list_)) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= list_.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      list_.WriteTo(output, _repeated_list_codec);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      size += list_.CalculateSize(_repeated_list_codec);
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(BattleSceneStaticInfoList other) {
       if (other == null) {
         return;
       }
@@ -2915,7 +3214,7 @@ namespace MonMoose.StaticData {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::MonMoose.StaticData.StructureReflection.Descriptor.MessageTypes[15]; }
+      get { return global::MonMoose.StaticData.StructureReflection.Descriptor.MessageTypes[17]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3017,228 +3316,10 @@ namespace MonMoose.StaticData {
 
   }
 
-  public sealed partial class TeamStaticInfoList : pb::IMessage<TeamStaticInfoList> {
-    private static readonly pb::MessageParser<TeamStaticInfoList> _parser = new pb::MessageParser<TeamStaticInfoList>(() => new TeamStaticInfoList());
+  public sealed partial class BattleTeamStaticInfoList : pb::IMessage<BattleTeamStaticInfoList> {
+    private static readonly pb::MessageParser<BattleTeamStaticInfoList> _parser = new pb::MessageParser<BattleTeamStaticInfoList>(() => new BattleTeamStaticInfoList());
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<TeamStaticInfoList> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::MonMoose.StaticData.StructureReflection.Descriptor.MessageTypes[16]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public TeamStaticInfoList() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public TeamStaticInfoList(TeamStaticInfoList other) : this() {
-      list_ = other.list_.Clone();
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public TeamStaticInfoList Clone() {
-      return new TeamStaticInfoList(this);
-    }
-
-    /// <summary>Field number for the "list" field.</summary>
-    public const int ListFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::MonMoose.StaticData.TeamStaticInfo> _repeated_list_codec
-        = pb::FieldCodec.ForMessage(10, global::MonMoose.StaticData.TeamStaticInfo.Parser);
-    private readonly pbc::RepeatedField<global::MonMoose.StaticData.TeamStaticInfo> list_ = new pbc::RepeatedField<global::MonMoose.StaticData.TeamStaticInfo>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::MonMoose.StaticData.TeamStaticInfo> List {
-      get { return list_; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
-      return Equals(other as TeamStaticInfoList);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(TeamStaticInfoList other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if(!list_.Equals(other.list_)) return false;
-      return true;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override int GetHashCode() {
-      int hash = 1;
-      hash ^= list_.GetHashCode();
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
-      list_.WriteTo(output, _repeated_list_codec);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int CalculateSize() {
-      int size = 0;
-      size += list_.CalculateSize(_repeated_list_codec);
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(TeamStaticInfoList other) {
-      if (other == null) {
-        return;
-      }
-      list_.Add(other.list_);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            input.SkipLastField();
-            break;
-          case 10: {
-            list_.AddEntriesFrom(input, _repeated_list_codec);
-            break;
-          }
-        }
-      }
-    }
-
-  }
-
-  public sealed partial class GroundStaticInfoList : pb::IMessage<GroundStaticInfoList> {
-    private static readonly pb::MessageParser<GroundStaticInfoList> _parser = new pb::MessageParser<GroundStaticInfoList>(() => new GroundStaticInfoList());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<GroundStaticInfoList> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::MonMoose.StaticData.StructureReflection.Descriptor.MessageTypes[17]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public GroundStaticInfoList() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public GroundStaticInfoList(GroundStaticInfoList other) : this() {
-      list_ = other.list_.Clone();
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public GroundStaticInfoList Clone() {
-      return new GroundStaticInfoList(this);
-    }
-
-    /// <summary>Field number for the "list" field.</summary>
-    public const int ListFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::MonMoose.StaticData.GroundStaticInfo> _repeated_list_codec
-        = pb::FieldCodec.ForMessage(10, global::MonMoose.StaticData.GroundStaticInfo.Parser);
-    private readonly pbc::RepeatedField<global::MonMoose.StaticData.GroundStaticInfo> list_ = new pbc::RepeatedField<global::MonMoose.StaticData.GroundStaticInfo>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::MonMoose.StaticData.GroundStaticInfo> List {
-      get { return list_; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
-      return Equals(other as GroundStaticInfoList);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(GroundStaticInfoList other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if(!list_.Equals(other.list_)) return false;
-      return true;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override int GetHashCode() {
-      int hash = 1;
-      hash ^= list_.GetHashCode();
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
-      list_.WriteTo(output, _repeated_list_codec);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int CalculateSize() {
-      int size = 0;
-      size += list_.CalculateSize(_repeated_list_codec);
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(GroundStaticInfoList other) {
-      if (other == null) {
-        return;
-      }
-      list_.Add(other.list_);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            input.SkipLastField();
-            break;
-          case 10: {
-            list_.AddEntriesFrom(input, _repeated_list_codec);
-            break;
-          }
-        }
-      }
-    }
-
-  }
-
-  public sealed partial class TerrainStaticInfoList : pb::IMessage<TerrainStaticInfoList> {
-    private static readonly pb::MessageParser<TerrainStaticInfoList> _parser = new pb::MessageParser<TerrainStaticInfoList>(() => new TerrainStaticInfoList());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<TerrainStaticInfoList> Parser { get { return _parser; } }
+    public static pb::MessageParser<BattleTeamStaticInfoList> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -3251,39 +3332,39 @@ namespace MonMoose.StaticData {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public TerrainStaticInfoList() {
+    public BattleTeamStaticInfoList() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public TerrainStaticInfoList(TerrainStaticInfoList other) : this() {
+    public BattleTeamStaticInfoList(BattleTeamStaticInfoList other) : this() {
       list_ = other.list_.Clone();
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public TerrainStaticInfoList Clone() {
-      return new TerrainStaticInfoList(this);
+    public BattleTeamStaticInfoList Clone() {
+      return new BattleTeamStaticInfoList(this);
     }
 
     /// <summary>Field number for the "list" field.</summary>
     public const int ListFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::MonMoose.StaticData.TerrainStaticInfo> _repeated_list_codec
-        = pb::FieldCodec.ForMessage(10, global::MonMoose.StaticData.TerrainStaticInfo.Parser);
-    private readonly pbc::RepeatedField<global::MonMoose.StaticData.TerrainStaticInfo> list_ = new pbc::RepeatedField<global::MonMoose.StaticData.TerrainStaticInfo>();
+    private static readonly pb::FieldCodec<global::MonMoose.StaticData.BattleTeamStaticInfo> _repeated_list_codec
+        = pb::FieldCodec.ForMessage(10, global::MonMoose.StaticData.BattleTeamStaticInfo.Parser);
+    private readonly pbc::RepeatedField<global::MonMoose.StaticData.BattleTeamStaticInfo> list_ = new pbc::RepeatedField<global::MonMoose.StaticData.BattleTeamStaticInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::MonMoose.StaticData.TerrainStaticInfo> List {
+    public pbc::RepeatedField<global::MonMoose.StaticData.BattleTeamStaticInfo> List {
       get { return list_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as TerrainStaticInfoList);
+      return Equals(other as BattleTeamStaticInfoList);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(TerrainStaticInfoList other) {
+    public bool Equals(BattleTeamStaticInfoList other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -3319,7 +3400,225 @@ namespace MonMoose.StaticData {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(TerrainStaticInfoList other) {
+    public void MergeFrom(BattleTeamStaticInfoList other) {
+      if (other == null) {
+        return;
+      }
+      list_.Add(other.list_);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 10: {
+            list_.AddEntriesFrom(input, _repeated_list_codec);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class BattleTerrainStaticInfoList : pb::IMessage<BattleTerrainStaticInfoList> {
+    private static readonly pb::MessageParser<BattleTerrainStaticInfoList> _parser = new pb::MessageParser<BattleTerrainStaticInfoList>(() => new BattleTerrainStaticInfoList());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<BattleTerrainStaticInfoList> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::MonMoose.StaticData.StructureReflection.Descriptor.MessageTypes[19]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public BattleTerrainStaticInfoList() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public BattleTerrainStaticInfoList(BattleTerrainStaticInfoList other) : this() {
+      list_ = other.list_.Clone();
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public BattleTerrainStaticInfoList Clone() {
+      return new BattleTerrainStaticInfoList(this);
+    }
+
+    /// <summary>Field number for the "list" field.</summary>
+    public const int ListFieldNumber = 1;
+    private static readonly pb::FieldCodec<global::MonMoose.StaticData.BattleTerrainStaticInfo> _repeated_list_codec
+        = pb::FieldCodec.ForMessage(10, global::MonMoose.StaticData.BattleTerrainStaticInfo.Parser);
+    private readonly pbc::RepeatedField<global::MonMoose.StaticData.BattleTerrainStaticInfo> list_ = new pbc::RepeatedField<global::MonMoose.StaticData.BattleTerrainStaticInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<global::MonMoose.StaticData.BattleTerrainStaticInfo> List {
+      get { return list_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as BattleTerrainStaticInfoList);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(BattleTerrainStaticInfoList other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!list_.Equals(other.list_)) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= list_.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      list_.WriteTo(output, _repeated_list_codec);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      size += list_.CalculateSize(_repeated_list_codec);
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(BattleTerrainStaticInfoList other) {
+      if (other == null) {
+        return;
+      }
+      list_.Add(other.list_);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 10: {
+            list_.AddEntriesFrom(input, _repeated_list_codec);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class BattleWinConditionStaticInfoList : pb::IMessage<BattleWinConditionStaticInfoList> {
+    private static readonly pb::MessageParser<BattleWinConditionStaticInfoList> _parser = new pb::MessageParser<BattleWinConditionStaticInfoList>(() => new BattleWinConditionStaticInfoList());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<BattleWinConditionStaticInfoList> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::MonMoose.StaticData.StructureReflection.Descriptor.MessageTypes[20]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public BattleWinConditionStaticInfoList() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public BattleWinConditionStaticInfoList(BattleWinConditionStaticInfoList other) : this() {
+      list_ = other.list_.Clone();
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public BattleWinConditionStaticInfoList Clone() {
+      return new BattleWinConditionStaticInfoList(this);
+    }
+
+    /// <summary>Field number for the "list" field.</summary>
+    public const int ListFieldNumber = 1;
+    private static readonly pb::FieldCodec<global::MonMoose.StaticData.BattleWinConditionStaticInfo> _repeated_list_codec
+        = pb::FieldCodec.ForMessage(10, global::MonMoose.StaticData.BattleWinConditionStaticInfo.Parser);
+    private readonly pbc::RepeatedField<global::MonMoose.StaticData.BattleWinConditionStaticInfo> list_ = new pbc::RepeatedField<global::MonMoose.StaticData.BattleWinConditionStaticInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<global::MonMoose.StaticData.BattleWinConditionStaticInfo> List {
+      get { return list_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as BattleWinConditionStaticInfoList);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(BattleWinConditionStaticInfoList other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!list_.Equals(other.list_)) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= list_.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      list_.WriteTo(output, _repeated_list_codec);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      size += list_.CalculateSize(_repeated_list_codec);
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(BattleWinConditionStaticInfoList other) {
       if (other == null) {
         return;
       }
@@ -3351,7 +3650,7 @@ namespace MonMoose.StaticData {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::MonMoose.StaticData.StructureReflection.Descriptor.MessageTypes[19]; }
+      get { return global::MonMoose.StaticData.StructureReflection.Descriptor.MessageTypes[21]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3460,7 +3759,7 @@ namespace MonMoose.StaticData {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::MonMoose.StaticData.StructureReflection.Descriptor.MessageTypes[20]; }
+      get { return global::MonMoose.StaticData.StructureReflection.Descriptor.MessageTypes[22]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3569,7 +3868,7 @@ namespace MonMoose.StaticData {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::MonMoose.StaticData.StructureReflection.Descriptor.MessageTypes[21]; }
+      get { return global::MonMoose.StaticData.StructureReflection.Descriptor.MessageTypes[23]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

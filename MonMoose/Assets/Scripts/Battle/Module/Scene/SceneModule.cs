@@ -8,14 +8,14 @@ namespace MonMoose.Battle
 {
     public class SceneModule : Module
     {
-        private BattleStaticInfo m_staticInfo;
+        private BattleSceneStaticInfo m_staticInfo;
         private List<BattleStage> m_stageList = new List<BattleStage>();
         private int m_curStageIndex = 0;
 
         protected override void OnInit(BattleInitData battleInitData)
         {
             base.OnInit(battleInitData);
-            m_staticInfo = StaticDataManager.instance.GetBattle(battleInitData.id);
+            m_staticInfo = StaticDataManager.instance.GetBattleScene(battleInitData.id);
             for (int i = 0; i < m_staticInfo.StageIdList.Count; ++i)
             {
                 int stageRid = m_staticInfo.StageIdList[i];

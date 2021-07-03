@@ -16,7 +16,7 @@ namespace MonMoose.GameLogic.UI
             base.OnInit(param);
             GameObjectPool pool = GetInventory().GetComponent<GameObjectPool>((int)EWidget.Content);
             pool.Init();
-            foreach (BattleStaticInfo battleInfo in StaticDataManager.instance.battleList)
+            foreach (BattleSceneStaticInfo battleInfo in StaticDataManager.instance.battleSceneList)
             {
                 var holder = pool.Fetch();
                 holder.obj.transform.Find("Text").GetComponent<Text>().text = string.Format("{0}.{1}", battleInfo.Id, battleInfo.Name);

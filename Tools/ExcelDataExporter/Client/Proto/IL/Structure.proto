@@ -30,10 +30,17 @@ enum EBattleStageType
 	EBattleStageType_Scenario = 2;
 }
 
-enum ETerrainType
+enum EBattleTerrainType
 {
-	ETerrainType_None = 0;
-	ETerrainType_Normal = 1;
+	EBattleTerrainType_None = 0;
+	EBattleTerrainType_Normal = 1;
+}
+
+enum EBattleWinConditionType
+{
+	EBattleWinConditionType_None = 0;
+	EBattleWinConditionType_Battle = 1;
+	EBattleWinConditionType_Scenario = 2;
 }
 
 enum EEntityType
@@ -74,7 +81,17 @@ message AttributeStaticInfo
 	string IconPath = 4;
 }
 
-message BattleStaticInfo
+message BattleGroundStaticInfo
+{
+	int32 Id = 1;
+	string ScenePath = 2;
+	int32 LeftWidth = 3;
+	int32 RightWidth = 4;
+	int32 Height = 5;
+	repeated int32 GridIdList = 6;
+}
+
+message BattleSceneStaticInfo
 {
 	int32 Id = 1;
 	string Name = 2;
@@ -92,27 +109,24 @@ message BattleStageStaticInfo
 	string ScenePath = 7;
 }
 
-message TeamStaticInfo
+message BattleTeamStaticInfo
 {
 	int32 Id = 1;
 	string Name = 2;
 }
 
-message GroundStaticInfo
-{
-	int32 Id = 1;
-	string ScenePath = 2;
-	int32 LeftWidth = 3;
-	int32 RightWidth = 4;
-	int32 Height = 5;
-	repeated int32 GridIdList = 6;
-}
-
-message TerrainStaticInfo
+message BattleTerrainStaticInfo
 {
 	int32 Id = 1;
 	string Name = 2;
 	int32 WalkSpeed = 3;
+}
+
+message BattleWinConditionStaticInfo
+{
+	int32 Id = 1;
+	string Name = 2;
+	int32 ParamInt1 = 3;
 }
 
 message CollectableActorStaticInfo
@@ -161,9 +175,14 @@ message AttributeStaticInfoList
 	repeated AttributeStaticInfo list = 1;
 }
 
-message BattleStaticInfoList
+message BattleGroundStaticInfoList
 {
-	repeated BattleStaticInfo list = 1;
+	repeated BattleGroundStaticInfo list = 1;
+}
+
+message BattleSceneStaticInfoList
+{
+	repeated BattleSceneStaticInfo list = 1;
 }
 
 message BattleStageStaticInfoList
@@ -171,19 +190,19 @@ message BattleStageStaticInfoList
 	repeated BattleStageStaticInfo list = 1;
 }
 
-message TeamStaticInfoList
+message BattleTeamStaticInfoList
 {
-	repeated TeamStaticInfo list = 1;
+	repeated BattleTeamStaticInfo list = 1;
 }
 
-message GroundStaticInfoList
+message BattleTerrainStaticInfoList
 {
-	repeated GroundStaticInfo list = 1;
+	repeated BattleTerrainStaticInfo list = 1;
 }
 
-message TerrainStaticInfoList
+message BattleWinConditionStaticInfoList
 {
-	repeated TerrainStaticInfo list = 1;
+	repeated BattleWinConditionStaticInfo list = 1;
 }
 
 message CollectableActorStaticInfoList

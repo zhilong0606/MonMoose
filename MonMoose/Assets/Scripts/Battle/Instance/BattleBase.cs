@@ -151,6 +151,15 @@ namespace MonMoose.Battle
             }
         }
 
+        public BattleStage GetCurStage()
+        {
+            if (m_sceneModule != null)
+            {
+                return m_sceneModule.GetCurStage();
+            }
+            return null;
+        }
+
         public Team GetTeam(int teamId)
         {
             for (int i = 0; i < m_teamList.Count; ++i)
