@@ -2,24 +2,36 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using UnityEditor;
+using UnityEngine;
 
 public static class AssetPathUtility
 {
     private const string m_delimiter = "/";
 
-    public static string GetFileFullNameExceptExtension(string fileFullName)
+    public static string GetFileName(string fileFullName, bool isFullName, bool exceptExtension)
     {
         if (!string.IsNullOrEmpty(fileFullName))
         {
             fileFullName = GetNormalizePath(fileFullName);
-            int lastDotIndex = fileFullName.LastIndexOf(".", StringComparison.Ordinal);
-            int lastDelimiterIndex = fileFullName.LastIndexOf(m_delimiter, StringComparison.Ordinal);
-            if (lastDotIndex >= 0)
+            if (isFullName)
             {
-                if (lastDotIndex > lastDelimiterIndex)
+                if (exceptExtension)
                 {
-                    CutStr(fileFullName, lastDotIndex, true);
+                    fileFullName = CutStrBy(fileFullName, ".", true, true);
                 }
+                return fileFullName;
+            }
+            else
+            {
+                string folderPath = GetFileFolderPath(fileFullName);
+                string fileName = fileFullName.Substring(folderPath.Length + 1);
+                if (exceptExtension)
+                {
+                    fileName = CutStrBy(fileName, ".", true, true);
+                }
+                return fileName;
             }
         }
         return fileFullName;
@@ -41,11 +53,11 @@ public static class AssetPathUtility
         return str1 + CutStr(str2, dupLength - 1, false);
     }
 
-    public static string CutStrBy(string srcStr, string cutterStr, bool isForward, bool useFront)
+    public static string CutStrBy(string srcStr, string cutterStr, bool isForwardFindCutter, bool useFront)
     {
         if (!string.IsNullOrEmpty(srcStr))
         {
-            int index = isForward ? srcStr.IndexOf(cutterStr, StringComparison.Ordinal) : srcStr.LastIndexOf(cutterStr, StringComparison.Ordinal);
+            int index = isForwardFindCutter ? srcStr.IndexOf(cutterStr, StringComparison.Ordinal) : srcStr.LastIndexOf(cutterStr, StringComparison.Ordinal);
             return CutStr(srcStr, index, useFront);
         }
         return string.Empty;
@@ -68,8 +80,31 @@ public static class AssetPathUtility
     {
         if (!string.IsNullOrEmpty(path))
         {
-            return path.Replace("\\", "/");
+            return path.Replace("\\", m_delimiter);
         }
         return string.Empty;
+    }
+
+    public static string GetClassFullPath(Type type)
+    {
+        return GetClassPath(type, true);
+    }
+
+    public static string GetClassAssetPath(Type type)
+    {
+        return GetClassPath(type, false);
+    }
+
+    public static string GetClassPath(Type type, bool isFullPath)
+    {
+        string path = AssetDatabase.FindAssets("t:Script")
+            .Where(v => Path.GetFileNameWithoutExtension(AssetDatabase.GUIDToAssetPath(v)) == type.Name)
+            .Select(id => AssetDatabase.GUIDToAssetPath(id))
+            .FirstOrDefault();
+        if (isFullPath)
+        {
+            return Concat(Application.dataPath, path, "Assets");
+        }
+        return path;
     }
 }
