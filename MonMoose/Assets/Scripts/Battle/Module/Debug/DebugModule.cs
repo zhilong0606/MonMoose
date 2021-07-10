@@ -14,8 +14,7 @@ namespace MonMoose.Battle
             base.OnInit(initData);
             m_actionOnDebug = initData.actionOnDebug;
         }
-
-        [ShortCutMethod(false)]
+        
         public void Log(int level, string str)
         {
             if (m_actionOnDebug != null)

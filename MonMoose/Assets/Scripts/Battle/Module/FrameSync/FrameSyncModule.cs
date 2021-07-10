@@ -27,7 +27,7 @@ namespace MonMoose.Battle
             m_handler.Init(m_battleInstance, m_relay);
         }
 
-        public void Start()
+        public void StartFrameSync()
         {
             isStart = true;
         }

@@ -8,12 +8,9 @@ namespace MonMoose.Core
     {
         private int m_id;
         private int m_typeId;
-        private bool m_triggerCount;
         private TriggerConditionBase m_condition;
         private TriggerActionBase m_action;
         private Action m_actionOnTriggerOvered;
-
-        private int m_curTriggerCount;
 
         public int id { get { return m_id; } }
 

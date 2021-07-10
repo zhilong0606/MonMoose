@@ -8,8 +8,7 @@ namespace MonMoose.Battle
     {
         private Dictionary<int, int> m_idMap = new Dictionary<int, int>();
         private const int m_capacity = 10000;
-
-        [ShortCutMethod(false)]
+        
         public int CreateObjId(EBattleObjType type)
         {
             int typeInt = (int)type;

@@ -34,14 +34,13 @@ namespace MonMoose.Battle
             }
         }
 
-        public void Start()
+        public void StartScene()
         {
             m_curStageIndex = 0;
             GetCurStage().Enter();
             GetCurStage().Start();
         }
-
-        [ShortCutMethod(true)]
+        
         public BattleStage GetCurStage()
         {
             if (m_curStageIndex >= 0 && m_curStageIndex < m_stageList.Count)
@@ -50,8 +49,7 @@ namespace MonMoose.Battle
             }
             return null;
         }
-
-        [ShortCutMethod(true)]
+        
         public BattleGrid GetGrid(int x, int y)
         {
             BattleStage curStage = GetCurStage();
@@ -61,8 +59,7 @@ namespace MonMoose.Battle
             }
             return null;
         }
-
-        [ShortCutMethod(true)]
+        
         public BattleGrid GetGrid(GridPosition gridPos)
         {
             return GetGrid(gridPos.x, gridPos.y);

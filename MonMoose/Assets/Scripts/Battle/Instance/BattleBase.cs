@@ -6,7 +6,6 @@ using UnityEngine;
 
 namespace MonMoose.Battle
 {
-    [ShortCutClass]
     public partial class BattleBase
     {
         private List<Team> m_teamList = new List<Team>();
@@ -14,14 +13,10 @@ namespace MonMoose.Battle
         private List<Player> m_playerList = new List<Player>();
         private Func<EBattleViewControllerType, BattleViewController> m_funcOnCreateCtrl;
         private IBattleEventListener m_eventListener;
-
-        [ShortCutField(false)]
+        
         private DebugModule m_debugModule = new DebugModule();
-        [ShortCutField(false)]
         private ObjIdModule m_objIdModule = new ObjIdModule();
-
         private SceneModule m_sceneModule = new SceneModule();
-
         private FrameSyncModule m_frameSyncModule = new FrameSyncModule();
         private MovePathFindModule m_pathFindModule = new MovePathFindModule();
 
@@ -93,7 +88,7 @@ namespace MonMoose.Battle
 
         public void Start()
         {
-            m_sceneModule.Start();
+            StartScene();
             m_tickProcess.Start();
         }
 
@@ -151,15 +146,6 @@ namespace MonMoose.Battle
             }
         }
 
-        public BattleStage GetCurStage()
-        {
-            if (m_sceneModule != null)
-            {
-                return m_sceneModule.GetCurStage();
-            }
-            return null;
-        }
-
         public Team GetTeam(int teamId)
         {
             for (int i = 0; i < m_teamList.Count; ++i)
@@ -197,36 +183,6 @@ namespace MonMoose.Battle
             }
 
             return true;
-        }
-
-        public BattleGrid GetGrid(int x, int y)
-        {
-            return m_sceneModule.GetGrid(x, y);
-        }
-
-        public BattleGrid GetGrid(GridPosition gridPos)
-        {
-            return m_sceneModule.GetGrid(gridPos);
-        }
-
-        public void StartFrameSync()
-        {
-            m_frameSyncModule.Start();
-        }
-
-        public int CreateObjId(EBattleObjType type)
-        {
-            return m_objIdModule.CreateObjId(type);
-        }
-
-        public bool FindPath(Entity entity, BattleGrid startGrid, DcmVec2 offset, BattleGrid targetGrid, List<BattleGrid> gridList)
-        {
-            return m_pathFindModule.FindPath(entity, startGrid, offset, targetGrid, gridList);
-        }
-
-        public void Log(int level, string str)
-        {
-            m_debugModule.Log(level, str);
         }
 
         public void Tick(float deltaTime)
