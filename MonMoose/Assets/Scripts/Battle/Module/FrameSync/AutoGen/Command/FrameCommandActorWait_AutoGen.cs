@@ -1,14 +1,12 @@
 namespace MonMoose.Battle
 {
-    public partial class FrameCommandMoveToGrid
+    public partial class FrameCommandActorWait
     {
         public int entityUid;
-        public int gridX;
-        public int gridY;
 
         public override EFrameCommandType commandType
         {
-            get { return EFrameCommandType.MoveToGrid; }
+            get { return EFrameCommandType.ActorWait; }
         }
 
         protected override byte GetBitFlagCount()
@@ -22,10 +20,6 @@ namespace MonMoose.Battle
             {
                 case ESerializeIndex.EntityUid:
                     return entityUid != default(int);
-                case ESerializeIndex.GridX:
-                    return gridX != default(int);
-                case ESerializeIndex.GridY:
-                    return gridY != default(int);
             }
             return false;
         }
@@ -35,10 +29,6 @@ namespace MonMoose.Battle
             switch ((ESerializeIndex)index)
             {
                 case ESerializeIndex.EntityUid:
-                    return sizeof(int);
-                case ESerializeIndex.GridX:
-                    return sizeof(int);
-                case ESerializeIndex.GridY:
                     return sizeof(int);
             }
             return 0;
@@ -51,12 +41,6 @@ namespace MonMoose.Battle
                 case ESerializeIndex.EntityUid:
                     ByteBufferUtility.WriteInt(buffer, ref offset, entityUid);
                     break;
-                case ESerializeIndex.GridX:
-                    ByteBufferUtility.WriteInt(buffer, ref offset, gridX);
-                    break;
-                case ESerializeIndex.GridY:
-                    ByteBufferUtility.WriteInt(buffer, ref offset, gridY);
-                    break;
             }
         }
 
@@ -67,20 +51,12 @@ namespace MonMoose.Battle
                 case ESerializeIndex.EntityUid:
                     entityUid = ByteBufferUtility.ReadInt(buffer, ref offset);
                     break;
-                case ESerializeIndex.GridX:
-                    gridX = ByteBufferUtility.ReadInt(buffer, ref offset);
-                    break;
-                case ESerializeIndex.GridY:
-                    gridY = ByteBufferUtility.ReadInt(buffer, ref offset);
-                    break;
             }
         }
 
         private enum ESerializeIndex
         {
             EntityUid,
-            GridX,
-            GridY,
 
             Max
         }

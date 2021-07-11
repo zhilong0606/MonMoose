@@ -1,7 +1,7 @@
 <Root>
 	<FrameSyncReady></FrameSyncReady>
 	<MoveToGrid>
-		<int>entityId</int>
+		<int>entityUid</int>
 		<int>gridX</int>
 		<int>gridY</int>
 	</MoveToGrid>
@@ -16,7 +16,7 @@
 		<int>posY</int>
 	</FormationRetreat>
 	<FormationtEmbattle>
-		<int>actorId</int>
+		<int>actorRid</int>
 		<int>posX</int>
 		<int>posY</int>
 	</FormationtEmbattle>
@@ -26,4 +26,7 @@
 	<StageEnd></StageEnd>
 	<StopMove></StopMove>
 	<StepEnd></StepEnd>
+	<ActorWait>
+		<int>entityUid</int>
+	</ActorWait>
 </Root>

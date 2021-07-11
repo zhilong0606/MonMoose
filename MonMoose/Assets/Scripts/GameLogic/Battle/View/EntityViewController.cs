@@ -12,6 +12,11 @@ namespace MonMoose.GameLogic.Battle
         protected EntityView m_view;
         protected bool m_isMoving;
 
+        public EntityView view
+        {
+            get { return m_view; }
+        }
+
         public override void PlayAnimation(string animName, float fadeTime)
         {
         }

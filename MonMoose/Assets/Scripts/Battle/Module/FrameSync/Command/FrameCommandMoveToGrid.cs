@@ -9,7 +9,7 @@ namespace MonMoose.Battle
             {
                 return false;
             }
-            Entity entity = m_battleInstance.GetEntity(entityId);
+            Entity entity = m_battleInstance.GetEntity(entityUid);
             if (entity == null)
             {
                 return false;

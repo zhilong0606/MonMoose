@@ -18,10 +18,11 @@ namespace MonMoose.GameLogic.Battle
         {
             BattleGridView view = BattleShortCut.GetGridView(new GridPosition(x, y));
             //BattleShortCut.curBattleStage.FormationEmbattle(actorId)
-            ActorStaticInfo entityInfo = StaticDataManager.instance.GetActor(actorId);
-            GameObject go = GameObjectPoolManager.instance.Fetch(entityInfo.PrefabPath);
-            go.transform.position = view.transform.position;
-            BattlePrepareActorManager.instance.AddActor(actorId, go, view.gridPosition);
+            //ActorStaticInfo entityInfo = StaticDataManager.instance.GetActor(actorId);
+            //GameObject go = GameObjectPoolManager.instance.Fetch(entityInfo.PrefabPath);
+            //go.transform.position = view.transform.position;
+            //BattlePrepareActorManager
+            //BattlePrepareActorManager.instance.AddActor(actorId, go, view.gridPosition);
             EventManager.instance.Broadcast((int)EventID.BattlePrepare_ActorItemHide, actorId);
         }
 

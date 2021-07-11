@@ -28,6 +28,8 @@ namespace MonMoose.Battle
                     return battleInstance.FetchPoolObj<FrameCommandStopMove>(typeof(FrameCommandFactory));
                 case EFrameCommandType.StepEnd:
                     return battleInstance.FetchPoolObj<FrameCommandStepEnd>(typeof(FrameCommandFactory));
+                case EFrameCommandType.ActorWait:
+                    return battleInstance.FetchPoolObj<FrameCommandActorWait>(typeof(FrameCommandFactory));
             }
             return null;
         }

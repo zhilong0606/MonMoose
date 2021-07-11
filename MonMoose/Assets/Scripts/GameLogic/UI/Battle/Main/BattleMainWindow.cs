@@ -9,6 +9,7 @@ namespace MonMoose.GameLogic.UI
         {
             base.OnInit(param);
             GetInventory().AddComponent<BattleMainNotifyWidget>((int)EWidget.MainNotify, true);
+            GetInventory().AddComponent<BattleMainSelecedActorInfoWidget>((int)EWidget.SelectedActorInfo, true);
         }
 
         private KeyCode[] codes = new KeyCode[] {KeyCode.A, KeyCode.S, KeyCode.D, KeyCode.W, KeyCode.X};
@@ -29,6 +30,7 @@ namespace MonMoose.GameLogic.UI
         private enum EWidget
         {
             MainNotify,
+            SelectedActorInfo,
         }
     }
 }

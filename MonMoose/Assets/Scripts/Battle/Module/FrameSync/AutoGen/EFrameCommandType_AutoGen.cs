@@ -13,6 +13,7 @@ namespace MonMoose.Battle
         StageEnd,
         StopMove,
         StepEnd,
+        ActorWait,
 
         Max
     }

@@ -7,10 +7,10 @@ namespace MonMoose.Battle
             FrameCommandFrameSyncReady cmd = m_battleInstance.FetchPoolObj<FrameCommandFrameSyncReady>(this);
             SendCommand(cmd);
         }
-        public void SendMoveToGrid(int entityId, int gridX, int gridY)
+        public void SendMoveToGrid(int entityUid, int gridX, int gridY)
         {
             FrameCommandMoveToGrid cmd = m_battleInstance.FetchPoolObj<FrameCommandMoveToGrid>(this);
-            cmd.entityId = entityId;
+            cmd.entityUid = entityUid;
             cmd.gridX = gridX;
             cmd.gridY = gridY;
             SendCommand(cmd);
@@ -31,10 +31,10 @@ namespace MonMoose.Battle
             cmd.posY = posY;
             SendCommand(cmd);
         }
-        public void SendFormationtEmbattle(int actorId, int posX, int posY)
+        public void SendFormationtEmbattle(int actorRid, int posX, int posY)
         {
             FrameCommandFormationtEmbattle cmd = m_battleInstance.FetchPoolObj<FrameCommandFormationtEmbattle>(this);
-            cmd.actorId = actorId;
+            cmd.actorRid = actorRid;
             cmd.posX = posX;
             cmd.posY = posY;
             SendCommand(cmd);
@@ -67,6 +67,12 @@ namespace MonMoose.Battle
         public void SendStepEnd()
         {
             FrameCommandStepEnd cmd = m_battleInstance.FetchPoolObj<FrameCommandStepEnd>(this);
+            SendCommand(cmd);
+        }
+        public void SendActorWait(int entityUid)
+        {
+            FrameCommandActorWait cmd = m_battleInstance.FetchPoolObj<FrameCommandActorWait>(this);
+            cmd.entityUid = entityUid;
             SendCommand(cmd);
         }
     }

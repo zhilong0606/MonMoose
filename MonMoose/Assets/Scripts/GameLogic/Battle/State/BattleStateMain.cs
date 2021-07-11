@@ -7,7 +7,7 @@ namespace MonMoose.GameLogic.Battle
 {
     public class BattleStateMain : State
     {
-        private int m_stateIndex;
+        private InputHandlerBattleMain m_inputHandler = new InputHandlerBattleMain();
 
         public override int stateIndex
         {
@@ -17,8 +17,15 @@ namespace MonMoose.GameLogic.Battle
         protected override void OnEnter(StateContext context)
         {
             base.OnEnter(context);
+            InputManager.instance.RegisterHandler(m_inputHandler);
             EventManager.instance.Broadcast((int)EventID.BattleStart);
             Debug.LogError("战斗开始");
+        }
+
+        protected override void OnExit()
+        {
+            InputManager.instance.UnRegisterHandler(m_inputHandler);
+            BattlePrepareActorManager.DestroyInstance();
         }
     }
 }

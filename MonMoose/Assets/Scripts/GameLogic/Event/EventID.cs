@@ -14,6 +14,8 @@ namespace MonMoose.GameLogic
         BattlePrepare_ActorItemShow,
         BattlePrepare_ActorItemHide,
         BattlePrepare_Finish,
+        
+        Battle_ActorSelected,
 
         BattleStart,
 
