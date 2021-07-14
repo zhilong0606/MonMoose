@@ -1,18 +1,11 @@
-﻿using System.Collections;
+using System;
+using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
+using MonMoose.Core;
 
-public class BattleTriggerModule : MonoBehaviour
+namespace MonMoose.Battle
 {
-    // Start is called before the first frame update
-    void Start()
+    public class BattleTriggerModule
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

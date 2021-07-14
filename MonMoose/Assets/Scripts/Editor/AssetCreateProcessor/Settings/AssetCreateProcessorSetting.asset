@@ -25,3 +25,6 @@ MonoBehaviour:
   - folderPath: Assets/Scripts/GameLogic/UI
     postfix: cs
     subSetting: {fileID: 11400000, guid: 714ac80f975376045810dab372fbfe14, type: 2}
+  - folderPath: Assets/Scripts/Battle
+    postfix: cs
+    subSetting: {fileID: 11400000, guid: c4a40f9c39deedc418cb68aa5bfdbade, type: 2}

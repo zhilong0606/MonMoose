@@ -1,18 +1,25 @@
-﻿using System.Collections;
+using System;
+using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
+using MonMoose.Core;
 
-public class FormationModule : MonoBehaviour
+namespace MonMoose.Battle
 {
-    // Start is called before the first frame update
-    void Start()
+    public class FormationModule : Module
     {
+        public void AddFormationActor(EntityInitData initData)
+        {
+            m_battleInstance.CreateEntity(initData, EBattleObjType.DynamicEntity);
+        }
         
-    }
+        public void RemoveFormationActor(int uid)
+        {
+            m_battleInstance.RemoveEntity(uid);
+        }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public void ExchangeFormationActor()
+        {
+
+        }
     }
 }

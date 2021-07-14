@@ -6,17 +6,14 @@
 		<int>gridY</int>
 	</MoveToGrid>
 	<FormationExchange>
-		<int>posX1</int>
-		<int>posY1</int>
-		<int>posX2</int>
-		<int>posY2</int>
+		<int>entityUid1</int>
+		<int>entityUid2</int>
 	</FormationExchange>
 	<FormationRetreat>
-		<int>posX</int>
-		<int>posY</int>
+		<int>entityUid</int>
 	</FormationRetreat>
 	<FormationtEmbattle>
-		<int>actorRid</int>
+		<int>entityRid</int>
 		<int>posX</int>
 		<int>posY</int>
 	</FormationtEmbattle>

@@ -4,7 +4,8 @@ namespace MonMoose.Battle
     {
         public override bool Execute(int playerId)
         {
-            m_battleInstance.eventListener.FormationRetreat(posX, posY);
+            m_battleInstance.RemoveFormationActor(entityUid);
+            //m_battleInstance.eventListener.FormationRetreat(entityUid);
             return true;
         }
     }

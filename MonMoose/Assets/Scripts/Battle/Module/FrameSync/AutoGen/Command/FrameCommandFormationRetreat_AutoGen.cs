@@ -2,8 +2,7 @@ namespace MonMoose.Battle
 {
     public partial class FrameCommandFormationRetreat
     {
-        public int posX;
-        public int posY;
+        public int entityUid;
 
         public override EFrameCommandType commandType
         {
@@ -19,10 +18,8 @@ namespace MonMoose.Battle
         {
             switch ((ESerializeIndex)index)
             {
-                case ESerializeIndex.PosX:
-                    return posX != default(int);
-                case ESerializeIndex.PosY:
-                    return posY != default(int);
+                case ESerializeIndex.EntityUid:
+                    return entityUid != default(int);
             }
             return false;
         }
@@ -31,9 +28,7 @@ namespace MonMoose.Battle
         {
             switch ((ESerializeIndex)index)
             {
-                case ESerializeIndex.PosX:
-                    return sizeof(int);
-                case ESerializeIndex.PosY:
+                case ESerializeIndex.EntityUid:
                     return sizeof(int);
             }
             return 0;
@@ -43,11 +38,8 @@ namespace MonMoose.Battle
         {
             switch ((ESerializeIndex)index)
             {
-                case ESerializeIndex.PosX:
-                    ByteBufferUtility.WriteInt(buffer, ref offset, posX);
-                    break;
-                case ESerializeIndex.PosY:
-                    ByteBufferUtility.WriteInt(buffer, ref offset, posY);
+                case ESerializeIndex.EntityUid:
+                    ByteBufferUtility.WriteInt(buffer, ref offset, entityUid);
                     break;
             }
         }
@@ -56,19 +48,15 @@ namespace MonMoose.Battle
         {
             switch ((ESerializeIndex)index)
             {
-                case ESerializeIndex.PosX:
-                    posX = ByteBufferUtility.ReadInt(buffer, ref offset);
-                    break;
-                case ESerializeIndex.PosY:
-                    posY = ByteBufferUtility.ReadInt(buffer, ref offset);
+                case ESerializeIndex.EntityUid:
+                    entityUid = ByteBufferUtility.ReadInt(buffer, ref offset);
                     break;
             }
         }
 
         private enum ESerializeIndex
         {
-            PosX,
-            PosY,
+            EntityUid,
 
             Max
         }

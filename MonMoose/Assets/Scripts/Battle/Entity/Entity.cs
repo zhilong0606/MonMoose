@@ -47,6 +47,11 @@ namespace MonMoose.Battle
             }
         }
 
+        public void UnInit()
+        {
+            m_ctrl.UnInit();
+        }
+
         public void SetTeam(Team team)
         {
             m_team = team;

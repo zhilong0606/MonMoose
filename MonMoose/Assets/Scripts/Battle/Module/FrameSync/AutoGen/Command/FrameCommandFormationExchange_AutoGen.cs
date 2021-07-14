@@ -2,10 +2,8 @@ namespace MonMoose.Battle
 {
     public partial class FrameCommandFormationExchange
     {
-        public int posX1;
-        public int posY1;
-        public int posX2;
-        public int posY2;
+        public int entityUid1;
+        public int entityUid2;
 
         public override EFrameCommandType commandType
         {
@@ -21,14 +19,10 @@ namespace MonMoose.Battle
         {
             switch ((ESerializeIndex)index)
             {
-                case ESerializeIndex.PosX1:
-                    return posX1 != default(int);
-                case ESerializeIndex.PosY1:
-                    return posY1 != default(int);
-                case ESerializeIndex.PosX2:
-                    return posX2 != default(int);
-                case ESerializeIndex.PosY2:
-                    return posY2 != default(int);
+                case ESerializeIndex.EntityUid1:
+                    return entityUid1 != default(int);
+                case ESerializeIndex.EntityUid2:
+                    return entityUid2 != default(int);
             }
             return false;
         }
@@ -37,13 +31,9 @@ namespace MonMoose.Battle
         {
             switch ((ESerializeIndex)index)
             {
-                case ESerializeIndex.PosX1:
+                case ESerializeIndex.EntityUid1:
                     return sizeof(int);
-                case ESerializeIndex.PosY1:
-                    return sizeof(int);
-                case ESerializeIndex.PosX2:
-                    return sizeof(int);
-                case ESerializeIndex.PosY2:
+                case ESerializeIndex.EntityUid2:
                     return sizeof(int);
             }
             return 0;
@@ -53,17 +43,11 @@ namespace MonMoose.Battle
         {
             switch ((ESerializeIndex)index)
             {
-                case ESerializeIndex.PosX1:
-                    ByteBufferUtility.WriteInt(buffer, ref offset, posX1);
+                case ESerializeIndex.EntityUid1:
+                    ByteBufferUtility.WriteInt(buffer, ref offset, entityUid1);
                     break;
-                case ESerializeIndex.PosY1:
-                    ByteBufferUtility.WriteInt(buffer, ref offset, posY1);
-                    break;
-                case ESerializeIndex.PosX2:
-                    ByteBufferUtility.WriteInt(buffer, ref offset, posX2);
-                    break;
-                case ESerializeIndex.PosY2:
-                    ByteBufferUtility.WriteInt(buffer, ref offset, posY2);
+                case ESerializeIndex.EntityUid2:
+                    ByteBufferUtility.WriteInt(buffer, ref offset, entityUid2);
                     break;
             }
         }
@@ -72,27 +56,19 @@ namespace MonMoose.Battle
         {
             switch ((ESerializeIndex)index)
             {
-                case ESerializeIndex.PosX1:
-                    posX1 = ByteBufferUtility.ReadInt(buffer, ref offset);
+                case ESerializeIndex.EntityUid1:
+                    entityUid1 = ByteBufferUtility.ReadInt(buffer, ref offset);
                     break;
-                case ESerializeIndex.PosY1:
-                    posY1 = ByteBufferUtility.ReadInt(buffer, ref offset);
-                    break;
-                case ESerializeIndex.PosX2:
-                    posX2 = ByteBufferUtility.ReadInt(buffer, ref offset);
-                    break;
-                case ESerializeIndex.PosY2:
-                    posY2 = ByteBufferUtility.ReadInt(buffer, ref offset);
+                case ESerializeIndex.EntityUid2:
+                    entityUid2 = ByteBufferUtility.ReadInt(buffer, ref offset);
                     break;
             }
         }
 
         private enum ESerializeIndex
         {
-            PosX1,
-            PosY1,
-            PosX2,
-            PosY2,
+            EntityUid1,
+            EntityUid2,
 
             Max
         }

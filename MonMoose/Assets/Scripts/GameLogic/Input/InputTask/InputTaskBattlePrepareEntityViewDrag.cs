@@ -48,8 +48,8 @@ namespace MonMoose.GameLogic
             }
             else
             {
+                BattleShortCut.frameSyncSender.SendFormationRetreat(actorId);
                 GameObjectPoolManager.instance.Release(actorObj);
-                BattlePrepareActorManager.instance.RemoveActor(actorId);
                 EventManager.instance.Broadcast((int)EventID.BattlePrepare_ActorItemShow, actorId);
             }
             End();

@@ -5,7 +5,7 @@ namespace MonMoose.Battle
 {
     public class EntityInitData
     {
-        public int id;
+        public int rid;
         public int level;
         public GridPosition pos;
         public List<SkillInitData> skillList = new List<SkillInitData>();

@@ -79,6 +79,16 @@ namespace MonMoose.Core
             }
         }
 
+        public static T GetOrAddComponent<T>(this GameObject go) where T : Component
+        {
+            T component = go.GetComponent<T>();
+            if (component == null)
+            {
+                component = go.AddComponent<T>();
+            }
+            return component;
+        }
+
         public static Transform SetPositionX(this Transform transform, float x)
         {
             Vector3 pos = transform.position;

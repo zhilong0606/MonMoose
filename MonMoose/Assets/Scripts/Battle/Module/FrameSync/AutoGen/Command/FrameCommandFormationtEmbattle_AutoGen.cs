@@ -2,7 +2,7 @@ namespace MonMoose.Battle
 {
     public partial class FrameCommandFormationtEmbattle
     {
-        public int actorRid;
+        public int entityRid;
         public int posX;
         public int posY;
 
@@ -20,8 +20,8 @@ namespace MonMoose.Battle
         {
             switch ((ESerializeIndex)index)
             {
-                case ESerializeIndex.ActorRid:
-                    return actorRid != default(int);
+                case ESerializeIndex.EntityRid:
+                    return entityRid != default(int);
                 case ESerializeIndex.PosX:
                     return posX != default(int);
                 case ESerializeIndex.PosY:
@@ -34,7 +34,7 @@ namespace MonMoose.Battle
         {
             switch ((ESerializeIndex)index)
             {
-                case ESerializeIndex.ActorRid:
+                case ESerializeIndex.EntityRid:
                     return sizeof(int);
                 case ESerializeIndex.PosX:
                     return sizeof(int);
@@ -48,8 +48,8 @@ namespace MonMoose.Battle
         {
             switch ((ESerializeIndex)index)
             {
-                case ESerializeIndex.ActorRid:
-                    ByteBufferUtility.WriteInt(buffer, ref offset, actorRid);
+                case ESerializeIndex.EntityRid:
+                    ByteBufferUtility.WriteInt(buffer, ref offset, entityRid);
                     break;
                 case ESerializeIndex.PosX:
                     ByteBufferUtility.WriteInt(buffer, ref offset, posX);
@@ -64,8 +64,8 @@ namespace MonMoose.Battle
         {
             switch ((ESerializeIndex)index)
             {
-                case ESerializeIndex.ActorRid:
-                    actorRid = ByteBufferUtility.ReadInt(buffer, ref offset);
+                case ESerializeIndex.EntityRid:
+                    entityRid = ByteBufferUtility.ReadInt(buffer, ref offset);
                     break;
                 case ESerializeIndex.PosX:
                     posX = ByteBufferUtility.ReadInt(buffer, ref offset);
@@ -78,7 +78,7 @@ namespace MonMoose.Battle
 
         private enum ESerializeIndex
         {
-            ActorRid,
+            EntityRid,
             PosX,
             PosY,
 

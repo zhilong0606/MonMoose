@@ -7,6 +7,7 @@ namespace MonMoose.Battle
     public enum EBattleObjType
     {
         None,
-        Entity,
+        StaticEntity,
+        DynamicEntity,
     }
 }

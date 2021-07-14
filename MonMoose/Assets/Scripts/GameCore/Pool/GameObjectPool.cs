@@ -51,12 +51,23 @@ namespace MonMoose.Core
             capacity = m_capacity;
         }
 
-        public PoolObjHolder Fetch()
+        public PoolObjHolder Fetch(GameObject parentObj = null)
         {
             PoolObjHolder holder = GetHolder();
             if (holder != null)
             {
-                holder.FetchTo(m_apearRoot != null ? m_apearRoot : gameObject);
+                if (parentObj != null)
+                {
+                    holder.FetchTo(parentObj);
+                }
+                else if(m_apearRoot != null)
+                {
+                    holder.FetchTo(m_apearRoot);
+                }
+                else
+                {
+                    holder.FetchTo(gameObject);
+                }
                 return holder;
             }
             return null;

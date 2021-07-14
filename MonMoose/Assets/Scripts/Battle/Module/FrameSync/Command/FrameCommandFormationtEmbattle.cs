@@ -5,12 +5,12 @@ namespace MonMoose.Battle
         public override bool Execute(int playerId)
         {
             EntityInitData entityInitData = new EntityInitData();
-            entityInitData.id = actorRid;
+            entityInitData.rid = entityRid;
             entityInitData.level = 1;
             entityInitData.pos = new GridPosition(posX, posY);
 
-            BattleFactory.CreateEntity(m_battleInstance, entityInitData, actorRid);
-            m_battleInstance.eventListener.FormationEmbattle(actorRid, posX, posY);
+            m_battleInstance.AddFormationActor(entityInitData);
+            m_battleInstance.eventListener.FormationEmbattle(entityRid, posX, posY);
             return true;
         }
     }

@@ -43,6 +43,16 @@ namespace MonMoose.Core
             return pool.Fetch().obj;
         }
 
+        public GameObject Fetch(string prefabName, GameObject parentObj = null)
+        {
+            GameObjectPool pool = GetPool(prefabName);
+            if (pool == null)
+            {
+                pool = CreatePool(prefabName);
+            }
+            return pool.Fetch(parentObj).obj;
+        }
+
         public bool Release(GameObject go)
         {
             foreach (var kv in m_poolMap)

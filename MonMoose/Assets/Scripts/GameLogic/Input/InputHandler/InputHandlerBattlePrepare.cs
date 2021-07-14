@@ -25,13 +25,10 @@ namespace MonMoose.GameLogic
             BattleGridView gridView = go.GetComponent<BattleGridView>();
             if (gridView != null)
             {
-                int actorId;
-                GameObject actorObj;
                 List<Entity> list = new List<Entity>();
                 BattleShortCut.battleInstance.GetEntitysByGrid(gridView.gridPosition, list);
                 Actor actor = list.Find(e => e is Actor) as Actor;
                 if (actor != null)
-                //if (BattlePrepareActorManager.instance.TryGetActor(gridView.gridPosition, out actorId, out actorObj))
                 {
                     InputTaskBattlePrepareEntityViewDrag task = ClassPoolManager.instance.Fetch<InputTaskBattlePrepareEntityViewDrag>(this);
                     task.actorId = actor.GetComponent<EntityInfoComponent>().entityId;

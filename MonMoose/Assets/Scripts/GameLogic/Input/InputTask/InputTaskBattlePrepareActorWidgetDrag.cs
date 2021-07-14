@@ -12,6 +12,7 @@ namespace MonMoose.GameLogic
     public class InputTaskBattlePrepareActorWidgetDrag : InputTask
     {
         public BattlePrepareActorItemWidget actorItemWidget;
+
         private BattlePrepareCoverActorItemWidget m_dragActorItemWidget;
         private bool m_isDraging;
 
@@ -20,11 +21,6 @@ namespace MonMoose.GameLogic
             base.OnRelease();
             m_dragActorItemWidget = null;
             m_isDraging = false;
-        }
-
-        protected override void OnStart()
-        {
-            base.OnStart();
         }
 
         protected override void OnHandleDrag(PointerEventData eventData)

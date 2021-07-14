@@ -10,17 +10,17 @@ namespace MonMoose.Core
     {
         private static void OnWillCreateAsset(string path)
         {
-            AssetCreateProcessorSetting setting = LoadSetting();
-            List<AssetCreateProcessorSetting.RuleSetting> ruleSettingList = new List<AssetCreateProcessorSetting.RuleSetting>(setting.ruleSettingList);
-            ruleSettingList.Sort((x, y) => string.Compare(y.folderPath, x.folderPath, StringComparison.Ordinal));
-            foreach (AssetCreateProcessorSetting.RuleSetting ruleSetting in ruleSettingList)
-            {
-                if (path.StartsWith(ruleSetting.folderPath) && path.EndsWith(ruleSetting.postfix + ".meta"))
-                {
-                    ruleSetting.subSetting.Apply(path, ruleSetting);
-                    return;
-                }
-            }
+            //AssetCreateProcessorSetting setting = LoadSetting();
+            //List<AssetCreateProcessorSetting.RuleSetting> ruleSettingList = new List<AssetCreateProcessorSetting.RuleSetting>(setting.ruleSettingList);
+            //ruleSettingList.Sort((x, y) => string.Compare(y.folderPath, x.folderPath, StringComparison.Ordinal));
+            //foreach (AssetCreateProcessorSetting.RuleSetting ruleSetting in ruleSettingList)
+            //{
+            //    if (path.StartsWith(ruleSetting.folderPath) && path.EndsWith(ruleSetting.postfix + ".meta"))
+            //    {
+            //        ruleSetting.subSetting.Apply(path, ruleSetting);
+            //        return;
+            //    }
+            //}
         }
 
         private static AssetCreateProcessorSetting LoadSetting()

@@ -34,7 +34,7 @@ namespace MonMoose.Battle
         protected override void OnInit(EntityInitData entityInitData)
         {
             base.OnInit(entityInitData);
-            m_entityId = entityInitData.id;
+            m_entityId = entityInitData.rid;
             m_entityStaticInfo = StaticDataManager.instance.GetEntity(m_entityId);
             OnInitSpecific(entityInitData);
             //handlers[(int) EAttributeType.MaxHp] = new AttributeHandler(this.actor.actorInfo.maxHp, 0, int.MaxValue, 0, LevelDependentCalculator);

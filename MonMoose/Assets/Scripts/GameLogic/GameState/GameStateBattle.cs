@@ -161,21 +161,21 @@ namespace MonMoose.GameLogic
         {
             switch (code)
             {
-                case KeyCode.W:
-                    m_sender.SendMoveToGrid(10001, 1, 4);
-                    break;
-                case KeyCode.S:
-                    m_sender.SendMoveToGrid(10001, 1, 3);
-                    break;
-                case KeyCode.A:
-                    m_sender.SendMoveToGrid(10001, 0, 3);
-                    break;
-                case KeyCode.D:
-                    m_sender.SendMoveToGrid(10001, 7, 2);
-                    break;
-                case KeyCode.X:
-                    m_sender.SendMoveToGrid(10001, 1, 1);
-                    break;
+                //case KeyCode.W:
+                //    m_sender.SendMoveToGrid(10001, 1, 4);
+                //    break;
+                //case KeyCode.S:
+                //    m_sender.SendMoveToGrid(10001, 1, 3);
+                //    break;
+                //case KeyCode.A:
+                //    m_sender.SendMoveToGrid(10001, 0, 3);
+                //    break;
+                //case KeyCode.D:
+                //    m_sender.SendMoveToGrid(10001, 7, 2);
+                //    break;
+                //case KeyCode.X:
+                //    m_sender.SendMoveToGrid(10001, 1, 1);
+                //    break;
             }
         }
 

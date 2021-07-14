@@ -65,7 +65,7 @@ namespace MonMoose.Battle
             {
                 StageEntityStaticInfo actorInfo = m_staticInfo.StageEntityList[i];
                 EntityInitData initData = new EntityInitData();
-                initData.id = actorInfo.Rid;
+                initData.rid = actorInfo.Rid;
                 initData.level = actorInfo.Level;
                 initData.pos = new GridPosition(actorInfo.PosX, actorInfo.PosY);
                 m_entityInitDataList.Add(new KeyValuePair<int, EntityInitData>(actorInfo.Uid, initData));
@@ -98,7 +98,7 @@ namespace MonMoose.Battle
         {
             for (int i = 0; i < m_entityInitDataList.Count; ++i)
             {
-                BattleFactory.CreateEntity(m_battleInstance, m_entityInitDataList[i].Value, m_entityInitDataList[i].Key);
+                m_battleInstance.CreateEntity(m_entityInitDataList[i].Value, m_entityInitDataList[i].Key);
             }
         }
 

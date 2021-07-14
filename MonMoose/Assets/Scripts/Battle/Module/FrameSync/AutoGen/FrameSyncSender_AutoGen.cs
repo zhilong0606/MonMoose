@@ -15,26 +15,23 @@ namespace MonMoose.Battle
             cmd.gridY = gridY;
             SendCommand(cmd);
         }
-        public void SendFormationExchange(int posX1, int posY1, int posX2, int posY2)
+        public void SendFormationExchange(int entityUid1, int entityUid2)
         {
             FrameCommandFormationExchange cmd = m_battleInstance.FetchPoolObj<FrameCommandFormationExchange>(this);
-            cmd.posX1 = posX1;
-            cmd.posY1 = posY1;
-            cmd.posX2 = posX2;
-            cmd.posY2 = posY2;
+            cmd.entityUid1 = entityUid1;
+            cmd.entityUid2 = entityUid2;
             SendCommand(cmd);
         }
-        public void SendFormationRetreat(int posX, int posY)
+        public void SendFormationRetreat(int entityUid)
         {
             FrameCommandFormationRetreat cmd = m_battleInstance.FetchPoolObj<FrameCommandFormationRetreat>(this);
-            cmd.posX = posX;
-            cmd.posY = posY;
+            cmd.entityUid = entityUid;
             SendCommand(cmd);
         }
-        public void SendFormationtEmbattle(int actorRid, int posX, int posY)
+        public void SendFormationtEmbattle(int entityRid, int posX, int posY)
         {
             FrameCommandFormationtEmbattle cmd = m_battleInstance.FetchPoolObj<FrameCommandFormationtEmbattle>(this);
-            cmd.actorRid = actorRid;
+            cmd.entityRid = entityRid;
             cmd.posX = posX;
             cmd.posY = posY;
             SendCommand(cmd);

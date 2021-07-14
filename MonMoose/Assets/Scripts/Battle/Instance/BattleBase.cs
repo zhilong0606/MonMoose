@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using MonMoose.Core;
+using MonMoose.StaticData;
 using UnityEngine;
 
 namespace MonMoose.Battle
@@ -19,6 +20,7 @@ namespace MonMoose.Battle
         private SceneModule m_sceneModule = new SceneModule();
         private FrameSyncModule m_frameSyncModule = new FrameSyncModule();
         private MovePathFindModule m_pathFindModule = new MovePathFindModule();
+        private FormationModule m_formationModule = new FormationModule();
 
         private List<Module> m_moduleList = new List<Module>();
         private TickProcess m_tickProcess = new TickProcess();
@@ -55,6 +57,7 @@ namespace MonMoose.Battle
             m_moduleList.Add(m_sceneModule);
             m_moduleList.Add(m_frameSyncModule);
             m_moduleList.Add(m_pathFindModule);
+            m_moduleList.Add(m_formationModule);
 
             for (int i = 0; i < m_moduleList.Count; ++i)
             {
@@ -95,6 +98,49 @@ namespace MonMoose.Battle
         public void AddEntity(Entity entity)
         {
             m_entityList.Add(entity);
+        }
+
+        public void RemoveEntity(int uid)
+        {
+            Entity entity = GetEntity(uid);
+            if (entity != null)
+            {
+                m_entityList.Remove(entity);
+            }
+        }
+
+        public Entity CreateEntity(EntityInitData initData, EBattleObjType objType)
+        {
+            return CreateEntity(initData, CreateObjId(objType));
+        }
+
+        public Entity CreateEntity(EntityInitData initData, int uid)
+        {
+            Entity entity = null;
+            EntityStaticInfo info = StaticDataManager.instance.GetEntity(initData.rid);
+            switch (info.EntityType)
+            {
+                case EEntityType.Actor:
+                    entity = FetchPoolObj<Actor>(typeof(BattleFactory));
+                    break;
+            }
+            if (entity != null)
+            {
+                entity.Init(uid, initData);
+                AddEntity(entity);
+            }
+            return entity;
+        }
+
+        public void DestroyEntity(int uid)
+        {
+            Entity entity = GetEntity(uid);
+            if (entity != null)
+            {
+                entity.UnInit();
+                entity.Release();
+            }
+            RemoveEntity(uid);
         }
 
         public BattleViewController GetViewController(EBattleViewControllerType type)

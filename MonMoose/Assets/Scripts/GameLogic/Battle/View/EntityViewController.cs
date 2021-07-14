@@ -35,15 +35,16 @@ namespace MonMoose.GameLogic.Battle
         {
             ActorInfoComponent infoComponent = m_owner.GetComponent<ActorInfoComponent>();
             string prefabPath = infoComponent.actorStaticInfo.PrefabPath;
-            GameObject prefab = ResourceManager.instance.GetPrefab(prefabPath);
             GameObject actorRoot = BattleShortCut.actorRoot;
-            GameObject go = GameObject.Instantiate(prefab, actorRoot.transform);
-            m_view = go.AddComponent<ActorView>();
+            GameObject go = GameObjectPoolManager.instance.Fetch(prefabPath, actorRoot);
+            m_view = go.GetOrAddComponent<ActorView>();
             m_view.Init();
         }
 
         public override void UnInitView()
         {
+            m_view.UnInit();
+            GameObjectPoolManager.instance.Release(m_view.gameObject);
             m_view = null;
         }
 

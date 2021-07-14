@@ -16,24 +16,15 @@ namespace MonMoose.GameLogic.Battle
 
         public void FormationEmbattle(int actorId, int x, int y)
         {
-            BattleGridView view = BattleShortCut.GetGridView(new GridPosition(x, y));
-            //BattleShortCut.curBattleStage.FormationEmbattle(actorId)
-            //ActorStaticInfo entityInfo = StaticDataManager.instance.GetActor(actorId);
-            //GameObject go = GameObjectPoolManager.instance.Fetch(entityInfo.PrefabPath);
-            //go.transform.position = view.transform.position;
-            //BattlePrepareActorManager
-            //BattlePrepareActorManager.instance.AddActor(actorId, go, view.gridPosition);
             EventManager.instance.Broadcast((int)EventID.BattlePrepare_ActorItemHide, actorId);
         }
 
         public void FormationExchange(int posX1, int posY1, int posX2, int posY2)
         {
-            throw new System.NotImplementedException();
         }
 
         public void FormationRetreat(int posX, int posY)
         {
-            throw new System.NotImplementedException();
         }
 
         public void FormationEnd()

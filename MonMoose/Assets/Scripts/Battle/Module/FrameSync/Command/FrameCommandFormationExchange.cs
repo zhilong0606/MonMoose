@@ -4,7 +4,7 @@ namespace MonMoose.Battle
     {
         public override bool Execute(int playerId)
         {
-            m_battleInstance.eventListener.FormationExchange(posX1, posY1, posX2, posY2);
+            //m_battleInstance.eventListener.FormationExchange(posX1, posY1, posX2, posY2);
             return true;
         }
     }
