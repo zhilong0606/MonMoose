@@ -26,12 +26,6 @@ namespace MonMoose.Battle
             get { return m_offset; }
         }
 
-        protected override void OnInit(EntityInitData entityInitData)
-        {
-            base.OnInit(entityInitData);
-            SetPosition(entityInitData.pos, DcmVec2.zero, true);
-        }
-
         public void SetForward(DcmVec2 forward)
         {
             m_forward = forward;

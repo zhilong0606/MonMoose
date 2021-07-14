@@ -7,7 +7,6 @@ namespace MonMoose.Battle
     {
         public int rid;
         public int level;
-        public GridPosition pos;
         public List<SkillInitData> skillList = new List<SkillInitData>();
     }
 }

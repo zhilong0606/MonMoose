@@ -19,7 +19,7 @@ namespace MonMoose.Battle
             for (int i = 0; i < initData.actorList.Count; ++i)
             {
                 EntityInitData entityInitData = initData.actorList[i];
-                Entity entity = m_battleInstance.CreateEntity(entityInitData, m_battleInstance.CreateObjId(EBattleObjType.StaticEntity));
+                Entity entity = m_battleInstance.CreateEntity(entityInitData, m_battleInstance.CreateObjId(EBattleObjType.StaticEntity), default(GridPosition));
                 entity.SetTeam(this);
                 entityList.Add(entity);
             }

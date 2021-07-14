@@ -39,6 +39,7 @@ namespace MonMoose.GameLogic
             if(view != null && view.canEmbattle)
             {
                 actorItemWidget.SetActiveSafely(false);
+                //BattleShortCut.battleInstance.s()
                 BattleShortCut.frameSyncSender.SendFormationtEmbattle(actorItemWidget.actorId, view.gridPosition.x, view.gridPosition.y);
             }
             else

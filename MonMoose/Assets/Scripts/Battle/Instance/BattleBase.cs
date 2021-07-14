@@ -109,12 +109,12 @@ namespace MonMoose.Battle
             }
         }
 
-        public Entity CreateEntity(EntityInitData initData, EBattleObjType objType)
+        public Entity CreateEntity(EntityInitData initData, EBattleObjType objType, GridPosition gridPosition)
         {
-            return CreateEntity(initData, CreateObjId(objType));
+            return CreateEntity(initData, CreateObjId(objType), gridPosition);
         }
 
-        public Entity CreateEntity(EntityInitData initData, int uid)
+        public Entity CreateEntity(EntityInitData initData, int uid, GridPosition gridPosition)
         {
             Entity entity = null;
             EntityStaticInfo info = StaticDataManager.instance.GetEntity(initData.rid);
@@ -127,6 +127,7 @@ namespace MonMoose.Battle
             if (entity != null)
             {
                 entity.Init(uid, initData);
+                entity.GetComponent<LocationComponent>().SetPosition(gridPosition, DcmVec2.zero, true);
                 AddEntity(entity);
             }
             return entity;

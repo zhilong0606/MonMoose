@@ -21,8 +21,6 @@ namespace MonMoose.Battle
             get { return m_staticInfo; }
         }
 
-        private List<KeyValuePair<int, EntityInitData>> m_entityInitDataList = new List<KeyValuePair<int, EntityInitData>>();
-
         public void Init(int id)
         {
             m_staticInfo = StaticDataManager.instance.GetBattleStage(id);
@@ -61,15 +59,6 @@ namespace MonMoose.Battle
                 grid.Init(m_groundStaticInfo.GridIdList[i], new GridPosition(gridPosX, gridPosY), new DcmVec2(stagePosX, stagePosY), gridSize);
                 m_gridList.Add(grid);
             }
-            for (int i = 0; i < m_staticInfo.StageEntityList.Count; ++i)
-            {
-                StageEntityStaticInfo actorInfo = m_staticInfo.StageEntityList[i];
-                EntityInitData initData = new EntityInitData();
-                initData.rid = actorInfo.Rid;
-                initData.level = actorInfo.Level;
-                initData.pos = new GridPosition(actorInfo.PosX, actorInfo.PosY);
-                m_entityInitDataList.Add(new KeyValuePair<int, EntityInitData>(actorInfo.Uid, initData));
-            }
 
             for (int i = 0; i < m_staticInfo.EmbattleList.Count; ++i)
             {
@@ -96,9 +85,14 @@ namespace MonMoose.Battle
 
         public void Enter()
         {
-            for (int i = 0; i < m_entityInitDataList.Count; ++i)
+            for (int i = 0; i < m_staticInfo.StageEntityList.Count; ++i)
             {
-                m_battleInstance.CreateEntity(m_entityInitDataList[i].Value, m_entityInitDataList[i].Key);
+                StageEntityStaticInfo actorInfo = m_staticInfo.StageEntityList[i];
+                EntityInitData initData = new EntityInitData();
+                initData.rid = actorInfo.Rid;
+                initData.level = actorInfo.Level;
+                //initData.pos = new GridPosition(actorInfo.PosX, actorInfo.PosY);
+                m_battleInstance.CreateEntity(initData, EBattleObjType.StaticEntity, new GridPosition(actorInfo.PosX, actorInfo.PosY));
             }
         }
 

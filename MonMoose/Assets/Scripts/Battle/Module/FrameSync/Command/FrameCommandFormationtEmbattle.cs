@@ -7,7 +7,7 @@ namespace MonMoose.Battle
             EntityInitData entityInitData = new EntityInitData();
             entityInitData.rid = entityRid;
             entityInitData.level = 1;
-            entityInitData.pos = new GridPosition(posX, posY);
+            //entityInitData.pos = new GridPosition(posX, posY);
 
             m_battleInstance.AddFormationActor(entityInitData);
             m_battleInstance.eventListener.FormationEmbattle(entityRid, posX, posY);
